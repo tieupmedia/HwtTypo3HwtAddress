@@ -1,0 +1,23 @@
+plugin.tx_hwtaddress {
+	#mvc.callDefaultActionIfActionCantBeResolved = 1
+
+	persistence {
+		classes {
+		}
+	}
+	view {
+		templateRootPath = {$plugin.tx_hwtaddress.view.templateRootPath}
+		partialRootPath = {$plugin.tx_hwtaddress.view.partialRootPath}
+		layoutRootPath = {$plugin.tx_hwtaddress.view.layoutRootPath}
+	}
+	settings {
+		list {
+            displayPageRelated = {$plugin.tx_hwtaddress.settings.list.displayPageRelated}
+            singlePid = {$plugin.tx_hwtaddress.settings.list.singlePid}
+		}
+		single {
+            backPid = {$plugin.tx_hwtaddress.settings.single.backPid}
+            redirectIfEmptyPid = {$plugin.tx_hwtaddress.settings.single.redirectIfEmptyPid}
+		}
+	}
+}

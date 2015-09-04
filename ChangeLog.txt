@@ -1,0 +1,21 @@
+2015-09-04 Heiko Westermann <hwt3@gmx.de>
+    * Version 0.0.3-alpha - First public git release
+    * Task: Changed naming of flexform settings.
+    * Task: Code cleanup.
+    * Task: Prepared locallang for frontend.
+    * Task: Changed classes to work with namespaces.
+
+2015-06-09 Heiko Westermann <hwt3@gmx.de>
+	* Bugfix: Label for related address records in page settings.
+    * Task: Alternative label with company title in backend list.
+	* Task: Changed extension description.
+
+2015-05-17 Heiko Westermann <hwt3@gmx.de>
+	* Version 0.0.2-alpha
+	* Feature: Added sysfolder type.
+    * Feature: Added ke_search indexer that can be enabled in extension settings.
+
+2014-05-18 Heiko Westermann <hwt3@gmx.de>
+	* Version 0.0.1-alpha
+	* Initial setup: This is an early version of the extension in development.
+	   Some major functions and features are missing!

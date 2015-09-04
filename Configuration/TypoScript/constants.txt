@@ -1,0 +1,21 @@
+plugin.tx_hwtaddress {
+	view {
+		 # cat=plugin.tx_hwtaddress/file; type=string; label=Path to template root (FE)
+		templateRootPath = EXT:hwt_address/Resources/Private/Templates/
+		 # cat=plugin.tx_hwtaddress/file; type=string; label=Path to template partials (FE)
+		partialRootPath = EXT:hwt_address/Resources/Private/Partials/
+		 # cat=plugin.tx_hwtaddress/file; type=string; label=Path to template layouts (FE)
+		layoutRootPath = EXT:hwt_address/Resources/Private/Layouts/
+	}
+
+	settings {
+        list {
+            displayPageRelated =
+            singlePid =
+        }
+        single {
+            backPid =
+            redirectIfEmptyPid =
+        }
+	}
+}

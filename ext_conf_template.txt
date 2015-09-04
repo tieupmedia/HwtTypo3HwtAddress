@@ -1,0 +1,5 @@
+	# cat=Basic/enable/103; type=boolean; label=LLL:EXT:hwt_address/Resources/Private/Language/locallang_be.xlf:extmgm.enableRelationsInPages
+enableRelationsInPages = 0
+
+	# cat=Basic/enable/104; type=boolean; label=LLL:EXT:hwt_address/Resources/Private/Language/locallang_be.xlf:extmgm.enableKesearchHooks
+enableKesearchHooks = 0

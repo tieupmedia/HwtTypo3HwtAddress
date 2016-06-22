@@ -18,8 +18,6 @@ Tx_Extbase_Utility_Extension::configurePlugin(
 // Register ke_search hooks
 $emConfiguration = unserialize($GLOBALS['TYPO3_CONF_VARS']['EXT']['extConf']['hwt_address']);
 if ($emConfiguration['enableKesearchHooks']) {
-    // register custom indexer hook
-    $GLOBALS['TYPO3_CONF_VARS']['EXTCONF']['ke_search']['registerIndexerConfiguration'][] = 'EXT:' . $_EXTKEY . '/Classes/Hook/KeSearchHooks.php.php:Hwt\HwtAddress\Hooks\KeSearchHooks';
-
-    $GLOBALS['TYPO3_CONF_VARS']['EXTCONF']['ke_search']['customIndexer'][] = 'EXT:' . $_EXTKEY . '/Classes/Hook/KeSearchHooks.php.php:Hwt\HwtAddress\Hooks\KeSearchHooks';
+    $GLOBALS['TYPO3_CONF_VARS']['EXTCONF']['ke_search']['registerIndexerConfiguration'][] = 'Hwt\\HwtAddress\\Hooks\\KeSearchHooks';
+    $GLOBALS['TYPO3_CONF_VARS']['EXTCONF']['ke_search']['customIndexer'][] = 'Hwt\\HwtAddress\\Hooks\\KeSearchHooks';
 }

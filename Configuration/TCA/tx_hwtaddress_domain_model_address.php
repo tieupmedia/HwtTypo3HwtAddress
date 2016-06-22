@@ -250,7 +250,7 @@ $extTca = array(
 			'exclude' => 1,
 			'l10n_mode' => 'noCopy',
 			'label' => 'LLL:EXT:cms/locallang_ttc.xml:bodytext_formlabel',
-            'defaultExtras' => 'richtext[]',
+			'defaultExtras' => 'richtext[]:rte_transform[mode=ts_css]',
 			'config' => array(
 				'type' => 'text',
 				'cols' => 30,

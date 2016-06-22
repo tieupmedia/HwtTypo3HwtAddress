@@ -1,28 +1,28 @@
 2016-06-23 Heiko Westermann <hwt3@gmx.de>
-    * Version 0.0.4-beta - Maintenance and bugfix release
-    * Task/Bugfix: Updated ke_search hook. Updated api call for typo3 6.2 and indexing values.
-    * Task/Bugfix: Added the related_address and related_address_from properties to address model.
-    * Feature: Added hooks for record preview from backend and plugin summary in backend.
-    * Bugfix: Wrong action params for single view in plugin flexform
+	* Version 0.0.4-beta - Maintenance and bugfix release
+	* Task/Bugfix: Updated ke_search hook. Updated api call for typo3 6.2 and indexing values.
+	* Task/Bugfix: Added the related_address and related_address_from properties to address model.
+	* Feature: Added hooks for record preview from backend and plugin summary in backend.
+	* Bugfix: Wrong action params for single view in plugin flexform
 	* Bugfix: Updated hook registration for ke_search to namespaced classnames
 	* Bugfix: Text links in rte went wrong. Updated tca setting.
 
 2015-09-04 Heiko Westermann <hwt3@gmx.de>
-    * Version 0.0.3-alpha - First public git release
-    * Task: Changed naming of flexform settings.
-    * Task: Code cleanup.
-    * Task: Prepared locallang for frontend.
-    * Task: Changed classes to work with namespaces.
+	* Version 0.0.3-alpha - First public git release
+	* Task: Changed naming of flexform settings.
+	* Task: Code cleanup.
+	* Task: Prepared locallang for frontend.
+	* Task: Changed classes to work with namespaces.
 
 2015-06-09 Heiko Westermann <hwt3@gmx.de>
 	* Bugfix: Label for related address records in page settings.
-    * Task: Alternative label with company title in backend list.
+	* Task: Alternative label with company title in backend list.
 	* Task: Changed extension description.
 
 2015-05-17 Heiko Westermann <hwt3@gmx.de>
 	* Version 0.0.2-alpha
 	* Feature: Added sysfolder type.
-    * Feature: Added ke_search indexer that can be enabled in extension settings.
+	* Feature: Added ke_search indexer that can be enabled in extension settings.
 
 2014-05-18 Heiko Westermann <hwt3@gmx.de>
 	* Version 0.0.1-alpha

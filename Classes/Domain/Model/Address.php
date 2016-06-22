@@ -222,6 +222,21 @@ class Address extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
      */
     protected $companyImages;
 
+    /**
+     * related addresses
+     *
+     * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Hwt\HwtAddress\Domain\Model\Address>
+     */
+    protected $relatedAddress;
+
+    /**
+     * related from addresses
+     *
+     * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Hwt\HwtAddress\Domain\Model\Address>
+     * @lazy
+     */
+    protected $relatedAddressFrom;
+
 
     /**
      * __construct
@@ -231,6 +246,8 @@ class Address extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
          $this->images = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
          $this->companyImages = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
          $this->categories = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
+         $this->relatedAddress = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
+         $this->relatedAddressFrom = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
      }
 
 
@@ -583,5 +600,23 @@ class Address extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
      */
     public function getCompanyImages() {
             return $this->companyImages;
+    }
+
+    /**
+     * Returns related addresses
+     *
+     * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Hwt\HwtAddress\Domain\Model\Address> $categories
+     */
+    public function getRelatedAddress() {
+        return $this->relatedAddress;
+    }
+
+    /**
+     * Returns the addresses related from
+     *
+     * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Hwt\HwtAddress\Domain\Model\Address> $categories
+     */
+    public function getRelatedAddressFrom() {
+        return $this->relatedAddressFrom;
     }
 }

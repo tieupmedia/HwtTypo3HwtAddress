@@ -49,7 +49,7 @@ class KeSearchHooks {
         $newArray = array(
             'Modern Address',
             'hwtaddressindexer',
-            t3lib_extMgm::extRelPath('hwt_address') . 'Resources/Public/Icons/tx_hwtaddress_domain_model_address.gif'
+            \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extRelPath('hwt_address') . 'Resources/Public/Icons/tx_hwtaddress_domain_model_address.gif'
         );
         $params['items'][] = $newArray;
 
@@ -67,7 +67,7 @@ class KeSearchHooks {
     */
     public function customIndexer(&$indexerConfig, &$indexerObject) {
         /*
-         * Food indexing
+         * address indexing
          */
 		if($indexerConfig['type'] == 'hwtaddressindexer') {
 			$content = '';
@@ -94,7 +94,7 @@ class KeSearchHooks {
 						// compile the information which should go into the index
 						// the field names depend on the table you want to index!
 					$title = strip_tags($record['firstname'] . "\n" . $record['lastname'] . "\n" . $record['company_title']);
-					$abstract = strip_tags($record['info'] . "\n" . $record['company_short']);
+					$abstract = strip_tags($record['position'] . "\n" . $record['department'] . "\n" . $record['company_subtitle'] . "\n" . $record['company_short']);
 					$content = strip_tags($record['info'] . "\n" . $record['company_bodytext']);
 					$fullContent = $title . "\n" . $abstract . "\n" . $content;
 					$params = '&tx_hwtaddress_address[address]=' . $record['uid'];
@@ -108,7 +108,7 @@ class KeSearchHooks {
  
 						// add something to the title, just to identify the entries
 						// in the frontend
-					$title = '[ADDRESS] ' . $title;
+					$title = $title;
  
 						// ... and store the information in the index
 					$indexerObject->storeInIndex(

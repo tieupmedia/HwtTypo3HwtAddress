@@ -30,7 +30,7 @@
 								</numIndex>
 								<numIndex index="1">
 									<numIndex index="0">LLL:EXT:hwt_address/Resources/Private/Language/locallang_be.xlf:flexform_setting.mode.address_single</numIndex>
-									<numIndex index="1">Address->single;Address->list</numIndex>
+									<numIndex index="1">Address->single</numIndex>
 								</numIndex>
 								<numIndex index="2">
 									<numIndex index="0">LLL:EXT:hwt_address/Resources/Private/Language/locallang_be.xlf:flexform_setting.mode.address_search</numIndex>
@@ -45,7 +45,7 @@
 					<settings.addressSingleRecord>
 						<TCEforms>
 							<label>LLL:EXT:hwt_address/Resources/Private/Language/locallang_be.xlf:flexform_setting.addressSingleRecord</label>
-                            <displayCond>FIELD:switchableControllerActions:=:Address->single;Address->list</displayCond>
+							<displayCond>FIELD:switchableControllerActions:=:Address->single</displayCond>
 							<config>
 								<type>group</type>
 								<internal_type>db</internal_type>
@@ -92,7 +92,6 @@
 					<settings.addressStoragePages>
 						<TCEforms>
 							<label>LLL:EXT:hwt_address/Resources/Private/Language/locallang_be.xlf:flexform_setting.addressStoragePages</label>
-                            <displayCond>FIELD:switchableControllerActions:=:Address->list;Address->single</displayCond>
 							<config>
 								<type>group</type>
 								<internal_type>db</internal_type>

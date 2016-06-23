@@ -1,4 +1,9 @@
 2016-06-23 Heiko Westermann <hwt3@gmx.de>
+	* Version 0.0.5-beta - Maintenance and bugfix release
+	* Bugfix: ke_search hook couldn't be loaded. Renamed class file with correct camel case.
+	* Task: Code cleanup in ke_search hook
+
+2016-06-23 Heiko Westermann <hwt3@gmx.de>
 	* Version 0.0.4-beta - Maintenance and bugfix release
 	* Task/Bugfix: Updated ke_search hook. Updated api call for typo3 6.2 and indexing values.
 	* Task/Bugfix: Added the related_address and related_address_from properties to address model.

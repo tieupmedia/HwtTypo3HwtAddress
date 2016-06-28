@@ -1,9 +1,10 @@
 # HwtTypo3HwtAddress
-Install Note: Name the extension folder "hwt_address"!
+###Install Note: Name the extension folder "hwt_address"!
 
-About: This TYPO3 extensions extends the sys_categories since TYPO3 6.x. It adds a category image and own model and repository for usage in custom extensions.
+###About:  
+This TYPO3 extension provides address handling since TYPO3 6.x. It adds an address record, model and repository and a frontend plugin.
 
-Features:
+###Features:  
 - Manage universal address records for persons or companies in backend
 - Plugin for list and single view and zip search in frontend
 - Relate addresses to addresses

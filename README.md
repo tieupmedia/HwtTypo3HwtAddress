@@ -1,5 +1,6 @@
 # HwtTypo3HwtAddress
-###Install Note: Name the extension folder "hwt_address"!
+###Install Note:  
+Name the extension folder "hwt_address"!
 
 ###About:  
 This TYPO3 extension provides address handling since TYPO3 6.x. It adds an address record, model and repository and a frontend plugin.

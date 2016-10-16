@@ -27,7 +27,7 @@ $extTca = array(
 			'starttime' => 'starttime',
 			'endtime' => 'endtime',
 		),
-		'iconfile' => t3lib_extMgm::extRelPath('hwt_address') . 'Resources/Public/Icons/tx_hwtaddress_domain_model_address.gif',
+		'iconfile' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extRelPath('hwt_address') . 'Resources/Public/Icons/tx_hwtaddress_domain_model_address.gif',
 		'searchFields' => 'uid,firstname,lastname,company_title,company_subtitle,zip,city',
 	),
 	'interface' => array(
@@ -188,7 +188,7 @@ $extTca = array(
 				'type' => 'input',
 				'size' => 12,
 				'max' => 20,
-				'eval' => 'datetime',
+				'eval' => 'date',
 			)
 		),
 
@@ -264,7 +264,9 @@ $extTca = array(
 						'type' => 'script',
 						'title' => 'Full screen Rich Text Editing',
 						'icon' => 'wizard_rte2.gif',
-						'script' => 'wizard_rte.php',
+						'module' => array(
+                            'name' => 'wizard_rte',
+                        ),
 					),
 				),
 			)
@@ -536,9 +538,9 @@ $extTca = array(
                     --palette--;LLL:EXT:hwt_address/Resources/Private/Language/locallang_db.xlf:palette.relations_address;paletteRelationsAddress,
                     --palette--;LLL:EXT:hwt_address/Resources/Private/Language/locallang_db.xlf:palette.relations_pages;paletteRelationsPages,
 
-                --div--;LLL:EXT:cms/locallang_ttc.xml:tabs.access,
-                    --palette--;LLL:EXT:cms/locallang_ttc.xml:palette.visibility;paletteVisbility,
-                    --palette--;LLL:EXT:cms/locallang_ttc.xml:palette.access;paletteAccess,'
+                --div--;LLL:EXT:cms/locallang_ttc.xlf:tabs.access,
+                    --palette--;LLL:EXT:cms/locallang_ttc.xlf:palette.visibility;paletteVisbility,
+                    --palette--;LLL:EXT:cms/locallang_ttc.xlf:palette.access;paletteAccess,'
 		),
 	),
 	'palettes' => array(

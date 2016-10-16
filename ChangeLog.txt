@@ -1,3 +1,7 @@
+2016-10-16 Heiko Westermann <hwt3@gmx.de>
+	* Version 0.0.6-beta - Compatibility Release
+	* Task: Compatibility changes for TYPO3 7.6
+
 2016-06-23 Heiko Westermann <hwt3@gmx.de>
 	* Version 0.0.5-beta - Maintenance and bugfix release
 	* Bugfix: ke_search hook couldn't be loaded. Renamed class file with correct camel case.

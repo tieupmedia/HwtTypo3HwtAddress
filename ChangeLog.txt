@@ -1,3 +1,6 @@
+2017-03-03 Heiko Westermann <hwt3@gmx.de>
+	* Task: Compatibility changes for folder icons in TYPO3 >= 7.5
+
 2016-10-16 Heiko Westermann <hwt3@gmx.de>
 	* Version 0.0.6-beta - Compatibility Release
 	* Task: Compatibility changes for TYPO3 7.6

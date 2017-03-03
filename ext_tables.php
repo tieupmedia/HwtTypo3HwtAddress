@@ -79,20 +79,38 @@ $tempColumns = array(
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTCAcolumns('pages', $tempColumns, 1);
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addToAllTCAtypes('pages', 'tx_hwtaddress_related_address;;;;1-1-1, tx_hwtaddress_related_address_from');
 
+
 /*
  * Add folder contains type
  */
 if (TYPO3_MODE == 'BE') {
-    $folderName = 'hwtaddr';
-    $folderPath = '../typo3conf/ext/' . $_EXTKEY . '/Resources/Public/Icons/folder-hwtaddr.gif';
+    /*
+     * Mount page icon
+     */
+    if ( version_compare(TYPO3_version, '7.5.0') >= 0 ) {
+            // since TYPO3 7.5
+        $GLOBALS['TCA']['pages']['ctrl']['typeicon_classes']['contains-hwtaddress'] = 'apps-pagetree-folder-contains-hwtaddress';
 
-    unset($GLOBALS['ICON_TYPES'][$folderName]);
+        // add select option for hwtaddress
+        $GLOBALS['TCA']['pages']['columns']['module']['config']['items'][] = array(
+            0 => 'LLL:EXT:' . $_EXTKEY . '/Resources/Private/Language/locallang_be.xlf:folder',
+            1 => 'hwtaddress',
+            2 => 'apps-pagetree-folder-contains-hwtaddress'
+        );
+    }
+    else {
+            // before TYPO3 7.5
+        $folderName = 'hwtaddress';
+        $folderPath = '../typo3conf/ext/' . $_EXTKEY . '/Resources/Public/Icons/folder-hwtaddress.gif';
 
-	\TYPO3\CMS\Backend\Sprite\SpriteManager::addTcaTypeIcon('pages', 'contains-'.$folderName, $folderPath);
+        unset($GLOBALS['ICON_TYPES'][$folderName]);
 
-    $GLOBALS['TCA']['pages']['columns']['module']['config']['items'][] = array(
-        0 => 'LLL:EXT:' . $_EXTKEY . '/Resources/Private/Language/locallang_be.xlf:folder',
-        1 => $folderName,
-        2 => $folderPath
-    );
+        \TYPO3\CMS\Backend\Sprite\SpriteManager::addTcaTypeIcon('pages', 'contains-'.$folderName, $folderPath);
+
+        $GLOBALS['TCA']['pages']['columns']['module']['config']['items'][] = array(
+            0 => 'LLL:EXT:' . $_EXTKEY . '/Resources/Private/Language/locallang_be.xlf:folder',
+            1 => $folderName,
+            2 => $folderPath
+        );
+    }
 }

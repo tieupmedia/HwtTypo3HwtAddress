@@ -35,3 +35,21 @@ $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['t3lib/class.t3lib_tcemain.php']['proc
  * Register CmsLayout hook
  */
 $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['cms/layout/class.tx_cms_layout.php']['list_type_Info']['hwtaddress_address'][$_EXTKEY] = 'Hwt\\HwtAddress\\Hooks\\CmsLayout->getExtensionSummary';
+
+
+if (TYPO3_MODE === 'BE') {
+    /*
+     * Register folder icon
+     * For TYPO3 >= 7.5, older version just need tca.php codes
+     */
+    if ( version_compare(TYPO3_version, '7.5.0') >= 0 ) {
+        /** @var \TYPO3\CMS\Core\Imaging\IconRegistry $iconRegistry */
+        $iconRegistry = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance('TYPO3\\CMS\\Core\\Imaging\\IconRegistry');
+
+        $iconRegistry->registerIcon(
+            'apps-pagetree-folder-contains-hwtaddress',
+            'TYPO3\\CMS\\Core\\Imaging\\IconProvider\\BitmapIconProvider',
+            array('source' => 'EXT:' . $_EXTKEY . '/Resources/Public/Icons/folder-hwtaddress.gif')
+        );
+    }
+}

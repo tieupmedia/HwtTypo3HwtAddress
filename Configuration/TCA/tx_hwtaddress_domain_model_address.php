@@ -63,7 +63,7 @@ $extTca = array(
 		),
         'hidden' => array(
 			'exclude' => 1,
-			'label' => 'LLL:EXT:lang/locallang_general.xml:LGL.hidden',
+			'label' => 'LLL:EXT:lang/locallang_general.xlf:LGL.hidden',
 			'config' => array(
 				'type' => 'check',
 				'default' => 0
@@ -71,7 +71,7 @@ $extTca = array(
 		),
 		'starttime' => array(
 			'exclude' => 1,
-			'label' => 'LLL:EXT:lang/locallang_general.xml:LGL.starttime',
+			'label' => 'LLL:EXT:lang/locallang_general.xlf:LGL.starttime',
 			'config' => array(
 				'type' => 'input',
 				'size' => 8,
@@ -82,7 +82,7 @@ $extTca = array(
 		),
 		'endtime' => array(
 			'exclude' => 1,
-			'label' => 'LLL:EXT:lang/locallang_general.xml:LGL.endtime',
+			'label' => 'LLL:EXT:lang/locallang_general.xlf:LGL.endtime',
 			'config' => array(
 				'type' => 'input',
 				'size' => 8,
@@ -249,7 +249,7 @@ $extTca = array(
 		'company_bodytext' => array(
 			'exclude' => 1,
 			'l10n_mode' => 'noCopy',
-			'label' => 'LLL:EXT:cms/locallang_ttc.xml:bodytext_formlabel',
+			'label' => 'LLL:EXT:cms/locallang_ttc.xlf:bodytext_formlabel',
 			'defaultExtras' => 'richtext[]:rte_transform[mode=ts_css]',
 			'config' => array(
 				'type' => 'text',
@@ -584,7 +584,7 @@ $extTca = array(
 			'canNotCollapse' => TRUE,
 		),
 		'paletteAccess' => array(
-			'showitem' => 'starttime;LLL:EXT:cms/locallang_ttc.xml:starttime_formlabel, endtime;LLL:EXT:cms/locallang_ttc.xml:endtime_formlabel,',
+			'showitem' => 'starttime;LLL:EXT:cms/locallang_ttc.xlf:starttime_formlabel, endtime;LLL:EXT:cms/locallang_ttc.xlf:endtime_formlabel,',
 			'canNotCollapse' => TRUE,
 		),
 	),

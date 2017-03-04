@@ -7,7 +7,15 @@ if (!defined('TYPO3_MODE')) {
 // Extension manager configuration
 $emConfiguration = unserialize($GLOBALS['TYPO3_CONF_VARS']['EXT']['extConf']['hwt_address']);
 
+// Extension locallang
 $ll = 'LLL:EXT:hwt_address/Resources/Private/Language/locallang_db.xlf:tx_hwtaddress_domain_model_address.';
+
+// CMS locallang
+if ( version_compare(TYPO3_version, '8.0.0') >= 0 ) {
+    $llTtc = 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:';
+} else {
+    $llTtc = 'LLL:EXT:cms/locallang_ttc.xlf:';
+}
 
 $extTca = array(
 	'ctrl' => array(
@@ -139,7 +147,7 @@ $extTca = array(
                             'width' => '100',
                             'height' => '100',
                         ),
-                        'createNewRelationLinkTitle' => 'LLL:EXT:cms/locallang_ttc.xlf:images.addFileReference'
+                        'createNewRelationLinkTitle' => $llTtc.'images.addFileReference'
                     ),
                     // custom configuration for displaying fields in the overlay/reference table
                     // to use the imageoverlayPalette instead of the basicoverlayPalette
@@ -249,7 +257,7 @@ $extTca = array(
 		'company_bodytext' => array(
 			'exclude' => 1,
 			'l10n_mode' => 'noCopy',
-			'label' => 'LLL:EXT:cms/locallang_ttc.xlf:bodytext_formlabel',
+			'label' => $llTtc.'bodytext_formlabel',
 			'defaultExtras' => 'richtext[]:rte_transform[mode=ts_css]',
 			'config' => array(
 				'type' => 'text',
@@ -282,7 +290,7 @@ $extTca = array(
                             'width' => '100',
                             'height' => '100',
                         ),
-                        'createNewRelationLinkTitle' => 'LLL:EXT:cms/locallang_ttc.xlf:images.addFileReference'
+                        'createNewRelationLinkTitle' => $llTtc.'images.addFileReference'
                     ),
                     // custom configuration for displaying fields in the overlay/reference table
                     // to use the imageoverlayPalette instead of the basicoverlayPalette
@@ -538,9 +546,9 @@ $extTca = array(
                     --palette--;LLL:EXT:hwt_address/Resources/Private/Language/locallang_db.xlf:palette.relations_address;paletteRelationsAddress,
                     --palette--;LLL:EXT:hwt_address/Resources/Private/Language/locallang_db.xlf:palette.relations_pages;paletteRelationsPages,
 
-                --div--;LLL:EXT:cms/locallang_ttc.xlf:tabs.access,
-                    --palette--;LLL:EXT:cms/locallang_ttc.xlf:palette.visibility;paletteVisbility,
-                    --palette--;LLL:EXT:cms/locallang_ttc.xlf:palette.access;paletteAccess,'
+                --div--;'.$llTtc.'tabs.access,
+                    --palette--;'.$llTtc.'palette.visibility;paletteVisbility,
+                    --palette--;'.$llTtc.'palette.access;paletteAccess,'
 		),
 	),
 	'palettes' => array(
@@ -584,7 +592,7 @@ $extTca = array(
 			'canNotCollapse' => TRUE,
 		),
 		'paletteAccess' => array(
-			'showitem' => 'starttime;LLL:EXT:cms/locallang_ttc.xlf:starttime_formlabel, endtime;LLL:EXT:cms/locallang_ttc.xlf:endtime_formlabel,',
+			'showitem' => 'starttime;'.$llTtc.'starttime_formlabel, endtime;'.$llTtc.'endtime_formlabel,',
 			'canNotCollapse' => TRUE,
 		),
 	),

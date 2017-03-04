@@ -4,11 +4,18 @@ if (!defined('TYPO3_MODE')) {
 	die ('Access denied.');
 }
 
+
 // Extension manager configuration
 $emConfiguration = unserialize($GLOBALS['TYPO3_CONF_VARS']['EXT']['extConf']['hwt_address']);
 
 // Extension locallang
 $ll = 'LLL:EXT:hwt_address/Resources/Private/Language/locallang_db.xlf:tx_hwtaddress_domain_model_address.';
+
+// General locallang
+$llGeneral = 'LLL:EXT:lang/locallang_general.xlf:';
+
+// TCA locallang
+$llTca = 'LLL:EXT:lang/locallang_tca.xlf:';
 
 // CMS locallang
 if ( version_compare(TYPO3_version, '8.0.0') >= 0 ) {
@@ -16,6 +23,7 @@ if ( version_compare(TYPO3_version, '8.0.0') >= 0 ) {
 } else {
     $llTtc = 'LLL:EXT:cms/locallang_ttc.xlf:';
 }
+
 
 $extTca = array(
 	'ctrl' => array(
@@ -71,7 +79,7 @@ $extTca = array(
 		),
         'hidden' => array(
 			'exclude' => 1,
-			'label' => 'LLL:EXT:lang/locallang_general.xlf:LGL.hidden',
+			'label' => $llGeneral . 'LGL.hidden',
 			'config' => array(
 				'type' => 'check',
 				'default' => 0
@@ -79,7 +87,7 @@ $extTca = array(
 		),
 		'starttime' => array(
 			'exclude' => 1,
-			'label' => 'LLL:EXT:lang/locallang_general.xlf:LGL.starttime',
+			'label' => $llGeneral . 'LGL.starttime',
 			'config' => array(
 				'type' => 'input',
 				'size' => 8,
@@ -90,7 +98,7 @@ $extTca = array(
 		),
 		'endtime' => array(
 			'exclude' => 1,
-			'label' => 'LLL:EXT:lang/locallang_general.xlf:LGL.endtime',
+			'label' => $llGeneral . 'LGL.endtime',
 			'config' => array(
 				'type' => 'input',
 				'size' => 8,
@@ -154,32 +162,32 @@ $extTca = array(
                     'foreign_types' => array(
                         '0' => array(
                             'showitem' => '
-                                --palette--;LLL:EXT:lang/locallang_tca.xlf:sys_file_reference.imageoverlayPalette;imageoverlayPalette,
+                                --palette--;' . $llTca . 'sys_file_reference.imageoverlayPalette;imageoverlayPalette,
                                 --palette--;;filePalette'
                         ),
                         \TYPO3\CMS\Core\Resource\File::FILETYPE_TEXT => array(
                             'showitem' => '
-                                --palette--;LLL:EXT:lang/locallang_tca.xlf:sys_file_reference.imageoverlayPalette;imageoverlayPalette,
+                                --palette--;' . $llTca . 'sys_file_reference.imageoverlayPalette;imageoverlayPalette,
                                 --palette--;;filePalette'
                         ),
                         \TYPO3\CMS\Core\Resource\File::FILETYPE_IMAGE => array(
                             'showitem' => '
-                                --palette--;LLL:EXT:lang/locallang_tca.xlf:sys_file_reference.imageoverlayPalette;imageoverlayPalette,
+                                --palette--;' . $llTca . 'sys_file_reference.imageoverlayPalette;imageoverlayPalette,
                                 --palette--;;filePalette'
                         ),
                         \TYPO3\CMS\Core\Resource\File::FILETYPE_AUDIO => array(
                             'showitem' => '
-                                --palette--;LLL:EXT:lang/locallang_tca.xlf:sys_file_reference.imageoverlayPalette;imageoverlayPalette,
+                                --palette--;' . $llTca . 'sys_file_reference.imageoverlayPalette;imageoverlayPalette,
                                 --palette--;;filePalette'
                         ),
                         \TYPO3\CMS\Core\Resource\File::FILETYPE_VIDEO => array(
                             'showitem' => '
-                                --palette--;LLL:EXT:lang/locallang_tca.xlf:sys_file_reference.imageoverlayPalette;imageoverlayPalette,
+                                --palette--;' . $llTca . 'sys_file_reference.imageoverlayPalette;imageoverlayPalette,
                                 --palette--;;filePalette'
                         ),
                         \TYPO3\CMS\Core\Resource\File::FILETYPE_APPLICATION => array(
                             'showitem' => '
-                                --palette--;LLL:EXT:lang/locallang_tca.xlf:sys_file_reference.imageoverlayPalette;imageoverlayPalette,
+                                --palette--;' . $llTca . 'sys_file_reference.imageoverlayPalette;imageoverlayPalette,
                                 --palette--;;filePalette'
                         )
                     ),
@@ -297,32 +305,32 @@ $extTca = array(
                     'foreign_types' => array(
                         '0' => array(
                             'showitem' => '
-                                --palette--;LLL:EXT:lang/locallang_tca.xlf:sys_file_reference.imageoverlayPalette;imageoverlayPalette,
+                                --palette--;' . $llTca . 'sys_file_reference.imageoverlayPalette;imageoverlayPalette,
                                 --palette--;;filePalette'
                         ),
                         \TYPO3\CMS\Core\Resource\File::FILETYPE_TEXT => array(
                             'showitem' => '
-                                --palette--;LLL:EXT:lang/locallang_tca.xlf:sys_file_reference.imageoverlayPalette;imageoverlayPalette,
+                                --palette--;' . $llTca . 'sys_file_reference.imageoverlayPalette;imageoverlayPalette,
                                 --palette--;;filePalette'
                         ),
                         \TYPO3\CMS\Core\Resource\File::FILETYPE_IMAGE => array(
                             'showitem' => '
-                                --palette--;LLL:EXT:lang/locallang_tca.xlf:sys_file_reference.imageoverlayPalette;imageoverlayPalette,
+                                --palette--;' . $llTca . 'sys_file_reference.imageoverlayPalette;imageoverlayPalette,
                                 --palette--;;filePalette'
                         ),
                         \TYPO3\CMS\Core\Resource\File::FILETYPE_AUDIO => array(
                             'showitem' => '
-                                --palette--;LLL:EXT:lang/locallang_tca.xlf:sys_file_reference.imageoverlayPalette;imageoverlayPalette,
+                                --palette--;' . $llTca . 'sys_file_reference.imageoverlayPalette;imageoverlayPalette,
                                 --palette--;;filePalette'
                         ),
                         \TYPO3\CMS\Core\Resource\File::FILETYPE_VIDEO => array(
                             'showitem' => '
-                                --palette--;LLL:EXT:lang/locallang_tca.xlf:sys_file_reference.imageoverlayPalette;imageoverlayPalette,
+                                --palette--;' . $llTca . 'sys_file_reference.imageoverlayPalette;imageoverlayPalette,
                                 --palette--;;filePalette'
                         ),
                         \TYPO3\CMS\Core\Resource\File::FILETYPE_APPLICATION => array(
                             'showitem' => '
-                                --palette--;LLL:EXT:lang/locallang_tca.xlf:sys_file_reference.imageoverlayPalette;imageoverlayPalette,
+                                --palette--;' . $llTca . 'sys_file_reference.imageoverlayPalette;imageoverlayPalette,
                                 --palette--;;filePalette'
                         )
                     ),
@@ -531,20 +539,20 @@ $extTca = array(
     'types' => array(
 		0 => array(
 			'showitem' =>
-                '--palette--;LLL:EXT:hwt_address/Resources/Private/Language/locallang_db.xlf:palette.name;paletteName,
-                    birthday,info, --palette--;LLL:EXT:hwt_address/Resources/Private/Language/locallang_db.xlf:palette.employee;paletteEmployee, images,
+                '--palette--;'.$ll.'palette.name;paletteName,
+                    birthday,info, --palette--;'.$ll.'palette.employee;paletteEmployee, images,
 
-                --div--;LLL:EXT:hwt_address/Resources/Private/Language/locallang_db.xlf:tabs.company,
+                --div--;'.$ll.'tabs.company,
                     company_title;;paletteCompanyTitle,company_short,company_bodytext,company_images,
 
-                --div--;LLL:EXT:hwt_address/Resources/Private/Language/locallang_db.xlf:tabs.address,
-                    --palette--;LLL:EXT:hwt_address/Resources/Private/Language/locallang_db.xlf:palette.electronic_address;paletteElectronicAddress,
-                    --palette--;LLL:EXT:hwt_address/Resources/Private/Language/locallang_db.xlf:palette.location_address;paletteLocationAddress,
-                    --palette--;LLL:EXT:hwt_address/Resources/Private/Language/locallang_db.xlf:palette.geographical_address;paletteGeographicalAddress,
+                --div--;'.$ll.'tabs.address,
+                    --palette--;'.$ll.'palette.electronic_address;paletteElectronicAddress,
+                    --palette--;'.$ll.'palette.location_address;paletteLocationAddress,
+                    --palette--;'.$ll.'palette.geographical_address;paletteGeographicalAddress,
 
-                --div--;LLL:EXT:hwt_address/Resources/Private/Language/locallang_db.xlf:tabs.relations,
-                    --palette--;LLL:EXT:hwt_address/Resources/Private/Language/locallang_db.xlf:palette.relations_address;paletteRelationsAddress,
-                    --palette--;LLL:EXT:hwt_address/Resources/Private/Language/locallang_db.xlf:palette.relations_pages;paletteRelationsPages,
+                --div--;'.$ll.'tabs.relations,
+                    --palette--;'.$ll.'palette.relations_address;paletteRelationsAddress,
+                    --palette--;'.$ll.'palette.relations_pages;paletteRelationsPages,
 
                 --div--;'.$llTtc.'tabs.access,
                     --palette--;'.$llTtc.'palette.visibility;paletteVisbility,

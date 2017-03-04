@@ -523,20 +523,20 @@ $extTca = array(
     'types' => array(
 		0 => array(
 			'showitem' =>
-                '--palette--;LLL:EXT:hwt_address/Resources/Private/Language/locallang_db.xlf:palette.name;paletteName,
-                    birthday,info, --palette--;LLL:EXT:hwt_address/Resources/Private/Language/locallang_db.xlf:palette.employee;paletteEmployee, images,
+                '--palette--;'.$ll.'palette.name;paletteName,
+                    birthday,info, --palette--;'.$ll.'palette.employee;paletteEmployee, images,
 
-                --div--;LLL:EXT:hwt_address/Resources/Private/Language/locallang_db.xlf:tabs.company,
+                --div--;'.$ll.'tabs.company,
                     company_title;;paletteCompanyTitle,company_short,company_bodytext,company_images,
 
-                --div--;LLL:EXT:hwt_address/Resources/Private/Language/locallang_db.xlf:tabs.address,
-                    --palette--;LLL:EXT:hwt_address/Resources/Private/Language/locallang_db.xlf:palette.electronic_address;paletteElectronicAddress,
-                    --palette--;LLL:EXT:hwt_address/Resources/Private/Language/locallang_db.xlf:palette.location_address;paletteLocationAddress,
-                    --palette--;LLL:EXT:hwt_address/Resources/Private/Language/locallang_db.xlf:palette.geographical_address;paletteGeographicalAddress,
+                --div--;'.$ll.'tabs.address,
+                    --palette--;'.$ll.'palette.electronic_address;paletteElectronicAddress,
+                    --palette--;'.$ll.'palette.location_address;paletteLocationAddress,
+                    --palette--;'.$ll.'palette.geographical_address;paletteGeographicalAddress,
 
-                --div--;LLL:EXT:hwt_address/Resources/Private/Language/locallang_db.xlf:tabs.relations,
-                    --palette--;LLL:EXT:hwt_address/Resources/Private/Language/locallang_db.xlf:palette.relations_address;paletteRelationsAddress,
-                    --palette--;LLL:EXT:hwt_address/Resources/Private/Language/locallang_db.xlf:palette.relations_pages;paletteRelationsPages,
+                --div--;'.$ll.'tabs.relations,
+                    --palette--;'.$ll.'palette.relations_address;paletteRelationsAddress,
+                    --palette--;'.$ll.'palette.relations_pages;paletteRelationsPages,
 
                 --div--;LLL:EXT:cms/locallang_ttc.xlf:tabs.access,
                     --palette--;LLL:EXT:cms/locallang_ttc.xlf:palette.visibility;paletteVisbility,

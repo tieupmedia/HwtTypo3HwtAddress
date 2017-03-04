@@ -111,39 +111,39 @@
 			</trans-unit>
 
 
-			<trans-unit id="palette.name" xml:space="preserve">
+			<trans-unit id="tx_hwtaddress_domain_model_address.palette.name" xml:space="preserve">
 				<target>Name</target>
 			</trans-unit>
-			<trans-unit id="palette.employee" xml:space="preserve">
+			<trans-unit id="tx_hwtaddress_domain_model_address.palette.employee" xml:space="preserve">
 				<target>Mitarbeiterdaten</target>
 			</trans-unit>
-			<trans-unit id="palette.company_title" xml:space="preserve">
+			<trans-unit id="tx_hwtaddress_domain_model_address.palette.company_title" xml:space="preserve">
 				<target>Firma</target>
 			</trans-unit>
-			<trans-unit id="palette.electronic_address" xml:space="preserve">
+			<trans-unit id="tx_hwtaddress_domain_model_address.palette.electronic_address" xml:space="preserve">
 				<target>elektronische Kontaktdaten</target>
 			</trans-unit>
-			<trans-unit id="palette.location_address" xml:space="preserve">
+			<trans-unit id="tx_hwtaddress_domain_model_address.palette.location_address" xml:space="preserve">
 				<target>Ortsangabe</target>
 			</trans-unit>
-			<trans-unit id="palette.geographical_address" xml:space="preserve">
+			<trans-unit id="tx_hwtaddress_domain_model_address.palette.geographical_address" xml:space="preserve">
 				<target>geografische Adresse</target>
 			</trans-unit>
 			<trans-unit id="palette.relations_address" xml:space="preserve">
 				<target>Adress-Verknüpfungen</target>
 			</trans-unit>
-			<trans-unit id="palette.relations_pages" xml:space="preserve">
+			<trans-unit id="tx_hwtaddress_domain_model_address.palette.relations_pages" xml:space="preserve">
 				<target>Seiten-Verknüpfungen</target>
 			</trans-unit>
 
 
-			<trans-unit id="tabs.address" xml:space="preserve">
+			<trans-unit id="tx_hwtaddress_domain_model_address.tabs.address" xml:space="preserve">
 				<target>Adresse</target>
 			</trans-unit>
-			<trans-unit id="tabs.company" xml:space="preserve">
+			<trans-unit id="tx_hwtaddress_domain_model_address.tabs.company" xml:space="preserve">
 				<target>Firma</target>
 			</trans-unit>
-			<trans-unit id="tabs.relations" xml:space="preserve">
+			<trans-unit id="tx_hwtaddress_domain_model_address.tabs.relations" xml:space="preserve">
 				<target>Verknüpfungen</target>
 			</trans-unit>
 

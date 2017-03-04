@@ -9,6 +9,9 @@ $emConfiguration = unserialize($GLOBALS['TYPO3_CONF_VARS']['EXT']['extConf']['hw
 
 $ll = 'LLL:EXT:hwt_address/Resources/Private/Language/locallang_db.xlf:tx_hwtaddress_domain_model_address.';
 
+// General locallang
+$llGeneral = 'LLL:EXT:lang/locallang_general.xlf:';
+
 $extTca = array(
 	'ctrl' => array(
 		'title' => 'LLL:EXT:hwt_address/Resources/Private/Language/locallang_db.xlf:tx_hwtaddress_domain_model_address',
@@ -63,7 +66,7 @@ $extTca = array(
 		),
         'hidden' => array(
 			'exclude' => 1,
-			'label' => 'LLL:EXT:lang/locallang_general.xlf:LGL.hidden',
+			'label' => $llGeneral . 'LGL.hidden',
 			'config' => array(
 				'type' => 'check',
 				'default' => 0
@@ -71,7 +74,7 @@ $extTca = array(
 		),
 		'starttime' => array(
 			'exclude' => 1,
-			'label' => 'LLL:EXT:lang/locallang_general.xlf:LGL.starttime',
+			'label' => $llGeneral . 'LGL.starttime',
 			'config' => array(
 				'type' => 'input',
 				'size' => 8,
@@ -82,7 +85,7 @@ $extTca = array(
 		),
 		'endtime' => array(
 			'exclude' => 1,
-			'label' => 'LLL:EXT:lang/locallang_general.xlf:LGL.endtime',
+			'label' => $llGeneral . 'LGL.endtime',
 			'config' => array(
 				'type' => 'input',
 				'size' => 8,

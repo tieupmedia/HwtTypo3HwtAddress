@@ -1,0 +1,39 @@
+# Demo settings for companies
+
+TCEFORM.tx_hwtaddress_domain_model_address {
+    academic.disabled = 1
+    firstname.disabled = 1
+    lastname.disabled = 1
+    gender.disabled = 1
+    images.disabled = 1
+    birthday.disabled = 1
+    department.disabled = 1	
+    position.disabled = 1
+    info.disabled = 1
+
+    company_title.disabled = 0
+    company_subtitle.disabled = 0
+    company_short.disabled = 0
+    company_bodytext.disabled = 0
+    company_images.disabled = 0
+
+    phone.disabled = 0
+    mobile.disabled = 1
+    fax.disabled = 0
+    email.disabled = 0
+    www.disabled = 0
+    building.disabled = 0
+    street.disabled = 0
+    zip.disabled = 0
+    city.disabled = 0
+    region.disabled = 0
+    country.disabled = 0
+    longitude.disabled = 0
+    latitude.disabled = 0
+
+    related_address.disabled = 0	
+    related_address_from.disabled = 0
+    related_pages_from.disabled = 0
+
+    categories.disabled = 0
+}

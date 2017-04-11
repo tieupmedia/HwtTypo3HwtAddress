@@ -1,4 +1,5 @@
 2017-04-11 Heiko Westermann <hwt3@gmx.de>
+    * Version 0.0.7-beta - Compatiblity and bugfix release
     * Bugfix: Respect extension manager setting for relations in page records.
 	* Task: Compatibility changes for folder icons in TYPO3 >= 7.5
 	* Task: Compatibility changes for language files in TYPO3 >= 6.2

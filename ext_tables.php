@@ -50,34 +50,6 @@ if (TYPO3_MODE == 'BE') {
     $options = array()
 );
 
-/*
- * Extend tca pages
- */
-$tempColumns = array(
-    'tx_hwtaddress_related_address' => array(
-        'exclude' => 1,
-        'l10n_mode' => 'mergeIfNotBlank',
-        'label' => 'LLL:EXT:' . $_EXTKEY . '/Resources/Private/Language/locallang_db.xlf:pages.tx_hwtaddress_related_address',
-        'config' => array(
-            'type' => 'group',
-            'internal_type' => 'db',
-            'allowed' => 'tx_hwtaddress_domain_model_address',
-            'foreign_table' => 'tx_hwtaddress_domain_model_address',
-//            'MM_opposite_field' => 'related_pages_from',
-            'size' => 5,
-            'minitems' => 0,
-            'maxitems' => 100,
-            'MM' => 'tx_hwtaddress_domain_model_pages_address_mm',
-            'wizards' => array(
-                'suggest' => array(
-                    'type' => 'suggest',
-                ),
-            ),
-        )
-    ),
-);
-\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTCAcolumns('pages', $tempColumns, 1);
-\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addToAllTCAtypes('pages', 'tx_hwtaddress_related_address;;;;1-1-1, tx_hwtaddress_related_address_from');
 
 
 /*

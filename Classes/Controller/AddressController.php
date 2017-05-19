@@ -113,7 +113,7 @@ class AddressController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControll
             $record = $this->addressRepository->findByUid($address);
         }
         elseif ((int)$this->settings['addressSingleRecord'] > 0) {
-            $record = $this->addressRepository->findByUid($singleUid);
+            $record = $this->addressRepository->findByUid((int)$this->settings['addressSingleRecord']);
         }
         elseif ((int)$this->settings['single']['redirectIfEmptyPid'] > 0) {
             $this->uriBuilder->setTargetPageUid($this->settings['single']['redirectIfEmptyPid']);

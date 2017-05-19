@@ -186,6 +186,17 @@
 						</TCEforms>
 					</settings.orderDirection>
 
+					<!-- layout  -->
+					<settings.layout>
+						<TCEforms>
+							<label>LLL:EXT:hwt_address/Resources/Private/Language/locallang_be.xml:flexform_setting.template</label>
+							<config>
+								<type>select</type>
+								<itemsProcFunc>Hwt\HwtAddress\Helper\TcaHelper->getTemplateList</itemsProcFunc>
+								<items type="array"></items>
+							</config>
+						</TCEforms>
+					</settings.layout>
 				</el>
 			</ROOT>
 		</sDEF>

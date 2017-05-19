@@ -73,8 +73,13 @@
 			</trans-unit>
 			<trans-unit id="flexform_setting.orderDirection.desc" xml:space="preserve">
 				<source>descending</source>
-			</trans-unit>			
-
+			</trans-unit>
+			<trans-unit id="flexform_setting.template" xml:space="preserve">
+				<source>Template</source>
+			</trans-unit>
+			<trans-unit id="flexform_setting.template.default" xml:space="preserve">
+				<source>Default</source>
+			</trans-unit>
 
 			<trans-unit id="extmgm.enableRelationsInPages" xml:space="preserve">
 				<source>Enable address relations in page records</source>

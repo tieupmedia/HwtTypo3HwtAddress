@@ -187,7 +187,7 @@
 					</settings.orderDirection>
 
 					<!-- layout  -->
-					<settings.layout>
+					<settings.template>
 						<TCEforms>
 							<label>LLL:EXT:hwt_address/Resources/Private/Language/locallang_be.xml:flexform_setting.template</label>
 							<config>
@@ -196,7 +196,7 @@
 								<items type="array"></items>
 							</config>
 						</TCEforms>
-					</settings.layout>
+					</settings.template>
 				</el>
 			</ROOT>
 		</sDEF>

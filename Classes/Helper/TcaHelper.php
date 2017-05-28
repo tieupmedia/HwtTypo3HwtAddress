@@ -20,9 +20,9 @@ class TcaHelper {
 			1 => 'Default'
 		];
 
-		$templateRegistry = $GLOBALS['TYPO3_CONF_VARS']['EXT']['hwt_address']['templates'];
+		$templateRegistry = $GLOBALS['TYPO3_CONF_VARS']['EXT']['hwt_address']['templates'][$params['row']['switchableControllerActions'][0]];
 		if (isset($templateRegistry) && count($templateRegistry) > 0) {
-			foreach ($GLOBALS['TYPO3_CONF_VARS']['EXT']['hwt_address']['templates'] as $item => $name) {
+			foreach ($templateRegistry as $item => $name) {
 				$params['items'][] = [
 					0 => $name,
 					1 => GeneralUtility::underscoredToUpperCamelCase($item)

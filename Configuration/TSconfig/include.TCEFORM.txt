@@ -1,0 +1,4 @@
+# Add one of these lines to your pageTS
+
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:hwt_address/Configuration/TSconfig/TCEFORM.hwtaddress_address_person.txt">
+#<INCLUDE_TYPOSCRIPT: source="FILE:EXT:hwt_address/Configuration/TSconfig/TCEFORM.hwtaddress_address_company.txt">

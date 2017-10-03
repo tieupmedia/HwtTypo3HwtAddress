@@ -1,6 +1,9 @@
-2017-03-03 Heiko Westermann <hwt3@gmx.de>
+2017-04-11 Heiko Westermann <hwt3@gmx.de>
+    * Version 0.0.7-beta - Compatiblity and bugfix release
+    * Bugfix: Respect extension manager setting for relations in page records.
 	* Task: Compatibility changes for folder icons in TYPO3 >= 7.5
 	* Task: Compatibility changes for language files in TYPO3 >= 6.2
+    * Task: Added TSconfig/TCEFORM (demo) settings
 
 2016-10-16 Heiko Westermann <hwt3@gmx.de>
 	* Version 0.0.6-beta - Compatibility Release

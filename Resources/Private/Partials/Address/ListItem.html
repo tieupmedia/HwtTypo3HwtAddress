@@ -1,0 +1,27 @@
+<div class="address-item">
+    Address Title: {address.title}<br />
+    Address Uid: {address.uid}<br />
+
+    <f:for each="{address.categories}" as="category">
+        Category Title: {category.title}<br />
+        Category Uid: {category.uid}
+    </f:for>
+
+    <f:for each="{address.images}" as="image">
+        Orginal-Attribute:<br />
+        Dateiname:    {image.originalResource.originalFile.name}<br />
+        Titel:        {image.originalResource.originalFile.title}<br />
+        Beschreibung: {image.originalResource.originalFile.description}<br />
+        Alt-Text:     {image.originalResource.originalFile.alternative}<br />
+        UID:          {image.originalResource.originalFile.uid}<br />
+        Pfad:         {image.originalResource.publicUrl}<br /><br />
+
+        Referenz-Attribute:<br />
+        Titel:        {image.originalResource.title}<br />
+        Beschreibung: {image.originalResource.name}<br /><br />
+
+        Ausgabe als Bild:<br />
+        <f:image src="{image.originalResource.originalFile.uid}" alt="" /><br />
+        <f:image src="{image.uid}" alt="" treatIdAsReference="TRUE" /><br /><br />
+    </f:for>
+</div>

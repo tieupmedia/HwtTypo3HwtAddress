@@ -33,45 +33,45 @@ namespace Hwt\HwtAddress\Hooks;
  */
 class Tcemain {
     /*
-	 * Generate a different preview link
-	 * @param string $status status
-	 * @param string $table table name
-	 * @param integer $recordUid id of the record
-	 * @param array $fields fieldArray
-	 * @param \TYPO3\CMS\Core\DataHandling\DataHandler $parentObject parent Object
-	 * @return void
-	 */
-	public function processDatamap_afterDatabaseOperations($status, $table, $recordUid, array $fields, \TYPO3\CMS\Core\DataHandling\DataHandler $parentObject) {
+     * Generate a different preview link
+     * @param string $status status
+     * @param string $table table name
+     * @param integer $recordUid id of the record
+     * @param array $fields fieldArray
+     * @param \TYPO3\CMS\Core\DataHandling\DataHandler $parentObject parent Object
+     * @return void
+     */
+    public function processDatamap_afterDatabaseOperations($status, $table, $recordUid, array $fields, \TYPO3\CMS\Core\DataHandling\DataHandler $parentObject) {
 
-		// Preview link
-		if ($table === 'tx_hwtaddress_domain_model_address') {
+        // Preview link
+        if ($table === 'tx_hwtaddress_domain_model_address') {
 
-			// direct preview
-			if (!is_numeric($recordUid)) {
-				$recordUid = $parentObject->substNEWwithIDs[$recordUid];
-			}
+            // direct preview
+            if (!is_numeric($recordUid)) {
+                $recordUid = $parentObject->substNEWwithIDs[$recordUid];
+            }
 
-			if (isset($GLOBALS['_POST']['_savedokview_x'])) {
-				// If "savedokview" has been pressed
-				$pagesTsConfig = \TYPO3\CMS\Backend\Utility\BackendUtility::getPagesTSconfig($GLOBALS['_POST']['popViewId']);
+            if (isset($GLOBALS['_POST']['_savedokview_x'])) {
+                // If "savedokview" has been pressed
+                $pagesTsConfig = \TYPO3\CMS\Backend\Utility\BackendUtility::getPagesTSconfig($GLOBALS['_POST']['popViewId']);
                 $pagesTsConfigSinglePid = $pagesTsConfig['tx_hwtaddress.']['singlePidAddress'];
-				if ($pagesTsConfigSinglePid) {
-					$record = \TYPO3\CMS\Backend\Utility\BackendUtility::getRecord($table, $recordUid);
+                if ($pagesTsConfigSinglePid) {
+                    $record = \TYPO3\CMS\Backend\Utility\BackendUtility::getRecord($table, $recordUid);
 
-					$parameters = array(
-						'no_cache' => 1,
+                    $parameters = array(
+                        'no_cache' => 1,
                         'tx_hwtaddress_address[address]' => $recordUid,
-					);
+                    );
 
-					$GLOBALS['_POST']['popViewId_addParams'] = \TYPO3\CMS\Core\Utility\GeneralUtility::implodeArrayForUrl('', $parameters, '', FALSE, TRUE);
-					$GLOBALS['_POST']['popViewId'] = $pagesTsConfigSinglePid;
-				}
-			}
-		}
+                    $GLOBALS['_POST']['popViewId_addParams'] = \TYPO3\CMS\Core\Utility\GeneralUtility::implodeArrayForUrl('', $parameters, '', FALSE, TRUE);
+                    $GLOBALS['_POST']['popViewId'] = $pagesTsConfigSinglePid;
+                }
+            }
+        }
 
-	}
+    }
 }
 
 if (defined('TYPO3_MODE') && $GLOBALS['TYPO3_CONF_VARS'][TYPO3_MODE]['XCLASS']['ext/hwt_address/Classes/Hooks/Tcemain.php']) {
-	include_once($GLOBALS['TYPO3_CONF_VARS'][TYPO3_MODE]['XCLASS']['ext/hwt_address/Classes/Hooks/Tcemain.php']);
+    include_once($GLOBALS['TYPO3_CONF_VARS'][TYPO3_MODE]['XCLASS']['ext/hwt_address/Classes/Hooks/Tcemain.php']);
 }

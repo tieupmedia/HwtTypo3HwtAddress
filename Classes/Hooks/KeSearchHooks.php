@@ -86,11 +86,11 @@ class KeSearchHooks {
             $res = $GLOBALS['TYPO3_DB']->exec_SELECTquery($fields,$table,$where,$groupBy,$orderBy,$limit);
 
             $resCount = $GLOBALS['TYPO3_DB']->sql_num_rows($res);
- 
+
             // Loop through the records and write them to the index.
             if($resCount) {
                 while ( ($record = $GLOBALS['TYPO3_DB']->sql_fetch_assoc($res)) ) {
- 
+
                     // compile the information which should go into the index
                     // the field names depend on the table you want to index!
                     $title = strip_tags($record['firstname'] . "\n" . $record['lastname'] . "\n" . $record['company_title']);
@@ -105,7 +105,7 @@ class KeSearchHooks {
                         'orig_pid' => $record['pid'],
                         'sortdate' => $record['datetime'],
                     );
- 
+
                     // add something to the title, just to identify the entries
                     // in the frontend
                     $title = $title;

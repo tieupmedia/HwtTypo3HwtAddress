@@ -33,6 +33,7 @@ namespace Hwt\HwtAddress\Domain\Repository;
  * @author Heiko Westermann <hwt3@gmx.de>
  */
 class AddressRepository extends AbstractRepository {
+
     /**
      * Find addresses related to page
      *
@@ -67,19 +68,19 @@ SQL;
      * Find addresses without pid restriction
      *
      * @return \TYPO3\CMS\Extbase\Persistence\QueryResultInterface addresses
-     */	
+     */
     public function findAllWithoutPidRestriction($categories, $zip, $orderBy, $orderDirection) {
         $query = $this->createQuery();
         $query->getQuerySettings()->setRespectStoragePage(FALSE);
-		
-		if ($zip) {
-			$zip = substr($zip, 0, 2);
-			//$zip = (int)$zip;
-		
-			// protect any result if zip is false
-			if ($zip == "") {$zip = 'noplz';}
-		}
-		
+
+        if ($zip) {
+            $zip = substr($zip, 0, 2);
+            //$zip = (int)$zip;
+
+            // protect any result if zip is false
+            if ($zip == "") {$zip = 'noplz';}
+        }
+
         if($categories) {
             $sql = <<<SQL
                 SELECT
@@ -95,29 +96,29 @@ SQL;
 SQL;
             $sql .= $categories;
             $sql .= ')';
-			
-			if ($zip) {
-				$sql .= " AND (tx_hwtaddress_domain_model_address.region LIKE '%" . $zip . "%' OR tx_hwtaddress_domain_model_address.region LIKE '%" . $zip . ",%')";
-			}
-			
-			$sql .= <<<SQL
-				AND tx_hwtaddress_domain_model_address.hidden=0 AND tx_hwtaddress_domain_model_address.deleted=0
+
+            if ($zip) {
+                $sql .= " AND (tx_hwtaddress_domain_model_address.region LIKE '%" . $zip . "%' OR tx_hwtaddress_domain_model_address.region LIKE '%" . $zip . ",%')";
+            }
+
+            $sql .= <<<SQL
+                AND tx_hwtaddress_domain_model_address.hidden=0 AND tx_hwtaddress_domain_model_address.deleted=0
                 GROUP BY
                     tx_hwtaddress_domain_model_address.uid
-				ORDER BY tx_hwtaddress_domain_model_address.
+                ORDER BY tx_hwtaddress_domain_model_address.
 SQL;
-			$sql .= $orderBy . ' ' . $orderDirection;
+            $sql .= $orderBy . ' ' . $orderDirection;
             $parameters = array('tx_hwtaddress_domain_model_address');
             $query->statement($sql, $parameters);
         }
-		elseif ($zip) {
-			$query->matching(
-				$query->logicalOr(
-					$query->like('region', '%' . $zip . '%'),
-					$query->like('region', '%' . $zip . ',%')
-				)
-			);
-		}
+        elseif ($zip) {
+            $query->matching(
+                $query->logicalOr(
+                    $query->like('region', '%' . $zip . '%'),
+                    $query->like('region', '%' . $zip . ',%')
+                )
+            );
+        }
         return $query->execute();
     }
 
@@ -132,24 +133,24 @@ SQL;
      *
      * @return \TYPO3\CMS\Extbase\Persistence\QueryResultInterface addresses
      */
-	public function findByUidInList($uids, $orderBy, $orderDirection) {
-		$uids = explode(',', $uids);
+    public function findByUidInList($uids, $orderBy, $orderDirection) {
+        $uids = explode(',', $uids);
         $query = $this->createQuery();
         $query->getQuerySettings()->setRespectStoragePage(FALSE);
-		$query->matching(
-				$query->in('uid', $uids)
-		);
-		if ($orderDirection == 'desc') {
-			$query->setOrderings(array(
-				$orderBy => \TYPO3\CMS\Extbase\Persistence\QueryInterface::ORDER_DESCENDING
-			));
-		}
-		else {
-			$query->setOrderings(array(
-				$orderBy => \TYPO3\CMS\Extbase\Persistence\QueryInterface::ORDER_ASCENDING
-			));
-		}
-		
+        $query->matching(
+                $query->in('uid', $uids)
+        );
+        if ($orderDirection == 'desc') {
+            $query->setOrderings(array(
+                $orderBy => \TYPO3\CMS\Extbase\Persistence\QueryInterface::ORDER_DESCENDING
+            ));
+        }
+        else {
+            $query->setOrderings(array(
+                $orderBy => \TYPO3\CMS\Extbase\Persistence\QueryInterface::ORDER_ASCENDING
+            ));
+        }
+
         return $query->execute();
     }
 }

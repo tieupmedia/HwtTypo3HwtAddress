@@ -62,7 +62,7 @@ class Link extends \Hwt\HwtAddress\DomainObject\AbstractManageableEntity {
      * @return string
      */
     public function getHeader() {
-            return $this->header;
+        return $this->header;
     }
 
     /**
@@ -71,7 +71,7 @@ class Link extends \Hwt\HwtAddress\DomainObject\AbstractManageableEntity {
      * @return string
      */
     public function getParameter() {
-            return $this->parameter;
+        return $this->parameter;
     }
 
     /**
@@ -80,7 +80,7 @@ class Link extends \Hwt\HwtAddress\DomainObject\AbstractManageableEntity {
      * @return string
      */
     public function getLinktext() {
-            return $this->linktext;
+        return $this->linktext;
     }
 
     /**
@@ -89,6 +89,6 @@ class Link extends \Hwt\HwtAddress\DomainObject\AbstractManageableEntity {
      * @return string
      */
     public function getType() {
-            return $this->type;
+        return $this->type;
     }
 }

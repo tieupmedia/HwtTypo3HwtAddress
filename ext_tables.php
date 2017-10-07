@@ -1,6 +1,6 @@
 <?php
 if (!defined('TYPO3_MODE')) {
-	die ('Access denied.');
+    die ('Access denied.');
 }
 
 /*
@@ -17,7 +17,7 @@ if (!defined('TYPO3_MODE')) {
  * Plugin
  */
 \TYPO3\CMS\Extbase\Utility\ExtensionUtility::registerPlugin(
-	$_EXTKEY, 'Address', 'LLL:EXT:' . $_EXTKEY . '/Resources/Private/Language/locallang_be.xlf:plugin_address'
+    $_EXTKEY, 'Address', 'LLL:EXT:' . $_EXTKEY . '/Resources/Private/Language/locallang_be.xlf:plugin_address'
 );
 
 $extensionName = \TYPO3\CMS\Core\Utility\GeneralUtility::underscoredToUpperCamelCase($_EXTKEY);
@@ -36,8 +36,8 @@ $GLOBALS['TCA']['tt_content']['types']['list']['subtypes_addlist'][$pluginSignat
  * Wizard Plugin
  */
 if (TYPO3_MODE == 'BE') {
-	$TBE_MODULES_EXT['xMOD_db_new_content_el']['addElClasses']['tx_' . strtolower($extensionName) . '_wizicon'] =
-		\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extPath($_EXTKEY) . 'Resources/Private/Php/class.tx_' . strtolower($extensionName) . '_wizicon.php';
+    $TBE_MODULES_EXT['xMOD_db_new_content_el']['addElClasses']['tx_' . strtolower($extensionName) . '_wizicon'] =
+        \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extPath($_EXTKEY) . 'Resources/Private/Php/class.tx_' . strtolower($extensionName) . '_wizicon.php';
 }
 
 /*

@@ -1,16 +1,16 @@
 <?php
 if (!defined ('TYPO3_MODE')) {
-	die ('Access denied.');
+    die ('Access denied.');
 }
 
 \TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
-	'Hwt.' . $_EXTKEY,
-	'Address',
-	array(
-		'Address' => 'list,single,search',
-	),
-	array(
-		'Address' => 'list,single,search',
+    'Hwt.' . $_EXTKEY,
+    'Address',
+    array(
+        'Address' => 'list,single,search',
+    ),
+    array(
+        'Address' => 'list,single,search',
     )
 );
 

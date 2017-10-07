@@ -1,88 +1,91 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xliff version="1.0">
-	<file source-language="en" target-language="de" datatype="plaintext" original="messages" date="2015-01-18T17:54:12Z" product-name="tx_hwtaddress">
-		<header/>
-		<body>
-			<trans-unit id="folder" xml:space="preserve">
-				<target>Adress-Ordner</target>
-			</trans-unit>
-
-			<trans-unit id="plugin_address" xml:space="preserve">
-				<target>Adress-Plugin</target>
-			</trans-unit>
-			
-			<trans-unit id="wizard_pi1.title" xml:space="preserve">
-				<target>Adress-Plugin</target>
-			</trans-unit>
-			<trans-unit id="wizard_pi1.plus_wiz_description" xml:space="preserve">
-				<target>Listen und Detailansicht für Adressen und Personen</target>
-			</trans-unit>
-
-			<trans-unit id="flexform_tab.settings" xml:space="preserve">
-				<target>Einstellungen</target>
-			</trans-unit>
-			<trans-unit id="flexform_setting.mode" xml:space="preserve">
-				<target>Modus</target>
-			</trans-unit>
-			<trans-unit id="flexform_setting.mode.address_list" xml:space="preserve">
-				<target>Adress-Liste</target>
-			</trans-unit>
-			<trans-unit id="flexform_setting.mode.address_single" xml:space="preserve">
-				<target>Adress-Detailansicht</target>
-			</trans-unit>
-			<trans-unit id="flexform_setting.mode.address_search" xml:space="preserve">
-				<target>Adress-Suche</target>
-			</trans-unit>
-			<trans-unit id="flexform_setting.addressSingleRecord" xml:space="preserve">
-				<target>Einzelner Adress-Datensatz</target>
-			</trans-unit>
-			<trans-unit id="flexform_setting.addressStoragePages" xml:space="preserve">
-				<target>Adress-Seiten</target>
-			</trans-unit>
-			<trans-unit id="flexform_setting.addressCategories" xml:space="preserve">
-				<target>Kategorien</target>
-			</trans-unit>
-			<trans-unit id="flexform_setting.addressRecords" xml:space="preserve">
-				<target>Adress-Datensätze</target>
-			</trans-unit>
+    <file source-language="en" target-language="de" datatype="plaintext" original="messages" date="2015-01-18T17:54:12Z" product-name="tx_hwtaddress">
+        <header/>
+        <body>
+            <trans-unit id="folder" xml:space="preserve">
+                <target>Adress-Ordner</target>
+            </trans-unit>
 
 
-			<trans-unit id="flexform_setting.orderBy" xml:space="preserve">
-				<target>Sortierung</target>
-			</trans-unit>
-			<trans-unit id="flexform_setting.orderBy.sorting" xml:space="preserve">
-				<target>manuelle Sortierung</target>
-			</trans-unit>
-			<trans-unit id="flexform_setting.orderBy.firstname" xml:space="preserve">
-				<target>Vorname</target>
-			</trans-unit>
-			<trans-unit id="flexform_setting.orderBy.lastname" xml:space="preserve">
-				<target>Nachname</target>
-			</trans-unit>
-			<trans-unit id="flexform_setting.orderBy.company_title" xml:space="preserve">
-				<target>Firma</target>
-			</trans-unit>
-			<trans-unit id="flexform_setting.orderBy.crdate" xml:space="preserve">
-				<target>Erstellung</target>
-			</trans-unit>
 
-			<trans-unit id="flexform_setting.orderDirection" xml:space="preserve">
-				<target>Sortierrichtung</target>
-			</trans-unit>
-			<trans-unit id="flexform_setting.orderDirection.asc" xml:space="preserve">
-				<target>aufsteigend</target>
-			</trans-unit>
-			<trans-unit id="flexform_setting.orderDirection.desc" xml:space="preserve">
-				<target>absteigend</target>
-			</trans-unit>
+            <trans-unit id="plugin_address" xml:space="preserve">
+                <target>Adress-Plugin</target>
+            </trans-unit>
+            <trans-unit id="wizard_pi1.title" xml:space="preserve">
+                <target>Adress-Plugin</target>
+            </trans-unit>
+            <trans-unit id="wizard_pi1.plus_wiz_description" xml:space="preserve">
+                <target>Listen und Detailansicht für Adressen und Personen</target>
+            </trans-unit>
 
 
-			<trans-unit id="extmgm.enableRelationsInPages" xml:space="preserve">
-				<target>Aktiviere Adress-Verknüpfungen in Seiteneigenschaften</target>
-			</trans-unit>
-			<trans-unit id="extmgm.enableKesearchHooks" xml:space="preserve">
-				<target>Aktiviere ke_search-Hooks</target>
-			</trans-unit>
-		</body>
-	</file>
+            <trans-unit id="flexform_tab.settings" xml:space="preserve">
+                <target>Einstellungen</target>
+            </trans-unit>
+            <trans-unit id="flexform_setting.mode" xml:space="preserve">
+                <target>Modus</target>
+            </trans-unit>
+            <trans-unit id="flexform_setting.mode.address_list" xml:space="preserve">
+                <target>Adress-Liste</target>
+            </trans-unit>
+            <trans-unit id="flexform_setting.mode.address_single" xml:space="preserve">
+                <target>Adress-Detailansicht</target>
+            </trans-unit>
+            <trans-unit id="flexform_setting.mode.address_search" xml:space="preserve">
+                <target>Adress-Suche</target>
+            </trans-unit>
+            <trans-unit id="flexform_setting.addressSingleRecord" xml:space="preserve">
+                <target>Einzelner Adress-Datensatz</target>
+            </trans-unit>
+            <trans-unit id="flexform_setting.addressStoragePages" xml:space="preserve">
+                <target>Adress-Seiten</target>
+            </trans-unit>
+            <trans-unit id="flexform_setting.addressCategories" xml:space="preserve">
+                <target>Kategorien</target>
+            </trans-unit>
+            <trans-unit id="flexform_setting.addressRecords" xml:space="preserve">
+                <target>Adress-Datensätze</target>
+            </trans-unit>
+
+
+            <trans-unit id="flexform_setting.orderBy" xml:space="preserve">
+                <target>Sortierung</target>
+            </trans-unit>
+            <trans-unit id="flexform_setting.orderBy.sorting" xml:space="preserve">
+                <target>manuelle Sortierung</target>
+            </trans-unit>
+            <trans-unit id="flexform_setting.orderBy.firstname" xml:space="preserve">
+                <target>Vorname</target>
+            </trans-unit>
+            <trans-unit id="flexform_setting.orderBy.lastname" xml:space="preserve">
+                <target>Nachname</target>
+            </trans-unit>
+            <trans-unit id="flexform_setting.orderBy.company_title" xml:space="preserve">
+                <target>Firma</target>
+            </trans-unit>
+            <trans-unit id="flexform_setting.orderBy.crdate" xml:space="preserve">
+                <target>Erstellung</target>
+            </trans-unit>
+
+            <trans-unit id="flexform_setting.orderDirection" xml:space="preserve">
+                <target>Sortierrichtung</target>
+            </trans-unit>
+            <trans-unit id="flexform_setting.orderDirection.asc" xml:space="preserve">
+                <target>aufsteigend</target>
+            </trans-unit>
+            <trans-unit id="flexform_setting.orderDirection.desc" xml:space="preserve">
+                <target>absteigend</target>
+            </trans-unit>
+
+
+
+            <trans-unit id="extmgm.enableRelationsInPages" xml:space="preserve">
+                <target>Aktiviere Adress-Verknüpfungen in Seiteneigenschaften</target>
+            </trans-unit>
+            <trans-unit id="extmgm.enableKesearchHooks" xml:space="preserve">
+                <target>Aktiviere ke_search-Hooks</target>
+            </trans-unit>
+        </body>
+    </file>
 </xliff>

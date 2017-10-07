@@ -32,47 +32,7 @@ namespace Hwt\HwtAddress\Domain\Model;
  * @subpackage tx_hwtaddress
  * @author Heiko Westermann <hwt3@gmx.de>
  */
-class Address extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
-
-	/**
-	 * @var DateTime
-	 */
-	protected $crdate;
-
-	/**
-	 * @var DateTime
-	 */
-	protected $tstamp;
-
-	/**
-	 * @var DateTime
-	 */
-	protected $starttime;
-
-	/**
-	 * @var DateTime
-	 */
-	protected $endtime;
-
-	/**
-	 * @var boolean
-	 */
-	protected $hidden;
-
-	/**
-	 * @var boolean
-	 */
-	protected $deleted;
-
-	/**
-	 * @var integer
-	 */
-	protected $cruserId;
-
-	/**
-	 * @var integer
-	 */
-	protected $sorting;
+class Address extends \Hwt\HwtAddress\DomainObject\AbstractManageableEntity {
 
 	/**
 	 * @var string
@@ -265,96 +225,6 @@ class Address extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	 */
 	public function getTitle() {
 		return $this->title;
-	}
-
-	/**
-	 * Get datetime
-	 *
-	 * @return DateTime
-	 */
-	public function getDatetime() {
-		return $this->datetime;
-	}
-
-	/**
-	 * Get creation date
-	 *
-	 * @return integer
-	 */
-	public function getCrdate() {
-		return $this->crdate;
-	}
-
-	/**
-	 * Get timestamp
-	 *
-	 * @return integer
-	 */
-	public function getTstamp() {
-		return $this->tstamp;
-	}
-
-	/**
-	 * Get id of creator user
-	 *
-	 * @return integer
-	 */
-	public function getCruserId() {
-		return $this->cruserId;
-	}
-
-	/**
-	 * Get editlock flag
-	 *
-	 * @return integer
-	 */
-	public function getEditlock() {
-		return $this->editlock;
-	}
-
-	/**
-	 * Get hidden flag
-	 *
-	 * @return integer
-	 */
-	public function getHidden() {
-		return $this->hidden;
-	}
-
-	/**
-	 * Get deleted flag
-	 *
-	 * @return integer
-	 */
-	public function getDeleted() {
-		return $this->deleted;
-	}
-
-	/**
-	 * Get start time
-	 *
-	 * @return DateTime
-	 */
-	public function getStarttime() {
-		return $this->starttime;
-	}
-
-	/**
-	 * Get endtime
-	 *
-	 * @return DateTime
-	 */
-	public function getEndtime() {
-		return $this->endtime;
-	}
-
-	/**
-	 * Get sorting
-	 *
-	 * @return integer
-	 */
-	public function getSorting() {
-		return $this->sorting;
 	}
 
     /**

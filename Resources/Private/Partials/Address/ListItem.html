@@ -24,4 +24,6 @@
         <f:image src="{image.originalResource.originalFile.uid}" alt="" /><br />
         <f:image src="{image.uid}" alt="" treatIdAsReference="TRUE" /><br /><br />
     </f:for>
+
+    <f:render partial="Address/Links" arguments="{links: address.links}" />
 </div>

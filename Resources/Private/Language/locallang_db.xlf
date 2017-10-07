@@ -72,6 +72,9 @@
 			<trans-unit id="tx_hwtaddress_domain_model_address.www" xml:space="preserve">
 				<source>WWW</source>
 			</trans-unit>
+			<trans-unit id="tx_hwtaddress_domain_model_address.links" xml:space="preserve">
+				<source>Links (Social / Profiles)</source>
+			</trans-unit>
 			<trans-unit id="tx_hwtaddress_domain_model_address.building" xml:space="preserve">
 				<source>Building</source>
 			</trans-unit>
@@ -109,8 +112,8 @@
 			<trans-unit id="tx_hwtaddress_domain_model_address.related_pages_from" xml:space="preserve">
 				<source>Related from pages</source>
 			</trans-unit>
-			
-			
+
+
 			<trans-unit id="tx_hwtaddress_domain_model_address.palette.name" xml:space="preserve">
 				<source>Name</source>
 			</trans-unit>
@@ -135,7 +138,7 @@
 			<trans-unit id="palette.relations_pages" xml:space="preserve">
 				<source>Page Relations</source>
 			</trans-unit>
-			
+
 
 			<trans-unit id="tx_hwtaddress_domain_model_address.tabs.address" xml:space="preserve">
 				<source>Address</source>
@@ -146,6 +149,65 @@
 			<trans-unit id="tx_hwtaddress_domain_model_address.tabs.relations" xml:space="preserve">
 				<source>Relations</source>
 			</trans-unit>
+
+
+
+            <trans-unit id="tx_hwtaddress_domain_model_link" xml:space="preserve">
+				<source>Address-Link</source>
+			</trans-unit>
+            <trans-unit id="tx_hwtaddress_domain_model_link.header" xml:space="preserve">
+				<source>Header</source>
+			</trans-unit>
+            <trans-unit id="tx_hwtaddress_domain_model_link.parameter" xml:space="preserve">
+				<source>Link</source>
+			</trans-unit>
+            <trans-unit id="tx_hwtaddress_domain_model_link.linktext" xml:space="preserve">
+				<source>Linktext</source>
+			</trans-unit>
+            <trans-unit id="tx_hwtaddress_domain_model_link.type" xml:space="preserve">
+				<source>Type</source>
+			</trans-unit>
+            <trans-unit id="tx_hwtaddress_domain_model_link.type.pleaseSelect" xml:space="preserve">
+				<source>--- Please select: ---</source>
+			</trans-unit>
+            <trans-unit id="tx_hwtaddress_domain_model_link.type.facebook" xml:space="preserve">
+				<source>Facebook</source>
+			</trans-unit>
+            <trans-unit id="tx_hwtaddress_domain_model_link.type.github" xml:space="preserve">
+				<source>GitHub</source>
+			</trans-unit>
+            <trans-unit id="tx_hwtaddress_domain_model_link.type.gitlab" xml:space="preserve">
+				<source>GitLab</source>
+			</trans-unit>
+            <trans-unit id="tx_hwtaddress_domain_model_link.type.google" xml:space="preserve">
+				<source>Google+</source>
+			</trans-unit>
+            <trans-unit id="tx_hwtaddress_domain_model_link.type.pinterest" xml:space="preserve">
+				<source>Pinterest</source>
+			</trans-unit>
+            <trans-unit id="tx_hwtaddress_domain_model_link.type.instagram" xml:space="preserve">
+				<source>Instagram</source>
+			</trans-unit>
+            <trans-unit id="tx_hwtaddress_domain_model_link.type.linkedin" xml:space="preserve">
+				<source>LinkedIn</source>
+			</trans-unit>
+            <trans-unit id="tx_hwtaddress_domain_model_link.type.twitter" xml:space="preserve">
+				<source>Twitter</source>
+			</trans-unit>
+            <trans-unit id="tx_hwtaddress_domain_model_link.type.vimeo" xml:space="preserve">
+				<source>Vimeo</source>
+			</trans-unit>
+            <trans-unit id="tx_hwtaddress_domain_model_link.type.xing" xml:space="preserve">
+				<source>Xing</source>
+			</trans-unit>
+            <trans-unit id="tx_hwtaddress_domain_model_link.type.youtube" xml:space="preserve">
+				<source>YouTube</source>
+			</trans-unit>
+
+            <trans-unit id="tx_hwtaddress_domain_model_link.palette.name" xml:space="preserve">
+				<source>Link-Attributes</source>
+			</trans-unit>
+
 
 
 			<trans-unit id="pages.tx_hwtaddress_related_address" xml:space="preserve">

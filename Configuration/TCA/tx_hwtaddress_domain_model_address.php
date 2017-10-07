@@ -375,6 +375,26 @@ $extTca = array(
 				'max' => 80,
 			)
 		),
+        'links' => array(
+            'exclude' => 1,
+            'label' => $ll . 'links',
+            'config' => array(
+                'type' => 'inline',
+                'allowed' => 'tx_hwtaddress_domain_model_link',
+                'foreign_table' => 'tx_hwtaddress_domain_model_link',
+                'foreign_sortby' => 'sorting',
+                'foreign_field' => 'address',
+                'minitems' => 0,
+                'maxitems' => 20,
+                'appearance' => array(
+                'collapse' => 0,
+                    'levelLinksPosition' => 'top',
+                    'showSynchronizationLink' => 1,
+                    'showPossibleLocalizationRecords' => 1,
+                    'showAllLocalizationLink' => 1
+                ),
+            ),
+        ),
         'building' => array(
 			'exclude' => 1,
 			'label' => $ll . 'building',
@@ -564,7 +584,7 @@ $extTca = array(
 		),
 
 		'paletteElectronicAddress' => array(
-			'showitem' => 'phone, fax, --linebreak--, mobile, email, --linebreak--, www',
+			'showitem' => 'phone, fax, --linebreak--, mobile, email, --linebreak--, www, --linebreak--, links',
 			'canNotCollapse' => TRUE,
 		),
         'paletteLocationAddress' => array(

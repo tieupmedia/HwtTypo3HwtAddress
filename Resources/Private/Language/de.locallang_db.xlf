@@ -72,6 +72,9 @@
 			<trans-unit id="tx_hwtaddress_domain_model_address.www" xml:space="preserve">
 				<target>WWW</target>
 			</trans-unit>
+            <trans-unit id="tx_hwtaddress_domain_model_address.links" xml:space="preserve">
+				<target>Links (Social Media / Profile)</target>
+			</trans-unit>
 			<trans-unit id="tx_hwtaddress_domain_model_address.building" xml:space="preserve">
 				<target>Gebäude</target>
 			</trans-unit>
@@ -146,6 +149,65 @@
 			<trans-unit id="tx_hwtaddress_domain_model_address.tabs.relations" xml:space="preserve">
 				<target>Verknüpfungen</target>
 			</trans-unit>
+
+
+
+            <trans-unit id="tx_hwtaddress_domain_model_link" xml:space="preserve">
+				<target>Adress-Link</target>
+			</trans-unit>
+            <trans-unit id="tx_hwtaddress_domain_model_link.header" xml:space="preserve">
+				<target>Überschrift</target>
+			</trans-unit>
+            <trans-unit id="tx_hwtaddress_domain_model_link.parameter" xml:space="preserve">
+				<target>Link</target>
+			</trans-unit>
+            <trans-unit id="tx_hwtaddress_domain_model_link.linktext" xml:space="preserve">
+				<target>Linktext</target>
+			</trans-unit>
+            <trans-unit id="tx_hwtaddress_domain_model_link.type" xml:space="preserve">
+				<target>Typ</target>
+			</trans-unit>
+            <trans-unit id="tx_hwtaddress_domain_model_link.type.pleaseSelect" xml:space="preserve">
+				<target>--- Bitte wählen: ---</target>
+			</trans-unit>
+            <trans-unit id="tx_hwtaddress_domain_model_link.type.facebook" xml:space="preserve">
+				<target>Facebook</target>
+			</trans-unit>
+            <trans-unit id="tx_hwtaddress_domain_model_link.type.github" xml:space="preserve">
+				<target>GitHub</target>
+			</trans-unit>
+            <trans-unit id="tx_hwtaddress_domain_model_link.type.gitlab" xml:space="preserve">
+				<target>GitLab</target>
+			</trans-unit>
+            <trans-unit id="tx_hwtaddress_domain_model_link.type.google" xml:space="preserve">
+				<target>Google+</target>
+			</trans-unit>
+            <trans-unit id="tx_hwtaddress_domain_model_link.type.pinterest" xml:space="preserve">
+				<target>Pinterest</target>
+			</trans-unit>
+            <trans-unit id="tx_hwtaddress_domain_model_link.type.instagram" xml:space="preserve">
+				<target>Instagram</target>
+			</trans-unit>
+            <trans-unit id="tx_hwtaddress_domain_model_link.type.linkedin" xml:space="preserve">
+				<target>LinkedIn</target>
+			</trans-unit>
+            <trans-unit id="tx_hwtaddress_domain_model_link.type.twitter" xml:space="preserve">
+				<target>Twitter</target>
+			</trans-unit>
+            <trans-unit id="tx_hwtaddress_domain_model_link.type.vimeo" xml:space="preserve">
+				<target>Vimeo</target>
+			</trans-unit>
+            <trans-unit id="tx_hwtaddress_domain_model_link.type.xing" xml:space="preserve">
+				<target>Xing</target>
+			</trans-unit>
+            <trans-unit id="tx_hwtaddress_domain_model_link.type.youtube" xml:space="preserve">
+				<target>YouTube</target>
+			</trans-unit>
+
+            <trans-unit id="tx_hwtaddress_domain_model_link.palette.name" xml:space="preserve">
+				<target>Link-Eigenschaften</target>
+			</trans-unit>
+
 
 
 			<trans-unit id="pages.tx_hwtaddress_related_address" xml:space="preserve">

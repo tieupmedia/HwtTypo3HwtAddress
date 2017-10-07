@@ -1,0 +1,13 @@
+# Demo settings for address links
+
+TCEFORM.tx_hwtaddress_domain_model_link {
+    type {
+        # remove items from type select
+        removeItems = github,gitlab
+
+        # add items to type select
+        addItems {
+            custom = Custom Label
+        }
+    }
+}

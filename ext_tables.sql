@@ -37,6 +37,7 @@ CREATE TABLE tx_hwtaddress_domain_model_address (
     fax varchar(30) DEFAULT '' NOT NULL,
     email varchar(80) DEFAULT '' NOT NULL,
     www varchar(80) DEFAULT '' NOT NULL,
+    links int(11) unsigned DEFAULT '0' NOT NULL,
     building varchar(20) DEFAULT '' NOT NULL,
     street tinytext,
     zip varchar(20) DEFAULT '' NOT NULL,
@@ -69,6 +70,33 @@ CREATE TABLE tx_hwtaddress_domain_model_address_related_mm (
 	sorting_foreign int(11) DEFAULT '0' NOT NULL,
 	KEY uid_local (uid_local),
 	KEY uid_foreign (uid_foreign),
+);
+
+#
+# Table structure for table 'tx_hwtaddress_domain_model_link'
+#
+CREATE TABLE tx_hwtaddress_domain_model_link (
+	uid int(11) NOT NULL auto_increment,
+	pid int(11) DEFAULT '0' NOT NULL,
+	tstamp int(11) DEFAULT '0' NOT NULL,
+	crdate int(11) DEFAULT '0' NOT NULL,
+	cruser_id int(11) DEFAULT '0' NOT NULL,
+
+	sorting int(11) DEFAULT '0' NOT NULL,
+	deleted tinyint(4) DEFAULT '0' NOT NULL,
+	hidden tinyint(4) DEFAULT '0' NOT NULL,
+	starttime int(11) DEFAULT '0' NOT NULL,
+	endtime int(11) DEFAULT '0' NOT NULL,
+
+    header tinytext NOT NULL,
+    type tinytext NOT NULL,
+    parameter varchar(1024) DEFAULT '' NOT NULL,
+    linktext tinytext NOT NULL,
+
+    address int(11) DEFAULT '0' NOT NULL,
+
+    PRIMARY KEY (uid),
+    KEY parent (pid)
 );
 
 #

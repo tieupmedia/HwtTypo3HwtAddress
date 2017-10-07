@@ -189,6 +189,12 @@ class Address extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	 */
 	protected $www;
 
+	/**
+	 * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Hwt\HwtAddress\Domain\Model\Link>
+	 * @lazy
+	 */
+	protected $links;
+
     /**
 	 * @var string
 	 */
@@ -245,6 +251,7 @@ class Address extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
      public function __construct() {
          $this->images = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
          $this->companyImages = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
+         $this->links = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
          $this->categories = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
          $this->relatedAddress = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
          $this->relatedAddressFrom = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
@@ -555,6 +562,15 @@ class Address extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	 */
 	public function getWww() {
 		return $this->www;
+	}
+
+	/**
+	 * Get links
+	 *
+	 * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Hwt\HwtAddress\Domain\Model\Link>
+	 */
+	public function getLinks() {
+		return $this->links;
 	}
 
 	/**

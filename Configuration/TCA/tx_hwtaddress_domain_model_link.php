@@ -4,9 +4,8 @@ if (!defined('TYPO3_MODE')) {
     die ('Access denied.');
 }
 
-// Extension manager configuration
-$emConfiguration = unserialize($GLOBALS['TYPO3_CONF_VARS']['EXT']['extConf']['hwt_address']);
 
+// DB locallang
 $ll = 'LLL:EXT:hwt_address/Resources/Private/Language/locallang_db.xlf:tx_hwtaddress_domain_model_link.';
 
 // General locallang

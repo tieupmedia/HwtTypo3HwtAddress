@@ -5,11 +5,12 @@ if (!defined('TYPO3_MODE')) {
 }
 
 
+// Get extension manager configuration
 //$configurationUtility = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance('TYPO3\\CMS\\Extensionmanager\\Utility\\ConfigurationUtility');
 //$extensionConfiguration = $configurationUtility->getCurrentConfiguration('hwt_address');
-
 $extensionConfiguration = unserialize($GLOBALS['TYPO3_CONF_VARS']['EXT']['extConf']['hwt_address']);
 
+// Add relation field, if activated in em config
 if ( isset($extensionConfiguration['enableRelationsInPages']) && ($extensionConfiguration['enableRelationsInPages']==true) ) {
     // Extension locallang
     $ll = 'LLL:EXT:hwt_address/Resources/Private/Language/locallang_db.xlf:pages.';
@@ -27,7 +28,6 @@ if ( isset($extensionConfiguration['enableRelationsInPages']) && ($extensionConf
                 'internal_type' => 'db',
                 'allowed' => 'tx_hwtaddress_domain_model_address',
                 'foreign_table' => 'tx_hwtaddress_domain_model_address',
-                // 'MM_opposite_field' => 'related_pages_from',
                 'size' => 5,
                 'minitems' => 0,
                 'maxitems' => 100,

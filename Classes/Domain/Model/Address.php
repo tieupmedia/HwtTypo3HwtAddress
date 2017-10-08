@@ -34,6 +34,8 @@ namespace Hwt\HwtAddress\Domain\Model;
  */
 class Address extends \Hwt\HwtAddress\DomainObject\AbstractManageableEntity {
 
+    use \Hwt\HwtAddress\DomainObject\TraitCategoriesPropertyAndGetter;
+
     /**
      * @var string
      */
@@ -166,13 +168,6 @@ class Address extends \Hwt\HwtAddress\DomainObject\AbstractManageableEntity {
     protected $latitude;
 
     /**
-     * Categories
-     *
-     * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\TYPO3\CMS\Extbase\Domain\Model\Category>
-     */
-    protected $categories;
-
-    /**
      * images
      *
      * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\TYPO3\CMS\Extbase\Domain\Model\FileReference>
@@ -213,9 +208,9 @@ class Address extends \Hwt\HwtAddress\DomainObject\AbstractManageableEntity {
         $this->images = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
         $this->companyImages = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
         $this->links = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
-        $this->categories = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
         $this->relatedAddress = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
         $this->relatedAddressFrom = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
+        $this->initTraitCategoriesPropertyAndGetter();
     }
 
 
@@ -461,15 +456,6 @@ class Address extends \Hwt\HwtAddress\DomainObject\AbstractManageableEntity {
      */
     public function getLatitude() {
         return $this->latitude;
-    }
-
-    /**
-     * Returns the categories
-     *
-     * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\TYPO3\CMS\Extbase\Domain\Model\Category> $categories
-     */
-    public function getCategories() {
-        return $this->categories;
     }
 
     /**

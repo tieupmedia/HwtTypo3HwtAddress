@@ -434,7 +434,7 @@ class Address extends \Hwt\HwtAddress\DomainObject\AbstractManageableEntity {
     /**
      * Get links
      *
-     * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Hwt\HwtAddress\Domain\Model\Link>
+     * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Hwt\HwtAddress\Domain\Model\Link> $links
      */
     public function getLinks() {
         return $this->links;
@@ -461,7 +461,7 @@ class Address extends \Hwt\HwtAddress\DomainObject\AbstractManageableEntity {
     /**
      * Returns the images
      *
-     * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage $images
+     * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\TYPO3\CMS\Extbase\Domain\Model\FileReference> $images
      */
     public function getImages() {
             return $this->images;
@@ -470,7 +470,7 @@ class Address extends \Hwt\HwtAddress\DomainObject\AbstractManageableEntity {
     /**
      * Returns the company images
      *
-     * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage $companyImages
+     * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\TYPO3\CMS\Extbase\Domain\Model\FileReference> $companyImages
      */
     public function getCompanyImages() {
             return $this->companyImages;
@@ -479,7 +479,7 @@ class Address extends \Hwt\HwtAddress\DomainObject\AbstractManageableEntity {
     /**
      * Returns related addresses
      *
-     * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Hwt\HwtAddress\Domain\Model\Address> $categories
+     * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Hwt\HwtAddress\Domain\Model\Address> $relatedAddress
      */
     public function getRelatedAddress() {
         return $this->relatedAddress;
@@ -488,7 +488,7 @@ class Address extends \Hwt\HwtAddress\DomainObject\AbstractManageableEntity {
     /**
      * Returns the addresses related from
      *
-     * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Hwt\HwtAddress\Domain\Model\Address> $categories
+     * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Hwt\HwtAddress\Domain\Model\Address> $relatedAddressFrom
      */
     public function getRelatedAddressFrom() {
         return $this->relatedAddressFrom;

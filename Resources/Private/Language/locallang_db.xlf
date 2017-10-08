@@ -135,7 +135,7 @@
             <trans-unit id="tx_hwtaddress_domain_model_address.palette.relations_address" xml:space="preserve">
                 <source>Address Relations</source>
             </trans-unit>
-            <trans-unit id="palette.relations_pages" xml:space="preserve">
+            <trans-unit id="tx_hwtaddress_domain_model_address.palette.relations_pages" xml:space="preserve">
                 <source>Page Relations</source>
             </trans-unit>
 

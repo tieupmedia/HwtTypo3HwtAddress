@@ -32,33 +32,33 @@ namespace Hwt\HwtAddress\Hooks;
  * @subpackage hwt_address
  */
 class CmsLayout {
-	/**
-	 * Extension key
-	 *
-	 * @var string
-	 */
-	const KEY = 'hwt_address';
+    /**
+     * Extension key
+     *
+     * @var string
+     */
+    const KEY = 'hwt_address';
 
-	/**
-	 * Path to the locallang file
-	 *
-	 * @var string
-	 */
-	const LLPATH = 'LLL:EXT:hwt_address/Resources/Private/Language/locallang_be.xlf:';
-    
-	/**
-	 * Flexform information
-	 *
-	 * @var array
-	 */
-	public $flexformData = array();
-    
-	/**
-	 * Table information
-	 *
-	 * @var array
-	 */
-	public $tableData = array();
+    /**
+     * Path to the locallang file
+     *
+     * @var string
+     */
+    const LLPATH = 'LLL:EXT:hwt_address/Resources/Private/Language/locallang_be.xlf:';
+
+    /**
+     * Flexform information
+     *
+     * @var array
+     */
+    public $flexformData = array();
+
+    /**
+     * Table information
+     *
+     * @var array
+     */
+    public $tableData = array();
 
     /**
      * Returns information about this extension's pi1 plugin
@@ -72,16 +72,16 @@ class CmsLayout {
 
         if ($params['row']['list_type'] == 'hwtaddress_address') {
             $result .= '<br /><strong>' . $GLOBALS['LANG']->sL(self::LLPATH . 'plugin_address', TRUE) . '</strong><br />';
-            
+
             $this->flexformData = \TYPO3\CMS\Core\Utility\GeneralUtility::xml2array($params['row']['pi_flexform']);
-            
+
             $actions = $this->getFieldFromFlexform('switchableControllerActions');
-            
+
             $this->tableData[] = array(
                 $GLOBALS['LANG']->sL(self::LLPATH . 'flexform_setting.addressStoragePages', TRUE),
                 $this->getFieldFromFlexform('settings.addressStoragePages')
             );
-            
+
             if ($actions === 'Address->single') {
                 $this->tableData[] = array(
                     $GLOBALS['LANG']->sL(self::LLPATH . 'flexform_setting.addressSingleRecord', TRUE),
@@ -117,50 +117,50 @@ class CmsLayout {
 
 
 
-	/**
-	 * Get field value from flexform configuration,
-	 * including checks if flexform configuration is available
-	 *
-	 * @param string $key name of the key
-	 * @param string $sheet name of the sheet
-	 * @return string|NULL if nothing found, value if found
-	 */
-	public function getFieldFromFlexform($key, $sheet = 'sDEF') {
-		$flexform = $this->flexformData;
-		if (isset($flexform['data'])) {
-			$flexform = $flexform['data'];
-			if (is_array($flexform) && is_array($flexform[$sheet]) && is_array($flexform[$sheet]['lDEF'])
-				&& is_array($flexform[$sheet]['lDEF'][$key]) && isset($flexform[$sheet]['lDEF'][$key]['vDEF'])
-			) {
-				return $flexform[$sheet]['lDEF'][$key]['vDEF'];
-			}
-		}
+    /**
+     * Get field value from flexform configuration,
+     * including checks if flexform configuration is available
+     *
+     * @param string $key name of the key
+     * @param string $sheet name of the sheet
+     * @return string|NULL if nothing found, value if found
+     */
+    public function getFieldFromFlexform($key, $sheet = 'sDEF') {
+        $flexform = $this->flexformData;
+        if (isset($flexform['data'])) {
+            $flexform = $flexform['data'];
+            if (is_array($flexform) && is_array($flexform[$sheet]) && is_array($flexform[$sheet]['lDEF'])
+                && is_array($flexform[$sheet]['lDEF'][$key]) && isset($flexform[$sheet]['lDEF'][$key]['vDEF'])
+            ) {
+                return $flexform[$sheet]['lDEF'][$key]['vDEF'];
+            }
+        }
 
-		return NULL;
-	}
+        return NULL;
+    }
 
 
 
-	/**
-	 * Render the settings as table for Web>Page module
-	 * System settings are displayed in mono font
-	 *
-	 * @return string
-	 */
-	protected function renderSettingsAsTable() {
-		if (count($this->tableData) == 0) {
-			return '';
-		}
+    /**
+     * Render the settings as table for Web>Page module
+     * System settings are displayed in mono font
+     *
+     * @return string
+     */
+    protected function renderSettingsAsTable() {
+        if (count($this->tableData) == 0) {
+            return '';
+        }
 
-		$content = '';
-		foreach ($this->tableData as $line) {
-			$content .= '<strong>' . $line[0] . '</strong>' . ' ' . $line[1] . '<br />';
-		}
+        $content = '';
+        foreach ($this->tableData as $line) {
+            $content .= '<strong>' . $line[0] . '</strong>' . ' ' . $line[1] . '<br />';
+        }
 
-		return '<pre style="white-space:normal">' . $content . '</pre>';
-	}
+        return '<pre style="white-space:normal">' . $content . '</pre>';
+    }
 }
 
 if (defined('TYPO3_MODE') && $GLOBALS['TYPO3_CONF_VARS'][TYPO3_MODE]['XCLASS']['ext/hwt_address/Classes/Hooks/CmsLayout.php']) {
-	include_once($GLOBALS['TYPO3_CONF_VARS'][TYPO3_MODE]['XCLASS']['ext/hwt_address/Classes/Hooks/CmsLayout.php']);
+    include_once($GLOBALS['TYPO3_CONF_VARS'][TYPO3_MODE]['XCLASS']['ext/hwt_address/Classes/Hooks/CmsLayout.php']);
 }

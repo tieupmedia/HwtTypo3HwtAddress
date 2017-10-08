@@ -1,156 +1,220 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xliff version="1.0">
-	<file source-language="en" datatype="plaintext" original="messages" date="2014-05-18T17:54:12Z" product-name="tx_hwtaddress">
-		<header/>
-		<body>
-			<trans-unit id="tx_hwtaddress_domain_model_address" xml:space="preserve">
-				<source>Address</source>
-			</trans-unit>
+    <file source-language="en" datatype="plaintext" original="messages" date="2017-10-07T17:54:12Z" product-name="tx_hwtaddress">
+        <header/>
+        <body>
+            <trans-unit id="tx_hwtaddress_domain_model_address" xml:space="preserve">
+                <source>Address</source>
+            </trans-unit>
 
-			<trans-unit id="tx_hwtaddress_domain_model_address.academic" xml:space="preserve">
-				<source>Academic title</source>
-			</trans-unit>
-			<trans-unit id="tx_hwtaddress_domain_model_address.firstname" xml:space="preserve">
-				<source>Firstname</source>
-			</trans-unit>
-			<trans-unit id="tx_hwtaddress_domain_model_address.lastname" xml:space="preserve">
-				<source>Lastname</source>
-			</trans-unit>
-			<trans-unit id="tx_hwtaddress_domain_model_address.gender" xml:space="preserve">
-				<source>Gender</source>
-			</trans-unit>
-			<trans-unit id="tx_hwtaddress_domain_model_address.gender.0" xml:space="preserve">
-				<source>female</source>
-			</trans-unit>
-			<trans-unit id="tx_hwtaddress_domain_model_address.gender.1" xml:space="preserve">
-				<source>male</source>
-			</trans-unit>
-			<trans-unit id="tx_hwtaddress_domain_model_address.images" xml:space="preserve">
-				<source>Image</source>
-			</trans-unit>
-			<trans-unit id="tx_hwtaddress_domain_model_address.birthday" xml:space="preserve">
-				<source>Birthday</source>
-			</trans-unit>
-			<trans-unit id="tx_hwtaddress_domain_model_address.info" xml:space="preserve">
-				<source>Info</source>
-			</trans-unit>
-			<trans-unit id="tx_hwtaddress_domain_model_address.department" xml:space="preserve">
-				<source>Department</source>
-			</trans-unit>
-			<trans-unit id="tx_hwtaddress_domain_model_address.position" xml:space="preserve">
-				<source>Job Title</source>
-			</trans-unit>
+            <trans-unit id="tx_hwtaddress_domain_model_address.academic" xml:space="preserve">
+                <source>Academic title</source>
+            </trans-unit>
+            <trans-unit id="tx_hwtaddress_domain_model_address.firstname" xml:space="preserve">
+                <source>Firstname</source>
+            </trans-unit>
+            <trans-unit id="tx_hwtaddress_domain_model_address.lastname" xml:space="preserve">
+                <source>Lastname</source>
+            </trans-unit>
+            <trans-unit id="tx_hwtaddress_domain_model_address.gender" xml:space="preserve">
+                <source>Gender</source>
+            </trans-unit>
+            <trans-unit id="tx_hwtaddress_domain_model_address.gender.0" xml:space="preserve">
+                <source>female</source>
+            </trans-unit>
+            <trans-unit id="tx_hwtaddress_domain_model_address.gender.1" xml:space="preserve">
+                <source>male</source>
+            </trans-unit>
+            <trans-unit id="tx_hwtaddress_domain_model_address.images" xml:space="preserve">
+                <source>Image</source>
+            </trans-unit>
+            <trans-unit id="tx_hwtaddress_domain_model_address.birthday" xml:space="preserve">
+                <source>Birthday</source>
+            </trans-unit>
+            <trans-unit id="tx_hwtaddress_domain_model_address.info" xml:space="preserve">
+                <source>Info</source>
+            </trans-unit>
+            <trans-unit id="tx_hwtaddress_domain_model_address.department" xml:space="preserve">
+                <source>Department</source>
+            </trans-unit>
+            <trans-unit id="tx_hwtaddress_domain_model_address.position" xml:space="preserve">
+                <source>Job Title</source>
+            </trans-unit>
 
-			<trans-unit id="tx_hwtaddress_domain_model_address.company_title" xml:space="preserve">
-				<source>Title</source>
-			</trans-unit>
-			<trans-unit id="tx_hwtaddress_domain_model_address.company_subtitle" xml:space="preserve">
-				<source>Subtitle</source>
-			</trans-unit>
-			<trans-unit id="tx_hwtaddress_domain_model_address.company_short" xml:space="preserve">
-				<source>Short</source>
-			</trans-unit>
-			<trans-unit id="tx_hwtaddress_domain_model_address.company_bodytext" xml:space="preserve">
-				<source>Description</source>
-			</trans-unit>
-			<trans-unit id="tx_hwtaddress_domain_model_address.company_images" xml:space="preserve">
-				<source>Company Image</source>
-			</trans-unit>
+            <trans-unit id="tx_hwtaddress_domain_model_address.company_title" xml:space="preserve">
+                <source>Title</source>
+            </trans-unit>
+            <trans-unit id="tx_hwtaddress_domain_model_address.company_subtitle" xml:space="preserve">
+                <source>Subtitle</source>
+            </trans-unit>
+            <trans-unit id="tx_hwtaddress_domain_model_address.company_short" xml:space="preserve">
+                <source>Short</source>
+            </trans-unit>
+            <trans-unit id="tx_hwtaddress_domain_model_address.company_bodytext" xml:space="preserve">
+                <source>Description</source>
+            </trans-unit>
+            <trans-unit id="tx_hwtaddress_domain_model_address.company_images" xml:space="preserve">
+                <source>Company Image</source>
+            </trans-unit>
 
-			<trans-unit id="tx_hwtaddress_domain_model_address.phone" xml:space="preserve">
-				<source>Phone</source>
-			</trans-unit>
-			<trans-unit id="tx_hwtaddress_domain_model_address.mobile" xml:space="preserve">
-				<source>Mobile</source>
-			</trans-unit>
-			<trans-unit id="tx_hwtaddress_domain_model_address.fax" xml:space="preserve">
-				<source>Fax</source>
-			</trans-unit>
-			<trans-unit id="tx_hwtaddress_domain_model_address.email" xml:space="preserve">
-				<source>E-mail</source>
-			</trans-unit>
-			<trans-unit id="tx_hwtaddress_domain_model_address.www" xml:space="preserve">
-				<source>WWW</source>
-			</trans-unit>
-			<trans-unit id="tx_hwtaddress_domain_model_address.building" xml:space="preserve">
-				<source>Building</source>
-			</trans-unit>
-			<trans-unit id="tx_hwtaddress_domain_model_address.street" xml:space="preserve">
-				<source>Street</source>
-			</trans-unit>
-			<trans-unit id="tx_hwtaddress_domain_model_address.zip" xml:space="preserve">
-				<source>Zip</source>
-			</trans-unit>
-			<trans-unit id="tx_hwtaddress_domain_model_address.city" xml:space="preserve">
-				<source>City</source>
-			</trans-unit>
-			<trans-unit id="tx_hwtaddress_domain_model_address.region" xml:space="preserve">
-				<source>Region</source>
-			</trans-unit>
-			<trans-unit id="tx_hwtaddress_domain_model_address.country" xml:space="preserve">
-				<source>Country</source>
-			</trans-unit>
-			<trans-unit id="tx_hwtaddress_domain_model_address.longitude" xml:space="preserve">
-				<source>Longitutde</source>
-			</trans-unit>
-			<trans-unit id="tx_hwtaddress_domain_model_address.latitude" xml:space="preserve">
-				<source>Latitude</source>
-			</trans-unit>
+            <trans-unit id="tx_hwtaddress_domain_model_address.phone" xml:space="preserve">
+                <source>Phone</source>
+            </trans-unit>
+            <trans-unit id="tx_hwtaddress_domain_model_address.mobile" xml:space="preserve">
+                <source>Mobile</source>
+            </trans-unit>
+            <trans-unit id="tx_hwtaddress_domain_model_address.fax" xml:space="preserve">
+                <source>Fax</source>
+            </trans-unit>
+            <trans-unit id="tx_hwtaddress_domain_model_address.email" xml:space="preserve">
+                <source>E-mail</source>
+            </trans-unit>
+            <trans-unit id="tx_hwtaddress_domain_model_address.www" xml:space="preserve">
+                <source>WWW</source>
+            </trans-unit>
+            <trans-unit id="tx_hwtaddress_domain_model_address.links" xml:space="preserve">
+                <source>Links (Social / Profiles)</source>
+            </trans-unit>
+            <trans-unit id="tx_hwtaddress_domain_model_address.building" xml:space="preserve">
+                <source>Building</source>
+            </trans-unit>
+            <trans-unit id="tx_hwtaddress_domain_model_address.street" xml:space="preserve">
+                <source>Street</source>
+            </trans-unit>
+            <trans-unit id="tx_hwtaddress_domain_model_address.zip" xml:space="preserve">
+                <source>Zip</source>
+            </trans-unit>
+            <trans-unit id="tx_hwtaddress_domain_model_address.city" xml:space="preserve">
+                <source>City</source>
+            </trans-unit>
+            <trans-unit id="tx_hwtaddress_domain_model_address.region" xml:space="preserve">
+                <source>Region</source>
+            </trans-unit>
+            <trans-unit id="tx_hwtaddress_domain_model_address.country" xml:space="preserve">
+                <source>Country</source>
+            </trans-unit>
+            <trans-unit id="tx_hwtaddress_domain_model_address.longitude" xml:space="preserve">
+                <source>Longitutde</source>
+            </trans-unit>
+            <trans-unit id="tx_hwtaddress_domain_model_address.latitude" xml:space="preserve">
+                <source>Latitude</source>
+            </trans-unit>
 
-			<trans-unit id="tx_hwtaddress_domain_model_address.related_address" xml:space="preserve">
-				<source>Related addresses</source>
-			</trans-unit>
-			<trans-unit id="tx_hwtaddress_domain_model_address.related_address_from" xml:space="preserve">
-				<source>Related from addresses</source>
-			</trans-unit>
-			<trans-unit id="tx_hwtaddress_domain_model_address.related_pages" xml:space="preserve">
-				<source>Related pages</source>
-			</trans-unit>
-			<trans-unit id="tx_hwtaddress_domain_model_address.related_pages_from" xml:space="preserve">
-				<source>Related from pages</source>
-			</trans-unit>
-			
-			
-			<trans-unit id="tx_hwtaddress_domain_model_address.palette.name" xml:space="preserve">
-				<source>Name</source>
-			</trans-unit>
-			<trans-unit id="tx_hwtaddress_domain_model_address.palette.employee" xml:space="preserve">
-				<source>Employee Data</source>
-			</trans-unit>
-			<trans-unit id="tx_hwtaddress_domain_model_address.palette.company_title" xml:space="preserve">
-				<source>Company</source>
-			</trans-unit>
-			<trans-unit id="tx_hwtaddress_domain_model_address.palette.electronic_address" xml:space="preserve">
-				<source>Electronic Address</source>
-			</trans-unit>
-			<trans-unit id="tx_hwtaddress_domain_model_address.palette.location_address" xml:space="preserve">
-				<source>Location Address</source>
-			</trans-unit>
-			<trans-unit id="tx_hwtaddress_domain_model_address.palette.geographical_address" xml:space="preserve">
-				<source>Geographical Address</source>
-			</trans-unit>
-			<trans-unit id="tx_hwtaddress_domain_model_address.palette.relations_address" xml:space="preserve">
-				<source>Address Relations</source>
-			</trans-unit>
-			<trans-unit id="palette.relations_pages" xml:space="preserve">
-				<source>Page Relations</source>
-			</trans-unit>
-			
-
-			<trans-unit id="tx_hwtaddress_domain_model_address.tabs.address" xml:space="preserve">
-				<source>Address</source>
-			</trans-unit>
-			<trans-unit id="tx_hwtaddress_domain_model_address.tabs.company" xml:space="preserve">
-				<source>Company</source>
-			</trans-unit>
-			<trans-unit id="tx_hwtaddress_domain_model_address.tabs.relations" xml:space="preserve">
-				<source>Relations</source>
-			</trans-unit>
+            <trans-unit id="tx_hwtaddress_domain_model_address.related_address" xml:space="preserve">
+                <source>Related addresses</source>
+            </trans-unit>
+            <trans-unit id="tx_hwtaddress_domain_model_address.related_address_from" xml:space="preserve">
+                <source>Related from addresses</source>
+            </trans-unit>
+            <trans-unit id="tx_hwtaddress_domain_model_address.related_pages" xml:space="preserve">
+                <source>Related pages</source>
+            </trans-unit>
+            <trans-unit id="tx_hwtaddress_domain_model_address.related_pages_from" xml:space="preserve">
+                <source>Related from pages</source>
+            </trans-unit>
 
 
-			<trans-unit id="pages.tx_hwtaddress_related_address" xml:space="preserve">
-				<source>Related addresses</source>
-			</trans-unit>
-		</body>
-	</file>
+            <trans-unit id="tx_hwtaddress_domain_model_address.palette.name" xml:space="preserve">
+                <source>Name</source>
+            </trans-unit>
+            <trans-unit id="tx_hwtaddress_domain_model_address.palette.employee" xml:space="preserve">
+                <source>Employee Data</source>
+            </trans-unit>
+            <trans-unit id="tx_hwtaddress_domain_model_address.palette.company_title" xml:space="preserve">
+                <source>Company</source>
+            </trans-unit>
+            <trans-unit id="tx_hwtaddress_domain_model_address.palette.electronic_address" xml:space="preserve">
+                <source>Electronic Address</source>
+            </trans-unit>
+            <trans-unit id="tx_hwtaddress_domain_model_address.palette.location_address" xml:space="preserve">
+                <source>Location Address</source>
+            </trans-unit>
+            <trans-unit id="tx_hwtaddress_domain_model_address.palette.geographical_address" xml:space="preserve">
+                <source>Geographical Address</source>
+            </trans-unit>
+            <trans-unit id="tx_hwtaddress_domain_model_address.palette.relations_address" xml:space="preserve">
+                <source>Address Relations</source>
+            </trans-unit>
+            <trans-unit id="palette.relations_pages" xml:space="preserve">
+                <source>Page Relations</source>
+            </trans-unit>
+
+
+            <trans-unit id="tx_hwtaddress_domain_model_address.tabs.address" xml:space="preserve">
+                <source>Address</source>
+            </trans-unit>
+            <trans-unit id="tx_hwtaddress_domain_model_address.tabs.company" xml:space="preserve">
+                <source>Company</source>
+            </trans-unit>
+            <trans-unit id="tx_hwtaddress_domain_model_address.tabs.relations" xml:space="preserve">
+                <source>Relations</source>
+            </trans-unit>
+
+
+
+            <trans-unit id="tx_hwtaddress_domain_model_link" xml:space="preserve">
+                <source>Address-Link</source>
+            </trans-unit>
+
+            <trans-unit id="tx_hwtaddress_domain_model_link.header" xml:space="preserve">
+                <source>Header</source>
+            </trans-unit>
+            <trans-unit id="tx_hwtaddress_domain_model_link.parameter" xml:space="preserve">
+                <source>Link</source>
+            </trans-unit>
+            <trans-unit id="tx_hwtaddress_domain_model_link.linktext" xml:space="preserve">
+                <source>Linktext</source>
+            </trans-unit>
+            <trans-unit id="tx_hwtaddress_domain_model_link.type" xml:space="preserve">
+                <source>Type</source>
+            </trans-unit>
+            <trans-unit id="tx_hwtaddress_domain_model_link.type.pleaseSelect" xml:space="preserve">
+                <source>--- Please select: ---</source>
+            </trans-unit>
+            <trans-unit id="tx_hwtaddress_domain_model_link.type.facebook" xml:space="preserve">
+                <source>Facebook</source>
+            </trans-unit>
+            <trans-unit id="tx_hwtaddress_domain_model_link.type.github" xml:space="preserve">
+                <source>GitHub</source>
+            </trans-unit>
+            <trans-unit id="tx_hwtaddress_domain_model_link.type.gitlab" xml:space="preserve">
+                <source>GitLab</source>
+            </trans-unit>
+            <trans-unit id="tx_hwtaddress_domain_model_link.type.google" xml:space="preserve">
+                <source>Google+</source>
+            </trans-unit>
+            <trans-unit id="tx_hwtaddress_domain_model_link.type.pinterest" xml:space="preserve">
+                <source>Pinterest</source>
+            </trans-unit>
+            <trans-unit id="tx_hwtaddress_domain_model_link.type.instagram" xml:space="preserve">
+                <source>Instagram</source>
+            </trans-unit>
+            <trans-unit id="tx_hwtaddress_domain_model_link.type.linkedin" xml:space="preserve">
+                <source>LinkedIn</source>
+            </trans-unit>
+            <trans-unit id="tx_hwtaddress_domain_model_link.type.twitter" xml:space="preserve">
+                <source>Twitter</source>
+            </trans-unit>
+            <trans-unit id="tx_hwtaddress_domain_model_link.type.vimeo" xml:space="preserve">
+                <source>Vimeo</source>
+            </trans-unit>
+            <trans-unit id="tx_hwtaddress_domain_model_link.type.xing" xml:space="preserve">
+                <source>Xing</source>
+            </trans-unit>
+            <trans-unit id="tx_hwtaddress_domain_model_link.type.youtube" xml:space="preserve">
+                <source>YouTube</source>
+            </trans-unit>
+
+
+            <trans-unit id="tx_hwtaddress_domain_model_link.palette.name" xml:space="preserve">
+                <source>Link-Attributes</source>
+            </trans-unit>
+
+
+
+            <trans-unit id="pages.tx_hwtaddress_related_address" xml:space="preserve">
+                <source>Related addresses</source>
+            </trans-unit>
+        </body>
+    </file>
 </xliff>

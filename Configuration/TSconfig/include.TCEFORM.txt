@@ -2,3 +2,4 @@
 
 <INCLUDE_TYPOSCRIPT: source="FILE:EXT:hwt_address/Configuration/TSconfig/TCEFORM.hwtaddress_address_person.txt">
 #<INCLUDE_TYPOSCRIPT: source="FILE:EXT:hwt_address/Configuration/TSconfig/TCEFORM.hwtaddress_address_company.txt">
+#<INCLUDE_TYPOSCRIPT: source="FILE:EXT:hwt_address/Configuration/TSconfig/TCEFORM.hwtaddress_link.txt">

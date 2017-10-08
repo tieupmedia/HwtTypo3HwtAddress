@@ -33,30 +33,30 @@ namespace Hwt\HwtAddress\Domain\Repository;
  * @author Heiko Westermann <hwt3@gmx.de>
  */
 class AbstractRepository extends \TYPO3\CMS\Extbase\Persistence\Repository {
-    
+
     /**
      * Find address records in given page uids
      *
-	 * @param string $pids
+     * @param string $pids
      * @param string $orderBy
      * @param string $orderDirection
      *
-	 * @return \TYPO3\CMS\Extbase\Persistence\QueryResultInterface
+     * @return \TYPO3\CMS\Extbase\Persistence\QueryResultInterface
      */
-	public function findInPageIds($pids, $orderBy, $orderDirection) {
+    public function findInPageIds($pids, $orderBy, $orderDirection) {
         $query = $this->createQuery();
         $query->getQuerySettings()->setRespectStoragePage(FALSE);
-		if ($orderDirection == 'desc') {
-			$query->setOrderings(array(
-				$orderBy => \TYPO3\CMS\Extbase\Persistence\QueryInterface::ORDER_DESCENDING
-			));
-		}
-		else {
-			$query->setOrderings(array(
-				$orderBy => \TYPO3\CMS\Extbase\Persistence\QueryInterface::ORDER_ASCENDING
-			));
-		}
-		//$query->getQuerySettings()->setRespectEnableFields(TRUE);
+        if ($orderDirection == 'desc') {
+            $query->setOrderings(array(
+                $orderBy => \TYPO3\CMS\Extbase\Persistence\QueryInterface::ORDER_DESCENDING
+            ));
+        }
+        else {
+            $query->setOrderings(array(
+                $orderBy => \TYPO3\CMS\Extbase\Persistence\QueryInterface::ORDER_ASCENDING
+            ));
+        }
+        //$query->getQuerySettings()->setRespectEnableFields(TRUE);
 
         return $query->matching($query->in('pid', explode(',', $pids)))->execute();
     }

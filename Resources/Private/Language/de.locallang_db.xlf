@@ -1,156 +1,220 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xliff version="1.0">
-	<file source-language="en" target-language="de" datatype="plaintext" original="messages" date="2015-01-18T17:54:12Z" product-name="tx_hwtaddress">
-		<header/>
-		<body>
-			<trans-unit id="tx_hwtaddress_domain_model_address" xml:space="preserve">
-				<target>Adresse</target>
-			</trans-unit>
+    <file source-language="en" target-language="de" datatype="plaintext" original="messages" date="2017-10-07T17:54:12Z" product-name="tx_hwtaddress">
+        <header/>
+        <body>
+            <trans-unit id="tx_hwtaddress_domain_model_address" xml:space="preserve">
+                <target>Adresse</target>
+            </trans-unit>
 
-			<trans-unit id="tx_hwtaddress_domain_model_address.academic" xml:space="preserve">
-				<target>(akademischer) Titel</target>
-			</trans-unit>
-			<trans-unit id="tx_hwtaddress_domain_model_address.firstname" xml:space="preserve">
-				<target>Vorname</target>
-			</trans-unit>
-			<trans-unit id="tx_hwtaddress_domain_model_address.lastname" xml:space="preserve">
-				<target>Nachname</target>
-			</trans-unit>
-			<trans-unit id="tx_hwtaddress_domain_model_address.gender" xml:space="preserve">
-				<target>Geschlecht</target>
-			</trans-unit>
-			<trans-unit id="tx_hwtaddress_domain_model_address.gender.0" xml:space="preserve">
-				<target>weiblich</target>
-			</trans-unit>
-			<trans-unit id="tx_hwtaddress_domain_model_address.gender.1" xml:space="preserve">
-				<target>männlich</target>
-			</trans-unit>
-			<trans-unit id="tx_hwtaddress_domain_model_address.images" xml:space="preserve">
-				<target>Bild</target>
-			</trans-unit>
-			<trans-unit id="tx_hwtaddress_domain_model_address.birthday" xml:space="preserve">
-				<target>Geburtstag</target>
-			</trans-unit>
-			<trans-unit id="tx_hwtaddress_domain_model_address.info" xml:space="preserve">
-				<target>Info</target>
-			</trans-unit>
-			<trans-unit id="tx_hwtaddress_domain_model_address.department" xml:space="preserve">
-				<target>Abteilung</target>
-			</trans-unit>
-			<trans-unit id="tx_hwtaddress_domain_model_address.position" xml:space="preserve">
-				<target>Beruf / Position</target>
-			</trans-unit>
+            <trans-unit id="tx_hwtaddress_domain_model_address.academic" xml:space="preserve">
+                <target>(akademischer) Titel</target>
+            </trans-unit>
+            <trans-unit id="tx_hwtaddress_domain_model_address.firstname" xml:space="preserve">
+                <target>Vorname</target>
+            </trans-unit>
+            <trans-unit id="tx_hwtaddress_domain_model_address.lastname" xml:space="preserve">
+                <target>Nachname</target>
+            </trans-unit>
+            <trans-unit id="tx_hwtaddress_domain_model_address.gender" xml:space="preserve">
+                <target>Geschlecht</target>
+            </trans-unit>
+            <trans-unit id="tx_hwtaddress_domain_model_address.gender.0" xml:space="preserve">
+                <target>weiblich</target>
+            </trans-unit>
+            <trans-unit id="tx_hwtaddress_domain_model_address.gender.1" xml:space="preserve">
+                <target>männlich</target>
+            </trans-unit>
+            <trans-unit id="tx_hwtaddress_domain_model_address.images" xml:space="preserve">
+                <target>Bild</target>
+            </trans-unit>
+            <trans-unit id="tx_hwtaddress_domain_model_address.birthday" xml:space="preserve">
+                <target>Geburtstag</target>
+            </trans-unit>
+            <trans-unit id="tx_hwtaddress_domain_model_address.info" xml:space="preserve">
+                <target>Info</target>
+            </trans-unit>
+            <trans-unit id="tx_hwtaddress_domain_model_address.department" xml:space="preserve">
+                <target>Abteilung</target>
+            </trans-unit>
+            <trans-unit id="tx_hwtaddress_domain_model_address.position" xml:space="preserve">
+                <target>Beruf / Position</target>
+            </trans-unit>
 
-			<trans-unit id="tx_hwtaddress_domain_model_address.company_title" xml:space="preserve">
-				<target>Titel</target>
-			</trans-unit>
-			<trans-unit id="tx_hwtaddress_domain_model_address.company_subtitle" xml:space="preserve">
-				<target>Untertitel</target>
-			</trans-unit>
-			<trans-unit id="tx_hwtaddress_domain_model_address.company_short" xml:space="preserve">
-				<target>Kurzbeschreibung</target>
-			</trans-unit>
-			<trans-unit id="tx_hwtaddress_domain_model_address.company_bodytext" xml:space="preserve">
-				<target>Beschreibung</target>
-			</trans-unit>
-			<trans-unit id="tx_hwtaddress_domain_model_address.company_images" xml:space="preserve">
-				<target>Firmenbild</target>
-			</trans-unit>
+            <trans-unit id="tx_hwtaddress_domain_model_address.company_title" xml:space="preserve">
+                <target>Titel</target>
+            </trans-unit>
+            <trans-unit id="tx_hwtaddress_domain_model_address.company_subtitle" xml:space="preserve">
+                <target>Untertitel</target>
+            </trans-unit>
+            <trans-unit id="tx_hwtaddress_domain_model_address.company_short" xml:space="preserve">
+                <target>Kurzbeschreibung</target>
+            </trans-unit>
+            <trans-unit id="tx_hwtaddress_domain_model_address.company_bodytext" xml:space="preserve">
+                <target>Beschreibung</target>
+            </trans-unit>
+            <trans-unit id="tx_hwtaddress_domain_model_address.company_images" xml:space="preserve">
+                <target>Firmenbild</target>
+            </trans-unit>
 
-			<trans-unit id="tx_hwtaddress_domain_model_address.phone" xml:space="preserve">
-				<target>Telefon</target>
-			</trans-unit>
-			<trans-unit id="tx_hwtaddress_domain_model_address.mobile" xml:space="preserve">
-				<target>Mobil</target>
-			</trans-unit>
-			<trans-unit id="tx_hwtaddress_domain_model_address.fax" xml:space="preserve">
-				<target>Fax</target>
-			</trans-unit>
-			<trans-unit id="tx_hwtaddress_domain_model_address.email" xml:space="preserve">
-				<target>E-Mail</target>
-			</trans-unit>
-			<trans-unit id="tx_hwtaddress_domain_model_address.www" xml:space="preserve">
-				<target>WWW</target>
-			</trans-unit>
-			<trans-unit id="tx_hwtaddress_domain_model_address.building" xml:space="preserve">
-				<target>Gebäude</target>
-			</trans-unit>
-			<trans-unit id="tx_hwtaddress_domain_model_address.street" xml:space="preserve">
-				<target>Straße</target>
-			</trans-unit>
-			<trans-unit id="tx_hwtaddress_domain_model_address.zip" xml:space="preserve">
-				<target>PLZ</target>
-			</trans-unit>
-			<trans-unit id="tx_hwtaddress_domain_model_address.city" xml:space="preserve">
-				<target>Stadt</target>
-			</trans-unit>
-			<trans-unit id="tx_hwtaddress_domain_model_address.region" xml:space="preserve">
-				<target>Region / Bundesland</target>
-			</trans-unit>
-			<trans-unit id="tx_hwtaddress_domain_model_address.country" xml:space="preserve">
-				<target>Land</target>
-			</trans-unit>
-			<trans-unit id="tx_hwtaddress_domain_model_address.longitude" xml:space="preserve">
-				<target>Längengrad</target>
-			</trans-unit>
-			<trans-unit id="tx_hwtaddress_domain_model_address.latitude" xml:space="preserve">
-				<target>Breitengrad</target>
-			</trans-unit>
+            <trans-unit id="tx_hwtaddress_domain_model_address.phone" xml:space="preserve">
+                <target>Telefon</target>
+            </trans-unit>
+            <trans-unit id="tx_hwtaddress_domain_model_address.mobile" xml:space="preserve">
+                <target>Mobil</target>
+            </trans-unit>
+            <trans-unit id="tx_hwtaddress_domain_model_address.fax" xml:space="preserve">
+                <target>Fax</target>
+            </trans-unit>
+            <trans-unit id="tx_hwtaddress_domain_model_address.email" xml:space="preserve">
+                <target>E-Mail</target>
+            </trans-unit>
+            <trans-unit id="tx_hwtaddress_domain_model_address.www" xml:space="preserve">
+                <target>WWW</target>
+            </trans-unit>
+            <trans-unit id="tx_hwtaddress_domain_model_address.links" xml:space="preserve">
+                <target>Links (Social Media / Profile)</target>
+            </trans-unit>
+            <trans-unit id="tx_hwtaddress_domain_model_address.building" xml:space="preserve">
+                <target>Gebäude</target>
+            </trans-unit>
+            <trans-unit id="tx_hwtaddress_domain_model_address.street" xml:space="preserve">
+                <target>Straße</target>
+            </trans-unit>
+            <trans-unit id="tx_hwtaddress_domain_model_address.zip" xml:space="preserve">
+                <target>PLZ</target>
+            </trans-unit>
+            <trans-unit id="tx_hwtaddress_domain_model_address.city" xml:space="preserve">
+                <target>Stadt</target>
+            </trans-unit>
+            <trans-unit id="tx_hwtaddress_domain_model_address.region" xml:space="preserve">
+                <target>Region / Bundesland</target>
+            </trans-unit>
+            <trans-unit id="tx_hwtaddress_domain_model_address.country" xml:space="preserve">
+                <target>Land</target>
+            </trans-unit>
+            <trans-unit id="tx_hwtaddress_domain_model_address.longitude" xml:space="preserve">
+                <target>Längengrad</target>
+            </trans-unit>
+            <trans-unit id="tx_hwtaddress_domain_model_address.latitude" xml:space="preserve">
+                <target>Breitengrad</target>
+            </trans-unit>
 
-			<trans-unit id="tx_hwtaddress_domain_model_address.related_address" xml:space="preserve">
-				<target>verknüpfte Adressen</target>
-			</trans-unit>
-			<trans-unit id="tx_hwtaddress_domain_model_address.related_address_from" xml:space="preserve">
-				<target>verknüpft von Adressen</target>
-			</trans-unit>
-			<trans-unit id="tx_hwtaddress_domain_model_address.related_pages" xml:space="preserve">
-				<target>verknüpfte Seiten</target>
-			</trans-unit>
-			<trans-unit id="tx_hwtaddress_domain_model_address.related_pages_from" xml:space="preserve">
-				<target>verknüpft auf Seiten</target>
-			</trans-unit>
-
-
-			<trans-unit id="tx_hwtaddress_domain_model_address.palette.name" xml:space="preserve">
-				<target>Name</target>
-			</trans-unit>
-			<trans-unit id="tx_hwtaddress_domain_model_address.palette.employee" xml:space="preserve">
-				<target>Mitarbeiterdaten</target>
-			</trans-unit>
-			<trans-unit id="tx_hwtaddress_domain_model_address.palette.company_title" xml:space="preserve">
-				<target>Firma</target>
-			</trans-unit>
-			<trans-unit id="tx_hwtaddress_domain_model_address.palette.electronic_address" xml:space="preserve">
-				<target>elektronische Kontaktdaten</target>
-			</trans-unit>
-			<trans-unit id="tx_hwtaddress_domain_model_address.palette.location_address" xml:space="preserve">
-				<target>Ortsangabe</target>
-			</trans-unit>
-			<trans-unit id="tx_hwtaddress_domain_model_address.palette.geographical_address" xml:space="preserve">
-				<target>geografische Adresse</target>
-			</trans-unit>
-			<trans-unit id="palette.relations_address" xml:space="preserve">
-				<target>Adress-Verknüpfungen</target>
-			</trans-unit>
-			<trans-unit id="tx_hwtaddress_domain_model_address.palette.relations_pages" xml:space="preserve">
-				<target>Seiten-Verknüpfungen</target>
-			</trans-unit>
+            <trans-unit id="tx_hwtaddress_domain_model_address.related_address" xml:space="preserve">
+                <target>verknüpfte Adressen</target>
+            </trans-unit>
+            <trans-unit id="tx_hwtaddress_domain_model_address.related_address_from" xml:space="preserve">
+                <target>verknüpft von Adressen</target>
+            </trans-unit>
+            <trans-unit id="tx_hwtaddress_domain_model_address.related_pages" xml:space="preserve">
+                <target>verknüpfte Seiten</target>
+            </trans-unit>
+            <trans-unit id="tx_hwtaddress_domain_model_address.related_pages_from" xml:space="preserve">
+                <target>verknüpft auf Seiten</target>
+            </trans-unit>
 
 
-			<trans-unit id="tx_hwtaddress_domain_model_address.tabs.address" xml:space="preserve">
-				<target>Adresse</target>
-			</trans-unit>
-			<trans-unit id="tx_hwtaddress_domain_model_address.tabs.company" xml:space="preserve">
-				<target>Firma</target>
-			</trans-unit>
-			<trans-unit id="tx_hwtaddress_domain_model_address.tabs.relations" xml:space="preserve">
-				<target>Verknüpfungen</target>
-			</trans-unit>
+            <trans-unit id="tx_hwtaddress_domain_model_address.palette.name" xml:space="preserve">
+                <target>Name</target>
+            </trans-unit>
+            <trans-unit id="tx_hwtaddress_domain_model_address.palette.employee" xml:space="preserve">
+                <target>Mitarbeiterdaten</target>
+            </trans-unit>
+            <trans-unit id="tx_hwtaddress_domain_model_address.palette.company_title" xml:space="preserve">
+                <target>Firma</target>
+            </trans-unit>
+            <trans-unit id="tx_hwtaddress_domain_model_address.palette.electronic_address" xml:space="preserve">
+                <target>elektronische Kontaktdaten</target>
+            </trans-unit>
+            <trans-unit id="tx_hwtaddress_domain_model_address.palette.location_address" xml:space="preserve">
+                <target>Ortsangabe</target>
+            </trans-unit>
+            <trans-unit id="tx_hwtaddress_domain_model_address.palette.geographical_address" xml:space="preserve">
+                <target>geografische Adresse</target>
+            </trans-unit>
+            <trans-unit id="palette.relations_address" xml:space="preserve">
+                <target>Adress-Verknüpfungen</target>
+            </trans-unit>
+            <trans-unit id="tx_hwtaddress_domain_model_address.palette.relations_pages" xml:space="preserve">
+                <target>Seiten-Verknüpfungen</target>
+            </trans-unit>
 
 
-			<trans-unit id="pages.tx_hwtaddress_related_address" xml:space="preserve">
-				<target>verknüpfte Adressen</target>
-			</trans-unit>
-		</body>
-	</file>
+            <trans-unit id="tx_hwtaddress_domain_model_address.tabs.address" xml:space="preserve">
+                <target>Adresse</target>
+            </trans-unit>
+            <trans-unit id="tx_hwtaddress_domain_model_address.tabs.company" xml:space="preserve">
+                <target>Firma</target>
+            </trans-unit>
+            <trans-unit id="tx_hwtaddress_domain_model_address.tabs.relations" xml:space="preserve">
+                <target>Verknüpfungen</target>
+            </trans-unit>
+
+
+
+            <trans-unit id="tx_hwtaddress_domain_model_link" xml:space="preserve">
+                <target>Adress-Link</target>
+            </trans-unit>
+
+            <trans-unit id="tx_hwtaddress_domain_model_link.header" xml:space="preserve">
+                <target>Überschrift</target>
+            </trans-unit>
+            <trans-unit id="tx_hwtaddress_domain_model_link.parameter" xml:space="preserve">
+                <target>Link</target>
+            </trans-unit>
+            <trans-unit id="tx_hwtaddress_domain_model_link.linktext" xml:space="preserve">
+                <target>Linktext</target>
+            </trans-unit>
+            <trans-unit id="tx_hwtaddress_domain_model_link.type" xml:space="preserve">
+                <target>Typ</target>
+            </trans-unit>
+            <trans-unit id="tx_hwtaddress_domain_model_link.type.pleaseSelect" xml:space="preserve">
+                <target>--- Bitte wählen: ---</target>
+            </trans-unit>
+            <trans-unit id="tx_hwtaddress_domain_model_link.type.facebook" xml:space="preserve">
+                <target>Facebook</target>
+            </trans-unit>
+            <trans-unit id="tx_hwtaddress_domain_model_link.type.github" xml:space="preserve">
+                <target>GitHub</target>
+            </trans-unit>
+            <trans-unit id="tx_hwtaddress_domain_model_link.type.gitlab" xml:space="preserve">
+                <target>GitLab</target>
+            </trans-unit>
+            <trans-unit id="tx_hwtaddress_domain_model_link.type.google" xml:space="preserve">
+                <target>Google+</target>
+            </trans-unit>
+            <trans-unit id="tx_hwtaddress_domain_model_link.type.pinterest" xml:space="preserve">
+                <target>Pinterest</target>
+            </trans-unit>
+            <trans-unit id="tx_hwtaddress_domain_model_link.type.instagram" xml:space="preserve">
+                <target>Instagram</target>
+            </trans-unit>
+            <trans-unit id="tx_hwtaddress_domain_model_link.type.linkedin" xml:space="preserve">
+                <target>LinkedIn</target>
+            </trans-unit>
+            <trans-unit id="tx_hwtaddress_domain_model_link.type.twitter" xml:space="preserve">
+                <target>Twitter</target>
+            </trans-unit>
+            <trans-unit id="tx_hwtaddress_domain_model_link.type.vimeo" xml:space="preserve">
+                <target>Vimeo</target>
+            </trans-unit>
+            <trans-unit id="tx_hwtaddress_domain_model_link.type.xing" xml:space="preserve">
+                <target>Xing</target>
+            </trans-unit>
+            <trans-unit id="tx_hwtaddress_domain_model_link.type.youtube" xml:space="preserve">
+                <target>YouTube</target>
+            </trans-unit>
+
+
+            <trans-unit id="tx_hwtaddress_domain_model_link.palette.name" xml:space="preserve">
+                <target>Link-Eigenschaften</target>
+            </trans-unit>
+
+
+
+            <trans-unit id="pages.tx_hwtaddress_related_address" xml:space="preserve">
+                <target>verknüpfte Adressen</target>
+            </trans-unit>
+        </body>
+    </file>
 </xliff>

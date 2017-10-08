@@ -1,0 +1,6 @@
+<dl class="address-links">
+    <f:for each="{links}" as="link">
+        <dt>{link.header}</dt>
+        <dd>{link.type} <f:link.typolink parameter="{link.parameter}">{link.linktext}</f:link.typolink></dd>
+    </f:for>
+</dl>

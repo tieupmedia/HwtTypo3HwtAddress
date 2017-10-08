@@ -31,26 +31,26 @@
  */
 class tx_hwtaddress_wizicon {
 
-	const KEY = 'hwt_address';
+    const KEY = 'hwt_address';
 
-	/**
-	 * Processing the wizard items array
-	 *
-	 * @param array $wizardItems The wizard items
-	 * @return array array with wizard items
-	 */
-	public function proc($wizardItems) {
-		$wizardItems['plugins_tx_' . self::KEY] = array(
-			'icon'			=> \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extRelPath(self::KEY) . 'Resources/Public/Icons/ce_wiz.gif',
-			'title'			=> $GLOBALS['LANG']->sL('LLL:EXT:hwt_address/Resources/Private/Language/locallang_be.xlf:wizard_pi1.title'),
-			'description'	=> $GLOBALS['LANG']->sL('LLL:EXT:hwt_address/Resources/Private/Language/locallang_be.xlf:wizard_pi1.plus_wiz_description'),
-			'params'		=> '&defVals[tt_content][CType]=list&defVals[tt_content][list_type]=hwtaddress_address'
-		);
+    /**
+     * Processing the wizard items array
+     *
+     * @param array $wizardItems The wizard items
+     * @return array array with wizard items
+     */
+    public function proc($wizardItems) {
+        $wizardItems['plugins_tx_' . self::KEY] = array(
+            'icon'			=> \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extRelPath(self::KEY) . 'Resources/Public/Icons/ce_wiz.gif',
+            'title'			=> $GLOBALS['LANG']->sL('LLL:EXT:hwt_address/Resources/Private/Language/locallang_be.xlf:wizard_pi1.title'),
+            'description'	=> $GLOBALS['LANG']->sL('LLL:EXT:hwt_address/Resources/Private/Language/locallang_be.xlf:wizard_pi1.plus_wiz_description'),
+            'params'		=> '&defVals[tt_content][CType]=list&defVals[tt_content][list_type]=hwtaddress_address'
+        );
 
-		return $wizardItems;
-	}
+        return $wizardItems;
+    }
 }
 
 if (defined('TYPO3_MODE') && $TYPO3_CONF_VARS[TYPO3_MODE]['XCLASS']['ext/hwt_address/Resources/Private/Php/class.tx_hwtaddress_wizicon.php']) {
-	include_once($TYPO3_CONF_VARS[TYPO3_MODE]['XCLASS']['ext/hwt_address/Resources/Private/Php/class.tx_hwtaddress_wizicon.php']);
+    include_once($TYPO3_CONF_VARS[TYPO3_MODE]['XCLASS']['ext/hwt_address/Resources/Private/Php/class.tx_hwtaddress_wizicon.php']);
 }

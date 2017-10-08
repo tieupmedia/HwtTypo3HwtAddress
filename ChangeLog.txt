@@ -1,46 +1,57 @@
+2017-10-07 Heiko Westermann <hwt3@gmx.de>
+    * Version 0.0.8-beta - Feature, bugfix and maintenance release
+    * [TASK] Reformatted indents and new lines in xml files.
+    * [TASK] Reformatted indents and new lines in php tca files.
+    * [TASK] Reformatted indents and new lines in php class files.
+    * [TASK] Changed address domain model to inherit from custom domain object.
+    * [FEATURE] Added related links to address records, that allow flexible customization, e.g. for social/profile links.
+    * [TASK] Added common structure for use of fluid layouts and partials.
+    * [BUGFIX]: No address shown when selecting single address in single address mode.
+      Thanks to Christoph Lehmann.
+
 2017-04-11 Heiko Westermann <hwt3@gmx.de>
     * Version 0.0.7-beta - Compatiblity and bugfix release
     * Bugfix: Respect extension manager setting for relations in page records.
-	* Task: Compatibility changes for folder icons in TYPO3 >= 7.5
-	* Task: Compatibility changes for language files in TYPO3 >= 6.2
+    * Task: Compatibility changes for folder icons in TYPO3 >= 7.5
+    * Task: Compatibility changes for language files in TYPO3 >= 6.2
     * Task: Added TSconfig/TCEFORM (demo) settings
 
 2016-10-16 Heiko Westermann <hwt3@gmx.de>
-	* Version 0.0.6-beta - Compatibility Release
-	* Task: Compatibility changes for TYPO3 7.6
+    * Version 0.0.6-beta - Compatibility Release
+    * Task: Compatibility changes for TYPO3 7.6
 
 2016-06-23 Heiko Westermann <hwt3@gmx.de>
-	* Version 0.0.5-beta - Maintenance and bugfix release
-	* Bugfix: ke_search hook couldn't be loaded. Renamed class file with correct camel case.
-	* Task: Code cleanup in ke_search hook
+    * Version 0.0.5-beta - Maintenance and bugfix release
+    * Bugfix: ke_search hook couldn't be loaded. Renamed class file with correct camel case.
+    * Task: Code cleanup in ke_search hook
 
 2016-06-23 Heiko Westermann <hwt3@gmx.de>
-	* Version 0.0.4-beta - Maintenance and bugfix release
-	* Task/Bugfix: Updated ke_search hook. Updated api call for typo3 6.2 and indexing values.
-	* Task/Bugfix: Added the related_address and related_address_from properties to address model.
-	* Feature: Added hooks for record preview from backend and plugin summary in backend.
-	* Bugfix: Wrong action params for single view in plugin flexform
-	* Bugfix: Updated hook registration for ke_search to namespaced classnames
-	* Bugfix: Text links in rte went wrong. Updated tca setting.
+    * Version 0.0.4-beta - Maintenance and bugfix release
+    * Task/Bugfix: Updated ke_search hook. Updated api call for typo3 6.2 and indexing values.
+    * Task/Bugfix: Added the related_address and related_address_from properties to address model.
+    * Feature: Added hooks for record preview from backend and plugin summary in backend.
+    * Bugfix: Wrong action params for single view in plugin flexform
+    * Bugfix: Updated hook registration for ke_search to namespaced classnames
+    * Bugfix: Text links in rte went wrong. Updated tca setting.
 
 2015-09-04 Heiko Westermann <hwt3@gmx.de>
-	* Version 0.0.3-alpha - First public git release
-	* Task: Changed naming of flexform settings.
-	* Task: Code cleanup.
-	* Task: Prepared locallang for frontend.
-	* Task: Changed classes to work with namespaces.
+    * Version 0.0.3-alpha - First public git release
+    * Task: Changed naming of flexform settings.
+    * Task: Code cleanup.
+    * Task: Prepared locallang for frontend.
+    * Task: Changed classes to work with namespaces.
 
 2015-06-09 Heiko Westermann <hwt3@gmx.de>
-	* Bugfix: Label for related address records in page settings.
-	* Task: Alternative label with company title in backend list.
-	* Task: Changed extension description.
+    * Bugfix: Label for related address records in page settings.
+    * Task: Alternative label with company title in backend list.
+    * Task: Changed extension description.
 
 2015-05-17 Heiko Westermann <hwt3@gmx.de>
-	* Version 0.0.2-alpha
-	* Feature: Added sysfolder type.
-	* Feature: Added ke_search indexer that can be enabled in extension settings.
+    * Version 0.0.2-alpha
+    * Feature: Added sysfolder type.
+    * Feature: Added ke_search indexer that can be enabled in extension settings.
 
 2014-05-18 Heiko Westermann <hwt3@gmx.de>
-	* Version 0.0.1-alpha
-	* Initial setup: This is an early version of the extension in development.
-	   Some major functions and features are missing!
+    * Version 0.0.1-alpha
+    * Initial setup: This is an early version of the extension in development.
+      Some major functions and features are missing!

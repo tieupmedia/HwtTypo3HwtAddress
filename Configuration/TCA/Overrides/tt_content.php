@@ -11,7 +11,7 @@ $extensionKey = 'hwt_address';
  * Register plugin
  */
 \TYPO3\CMS\Extbase\Utility\ExtensionManagementUtility::registerPlugin(
-	$extensionKey, 'Address', 'LLL:EXT:' . $extensionKey . '/Resources/Private/Language/locallang_be.xlf:plugin_address'
+	'Hwt.' . $extensionKey, 'Address', 'LLL:EXT:' . $extensionKey . '/Resources/Private/Language/locallang_be.xlf:plugin_address'
 );
 
 $extensionName = \TYPO3\CMS\Core\Utility\GeneralUtility::underscoredToUpperCamelCase($extensionKey);

@@ -1,3 +1,10 @@
+2017-10-09 Heiko Westermann <hwt3@gmx.de>
+    * Version 0.0.9-beta - Maintenance release
+    * [TASK] Corrected return type in phpdoc of address relation and image getters.
+    * [BUGFIX] Corrected label keys in address tca.
+    * [TASK] Moved categories property and getter to domain object trait.
+    * [TASK] Code cleanup in tca.
+
 2017-10-07 Heiko Westermann <hwt3@gmx.de>
     * Version 0.0.8-beta - Feature, bugfix and maintenance release
     * [TASK] Reformatted indents and new lines in xml files.

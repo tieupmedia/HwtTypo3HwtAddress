@@ -5,10 +5,7 @@ if (!defined('TYPO3_MODE')) {
 }
 
 
-// Extension manager configuration
-$emConfiguration = unserialize($GLOBALS['TYPO3_CONF_VARS']['EXT']['extConf']['hwt_address']);
-
-// Extension locallang
+// DB locallang
 $ll = 'LLL:EXT:hwt_address/Resources/Private/Language/locallang_db.xlf:tx_hwtaddress_domain_model_address.';
 
 // General locallang
@@ -510,27 +507,6 @@ $extTca = array(
                 'readOnly' => 1,
             )
         ),
-//		'related_pages' => array(
-//			'exclude' => 1,
-//			'l10n_mode' => 'mergeIfNotBlank',
-//			'label' => $ll . 'related_pages',
-//			'config' => array(
-//				'type' => 'group',
-//				'internal_type' => 'db',
-//				'allowed' => 'pages',
-//				'foreign_table' => 'pages',
-//                'MM_opposite_field' => 'tx_hwtaddress_related_address_from',
-//				'size' => 5,
-//				'minitems' => 0,
-//				'maxitems' => 100,
-//				'MM' => 'tx_hwtaddress_domain_model_address_pages_mm',
-//				'wizards' => array(
-//					'suggest' => array(
-//						'type' => 'suggest',
-//					),
-//				),
-//			)
-//		),
         'related_pages_from' => array(
             'exclude' => 1,
             'label' => $ll . 'related_pages_from',
@@ -544,15 +520,11 @@ $extTca = array(
                 'minitems' => 0,
                 'maxitems' => 100,
                 'MM' => 'tx_hwtaddress_domain_model_pages_address_mm',
-                /*'MM_match_fields' => array(
-                    'tablenames' => 'pages'
-                ),*/
                 'wizards' => array(
                     'suggest' => array(
                         'type' => 'suggest',
                     ),
                 ),
-//                'readOnly' => 1,
             )
         ),
     ),
@@ -626,6 +598,11 @@ $extTca = array(
     ),
 );
 
+
+// Get extension manager configuration
+$emConfiguration = unserialize($GLOBALS['TYPO3_CONF_VARS']['EXT']['extConf']['hwt_address']);
+
+// Remove relation field, if not activated in em config
 if (!$emConfiguration['enableRelationsInPages']) {
     unset($extTca['columns']['related_pages_from']);
 }

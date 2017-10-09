@@ -132,7 +132,7 @@
             <trans-unit id="tx_hwtaddress_domain_model_address.palette.geographical_address" xml:space="preserve">
                 <target>geografische Adresse</target>
             </trans-unit>
-            <trans-unit id="palette.relations_address" xml:space="preserve">
+            <trans-unit id="tx_hwtaddress_domain_model_address.palette.relations_address" xml:space="preserve">
                 <target>Adress-Verknüpfungen</target>
             </trans-unit>
             <trans-unit id="tx_hwtaddress_domain_model_address.palette.relations_pages" xml:space="preserve">

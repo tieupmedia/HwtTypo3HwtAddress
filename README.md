@@ -13,3 +13,7 @@ This TYPO3 extension provides address handling since TYPO3 6.x. It adds an addre
 - Related links for addresses, that allow flexible customization, e.g. for social/profile links.
 - Integrated ke_seach indexer
 - Namespaced Extbase extension
+
+### Versions:
+- < 0.1.0 for TYPO3 6.2 - 7.6
+- \>= 0.1.0 for TYPO3 7.6 - 8.7

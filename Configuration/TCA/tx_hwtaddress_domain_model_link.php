@@ -147,6 +147,7 @@ $extTca = array(
             'label' => $ll . 'type',
             'config' => array(
                 'type' => 'select',
+                'renderType' => 'selectSingle',
                 'items' => array(
                     array($ll . 'type.pleaseSelect', ''),
                     array($ll . 'type.facebook', 'facebook'),

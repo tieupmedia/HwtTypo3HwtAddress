@@ -10,7 +10,7 @@ $extensionKey = 'hwt_address';
 /*
  * Register plugin
  */
-\TYPO3\CMS\Extbase\Utility\ExtensionManagementUtility::registerPlugin(
+\TYPO3\CMS\Extbase\Utility\ExtensionUtility::registerPlugin(
 	'Hwt.' . $extensionKey, 'Address', 'LLL:EXT:' . $extensionKey . '/Resources/Private/Language/locallang_be.xlf:plugin_address'
 );
 

@@ -5,6 +5,8 @@ if (!defined('TYPO3_MODE')) {
 }
 
 
+$extensionKey = 'hwt_address';
+
 /*
  * Add folder contains type
  */
@@ -18,7 +20,7 @@ if (TYPO3_MODE == 'BE') {
 
         // add select option for hwtaddress
         $GLOBALS['TCA']['pages']['columns']['module']['config']['items'][] = array(
-            0 => 'LLL:EXT:' . $_EXTKEY . '/Resources/Private/Language/locallang_be.xlf:folder',
+            0 => 'LLL:EXT:' . $extensionKey . '/Resources/Private/Language/locallang_be.xlf:folder',
             1 => 'hwtaddress',
             2 => 'apps-pagetree-folder-contains-hwtaddress'
         );
@@ -26,14 +28,14 @@ if (TYPO3_MODE == 'BE') {
     else {
             // before TYPO3 7.5
         $folderName = 'hwtaddress';
-        $folderPath = '../typo3conf/ext/' . $_EXTKEY . '/Resources/Public/Icons/folder-hwtaddress.gif';
+        $folderPath = '../typo3conf/ext/' . $extensionKey . '/Resources/Public/Icons/folder-hwtaddress.gif';
 
         unset($GLOBALS['ICON_TYPES'][$folderName]);
 
         \TYPO3\CMS\Backend\Sprite\SpriteManager::addTcaTypeIcon('pages', 'contains-'.$folderName, $folderPath);
 
         $GLOBALS['TCA']['pages']['columns']['module']['config']['items'][] = array(
-            0 => 'LLL:EXT:' . $_EXTKEY . '/Resources/Private/Language/locallang_be.xlf:folder',
+            0 => 'LLL:EXT:' . $extensionKey . '/Resources/Private/Language/locallang_be.xlf:folder',
             1 => $folderName,
             2 => $folderPath
         );

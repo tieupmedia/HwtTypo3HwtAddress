@@ -123,7 +123,7 @@ $extTca = array(
                     'link' => array(
                         'type' => 'popup',
                         'title' => $llTtc . 'header_link_formlabel',
-                        'icon' => 'EXT:backend/Resources/Public/Images/FormFieldWizard/wizard_link.gif',
+                        'icon' => 'actions-wizard-link',
                         'module' => array(
                             'name' => 'wizard_link',
                         ),

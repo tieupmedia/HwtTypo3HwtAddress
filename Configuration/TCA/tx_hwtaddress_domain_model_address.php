@@ -276,7 +276,7 @@ $extTca = array(
                         'RTEonly' => 1,
                         'type' => 'script',
                         'title' => 'Full screen Rich Text Editing',
-                        'icon' => 'wizard_rte2.gif',
+                        'icon' => 'actions-wizard-rte',
                         'module' => array(
                             'name' => 'wizard_rte',
                         ),

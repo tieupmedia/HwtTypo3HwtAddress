@@ -12,7 +12,7 @@
 
 $EM_CONF[$_EXTKEY] = array(
     'title' => 'Modern Address',
-    'description' => 'Address handling for TYPO3 >= 6.2',
+    'description' => 'Address handling für TYPO3 (since 6.2)',
     'category' => 'plugin',
     'author' => 'Heiko Westermann',
     'author_email' => 'hwt3@gmx.de',
@@ -22,7 +22,7 @@ $EM_CONF[$_EXTKEY] = array(
     'conflicts' => '',
     'priority' => '',
     'module' => '',
-    'state' => 'beta',
+    'state' => 'excludeFromUpdates',
     'internal' => '',
     'uploadfolder' => 0,
     'createDirs' => '',
@@ -30,7 +30,7 @@ $EM_CONF[$_EXTKEY] = array(
     'clearCacheOnLoad' => 0,
     'lockType' => '',
     'author_company' => '',
-    'version' => '0.1.0',
+    'version' => '0.1.0-feature',
     'constraints' => array(
         'depends' => array(
             'typo3' => '7.6.0-8.7.99',

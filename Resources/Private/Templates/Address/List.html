@@ -1,7 +1,14 @@
 <f:layout name="default" />
 
 <f:section name="main">
-<f:for each="{addresses}" as="address">
-    <f:render partial="Address/ListItem" arguments="{address: address}"/>
-</f:for>
+    <f:if condition="{settings.templateVariantList}">
+        <f:then>
+            <f:render partial="Address/TemplateVariants/List/{settings.templateVariantList -> f:format.case(mode: 'capital')}" arguments="{_all}"/>
+        </f:then>
+        <f:else>
+            <f:for each="{addresses}" as="address">
+                <f:render partial="Address/ListItem" arguments="{address: address}"/>
+            </f:for>
+        </f:else>
+    </f:if>
 </f:section>

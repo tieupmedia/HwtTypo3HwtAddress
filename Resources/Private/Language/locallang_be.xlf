@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xliff version="1.0">
-    <file source-language="en" datatype="plaintext" original="messages" date="2014-05-18T17:54:12Z" product-name="tx_hwtaddress">
+    <file source-language="en" datatype="plaintext" original="messages" date="2017-10-10T17:54:12Z" product-name="tx_hwtaddress">
         <header/>
         <body>
             <trans-unit id="folder" xml:space="preserve">
@@ -76,6 +76,33 @@
             </trans-unit>
             <trans-unit id="flexform_setting.orderDirection.desc" xml:space="preserve">
                 <source>descending</source>
+            </trans-unit>
+
+
+            <trans-unit id="flexform_setting.templateVariantList" xml:space="preserve">
+                <source>Template variant for list view</source>
+            </trans-unit>
+            <trans-unit id="flexform_setting.templateVariantList.example" xml:space="preserve">
+                <source>List Example</source>
+            </trans-unit>
+
+            <trans-unit id="flexform_setting.templateVariantSingle" xml:space="preserve">
+                <source>Template variant for single view</source>
+            </trans-unit>
+            <trans-unit id="flexform_setting.templateVariantSingle.example" xml:space="preserve">
+                <source>Single Example</source>
+            </trans-unit>
+
+            <trans-unit id="flexform_setting.templateVariantSearch" xml:space="preserve">
+                <source>Template variant for search view</source>
+            </trans-unit>
+            <trans-unit id="flexform_setting.templateVariantSearch.example" xml:space="preserve">
+                <source>Search Example</source>
+            </trans-unit>
+
+
+            <trans-unit id="flexform_tab.template" xml:space="preserve">
+                <source>Template</source>
             </trans-unit>
 
 

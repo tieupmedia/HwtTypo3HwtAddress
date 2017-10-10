@@ -189,5 +189,90 @@
                 </el>
             </ROOT>
         </sDEF>
+
+
+
+        <!--
+            ################################
+              SHEET Template
+            ################################
+        -->
+        <template>
+            <ROOT>
+                <TCEforms>
+                    <sheetTitle>LLL:EXT:hwt_address/Resources/Private/Language/locallang_be.xlf:flexform_tab.template</sheetTitle>
+                </TCEforms>
+                <type>array</type>
+                <el>
+                    <!-- template variant list -->
+                    <settings.templateVariantList>
+                        <TCEforms>
+                            <label>LLL:EXT:hwt_address/Resources/Private/Language/locallang_be.xlf:flexform_setting.templateVariantList</label>
+                            <displayCond>FIELD:sDEF.switchableControllerActions:=:Address->list;Address->single</displayCond>
+                            <config>
+                                <type>select</type>
+                                <items>
+                                    <numIndex index="0" type="array">
+                                        <numIndex index="0"> </numIndex>
+                                        <numIndex index="1">0</numIndex>
+                                    </numIndex>
+                                    <numIndex index="1" type="array">
+                                        <numIndex index="0">LLL:EXT:hwt_address/Resources/Private/Language/locallang_be.xml:flexform_setting.templateVariantList.example</numIndex>
+                                        <numIndex index="1">example</numIndex>
+                                    </numIndex>
+                                </items>
+                            </config>
+                        </TCEforms>
+                    </settings.templateVariantList>
+
+                    <!-- template variant single -->
+                    <settings.templateVariantSingle>
+                        <TCEforms>
+                            <label>LLL:EXT:hwt_address/Resources/Private/Language/locallang_be.xlf:flexform_setting.templateVariantSingle</label>
+                            <displayCond>
+                                <OR>
+                                    <numIndex index="0">FIELD:sDEF.switchableControllerActions:=:Address->list;Address->single</numIndex>
+                                    <numIndex index="1">FIELD:sDEF.switchableControllerActions:=:Address->single</numIndex>
+                                </OR>
+                            </displayCond>
+                            <config>
+                                <type>select</type>
+                                <items>
+                                    <numIndex index="0" type="array">
+                                        <numIndex index="0"> </numIndex>
+                                        <numIndex index="1">0</numIndex>
+                                    </numIndex>
+                                    <numIndex index="1" type="array">
+                                        <numIndex index="0">LLL:EXT:hwt_address/Resources/Private/Language/locallang_be.xml:flexform_setting.templateVariantSingle.example</numIndex>
+                                        <numIndex index="1">example</numIndex>
+                                    </numIndex>
+                                </items>
+                            </config>
+                        </TCEforms>
+                    </settings.templateVariantSingle>
+
+                    <!-- template variant search -->
+                    <settings.templateVariantSearch>
+                        <TCEforms>
+                            <label>LLL:EXT:hwt_address/Resources/Private/Language/locallang_be.xlf:flexform_setting.templateVariantSearch</label>
+                            <displayCond>FIELD:sDEF.switchableControllerActions:=:Address->search</displayCond>
+                            <config>
+                                <type>select</type>
+                                <items>
+                                    <numIndex index="0" type="array">
+                                        <numIndex index="0"> </numIndex>
+                                        <numIndex index="1">0</numIndex>
+                                    </numIndex>
+                                    <numIndex index="1" type="array">
+                                        <numIndex index="0">LLL:EXT:hwt_address/Resources/Private/Language/locallang_be.xml:flexform_setting.templateVariantSearch.example</numIndex>
+                                        <numIndex index="1">example</numIndex>
+                                    </numIndex>
+                                </items>
+                            </config>
+                        </TCEforms>
+                    </settings.templateVariantSearch>
+                </el>
+            </ROOT>
+        </template>
     </sheets>
 </T3DataStructure>

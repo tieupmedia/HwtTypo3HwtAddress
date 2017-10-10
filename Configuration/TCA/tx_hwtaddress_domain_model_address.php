@@ -40,7 +40,7 @@ $extTca = array(
             'starttime' => 'starttime',
             'endtime' => 'endtime',
         ),
-        'iconfile' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extRelPath('hwt_address') . 'Resources/Public/Icons/tx_hwtaddress_domain_model_address.gif',
+        'iconfile' => 'EXT:hwt_address/Resources/Public/Icons/tx_hwtaddress_domain_model_address.gif',
         'searchFields' => 'uid,firstname,lastname,company_title,company_subtitle,zip,city',
     ),
     'interface' => array(

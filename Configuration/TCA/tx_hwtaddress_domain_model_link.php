@@ -77,8 +77,8 @@ $extTca = array(
             'label' => $llGeneral . 'LGL.starttime',
             'config' => array(
                 'type' => 'input',
+                'renderType' => 'inputDateTime',
                 'size' => 8,
-                'max' => 20,
                 'eval' => 'datetime',
                 'default' => 0,
             )
@@ -88,8 +88,8 @@ $extTca = array(
             'label' => $llGeneral . 'LGL.endtime',
             'config' => array(
                 'type' => 'input',
+                'renderType' => 'inputDateTime',
                 'size' => 8,
-                'max' => 20,
                 'eval' => 'datetime',
                 'default' => 0,
             )

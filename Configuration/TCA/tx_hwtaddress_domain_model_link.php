@@ -14,6 +14,13 @@ $llGeneral = 'LLL:EXT:lang/locallang_general.xlf:';
 // TCA locallang
 $llTca = 'LLL:EXT:lang/locallang_tca.xlf:';
 
+// CMS locallang
+if ( version_compare(TYPO3_version, '8.0.0') >= 0 ) {
+    $llTtc = 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:';
+} else {
+    $llTtc = 'LLL:EXT:cms/locallang_ttc.xlf:';
+}
+
 $extTca = array(
     'ctrl' => array(
         'title' => 'LLL:EXT:hwt_address/Resources/Private/Language/locallang_db.xlf:tx_hwtaddress_domain_model_link',
@@ -115,7 +122,7 @@ $extTca = array(
                 'wizards' => array(
                     'link' => array(
                         'type' => 'popup',
-                        'title' => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:header_link_formlabel',
+                        'title' => $llTtc . 'header_link_formlabel',
                         'icon' => 'EXT:backend/Resources/Public/Images/FormFieldWizard/wizard_link.gif',
                         'module' => array(
                             'name' => 'wizard_link',
@@ -165,8 +172,8 @@ $extTca = array(
                 '--palette--;'.$ll.'palette.name;paletteName,
 
                 --div--;LLL:EXT:cms/locallang_ttc.xlf:tabs.access,
-                    --palette--;LLL:EXT:cms/locallang_ttc.xlf:palette.visibility;paletteVisbility,
-                    --palette--;LLL:EXT:cms/locallang_ttc.xlf:palette.access;paletteAccess,'
+                    --palette--;'.$llTtc.'palette.visibility;paletteVisbility,
+                    --palette--;'.$llTtc.'palette.access;paletteAccess,'
         ),
     ),
     'palettes' => array(
@@ -180,7 +187,7 @@ $extTca = array(
             'canNotCollapse' => TRUE,
         ),
         'paletteAccess' => array(
-            'showitem' => 'starttime;LLL:EXT:cms/locallang_ttc.xlf:starttime_formlabel, endtime;LLL:EXT:cms/locallang_ttc.xlf:endtime_formlabel,',
+            'showitem' => 'starttime;'.$llTtc.'starttime_formlabel, endtime;'.$llTtc.'endtime_formlabel,',
             'canNotCollapse' => TRUE,
         ),
     ),

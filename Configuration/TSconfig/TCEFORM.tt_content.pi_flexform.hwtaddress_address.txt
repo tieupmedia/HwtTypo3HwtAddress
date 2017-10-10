@@ -1,0 +1,7 @@
+# Demo settings for address plugin
+# Attention to \ for fields with prefix like 'settings.'!
+
+# Example for template variant for list action
+TCEFORM.tt_content.pi_flexform.hwtaddress_address.template.settings\.templateVariantList {
+	addItems.otherexample = Other Example
+}

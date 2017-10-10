@@ -535,7 +535,7 @@ $extTca = array(
                     birthday,info, --palette--;'.$ll.'palette.employee;paletteEmployee, images,
 
                 --div--;'.$ll.'tabs.company,
-                    company_title;;paletteCompanyTitle,company_short,company_bodytext,company_images,
+                    --palette--;'.$ll.'palette.company_title;paletteCompanyTitle, company_short,company_bodytext,company_images,
 
                 --div--;'.$ll.'tabs.address,
                     --palette--;'.$ll.'palette.electronic_address;paletteElectronicAddress,
@@ -561,7 +561,7 @@ $extTca = array(
             'canNotCollapse' => TRUE,
         ),
         'paletteCompanyTitle' => array(
-            'showitem' => 'company_subtitle',
+            'showitem' => 'company_title, --linebreak--, company_subtitle',
             'canNotCollapse' => TRUE,
         ),
 

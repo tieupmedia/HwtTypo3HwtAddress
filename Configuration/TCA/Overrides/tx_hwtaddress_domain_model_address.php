@@ -12,5 +12,7 @@ if (!defined('TYPO3_MODE')) {
     'hwt_address',
     'tx_hwtaddress_domain_model_address',
     $fieldName = 'categories',
-    $options = array()
+    $options = array(
+        'l10n_mode' => 'exclude'
+    )
 );

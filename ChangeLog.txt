@@ -1,3 +1,12 @@
+2018-02-12 Heiko Westermann <hwt3@gmx.de>
+    * Version 0.1.1-beta - Feature and bugfix release
+    * [FEATURE] Added TYPO3's assets field
+    * [FEATURE] Added translation fields and tca configs.
+    * [BUGFIX] Updated TCA to add sysfolder to custom address indexer.
+    * [BUGFIX] Allow to select multiple address pages in plugin settings.
+    * [BUGFIX] Corrected php version dependency:
+    * [TASK] Added partials to separate output of image and category items.
+
 2017-10-10 Heiko Westermann <hwt3@gmx.de>
     * Version 0.1.0-beta - Compatibility release
     * [TASK][BUGFIX] Compatibility to TYPO3 7.x and 8.x (LTS-Versions).

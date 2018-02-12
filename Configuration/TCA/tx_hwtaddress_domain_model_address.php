@@ -48,7 +48,7 @@ $extTca = array(
         'transOrigDiffSourceField' => 'l10n_diffsource',
     ),
     'interface' => array(
-        'showRecordFieldList' => 'sorting,hidden,starttime,endtime,academic,firstname,lastname,gender,images,birthday,department,position,info,
+        'showRecordFieldList' => 'sorting,hidden,starttime,endtime,academic,firstname,lastname,gender,images,assets,birthday,department,position,info,
             company_title,company_subtitle,company_short,company_bodytext,company_images,
             phone,mobile,fax,email,www,street,building,zip,city,region,country,longitude,latitude'
     ),
@@ -238,6 +238,50 @@ $extTca = array(
                 ),
                 $GLOBALS['TYPO3_CONF_VARS']['GFX']['imagefile_ext']
             )
+        ),
+        'assets' => array(
+            'label' => 'LLL:EXT:frontend/Resources/Private/Language/Database.xlf:tt_content.asset_references',
+            'config' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::getFileFieldTCAConfig('assets', array(
+                'appearance' => array(
+                    'createNewRelationLinkTitle' => 'LLL:EXT:frontend/Resources/Private/Language/Database.xlf:tt_content.asset_references.addFileReference'
+                ),
+                // custom configuration for displaying fields in the overlay/reference table
+                // behaves the same as the image field.
+                'overrideChildTca' => array(
+                    'types' => array(
+                        '0' => array(
+                            'showitem' => '
+                                --palette--;LLL:EXT:lang/Resources/Private/Language/locallang_tca.xlf:sys_file_reference.imageoverlayPalette;imageoverlayPalette,
+                                --palette--;;filePalette'
+                        ),
+                        \TYPO3\CMS\Core\Resource\File::FILETYPE_TEXT => array(
+                            'showitem' => '
+                                --palette--;LLL:EXT:lang/Resources/Private/Language/locallang_tca.xlf:sys_file_reference.imageoverlayPalette;imageoverlayPalette,
+                                --palette--;;filePalette'
+                        ),
+                        \TYPO3\CMS\Core\Resource\File::FILETYPE_IMAGE => array(
+                            'showitem' => '
+                                --palette--;LLL:EXT:lang/Resources/Private/Language/locallang_tca.xlf:sys_file_reference.imageoverlayPalette;imageoverlayPalette,
+                                --palette--;;filePalette'
+                        ),
+                        \TYPO3\CMS\Core\Resource\File::FILETYPE_AUDIO => array(
+                            'showitem' => '
+                                --palette--;LLL:EXT:lang/Resources/Private/Language/locallang_tca.xlf:sys_file_reference.audioOverlayPalette;audioOverlayPalette,
+                                --palette--;;filePalette'
+                        ),
+                        \TYPO3\CMS\Core\Resource\File::FILETYPE_VIDEO => array(
+                            'showitem' => '
+                                --palette--;LLL:EXT:lang/Resources/Private/Language/locallang_tca.xlf:sys_file_reference.videoOverlayPalette;videoOverlayPalette,
+                                --palette--;;filePalette'
+                        ),
+                        \TYPO3\CMS\Core\Resource\File::FILETYPE_APPLICATION => array(
+                            'showitem' => '
+                                --palette--;LLL:EXT:lang/Resources/Private/Language/locallang_tca.xlf:sys_file_reference.imageoverlayPalette;imageoverlayPalette,
+                                --palette--;;filePalette'
+                        )
+                    ),
+                ),
+            ), $GLOBALS['TYPO3_CONF_VARS']['SYS']['mediafile_ext'])
         ),
         'birthday' => array(
             'exclude' => 1,
@@ -600,7 +644,7 @@ $extTca = array(
         0 => array(
             'showitem' =>
                 '--palette--;'.$ll.'palette.name;paletteName,
-                    birthday,info, --palette--;'.$ll.'palette.employee;paletteEmployee, images,
+                    birthday,info, --palette--;'.$ll.'palette.employee;paletteEmployee, images, assets,
 
                 --div--;'.$ll.'tabs.company,
                     --palette--;'.$ll.'palette.company_title;paletteCompanyTitle, company_short,company_bodytext,company_images,

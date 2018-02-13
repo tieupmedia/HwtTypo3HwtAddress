@@ -218,15 +218,6 @@ class Address extends \Hwt\HwtAddress\DomainObject\AbstractManageableEntity {
 
 
     /**
-     * Get title
-     *
-     * @return string
-     */
-    public function getTitle() {
-        return $this->title;
-    }
-
-    /**
      * Get academic title
      *
      * @return string

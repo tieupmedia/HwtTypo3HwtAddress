@@ -1,0 +1,22 @@
+<div class="address-item address-person" itemscope itemtype="http://schema.org/Person">
+    <h1 class="personal-data">
+        <span class="academic" itemprop="honorificPrefix">{address.academic}</span>
+        <span class="name" itemprop="name">{address.firstname} {address.lastname}</span>
+    </h1>
+
+    <f:render partial="Address/PostalAddress" arguments="{_all}"/>
+
+    <p class="electronic-address">
+        <span class="phone" itemprop="telephone">{address.phone}</span><br />
+        <span class="mobile">{address.mobile}</span><br />
+        <span class="fax">{address.fax}</span><br />
+        <a class="email" href="mailto:{address.email}" itemprop="email">{address.email}</a><br />
+        <a class="www" href="{address.www}">{address.www}</a>
+    </p>
+
+    <p class="job-data">
+        <span class="company">{address.companyTitle}</span><br />
+        <span class="department">{address.department}</span><br />
+        <span class="position" itemprop="jobTitle">{address.position}</span>
+    </p>
+</div>

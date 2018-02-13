@@ -1,0 +1,22 @@
+<div class="address-item address-company" itemscope itemtype="http://schema.org/Person">
+    <h1 class="company-title" itemprop="name">{address.companyTitle}</h1>
+    <h2 class="company-subtitle" itemprop="alternateName">{address.companySubtitle}</h2>
+
+    <div class="company-description" itemprop="description">
+        <p class="company-short">
+            {address.companyShort}
+        </p>
+
+        {address.companyBodytext}
+    </div>
+
+    <f:render partial="Address/PostalAddress" arguments="{_all}"/>
+
+    <p class="electronic-address">
+        <span class="phone" itemprop="telephone">{address.phone}</span><br />
+        <span class="mobile">{address.mobile}</span><br />
+        <span class="fax">{address.fax}</span><br />
+        <a class="email" href="mailto:{address.email}" itemprop="email">{address.email}</a><br />
+        <a class="www" href="{address.www}">{address.www}</a>
+    </p>
+</div>

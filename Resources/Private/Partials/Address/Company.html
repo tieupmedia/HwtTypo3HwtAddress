@@ -19,4 +19,7 @@
         <a class="email" href="mailto:{address.email}" itemprop="email">{address.email}</a><br />
         <a class="www" href="{address.www}">{address.www}</a>
     </p>
+
+    <f:render partial="Address/RelatedAddresses" arguments="{_all}"/>
+    <f:render partial="Address/RelatedAddressesFrom" arguments="{_all}"/>
 </div>

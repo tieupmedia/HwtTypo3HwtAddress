@@ -1,12 +1,9 @@
 <div class="address-item">
-    Address Title: {address.title}<br />
-    Address Uid: {address.uid}<br />
-
-    <f:render partial="Address/Categories" arguments="{categories: address.categories}" />
-
-    <f:render partial="Address/Images" arguments="{images: address.images}" />
-
-    <f:render partial="Address/Links" arguments="{links: address.links}" />
-
-    <f:render partial="Address/Assets" arguments="{assets: address.assets}" />
+    <p>
+        Name: {address.firstname} {address.lastname}<br />
+        Company: {address.companyTitle}<br />
+        Uid: {address.uid}
+    </p>
+    
+    <f:link.page pageUid="{settings.list.singlePid}" additionalParams="{tx_hwtaddress_address: {address: address}}">Details</f:link.page>
 </div>

@@ -218,12 +218,16 @@ class Address extends \Hwt\HwtAddress\DomainObject\AbstractManageableEntity {
 
 
     /**
-     * Get title
+     * Get address label (name or title)
      *
      * @return string
      */
-    public function getTitle() {
-        return $this->title;
+    public function getNameOrTitle() {
+        $nameOrTitle = $this->companyTitle;
+        if ( $this->lastname ) {
+            $nameOrTitle = $this->firstname . ' ' . $this->lastname;
+        }
+        return $nameOrTitle;
     }
 
     /**

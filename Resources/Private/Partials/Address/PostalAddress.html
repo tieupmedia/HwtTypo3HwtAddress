@@ -1,0 +1,13 @@
+<div class="postal-address" itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+    <p class="location" itemprop="streetAddress">
+        <span class="street">{address.street}</span> <span class="building">{address.building}</span>
+    </p>
+    
+    <p class="town">
+        <span class="zip" itemprop="postalCode">{address.zip}</span> <span class="city" itemprop="addressLocality">{address.city}</span>
+    </p>
+
+    <p class="area">
+        <span class="country" itemprop="addressCountry">{address.country}</span> / <span class="region" itemprop="addressRegion">{address.region}</span>
+    </p>
+</div>

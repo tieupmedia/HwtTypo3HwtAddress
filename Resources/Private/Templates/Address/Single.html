@@ -1,29 +1,26 @@
-<div class="address-item">
-        Address Title: {address.title}<br />
-        Address Uid: {address.uid}<br />
+<div class="address-single">
+    <f:if condition="{address}">
+        <f:then>
+            <f:if condition="{address.lastname}">
+                <f:then>
+                    <f:render partial="Address/Person" arguments="{_all}"/>
+                </f:then>
+                <f:else>
+                    <f:render partial="Address/Company" arguments="{_all}"/>
+                </f:else>
+            </f:if>
 
-        <f:for each="{address.categories}" as="category">
-            Category Title: {category.title}<br />
-            Category Uid: {category.uid}
-        </f:for>
 
+            <f:render partial="Address/Categories" arguments="{categories: address.categories}" />
 
-        <f:for each="{address.images}" as="image">
-            Orginal-Attribute:<br />
-            Dateiname:    {image.originalResource.originalFile.name}<br />
-            Titel:        {image.originalResource.originalFile.title}<br />
-            Beschreibung: {image.originalResource.originalFile.description}<br />
-            Alt-Text:     {image.originalResource.originalFile.alternative}<br />
-            UID:          {image.originalResource.originalFile.uid}<br />
-            Pfad:         {image.originalResource.publicUrl}<br /><br />
+            <f:render partial="Address/Images" arguments="{images: address.images}" />
 
-            Referenz-Attribute:<br />
-            Titel:        {image.originalResource.title}<br />
-            Beschreibung: {image.originalResource.name}<br /><br />
+            <f:render partial="Address/Links" arguments="{links: address.links}" />
 
-            Ausgabe als Bild:<br />
-            <f:image src="{image.originalResource.originalFile.uid}" alt="" /><br />
-            <f:image src="{image.uid}" alt="" treatIdAsReference="TRUE" /><br /><br />
-        </f:for>
-
+            <f:render partial="Address/Assets" arguments="{assets: address.assets}" />
+        </f:then>
+        <f:else>
+            <f:render partial="Address/SingleNotFound" />
+        </f:else>
+    </f:if>
 </div>

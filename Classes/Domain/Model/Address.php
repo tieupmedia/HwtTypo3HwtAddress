@@ -34,6 +34,7 @@ namespace Hwt\HwtAddress\Domain\Model;
  */
 class Address extends \Hwt\HwtAddress\DomainObject\AbstractManageableEntity {
 
+    use \Hwt\HwtAddress\DomainObject\TraitAssetsPropertyAndGetter;
     use \Hwt\HwtAddress\DomainObject\TraitCategoriesPropertyAndGetter;
 
     /**
@@ -210,6 +211,7 @@ class Address extends \Hwt\HwtAddress\DomainObject\AbstractManageableEntity {
         $this->links = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
         $this->relatedAddress = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
         $this->relatedAddressFrom = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
+        $this->initTraitAssetsPropertyAndGetter();
         $this->initTraitCategoriesPropertyAndGetter();
     }
 

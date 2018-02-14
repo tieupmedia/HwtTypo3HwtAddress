@@ -6,6 +6,7 @@ TCEFORM.tx_hwtaddress_domain_model_address {
     lastname.disabled = 1
     gender.disabled = 1
     images.disabled = 1
+    assets.disabled = 1
     birthday.disabled = 1
     department.disabled = 1	
     position.disabled = 1

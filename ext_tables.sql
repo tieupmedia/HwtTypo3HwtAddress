@@ -2,6 +2,10 @@
 # Table structure for table 'tx_hwtaddress_domain_model_address'
 #
 CREATE TABLE tx_hwtaddress_domain_model_address (
+    sys_language_uid int(11) DEFAULT '0' NOT NULL,
+    l10n_parent int(11) DEFAULT '0' NOT NULL,
+    l10n_diffsource mediumblob NOT NULL,
+
     uid int(11) NOT NULL auto_increment,
     pid int(11) DEFAULT '0' NOT NULL,
     tstamp int(11) DEFAULT '0' NOT NULL,
@@ -20,6 +24,7 @@ CREATE TABLE tx_hwtaddress_domain_model_address (
     gender int(1) DEFAULT '0' NOT NULL,
 
     images int(11) unsigned DEFAULT '0',
+	assets int(11) unsigned DEFAULT '0' NOT NULL,
     birthday int(11) DEFAULT '0' NOT NULL,
     info text,
 

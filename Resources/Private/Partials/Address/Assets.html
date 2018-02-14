@@ -1,0 +1,20 @@
+<dl class="address-assets">
+    <f:for each="{assets}" as="mediaElement">
+        <dt>
+            <f:media file="{mediaElement}" />
+        </dt>
+
+        <f:if condition="{mediaElement.description}">
+            <f:then>
+                <dd>{mediaElement.description}</dd>
+            </f:then>
+            <f:else>
+                <f:if condition="{mediaElement.originalResource.description}">
+                    <f:then>
+                        <dd>{mediaElement.originalResource.description}</dd>
+                    </f:then>
+                </f:if>
+            </f:else>
+        </f:if>
+    </f:for>
+</dl>

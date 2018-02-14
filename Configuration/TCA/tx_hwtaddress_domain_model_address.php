@@ -42,14 +42,56 @@ $extTca = array(
         ),
         'iconfile' => 'EXT:hwt_address/Resources/Public/Icons/tx_hwtaddress_domain_model_address.gif',
         'searchFields' => 'uid,firstname,lastname,company_title,company_subtitle,zip,city',
+
+        'languageField' => 'sys_language_uid',
+        'transOrigPointerField' => 'l10n_parent',
+        'transOrigDiffSourceField' => 'l10n_diffsource',
     ),
     'interface' => array(
-        'showRecordFieldList' => 'sorting,hidden,starttime,endtime,academic,firstname,lastname,gender,images,birthday,department,position,info,
+        'showRecordFieldList' => 'sorting,hidden,starttime,endtime,academic,firstname,lastname,gender,images,assets,birthday,department,position,info,
             company_title,company_subtitle,company_short,company_bodytext,company_images,
             phone,mobile,fax,email,www,street,building,zip,city,region,country,longitude,latitude'
     ),
     'feInterface' => $TCA['tx_hwtaddress_domain_model_address']['feInterface'],
     'columns' => array(
+        'sys_language_uid' => [
+            'exclude' => true,
+            'label' => $llGeneral . 'LGL.language',
+            'config' => [
+                'type' => 'select',
+                'renderType' => 'selectSingle',
+                'special' => 'languages',
+                'items' => [
+                    [
+                        $llGeneral . 'LGL.allLanguages',
+                        -1,
+                        'flags-multiple'
+                    ],
+                ],
+                'default' => 0,
+            ]
+        ],
+        'l10n_parent' => [
+            'displayCond' => 'FIELD:sys_language_uid:>:0',
+            'exclude' => true,
+            'label' => $llGeneral . 'LGL.l18n_parent',
+            'config' => [
+                'type' => 'select',
+                'renderType' => 'selectSingle',
+                'items' => [
+                    ['', 0],
+                ],
+                'foreign_table' => 'tx_hwtaddress_domain_model_address',
+                'foreign_table_where' => 'AND tx_hwtaddress_domain_model_address.pid=###CURRENT_PID### AND tx_hwtaddress_domain_model_address.sys_language_uid IN (-1,0)',
+                'default' => 0,
+            ]
+        ],
+        'l10n_diffsource' => [
+            'config' => [
+                'type' => 'passthrough',
+                'default' => ''
+            ]
+        ],
         'pid' => array(
             'label' => 'pid',
             'config' => array(
@@ -117,6 +159,7 @@ $extTca = array(
         'firstname' => array(
             'exclude' => 1,
             'label' => $ll . 'firstname',
+            'l10n_mode' => 'exclude',
             'config' => array(
                 'type' => 'input',
                 'size' => 15,
@@ -125,6 +168,7 @@ $extTca = array(
         'lastname' => array(
             'exclude' => 1,
             'label' => $ll . 'lastname',
+            'l10n_mode' => 'exclude',
             'config' => array(
                 'type' => 'input',
                 'size' => 30,
@@ -133,6 +177,7 @@ $extTca = array(
         'gender' => array(
             'exclude' => 1,
             'label' => $ll . 'gender',
+            'l10n_mode' => 'exclude',
             'config' => array(
                 'type' => 'radio',
                 'items' => array(
@@ -144,6 +189,7 @@ $extTca = array(
         'images' => array(
             'exclude' => 1,
             'label' => $ll . 'images',
+            'l10n_mode' => 'exclude',
             'config' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::getFileFieldTCAConfig(
                 'images',
                 array(
@@ -193,9 +239,53 @@ $extTca = array(
                 $GLOBALS['TYPO3_CONF_VARS']['GFX']['imagefile_ext']
             )
         ),
+        'assets' => array(
+            'label' => 'LLL:EXT:frontend/Resources/Private/Language/Database.xlf:tt_content.asset_references',
+            'config' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::getFileFieldTCAConfig('assets', array(
+                'appearance' => array(
+                    'createNewRelationLinkTitle' => 'LLL:EXT:frontend/Resources/Private/Language/Database.xlf:tt_content.asset_references.addFileReference'
+                ),
+                // custom configuration for displaying fields in the overlay/reference table
+                // behaves the same as the image field.
+                'overrideChildTca' => array(
+                    'types' => array(
+                        '0' => array(
+                            'showitem' => '
+                                --palette--;LLL:EXT:lang/Resources/Private/Language/locallang_tca.xlf:sys_file_reference.imageoverlayPalette;imageoverlayPalette,
+                                --palette--;;filePalette'
+                        ),
+                        \TYPO3\CMS\Core\Resource\File::FILETYPE_TEXT => array(
+                            'showitem' => '
+                                --palette--;LLL:EXT:lang/Resources/Private/Language/locallang_tca.xlf:sys_file_reference.imageoverlayPalette;imageoverlayPalette,
+                                --palette--;;filePalette'
+                        ),
+                        \TYPO3\CMS\Core\Resource\File::FILETYPE_IMAGE => array(
+                            'showitem' => '
+                                --palette--;LLL:EXT:lang/Resources/Private/Language/locallang_tca.xlf:sys_file_reference.imageoverlayPalette;imageoverlayPalette,
+                                --palette--;;filePalette'
+                        ),
+                        \TYPO3\CMS\Core\Resource\File::FILETYPE_AUDIO => array(
+                            'showitem' => '
+                                --palette--;LLL:EXT:lang/Resources/Private/Language/locallang_tca.xlf:sys_file_reference.audioOverlayPalette;audioOverlayPalette,
+                                --palette--;;filePalette'
+                        ),
+                        \TYPO3\CMS\Core\Resource\File::FILETYPE_VIDEO => array(
+                            'showitem' => '
+                                --palette--;LLL:EXT:lang/Resources/Private/Language/locallang_tca.xlf:sys_file_reference.videoOverlayPalette;videoOverlayPalette,
+                                --palette--;;filePalette'
+                        ),
+                        \TYPO3\CMS\Core\Resource\File::FILETYPE_APPLICATION => array(
+                            'showitem' => '
+                                --palette--;LLL:EXT:lang/Resources/Private/Language/locallang_tca.xlf:sys_file_reference.imageoverlayPalette;imageoverlayPalette,
+                                --palette--;;filePalette'
+                        )
+                    ),
+                ),
+            ), $GLOBALS['TYPO3_CONF_VARS']['SYS']['mediafile_ext'])
+        ),
         'birthday' => array(
             'exclude' => 1,
-            'l10n_mode' => 'mergeIfNotBlank',
+            'l10n_mode' => 'exclude',
             'label' => $ll . 'birthday',
             'config' => array(
                 'type' => 'input',
@@ -236,6 +326,7 @@ $extTca = array(
         'company_title' => array(
             'exclude' => 1,
             'label' => $ll . 'company_title',
+            'l10n_mode' => 'exclude',
             'config' => array(
                 'type' => 'input',
                 'size' => 30,
@@ -287,9 +378,14 @@ $extTca = array(
         'company_images' => array(
             'exclude' => 1,
             'label' => $ll . 'company_images',
+            # Cannot be set to avoid bug: https://forge.typo3.org/issues/75850
+            #'l10n_mode' => 'exclude',
             'config' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::getFileFieldTCAConfig(
                 'company_images',
                 array(
+                    'behaviour' => array(
+                        'allowLanguageSynchronization' => true
+                    ),
                     'appearance' => array(
                         'headerThumbnail' => array(
                             'width' => '100',
@@ -340,6 +436,7 @@ $extTca = array(
         'phone' => array(
             'exclude' => 1,
             'label' => $ll . 'phone',
+            'l10n_mode' => 'exclude',
             'config' => array(
                 'type' => 'input',
                 'size' => 30,
@@ -349,6 +446,7 @@ $extTca = array(
         'mobile' => array(
             'exclude' => 1,
             'label' => $ll . 'mobile',
+            'l10n_mode' => 'exclude',
             'config' => array(
                 'type' => 'input',
                 'size' => 30,
@@ -358,6 +456,7 @@ $extTca = array(
         'fax' => array(
             'exclude' => 1,
             'label' => $ll . 'fax',
+            'l10n_mode' => 'exclude',
             'config' => array(
                 'type' => 'input',
                 'size' => 30,
@@ -367,6 +466,7 @@ $extTca = array(
         'email' => array(
             'exclude' => 1,
             'label' => $ll . 'email',
+            'l10n_mode' => 'exclude',
             'config' => array(
                 'type' => 'input',
                 'size' => 30,
@@ -376,6 +476,7 @@ $extTca = array(
         'www' => array(
             'exclude' => 1,
             'label' => $ll . 'www',
+            'l10n_mode' => 'exclude',
             'config' => array(
                 'type' => 'input',
                 'size' => 30,
@@ -385,6 +486,7 @@ $extTca = array(
         'links' => array(
             'exclude' => 1,
             'label' => $ll . 'links',
+            'l10n_mode' => 'exclude',
             'config' => array(
                 'type' => 'inline',
                 'allowed' => 'tx_hwtaddress_domain_model_link',
@@ -405,6 +507,7 @@ $extTca = array(
         'building' => array(
             'exclude' => 1,
             'label' => $ll . 'building',
+            'l10n_mode' => 'exclude',
             'config' => array(
                 'type' => 'input',
                 'size' => 10,
@@ -414,6 +517,7 @@ $extTca = array(
         'street' => array(
             'exclude' => 0,
             'label' => $ll . 'street',
+            'l10n_mode' => 'exclude',
             'config' => array(
                 'type' => 'input',
                 'size' => 30,
@@ -422,6 +526,7 @@ $extTca = array(
         'zip' => array(
             'exclude' => 0,
             'label' => $ll . 'zip',
+            'l10n_mode' => 'exclude',
             'config' => array(
                 'type' => 'input',
                 'size' => 10,
@@ -431,6 +536,7 @@ $extTca = array(
         'city' => array(
             'exclude' => 0,
             'label' => $ll . 'city',
+            'l10n_mode' => 'exclude',
             'config' => array(
                 'type' => 'input',
                 'size' => 30,
@@ -440,6 +546,7 @@ $extTca = array(
         'region' => array(
             'exclude' => 1,
             'label' => $ll . 'region',
+            'l10n_mode' => 'exclude',
             'config' => array(
                 'type' => 'input',
                 'size' => 30,
@@ -449,6 +556,7 @@ $extTca = array(
         'country' => array(
             'exclude' => 1,
             'label' => $ll . 'country',
+            'l10n_mode' => 'exclude',
             'config' => array(
                 'type' => 'input',
                 'size' => 30,
@@ -458,6 +566,7 @@ $extTca = array(
         'longitude' => array(
             'exclude' => 1,
             'label' => $ll . 'longitude',
+            'l10n_mode' => 'exclude',
             'config' => array(
                 'type' => 'input',
                 'size' => 30,
@@ -466,6 +575,7 @@ $extTca = array(
         'latitude' => array(
             'exclude' => 1,
             'label' => $ll . 'latitude',
+            'l10n_mode' => 'exclude',
             'config' => array(
                 'type' => 'input',
                 'size' => 30,
@@ -474,7 +584,7 @@ $extTca = array(
 
         'related_address' => array(
             'exclude' => 1,
-            'l10n_mode' => 'mergeIfNotBlank',
+            'l10n_mode' => 'exclude',
             'label' => $ll . 'related_address',
             'config' => array(
                 'type' => 'group',
@@ -496,6 +606,7 @@ $extTca = array(
         'related_address_from' => array(
             'exclude' => 1,
             'label' => $ll . 'related_address_from',
+            'l10n_mode' => 'exclude',
             'config' => array(
                 'type' => 'group',
                 'internal_type' => 'db',
@@ -510,6 +621,7 @@ $extTca = array(
         'related_pages_from' => array(
             'exclude' => 1,
             'label' => $ll . 'related_pages_from',
+            'l10n_mode' => 'exclude',
             'config' => array(
                 'type' => 'group',
                 'internal_type' => 'db',
@@ -532,7 +644,7 @@ $extTca = array(
         0 => array(
             'showitem' =>
                 '--palette--;'.$ll.'palette.name;paletteName,
-                    birthday,info, --palette--;'.$ll.'palette.employee;paletteEmployee, images,
+                    birthday,info, --palette--;'.$ll.'palette.employee;paletteEmployee, images, assets,
 
                 --div--;'.$ll.'tabs.company,
                     --palette--;'.$ll.'palette.company_title;paletteCompanyTitle, company_short,company_bodytext,company_images,

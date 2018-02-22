@@ -1,3 +1,11 @@
+2018-02-22 Heiko Westermann <hwt3@gmx.de>
+    * Version 0.1.2-beta - Feature and maintenance release
+    * [FEATURE] Added template-based handling and partial for record wasn't found in single view.
+    * [FEATURE] Added new partials to fulfill output with address relations.
+    * [FEATURE] Added new partials and reworked old ones to fulfill output (images, postal address, person, company).
+    * [FEATURE] Added getter for universal address labeling, e.g. for link text.
+    * [BUGFIX] Removed invalid title getter
+
 2018-02-12 Heiko Westermann <hwt3@gmx.de>
     * Version 0.1.1-beta - Feature and bugfix release
     * [FEATURE] Added TYPO3's assets field

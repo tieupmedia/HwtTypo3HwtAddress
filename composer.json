@@ -1,0 +1,40 @@
+{
+    "name": "tieupmedia/hwt_address",
+    "type": "typo3-cms-extension",
+    "version": "0.1.2",
+    "description": "Address handling for TYPO3 (since 6.2, estab. 2014) Development on https://github.com/tieupmedia/HwtTypo3HwtAddress",
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://composer.typo3.org/"
+        }
+    ],
+    "keywords": [
+        "TYPO3 CMS",
+        "Extbase",
+        "Fluid",
+        "Modern Address",
+        "universal"
+    ],
+    "authors": [
+        {
+            "name": "tie-up media",
+            "email": "hwt3@gmx.de",
+            "role": "Developer",
+            "homepage": "https://github.com/tieupmedia/"
+        }
+    ],
+    "require": {
+        "php": ">=5.4.0",
+        "typo3/cms-core": "~7.6.13||~8.7.0"
+    },
+    "replace": {
+        "hwt_address": "self.version",
+        "typo3-ter/hwt-address": "self.version"
+    },
+    "homepage": "https://github.com/tieupmedia/",
+    "license": "GPL-2.0-or-later",
+    "support": {
+        "issues": "https://github.com/tieupmedia/HwtTypo3HwtAddress/issues/"
+    }
+}

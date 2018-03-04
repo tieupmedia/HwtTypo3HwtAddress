@@ -47,7 +47,7 @@ class KeSearchHooks {
 
         // add address indexer item to "type" field
         $newArray = array(
-            'Modern Address',
+            'Modern Address (hwt_address)',
             'hwtaddressindexer',
             \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extRelPath('hwt_address') . 'Resources/Public/Icons/tx_hwtaddress_domain_model_address.gif'
         );

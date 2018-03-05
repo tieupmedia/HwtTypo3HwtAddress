@@ -109,6 +109,35 @@ class CmsLayout {
             );
 
 
+
+            /*
+             * Template variants
+             */
+            if ($actions === 'Address->single') {
+                $this->tableData[] = array(
+                    $GLOBALS['LANG']->sL(self::LLPATH . 'flexform_setting.templateVariantSingle', TRUE),
+                    $this->getFieldFromFlexform('settings.templateVariantSingle', 'template')
+                );
+            }
+            elseif (($actions === 'Address->list;Address->single')) {
+                $this->tableData[] = array(
+                    $GLOBALS['LANG']->sL(self::LLPATH . 'flexform_setting.templateVariantList', TRUE),
+                    $this->getFieldFromFlexform('settings.templateVariantList', 'template')
+                );
+                $this->tableData[] = array(
+                    $GLOBALS['LANG']->sL(self::LLPATH . 'flexform_setting.templateVariantSingle', TRUE),
+                    $this->getFieldFromFlexform('settings.templateVariantSingle', 'template')
+                );
+            }
+            elseif (($actions === 'Address->search')) {
+                $this->tableData[] = array(
+                    $GLOBALS['LANG']->sL(self::LLPATH . 'flexform_setting.templateVariantSearch', TRUE),
+                    $this->getFieldFromFlexform('settings.templateVariantSearch', 'template')
+                );
+            }
+
+
+
             $result .= $actions . $this->renderSettingsAsTable();
         }
 

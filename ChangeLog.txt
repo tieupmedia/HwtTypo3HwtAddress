@@ -1,3 +1,10 @@
+2018-03-14 Heiko Westermann <hwt3@gmx.de>
+    * Version 0.1.3-beta - Feature and bugfix release
+    * [FEATURE] Added selectable template variants for each plugin action. Just configure new variants selectable in flexform via page TSconfig. Add related partials for output in frontend.
+    * [FEATURE] Created own packagist repository and added composer.json
+    * [TASK] Clarified address indexer label for type selection in ke_search configuration
+    * [BUGFIX] Error in backend when ke_search wasn't installed. TCA modification now isn't done, if ke_search isn't installed.
+
 2018-02-22 Heiko Westermann <hwt3@gmx.de>
     * Version 0.1.2-beta - Feature and maintenance release
     * [FEATURE] Added template-based handling and partial for record wasn't found in single view.

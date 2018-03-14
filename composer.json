@@ -32,6 +32,11 @@
         "hwt_address": "self.version",
         "typo3-ter/hwt-address": "self.version"
     },
+    "autoload": {
+        "psr-4": {
+            "Hwt\\HwtAddress\\": "Classes"
+        }
+    },
     "homepage": "https://github.com/tieupmedia/",
     "license": "GPL-2.0-or-later",
     "support": {

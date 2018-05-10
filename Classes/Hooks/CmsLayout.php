@@ -60,6 +60,19 @@ class CmsLayout {
      */
     public $tableData = array();
 
+
+
+    /**
+     * Returns translations
+     *
+     * @param	string		$llPathAndKey	Parameter with the locallang path and key
+     * @return	string		The translation
+     */
+    function getPluginLL($llPathAndKey) {
+        $llValue = $GLOBALS['LANG']->sL($llPathAndKey);
+        return htmlspecialchars($llValue);
+    }
+
     /**
      * Returns information about this extension's pi1 plugin
      *
@@ -71,40 +84,40 @@ class CmsLayout {
         $result = '';
 
         if ($params['row']['list_type'] == 'hwtaddress_address') {
-            $result .= '<br /><strong>' . $GLOBALS['LANG']->sL(self::LLPATH . 'plugin_address', TRUE) . '</strong><br />';
+            $result .= '<br /><strong>' . $this->getPluginLL(self::LLPATH . 'plugin_address') . '</strong><br />';
 
             $this->flexformData = \TYPO3\CMS\Core\Utility\GeneralUtility::xml2array($params['row']['pi_flexform']);
 
             $actions = $this->getFieldFromFlexform('switchableControllerActions');
 
             $this->tableData[] = array(
-                $GLOBALS['LANG']->sL(self::LLPATH . 'flexform_setting.addressStoragePages', TRUE),
+                $this->getPluginLL(self::LLPATH . 'flexform_setting.addressStoragePages'),
                 $this->getFieldFromFlexform('settings.addressStoragePages')
             );
 
             if ($actions === 'Address->single') {
                 $this->tableData[] = array(
-                    $GLOBALS['LANG']->sL(self::LLPATH . 'flexform_setting.addressSingleRecord', TRUE),
+                    $this->getPluginLL(self::LLPATH . 'flexform_setting.addressSingleRecord'),
                     $this->getFieldFromFlexform('settings.addressSingleRecord')
                 );
             }
             elseif (($actions === 'Address->list;Address->single')) {
                 $this->tableData[] = array(
-                    $GLOBALS['LANG']->sL(self::LLPATH . 'flexform_setting.addressRecords', TRUE),
+                    $this->getPluginLL(self::LLPATH . 'flexform_setting.addressRecords'),
                     $this->getFieldFromFlexform('settings.addressRecords')
                 );
                 $this->tableData[] = array(
-                    $GLOBALS['LANG']->sL(self::LLPATH . 'flexform_setting.orderBy', TRUE),
+                    $this->getPluginLL(self::LLPATH . 'flexform_setting.orderBy'),
                     $this->getFieldFromFlexform('settings.orderBy')
                 );
                 $this->tableData[] = array(
-                    $GLOBALS['LANG']->sL(self::LLPATH . 'flexform_setting.orderDirection', TRUE),
+                    $this->getPluginLL(self::LLPATH . 'flexform_setting.orderDirection'),
                     $this->getFieldFromFlexform('settings.orderDirection')
                 );
             }
 
             $this->tableData[] = array(
-                $GLOBALS['LANG']->sL(self::LLPATH . 'flexform_setting.addressCategories', TRUE),
+                $this->getPluginLL(self::LLPATH . 'flexform_setting.addressCategories'),
                 $this->getFieldFromFlexform('settings.addressCategories')
             );
 
@@ -115,23 +128,23 @@ class CmsLayout {
              */
             if ($actions === 'Address->single') {
                 $this->tableData[] = array(
-                    $GLOBALS['LANG']->sL(self::LLPATH . 'flexform_setting.templateVariantSingle', TRUE),
+                    $this->getPluginLL(self::LLPATH . 'flexform_setting.templateVariantSingle'),
                     $this->getFieldFromFlexform('settings.templateVariantSingle', 'template')
                 );
             }
             elseif (($actions === 'Address->list;Address->single')) {
                 $this->tableData[] = array(
-                    $GLOBALS['LANG']->sL(self::LLPATH . 'flexform_setting.templateVariantList', TRUE),
+                    $this->getPluginLL(self::LLPATH . 'flexform_setting.templateVariantList'),
                     $this->getFieldFromFlexform('settings.templateVariantList', 'template')
                 );
                 $this->tableData[] = array(
-                    $GLOBALS['LANG']->sL(self::LLPATH . 'flexform_setting.templateVariantSingle', TRUE),
+                    $this->getPluginLL(self::LLPATH . 'flexform_setting.templateVariantSingle'),
                     $this->getFieldFromFlexform('settings.templateVariantSingle', 'template')
                 );
             }
             elseif (($actions === 'Address->search')) {
                 $this->tableData[] = array(
-                    $GLOBALS['LANG']->sL(self::LLPATH . 'flexform_setting.templateVariantSearch', TRUE),
+                    $this->getPluginLL(self::LLPATH . 'flexform_setting.templateVariantSearch'),
                     $this->getFieldFromFlexform('settings.templateVariantSearch', 'template')
                 );
             }

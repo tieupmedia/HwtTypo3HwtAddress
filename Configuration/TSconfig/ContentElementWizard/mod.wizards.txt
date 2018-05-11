@@ -1,0 +1,13 @@
+mod.wizards.newContentElement.wizardItems.plugins {
+	elements {
+		hwt_address {
+			iconIdentifier = ext-hwtaddress-wizard-icon
+			title = LLL:EXT:hwt_address/Resources/Private/Language/locallang_be.xlf:wizard_pi1.title
+			description = LLL:EXT:hwt_address/Resources/Private/Language/locallang_be.xlf:wizard_pi1.plus_wiz_description
+			tt_content_defValues {
+				CType = list
+				list_type = hwtaddress_address
+			}
+		}
+	}
+}

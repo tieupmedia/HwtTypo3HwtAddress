@@ -39,7 +39,7 @@ $EM_CONF[$_EXTKEY] = array(
         'conflicts' => array(
         ),
         'suggests' => array(
-            'ke_search' => '',
+            'ke_search' => '2.5.0-2.7.0',
         ),
     ),
 );

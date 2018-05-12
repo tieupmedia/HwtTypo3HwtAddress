@@ -21,6 +21,7 @@ This TYPO3 extension provides a modern address handling since TYPO3 6.x, establi
 - Plugin for list and single view and zip search in frontend
 - Template-based handling and partial for "record wasn't found" in single view
 - Selectable template variants for each plugin action. Just configure new variants selectable in flexform via page TSconfig. Add related partials for output in frontend.
+- Advanced 'record not found' handling for single view. (Redirects to page or action, show a content element, show a standalone template, system's 'page not found' handler)
 
 
 **Integration**

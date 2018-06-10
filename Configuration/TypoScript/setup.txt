@@ -5,16 +5,28 @@ plugin.tx_hwtaddress {
 		classes {
 		}
 	}
-	view {
-		templateRootPath = {$plugin.tx_hwtaddress.view.templateRootPath}
-		partialRootPath = {$plugin.tx_hwtaddress.view.partialRootPath}
-		layoutRootPath = {$plugin.tx_hwtaddress.view.layoutRootPath}
-	}
+
+    view {
+        templateRootPaths {
+            0 = EXT:hwt_address/Resources/Private/Templates/
+            1 = {$plugin.tx_hwtaddress.view.templateRootPath}
+        }
+        partialRootPaths {
+            0 = EXT:hwt_address/Resources/Private/Partials/
+            1 = {$plugin.tx_hwtaddress.view.partialRootPath}
+        }
+        layoutRootPaths {
+            0 = EXT:hwt_address/Resources/Private/Layouts/
+            1 = {$plugin.tx_hwtaddress.view.layoutRootPath}
+        }
+    }
+
 	settings {
 		list {
             displayPageRelated = {$plugin.tx_hwtaddress.settings.list.displayPageRelated}
             singlePid = {$plugin.tx_hwtaddress.settings.list.singlePid}
 		}
+
 		single {
             backPid = {$plugin.tx_hwtaddress.settings.single.backPid}
             redirectIfEmptyPid = {$plugin.tx_hwtaddress.settings.single.redirectIfEmptyPid}

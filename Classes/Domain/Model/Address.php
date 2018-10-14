@@ -154,6 +154,8 @@ class Address extends \Hwt\HwtAddress\DomainObject\AbstractManageableEntity {
 
     /**
      * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Hwt\HwtAddress\Domain\Model\Link>
+     * @TYPO3\CMS\Extbase\Annotation\ORM\Lazy
+     * @extensionScannerIgnoreLine Still needed for TYPO3 8.7
      * @lazy
      */
     protected $links;
@@ -172,6 +174,8 @@ class Address extends \Hwt\HwtAddress\DomainObject\AbstractManageableEntity {
      * images
      *
      * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\TYPO3\CMS\Extbase\Domain\Model\FileReference>
+     * @TYPO3\CMS\Extbase\Annotation\ORM\Lazy
+     * @extensionScannerIgnoreLine Still needed for TYPO3 8.7
      * @lazy
      */
     protected $images;
@@ -180,6 +184,8 @@ class Address extends \Hwt\HwtAddress\DomainObject\AbstractManageableEntity {
      * company images
      *
      * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\TYPO3\CMS\Extbase\Domain\Model\FileReference>
+     * @TYPO3\CMS\Extbase\Annotation\ORM\Lazy
+     * @extensionScannerIgnoreLine Still needed for TYPO3 8.7
      * @lazy
      */
     protected $companyImages;
@@ -195,6 +201,8 @@ class Address extends \Hwt\HwtAddress\DomainObject\AbstractManageableEntity {
      * related from addresses
      *
      * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Hwt\HwtAddress\Domain\Model\Address>
+     * @TYPO3\CMS\Extbase\Annotation\ORM\Lazy
+     * @extensionScannerIgnoreLine Still needed for TYPO3 8.7
      * @lazy
      */
     protected $relatedAddressFrom;

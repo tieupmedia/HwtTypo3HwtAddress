@@ -26,7 +26,7 @@ namespace Hwt\HwtAddress\Domain\Repository;
  ***************************************************************/
 
 /**
- * Address repository with all the callable functionality
+ * Abstract repository with all the callable functionality
  *
  * @package TYPO3
  * @subpackage tx_hwtaddress

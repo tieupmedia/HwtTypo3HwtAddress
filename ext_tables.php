@@ -1,4 +1,5 @@
 <?php
+
 if (!defined('TYPO3_MODE')) {
     die ('Access denied.');
 }
@@ -13,14 +14,3 @@ if (!defined('TYPO3_MODE')) {
  * allow db record on standard pages
  */
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::allowTableOnStandardPages('tx_hwtaddress_domain_model_address');
-
-
-/*
- * Add System Categories (deprecated since TYPO3 6.2.1)
- */
-/*\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::makeCategorizable(
-    $_EXTKEY,
-    'tx_hwtaddress_domain_model_address',
-    $fieldName = 'categories',
-    $options = array()
-);*/

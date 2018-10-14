@@ -1,8 +1,13 @@
 <?php
-if (!defined ('TYPO3_MODE')) {
+
+if (!defined('TYPO3_MODE')) {
     die ('Access denied.');
 }
 
+
+/*
+ * Configure plugin(s)
+ */
 \TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
     'Hwt.' . $_EXTKEY,
     'Address',
@@ -37,6 +42,9 @@ $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['t3lib/class.t3lib_tcemain.php']['proc
 $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['cms/layout/class.tx_cms_layout.php']['list_type_Info']['hwtaddress_address'][$_EXTKEY] = 'Hwt\\HwtAddress\\Hooks\\CmsLayout->getExtensionSummary';
 
 
+/*
+ * Add pageTS
+ */
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPageTSConfig('
     <INCLUDE_TYPOSCRIPT: source="FILE:EXT:hwt_address/Configuration/TSconfig/ContentElementWizard/mod.wizards.txt">
 ');
@@ -52,7 +60,7 @@ if (TYPO3_MODE === 'BE') {
             'apps-pagetree-folder-contains-hwtaddress' => 'folder-hwtaddress.gif',
             'ext-hwtaddress-wizard-icon' => 'ce_wiz.gif',
         );
-        
+
         /** @var \TYPO3\CMS\Core\Imaging\IconRegistry $iconRegistry */
         $iconRegistry = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance('TYPO3\\CMS\\Core\\Imaging\\IconRegistry');
 

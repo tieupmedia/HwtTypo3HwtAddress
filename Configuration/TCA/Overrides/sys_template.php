@@ -8,6 +8,6 @@ $extensionKey = 'hwt_address';
 
 
 /*
- * Default TypoScript
+ * Default selectable TypoScript
  */
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addStaticFile($extensionKey, 'Configuration/TypoScript', 'Modern Address');

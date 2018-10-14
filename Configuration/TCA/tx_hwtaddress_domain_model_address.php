@@ -314,7 +314,6 @@ $extTca = array(
 
         'info' => array(
             'exclude' => 1,
-            'l10n_mode' => 'noCopy',
             'label' => $ll . 'info',
             'config' => array(
                 'type' => 'text',
@@ -342,7 +341,6 @@ $extTca = array(
         ),
         'company_short' => array(
             'exclude' => 1,
-            'l10n_mode' => 'noCopy',
             'label' => $ll . 'company_short',
             'config' => array(
                 'type' => 'text',
@@ -352,7 +350,6 @@ $extTca = array(
         ),
         'company_bodytext' => array(
             'exclude' => 1,
-            'l10n_mode' => 'noCopy',
             'label' => $llTtc.'bodytext_formlabel',
             'defaultExtras' => 'richtext[]:rte_transform[mode=ts_css]',
             'config' => array(

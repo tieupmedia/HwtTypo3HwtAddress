@@ -53,23 +53,21 @@ $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['cms/layout/class.tx_cms_layout.php'][
 if (TYPO3_MODE === 'BE') {
     /*
      * Register folder icon
-     * For TYPO3 >= 7.5, older version just need tca.php codes
+     * (For TYPO3 >= 7.5)
      */
-    if ( version_compare(TYPO3_version, '7.5.0') >= 0 ) {
-        $icons = array(
-            'apps-pagetree-folder-contains-hwtaddress' => 'folder-hwtaddress.gif',
-            'ext-hwtaddress-wizard-icon' => 'ce_wiz.gif',
+    $icons = array(
+        'apps-pagetree-folder-contains-hwtaddress' => 'folder-hwtaddress.gif',
+        'ext-hwtaddress-wizard-icon' => 'ce_wiz.gif',
+    );
+
+    /** @var \TYPO3\CMS\Core\Imaging\IconRegistry $iconRegistry */
+    $iconRegistry = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance('TYPO3\\CMS\\Core\\Imaging\\IconRegistry');
+
+    foreach ($icons as $identifier => $file) {
+        $iconRegistry->registerIcon(
+            $identifier,
+            'TYPO3\\CMS\\Core\\Imaging\\IconProvider\\BitmapIconProvider',
+            array('source' => 'EXT:' . $_EXTKEY . '/Resources/Public/Icons/' . $file)
         );
-
-        /** @var \TYPO3\CMS\Core\Imaging\IconRegistry $iconRegistry */
-        $iconRegistry = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance('TYPO3\\CMS\\Core\\Imaging\\IconRegistry');
-
-        foreach ($icons as $identifier => $file) {
-            $iconRegistry->registerIcon(
-                $identifier,
-                'TYPO3\\CMS\\Core\\Imaging\\IconProvider\\BitmapIconProvider',
-                array('source' => 'EXT:' . $_EXTKEY . '/Resources/Public/Icons/' . $file)
-            );
-        }
     }
 }

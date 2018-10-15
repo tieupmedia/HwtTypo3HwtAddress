@@ -84,9 +84,9 @@ $extTca = array(
             'label' => $llGeneral . 'LGL.starttime',
             'config' => array(
                 'type' => 'input',
-                //'renderType' => 'inputDateTime',
-                'size' => 8,
-                'eval' => 'datetime',
+                'renderType' => 'inputDateTime',
+                'size' => 10,
+                'eval' => 'datetime,int',
                 'default' => 0,
             )
         ),
@@ -95,9 +95,9 @@ $extTca = array(
             'label' => $llGeneral . 'LGL.endtime',
             'config' => array(
                 'type' => 'input',
-                //'renderType' => 'inputDateTime',
-                'size' => 8,
-                'eval' => 'datetime',
+                'renderType' => 'inputDateTime',
+                'size' => 10,
+                'eval' => 'datetime,int',
                 'default' => 0,
             )
         ),
@@ -116,20 +116,10 @@ $extTca = array(
             'label' => $ll . 'parameter',
             'config' => array(
                 'type' => 'input',
+                'renderType' => 'inputLink',
                 'size' => 50,
                 'max' => 1024,
                 'eval' => 'trim',
-                'wizards' => array(
-                    'link' => array(
-                        'type' => 'popup',
-                        'title' => $llTtc . 'header_link_formlabel',
-                        'icon' => 'actions-wizard-link',
-                        'module' => array(
-                            'name' => 'wizard_link',
-                        ),
-                        'JSopenParams' => 'width=800,height=600,status=0,menubar=0,scrollbars=1'
-                    )
-                ),
                 'softref' => 'typolink'
             )
         ),

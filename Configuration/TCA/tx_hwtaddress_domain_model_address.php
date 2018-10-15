@@ -129,10 +129,13 @@ $extTca = array(
             'label' => $llGeneral . 'LGL.starttime',
             'config' => array(
                 'type' => 'input',
-                //'renderType' => 'inputDateTime',
-                'size' => 8,
-                'eval' => 'datetime',
+                'renderType' => 'inputDateTime',
+                'size' => 10,
+                'eval' => 'datetime,int',
                 'default' => 0,
+                'behaviour' => [
+                    'allowLanguageSynchronization' => true,
+                ],
             )
         ),
         'endtime' => array(
@@ -140,10 +143,13 @@ $extTca = array(
             'label' => $llGeneral . 'LGL.endtime',
             'config' => array(
                 'type' => 'input',
-                //'renderType' => 'inputDateTime',
-                'size' => 8,
-                'eval' => 'datetime',
+                'renderType' => 'inputDateTime',
+                'size' => 10,
+                'eval' => 'datetime,int',
                 'default' => 0,
+                'behaviour' => [
+                    'allowLanguageSynchronization' => true,
+                ],
             )
         ),
 
@@ -356,22 +362,14 @@ $extTca = array(
             'config' => array(
                 'type' => 'text',
                 'enableRichtext' => true,
+                'fieldControl' => array(
+                    'fullScreenRichtext' => array(
+                        'disabled' => false,
+                    ),
+                ),
                 'cols' => 30,
                 'rows' => 5,
                 'softref' => 'rtehtmlarea_images,typolink_tag,images,email[subst],url',
-                'wizards' => array(
-                    '_PADDING' => 2,
-                    'RTE' => array(
-                        'notNewRecords' => 1,
-                        'RTEonly' => 1,
-                        'type' => 'script',
-                        'title' => 'Full screen Rich Text Editing',
-                        'icon' => 'actions-wizard-rte',
-                        'module' => array(
-                            'name' => 'wizard_rte',
-                        ),
-                    ),
-                ),
             )
         ),
         'company_images' => array(
@@ -597,11 +595,6 @@ $extTca = array(
                 'minitems' => 0,
                 'maxitems' => 100,
                 'MM' => 'tx_hwtaddress_domain_model_address_related_mm',
-                'wizards' => array(
-                    'suggest' => array(
-                        'type' => 'suggest',
-                    ),
-                ),
             )
         ),
         'related_address_from' => array(
@@ -633,11 +626,6 @@ $extTca = array(
                 'minitems' => 0,
                 'maxitems' => 100,
                 'MM' => 'tx_hwtaddress_domain_model_pages_address_mm',
-                'wizards' => array(
-                    'suggest' => array(
-                        'type' => 'suggest',
-                    ),
-                ),
             )
         ),
     ),

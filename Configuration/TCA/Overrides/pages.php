@@ -69,11 +69,6 @@ if ( isset($extensionConfiguration['enableRelationsInPages']) && ($extensionConf
                 'minitems' => 0,
                 'maxitems' => 100,
                 'MM' => 'tx_hwtaddress_domain_model_pages_address_mm',
-                'wizards' => array(
-                    'suggest' => array(
-                        'type' => 'suggest',
-                    ),
-                ),
             )
         ),
     );

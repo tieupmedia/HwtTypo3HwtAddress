@@ -351,9 +351,9 @@ $extTca = array(
         'company_bodytext' => array(
             'exclude' => 1,
             'label' => $llTtc.'bodytext_formlabel',
-            'defaultExtras' => 'richtext[]:rte_transform[mode=ts_css]',
             'config' => array(
                 'type' => 'text',
+                'enableRichtext' => true,
                 'cols' => 30,
                 'rows' => 5,
                 'softref' => 'rtehtmlarea_images,typolink_tag,images,email[subst],url',

@@ -202,37 +202,39 @@ $extTca = array(
                     ),
                     // custom configuration for displaying fields in the overlay/reference table
                     // to use the imageoverlayPalette instead of the basicoverlayPalette
-                    'foreign_types' => array(
-                        '0' => array(
-                            'showitem' => '
-                                --palette--;' . $llTca . 'sys_file_reference.imageoverlayPalette;imageoverlayPalette,
-                                --palette--;;filePalette'
+                    'overrideChildTca' => array(
+                        'types' => array(
+                            '0' => array(
+                                'showitem' => '
+                                    --palette--;' . $llTca . 'sys_file_reference.imageoverlayPalette;imageoverlayPalette,
+                                    --palette--;;filePalette'
+                            ),
+                            \TYPO3\CMS\Core\Resource\File::FILETYPE_TEXT => array(
+                                'showitem' => '
+                                    --palette--;' . $llTca . 'sys_file_reference.imageoverlayPalette;imageoverlayPalette,
+                                    --palette--;;filePalette'
+                            ),
+                            \TYPO3\CMS\Core\Resource\File::FILETYPE_IMAGE => array(
+                                'showitem' => '
+                                    --palette--;' . $llTca . 'sys_file_reference.imageoverlayPalette;imageoverlayPalette,
+                                    --palette--;;filePalette'
+                            ),
+                            \TYPO3\CMS\Core\Resource\File::FILETYPE_AUDIO => array(
+                                'showitem' => '
+                                    --palette--;' . $llTca . 'sys_file_reference.imageoverlayPalette;imageoverlayPalette,
+                                    --palette--;;filePalette'
+                            ),
+                            \TYPO3\CMS\Core\Resource\File::FILETYPE_VIDEO => array(
+                                'showitem' => '
+                                    --palette--;' . $llTca . 'sys_file_reference.imageoverlayPalette;imageoverlayPalette,
+                                    --palette--;;filePalette'
+                            ),
+                            \TYPO3\CMS\Core\Resource\File::FILETYPE_APPLICATION => array(
+                                'showitem' => '
+                                    --palette--;' . $llTca . 'sys_file_reference.imageoverlayPalette;imageoverlayPalette,
+                                    --palette--;;filePalette'
+                            )
                         ),
-                        \TYPO3\CMS\Core\Resource\File::FILETYPE_TEXT => array(
-                            'showitem' => '
-                                --palette--;' . $llTca . 'sys_file_reference.imageoverlayPalette;imageoverlayPalette,
-                                --palette--;;filePalette'
-                        ),
-                        \TYPO3\CMS\Core\Resource\File::FILETYPE_IMAGE => array(
-                            'showitem' => '
-                                --palette--;' . $llTca . 'sys_file_reference.imageoverlayPalette;imageoverlayPalette,
-                                --palette--;;filePalette'
-                        ),
-                        \TYPO3\CMS\Core\Resource\File::FILETYPE_AUDIO => array(
-                            'showitem' => '
-                                --palette--;' . $llTca . 'sys_file_reference.imageoverlayPalette;imageoverlayPalette,
-                                --palette--;;filePalette'
-                        ),
-                        \TYPO3\CMS\Core\Resource\File::FILETYPE_VIDEO => array(
-                            'showitem' => '
-                                --palette--;' . $llTca . 'sys_file_reference.imageoverlayPalette;imageoverlayPalette,
-                                --palette--;;filePalette'
-                        ),
-                        \TYPO3\CMS\Core\Resource\File::FILETYPE_APPLICATION => array(
-                            'showitem' => '
-                                --palette--;' . $llTca . 'sys_file_reference.imageoverlayPalette;imageoverlayPalette,
-                                --palette--;;filePalette'
-                        )
                     ),
                     'maxitems' => 1,
                 ),
@@ -392,37 +394,39 @@ $extTca = array(
                     ),
                     // custom configuration for displaying fields in the overlay/reference table
                     // to use the imageoverlayPalette instead of the basicoverlayPalette
-                    'foreign_types' => array(
-                        '0' => array(
-                            'showitem' => '
-                                --palette--;' . $llTca . 'sys_file_reference.imageoverlayPalette;imageoverlayPalette,
-                                --palette--;;filePalette'
+                    'overrideChildTca' => array(
+                        'types' => array(
+                            '0' => array(
+                                'showitem' => '
+                                    --palette--;' . $llTca . 'sys_file_reference.imageoverlayPalette;imageoverlayPalette,
+                                    --palette--;;filePalette'
+                            ),
+                            \TYPO3\CMS\Core\Resource\File::FILETYPE_TEXT => array(
+                                'showitem' => '
+                                    --palette--;' . $llTca . 'sys_file_reference.imageoverlayPalette;imageoverlayPalette,
+                                    --palette--;;filePalette'
+                            ),
+                            \TYPO3\CMS\Core\Resource\File::FILETYPE_IMAGE => array(
+                                'showitem' => '
+                                    --palette--;' . $llTca . 'sys_file_reference.imageoverlayPalette;imageoverlayPalette,
+                                    --palette--;;filePalette'
+                            ),
+                            \TYPO3\CMS\Core\Resource\File::FILETYPE_AUDIO => array(
+                                'showitem' => '
+                                    --palette--;' . $llTca . 'sys_file_reference.imageoverlayPalette;imageoverlayPalette,
+                                    --palette--;;filePalette'
+                            ),
+                            \TYPO3\CMS\Core\Resource\File::FILETYPE_VIDEO => array(
+                                'showitem' => '
+                                    --palette--;' . $llTca . 'sys_file_reference.imageoverlayPalette;imageoverlayPalette,
+                                    --palette--;;filePalette'
+                            ),
+                            \TYPO3\CMS\Core\Resource\File::FILETYPE_APPLICATION => array(
+                                'showitem' => '
+                                    --palette--;' . $llTca . 'sys_file_reference.imageoverlayPalette;imageoverlayPalette,
+                                    --palette--;;filePalette'
+                            )
                         ),
-                        \TYPO3\CMS\Core\Resource\File::FILETYPE_TEXT => array(
-                            'showitem' => '
-                                --palette--;' . $llTca . 'sys_file_reference.imageoverlayPalette;imageoverlayPalette,
-                                --palette--;;filePalette'
-                        ),
-                        \TYPO3\CMS\Core\Resource\File::FILETYPE_IMAGE => array(
-                            'showitem' => '
-                                --palette--;' . $llTca . 'sys_file_reference.imageoverlayPalette;imageoverlayPalette,
-                                --palette--;;filePalette'
-                        ),
-                        \TYPO3\CMS\Core\Resource\File::FILETYPE_AUDIO => array(
-                            'showitem' => '
-                                --palette--;' . $llTca . 'sys_file_reference.imageoverlayPalette;imageoverlayPalette,
-                                --palette--;;filePalette'
-                        ),
-                        \TYPO3\CMS\Core\Resource\File::FILETYPE_VIDEO => array(
-                            'showitem' => '
-                                --palette--;' . $llTca . 'sys_file_reference.imageoverlayPalette;imageoverlayPalette,
-                                --palette--;;filePalette'
-                        ),
-                        \TYPO3\CMS\Core\Resource\File::FILETYPE_APPLICATION => array(
-                            'showitem' => '
-                                --palette--;' . $llTca . 'sys_file_reference.imageoverlayPalette;imageoverlayPalette,
-                                --palette--;;filePalette'
-                        )
                     ),
                     'maxitems' => 1,
                 ),

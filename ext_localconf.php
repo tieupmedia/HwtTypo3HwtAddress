@@ -31,12 +31,6 @@ if ($emConfiguration['enableKesearchHooks']) {
 
 
 /*
- * Register hook for preview of records
- */
-$GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['t3lib/class.t3lib_tcemain.php']['processDatamapClass'][$_EXTKEY] = 'Hwt\\HwtAddress\\Hooks\\Tcemain';
-
-
-/*
  * Register CmsLayout hook
  */
 $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['cms/layout/class.tx_cms_layout.php']['list_type_Info']['hwtaddress_address'][$_EXTKEY] = 'Hwt\\HwtAddress\\Hooks\\CmsLayout->getExtensionSummary';

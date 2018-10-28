@@ -30,7 +30,7 @@
                 <target>Adress-Liste</target>
             </trans-unit>
             <trans-unit id="flexform_setting.mode.address_single" xml:space="preserve">
-                <target>Adress-Detailansicht</target>
+                <target>Adress-Einzelansicht</target>
             </trans-unit>
             <trans-unit id="flexform_setting.mode.address_search" xml:space="preserve">
                 <target>Adress-Suche</target>
@@ -76,6 +76,33 @@
             </trans-unit>
             <trans-unit id="flexform_setting.orderDirection.desc" xml:space="preserve">
                 <target>absteigend</target>
+            </trans-unit>
+
+
+            <trans-unit id="flexform_setting.templateVariantList" xml:space="preserve">
+                <target>Template-Variante für Liste</target>
+            </trans-unit>
+            <trans-unit id="flexform_setting.templateVariantList.example" xml:space="preserve">
+                <target>Beispiel Liste</target>
+            </trans-unit>
+
+            <trans-unit id="flexform_setting.templateVariantSingle" xml:space="preserve">
+                <target>Template-Variante für Einzelansicht</target>
+            </trans-unit>
+            <trans-unit id="flexform_setting.templateVariantSingle.example" xml:space="preserve">
+                <target>Beispiel Einzelansicht</target>
+            </trans-unit>
+
+            <trans-unit id="flexform_setting.templateVariantSearch" xml:space="preserve">
+                <target>Template-Variante für Suche</target>
+            </trans-unit>
+            <trans-unit id="flexform_setting.templateVariantSearch.example" xml:space="preserve">
+                <target>Beispiel Suche</target>
+            </trans-unit>
+
+
+            <trans-unit id="flexform_tab.template" xml:space="preserve">
+                <target>Template</target>
             </trans-unit>
 
 

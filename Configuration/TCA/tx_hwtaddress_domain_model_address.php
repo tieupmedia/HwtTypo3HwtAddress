@@ -158,8 +158,8 @@ $extTca = array(
             'label' => $ll . 'academic',
             'config' => array(
                 'type' => 'input',
-                'size' => 15,
-                'max' => 20,
+                'size' => 20,
+                'max' => 30,
             )
         ),
         'firstname' => array(

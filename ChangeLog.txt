@@ -1,4 +1,19 @@
 2018-10-28 Heiko Westermann <hwt3@gmx.de>
+    * Version 0.2.0-beta - Compatibility and maintenance release
+    * [TASK] Removed compatibility code for TYPO3 < 7.5
+    * [UPDATE] Deprecation: #79440 - TCA Changes / Wizards suggest, rte fullwidth, _PADDING, wizard_link / render types 'inputLink', 'inputDateTime'
+    * [UPDATE] Deprecation: #80000 - InlineOverrideChildTca
+    * [UPDATE] Deprecation: #72856 - Removed RTE "modes" option + Deprecation: #79341 - TCA richtext configuration in defaultExtras dropped
+    * [UPDATE] Removed deprecated keys in ext_emconf.php
+    * [UPDATE] Breaking: #79242 - Remove l10n_mode noCopy
+    * [UPDATE] Compatibility for lazy property annotations
+    * [TASK] Updated version constraint for ke_search
+    * [TASK] Migrated $GLOBALS['TYPO3_DB'] functions to QueryBuilder in ke_search indexer hook
+    * [TASK] Updated version constraints
+    * [TASK] Reworked deprecated configs in plugin FlexForm, esp. 'renderType' and wizard settings
+    * [TASK] Reworked usage of sl() method, deprecated in 8.2 (Deprecation: #71917)
+
+2018-10-28 Heiko Westermann <hwt3@gmx.de>
     * Version 0.1.5-beta - Maintenance release
     * [TASK] Allow more characters in academic title
     * [TASK] Added constant declarations for constant editor

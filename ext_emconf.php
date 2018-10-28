@@ -17,14 +17,14 @@ $EM_CONF[$_EXTKEY] = array(
     'author' => 'Heiko Westermann',
     'author_email' => 'hwt3@gmx.de',
     'author_company' => 'tie-up media',
-    'state' => 'alpha',
+    'state' => 'beta',
     'uploadfolder' => 0,
     'createDirs' => '',
     'clearCacheOnLoad' => 0,
-    'version' => '0.2.0-rc.1',
+    'version' => '0.2.0',
     'constraints' => array(
         'depends' => array(
-            'typo3' => '8.7.0-9.2.99',
+            'typo3' => '8.7.0-9.5.99',
             'php' => '7.0.0-7.2.99',
         ),
         'conflicts' => array(

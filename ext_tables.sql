@@ -18,7 +18,7 @@ CREATE TABLE tx_hwtaddress_domain_model_address (
     starttime int(11) DEFAULT '0' NOT NULL,
     endtime int(11) DEFAULT '0' NOT NULL,
 
-    academic varchar(20) DEFAULT '' NOT NULL,
+    academic varchar(30) DEFAULT '' NOT NULL,
     firstname tinytext NOT NULL,
     lastname tinytext NOT NULL,
     gender int(1) DEFAULT '0' NOT NULL,

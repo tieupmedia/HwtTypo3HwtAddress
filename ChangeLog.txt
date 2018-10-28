@@ -1,3 +1,11 @@
+2018-10-28 Heiko Westermann <hwt3@gmx.de>
+    * Version 0.1.5-beta - Maintenance release
+    * [TASK] Allow more characters in academic title
+    * [TASK] Added constant declarations for constant editor
+    * [TASK] Added german translations for template variant fields in plugin flexform
+    * [TASK] Removed hook with old code for record preview  in <= TYPO3 6.5.
+    * [...] Use TCEMAIN.preview since TYPO3 7.x
+
 2018-10-14 Heiko Westermann <hwt3@gmx.de>
     * Version 0.1.4-beta - Feature and maintenance release
     * [FEATURE] Advanced 'record not found' handling for single view.

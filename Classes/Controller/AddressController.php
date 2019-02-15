@@ -89,6 +89,11 @@ class AddressController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControll
                 $isSearch = TRUE;
         }
 
+        /**
+         * array Stores UIDs of records to be assigned to the view.
+         */
+        $addressRecords = [];
+
         if ($this->settings['addressStoragePages'] && ($this->settings['addressStoragePages'] != '')) {
             $addressRecords = $this->addressRepository->findInPageIds($this->settings['addressStoragePages'], $this->settings['orderBy'], $this->settings['orderDirection']);
         }

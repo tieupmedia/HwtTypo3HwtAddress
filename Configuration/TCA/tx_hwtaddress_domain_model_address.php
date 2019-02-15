@@ -52,7 +52,7 @@ $extTca = array(
             company_title,company_subtitle,company_short,company_bodytext,company_images,
             phone,mobile,fax,email,www,street,building,zip,city,region,country,longitude,latitude'
     ),
-    'feInterface' => $TCA['tx_hwtaddress_domain_model_address']['feInterface'],
+    'feInterface' => $GLOBALS['TCA']['tx_hwtaddress_domain_model_address']['feInterface'],
     'columns' => array(
         'sys_language_uid' => [
             'exclude' => true,

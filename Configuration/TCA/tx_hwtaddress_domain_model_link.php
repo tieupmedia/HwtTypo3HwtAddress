@@ -45,7 +45,7 @@ $extTca = array(
     'interface' => array(
         'showRecordFieldList' => 'sorting,hidden,starttime,endtime,header,type,parameter,linktext'
     ),
-    'feInterface' => $TCA['tx_hwtaddress_domain_model_link']['feInterface'],
+    'feInterface' => $GLOBALS['TCA']['tx_hwtaddress_domain_model_link']['feInterface'],
     'columns' => array(
         'pid' => array(
             'label' => 'pid',

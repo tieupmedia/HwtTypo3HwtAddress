@@ -100,6 +100,8 @@ class AddressController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControll
         /*
          * Get address records
          */
+        $addressRecords = array();
+
         if ($this->settings['addressStoragePages'] && ($this->settings['addressStoragePages'] != '')) {
             $addressRecords = $this->addressRepository->findInPageIds($this->settings['addressStoragePages'], $this->settings['orderBy'], $this->settings['orderDirection']);
         }
@@ -145,7 +147,7 @@ class AddressController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControll
              is_array($this->settings['single']['recordNotFoundHandling']) &&
              isset($this->settings['single']['recordNotFoundHandling']['mode']) ) {
                 // Do configurable error handling, if no address record was found
-            
+
             return $this->doConfiguredErrorHandling($this->settings['single']['recordNotFoundHandling']);
         }
 

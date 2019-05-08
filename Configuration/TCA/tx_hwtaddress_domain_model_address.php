@@ -9,7 +9,9 @@ if (!defined('TYPO3_MODE')) {
 $ll = 'LLL:EXT:hwt_address/Resources/Private/Language/locallang_db.xlf:tx_hwtaddress_domain_model_address.';
 
 // General locallang
-if ( version_compare(TYPO3_version, '8.5.0') >= 0 ) {
+if ( version_compare(TYPO3_version, '9.3.0') >= 0 ) {
+    $llGeneral = 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:';
+} elseif ( version_compare(TYPO3_version, '8.5.0') >= 0 ) {
     $llGeneral = 'LLL:EXT:lang/Resources/Private/Language/locallang_general.xlf:';
 } else {
     $llGeneral = 'LLL:EXT:lang/locallang_general.xlf:';

@@ -47,11 +47,53 @@ $extTca = array(
         ),
         'iconfile' => 'EXT:hwt_address/Resources/Public/Icons/tx_hwtaddress_domain_model_link.gif',
         'searchFields' => 'uid,header,type,link,linktext',
+
+        'languageField' => 'sys_language_uid',
+        'transOrigPointerField' => 'l10n_parent',
+        'transOrigDiffSourceField' => 'l10n_diffsource',
     ),
     'interface' => array(
         'showRecordFieldList' => 'sorting,hidden,starttime,endtime,header,type,parameter,linktext'
     ),
     'columns' => array(
+        'sys_language_uid' => [
+            'exclude' => true,
+            'label' => $llGeneral . 'LGL.language',
+            'config' => [
+                'type' => 'select',
+                'renderType' => 'selectSingle',
+                'special' => 'languages',
+                'items' => [
+                    [
+                        $llGeneral . 'LGL.allLanguages',
+                        -1,
+                        'flags-multiple'
+                    ],
+                ],
+                'default' => 0,
+            ]
+        ],
+        'l10n_parent' => [
+            'displayCond' => 'FIELD:sys_language_uid:>:0',
+            'exclude' => true,
+            'label' => $llGeneral . 'LGL.l18n_parent',
+            'config' => [
+                'type' => 'select',
+                'renderType' => 'selectSingle',
+                'items' => [
+                    ['', 0],
+                ],
+                'foreign_table' => 'tx_hwtaddress_domain_model_address',
+                'foreign_table_where' => 'AND tx_hwtaddress_domain_model_address.pid=###CURRENT_PID### AND tx_hwtaddress_domain_model_address.sys_language_uid IN (-1,0)',
+                'default' => 0,
+            ]
+        ],
+        'l10n_diffsource' => [
+            'config' => [
+                'type' => 'passthrough',
+                'default' => ''
+            ]
+        ],
         'pid' => array(
             'label' => 'pid',
             'config' => array(
@@ -140,6 +182,7 @@ $extTca = array(
         'type' => array(
             'exclude' => 0,
             'label' => $ll . 'type',
+            'l10n_mode' => 'exclude',
             'config' => array(
                 'type' => 'select',
                 'renderType' => 'selectSingle',
@@ -167,6 +210,9 @@ $extTca = array(
             'showitem' =>
                 '--palette--;'.$ll.'palette.name;paletteName,
 
+                --div--;'.$ll.'tabs.language,
+                    --palette--;'.$ll.'palette.language;paletteLanguage,
+
                 --div--;LLL:EXT:cms/locallang_ttc.xlf:tabs.access,
                     --palette--;'.$llTtc.'palette.visibility;paletteVisbility,
                     --palette--;'.$llTtc.'palette.access;paletteAccess,'
@@ -185,6 +231,11 @@ $extTca = array(
         'paletteAccess' => array(
             'showitem' => 'starttime;'.$llTtc.'starttime_formlabel, endtime;'.$llTtc.'endtime_formlabel,',
             'canNotCollapse' => TRUE,
+        ),
+        'paletteLanguage' => array(
+            'showitem' => '
+                sys_language_uid;'.$llTtc.'sys_language_uid_formlabel,l10n_parent
+            ',
         ),
     ),
 );

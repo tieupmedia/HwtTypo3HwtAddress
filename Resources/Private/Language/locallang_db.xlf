@@ -138,6 +138,9 @@
             <trans-unit id="tx_hwtaddress_domain_model_address.palette.relations_pages" xml:space="preserve">
                 <source>Page Relations</source>
             </trans-unit>
+            <trans-unit id="tx_hwtaddress_domain_model_address.palette.language" xml:space="preserve">
+                <source>Language settings</source>
+            </trans-unit>
 
 
             <trans-unit id="tx_hwtaddress_domain_model_address.tabs.address" xml:space="preserve">
@@ -148,6 +151,9 @@
             </trans-unit>
             <trans-unit id="tx_hwtaddress_domain_model_address.tabs.relations" xml:space="preserve">
                 <source>Relations</source>
+            </trans-unit>
+            <trans-unit id="tx_hwtaddress_domain_model_address.tabs.language" xml:space="preserve">
+                <source>Language</source>
             </trans-unit>
 
 
@@ -208,6 +214,13 @@
 
             <trans-unit id="tx_hwtaddress_domain_model_link.palette.name" xml:space="preserve">
                 <source>Link-Attributes</source>
+            </trans-unit>
+            <trans-unit id="tx_hwtaddress_domain_model_link.palette.language" xml:space="preserve">
+                <source>Language settings</source>
+            </trans-unit>
+
+            <trans-unit id="tx_hwtaddress_domain_model_link.tabs.language" xml:space="preserve">
+                <source>Language</source>
             </trans-unit>
 
 

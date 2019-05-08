@@ -215,6 +215,13 @@
             <trans-unit id="tx_hwtaddress_domain_model_link.palette.name" xml:space="preserve">
                 <source>Link-Attributes</source>
             </trans-unit>
+            <trans-unit id="tx_hwtaddress_domain_model_link.palette.language" xml:space="preserve">
+                <source>Language settings</source>
+            </trans-unit>
+
+            <trans-unit id="tx_hwtaddress_domain_model_link.tabs.language" xml:space="preserve">
+                <source>Language</source>
+            </trans-unit>
 
 
 

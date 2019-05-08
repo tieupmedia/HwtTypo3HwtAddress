@@ -81,6 +81,10 @@ CREATE TABLE tx_hwtaddress_domain_model_address_related_mm (
 # Table structure for table 'tx_hwtaddress_domain_model_link'
 #
 CREATE TABLE tx_hwtaddress_domain_model_link (
+    sys_language_uid int(11) DEFAULT '0' NOT NULL,
+    l10n_parent int(11) DEFAULT '0' NOT NULL,
+    l10n_diffsource mediumblob NOT NULL,
+
     uid int(11) NOT NULL auto_increment,
     pid int(11) DEFAULT '0' NOT NULL,
     tstamp int(11) DEFAULT '0' NOT NULL,

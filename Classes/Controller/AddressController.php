@@ -51,6 +51,8 @@ class AddressController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControll
         $this->addressRepository = $addressRepository;
     }
 
+
+
     /**
      * Output search form for address
      *
@@ -67,12 +69,17 @@ class AddressController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControll
         $this->view->assign('searchform', array('zip'=>$zip, 'city'=>$city));
     }
 
+
+
     /**
      * Outputs a list view of address
      *
      * @return void
      */
     public function listAction() {
+        /*
+         * Prepare zip or city search, if requested
+         */
         if ($this->request->hasArgument('zip') && ($this->request->getArgument('zip')!='')) {
             $zip = $this->request->getArgument('zip');
             $isSearch = TRUE;
@@ -89,6 +96,12 @@ class AddressController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControll
                 $isSearch = TRUE;
         }
 
+
+        /*
+         * Get address records
+         */
+        $addressRecords = array();
+
         if ($this->settings['addressStoragePages'] && ($this->settings['addressStoragePages'] != '')) {
             $addressRecords = $this->addressRepository->findInPageIds($this->settings['addressStoragePages'], $this->settings['orderBy'], $this->settings['orderDirection']);
         }
@@ -102,8 +115,11 @@ class AddressController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControll
         if ((count($addressRecords)==0) && $this->settings['addressRecords']) {
             $addressRecords = $this->addressRepository->findByUidInList($this->settings['addressRecords'], $this->settings['orderBy'], $this->settings['orderDirection']);
         }
+
         $this->view->assign('addresses', $addressRecords);
     }
+
+
 
     /**
      * Single view of a address record
@@ -130,11 +146,11 @@ class AddressController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControll
         if ( !$record &&
              is_array($this->settings['single']['recordNotFoundHandling']) &&
              isset($this->settings['single']['recordNotFoundHandling']['mode']) ) {
-
                 // Do configurable error handling, if no address record was found
+
             return $this->doConfiguredErrorHandling($this->settings['single']['recordNotFoundHandling']);
         }
-                                  
+
         $this->view->assign('address', $record);
     }
 }

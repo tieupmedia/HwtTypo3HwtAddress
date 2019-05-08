@@ -58,7 +58,7 @@ if ( isset($extensionConfiguration['enableRelationsInPages']) && ($extensionConf
         ),
     );
 
-    \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTCAcolumns('pages', $tempColumns, 1);
+    \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTCAcolumns('pages', $tempColumns);
     \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addToAllTCAtypes(
         'pages',
         'tx_hwtaddress_related_address'

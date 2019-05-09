@@ -1,26 +1,37 @@
-<div class="address-single">
-    <f:if condition="{address}">
+<f:layout name="default" />
+
+<f:section name="main">
+    <f:if condition="{settings.templateVariantSingle}">
         <f:then>
-            <f:if condition="{address.lastname}">
-                <f:then>
-                    <f:render partial="Address/Person" arguments="{_all}"/>
-                </f:then>
-                <f:else>
-                    <f:render partial="Address/Company" arguments="{_all}"/>
-                </f:else>
-            </f:if>
-
-
-            <f:render partial="Address/Categories" arguments="{categories: address.categories}" />
-
-            <f:render partial="Address/Images" arguments="{images: address.images}" />
-
-            <f:render partial="Address/Links" arguments="{links: address.links}" />
-
-            <f:render partial="Address/Assets" arguments="{assets: address.assets}" />
+            <f:render partial="Address/TemplateVariants/Single/{settings.templateVariantSingle -> f:format.case(mode: 'capital')}" arguments="{_all}"/>
         </f:then>
         <f:else>
-            <f:render partial="Address/SingleNotFound" />
+            <div class="address-single">
+                <f:if condition="{address}">
+                    <f:then>
+                        <f:if condition="{address.lastname}">
+                            <f:then>
+                                <f:render partial="Address/Person" arguments="{_all}"/>
+                            </f:then>
+                            <f:else>
+                                <f:render partial="Address/Company" arguments="{_all}"/>
+                            </f:else>
+                        </f:if>
+
+
+                        <f:render partial="Address/Categories" arguments="{categories: address.categories}" />
+
+                        <f:render partial="Address/Images" arguments="{images: address.images}" />
+
+                        <f:render partial="Address/Links" arguments="{links: address.links}" />
+
+                        <f:render partial="Address/Assets" arguments="{assets: address.assets}" />
+                    </f:then>
+                    <f:else>
+                        <f:render partial="Address/SingleNotFound" />
+                    </f:else>
+                </f:if>
+            </div>
         </f:else>
     </f:if>
-</div>
+</f:section>

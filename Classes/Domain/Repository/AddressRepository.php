@@ -79,7 +79,7 @@ SQL;
         $query->getQuerySettings()->setRespectStoragePage(FALSE);
 
         if ($zip) {
-            $zip = substr($zip, 0, 2);
+            $zip = substr($zip, 0, 5);
             //$zip = (int)$zip;
 
             // protect any result if zip is false

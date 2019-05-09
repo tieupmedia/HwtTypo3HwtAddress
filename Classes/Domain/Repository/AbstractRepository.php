@@ -5,7 +5,7 @@ namespace Hwt\HwtAddress\Domain\Repository;
 /***************************************************************
  *  Copyright notice
  *
- *  (c) 2014 Heiko Westermann <hwt3@gmx.de>
+ *  (c) 2014-2109 Heiko Westermann <hwt3@gmx.de>
  *  All rights reserved
  *
  *  This script is part of the TYPO3 project. The TYPO3 project is
@@ -35,18 +35,40 @@ namespace Hwt\HwtAddress\Domain\Repository;
 class AbstractRepository extends \TYPO3\CMS\Extbase\Persistence\Repository {
 
     /**
-     * Find address records in given page uids
+     * Find records in given page uids
      *
      * @param string $pids
      * @param string $orderBy
-     * @param string $orderDirection
+     * @param null|string $orderDirection
+     * @param null|int $limit
+     * @param null|int $offset
      *
      * @return \TYPO3\CMS\Extbase\Persistence\QueryResultInterface
      */
-    public function findInPageIds($pids, $orderBy, $orderDirection) {
+    public function findInPageIds($pids, $orderBy='uid', $orderDirection=null, $limit=null, $offset=null) {
         $query = $this->createQuery();
         $query->getQuerySettings()->setRespectStoragePage(FALSE);
-        if ($orderDirection == 'desc') {
+
+        $this->_setOrderings($query, $orderBy, $orderDirection);
+        $this->_setRange($query, $limit, $offset);
+
+        $result = $query->matching($query->in('pid', explode(',', $pids)))->execute();
+
+        return $result;
+    }
+
+
+
+    /*
+     * Set orderings helper function
+     *
+     * @param \TYPO3\CMS\Extbase\Persistence\QueryInterface $query
+     * @param string $orderBy
+     * @param null|string $orderDirection
+     */
+    protected function _setOrderings(&$query, $orderBy='uid', $orderDirection)
+    {
+        if ( $orderDirection === 'desc' ) {
             $query->setOrderings(array(
                 $orderBy => \TYPO3\CMS\Extbase\Persistence\QueryInterface::ORDER_DESCENDING
             ));
@@ -56,8 +78,20 @@ class AbstractRepository extends \TYPO3\CMS\Extbase\Persistence\Repository {
                 $orderBy => \TYPO3\CMS\Extbase\Persistence\QueryInterface::ORDER_ASCENDING
             ));
         }
-        //$query->getQuerySettings()->setRespectEnableFields(TRUE);
+    }
 
-        return $query->matching($query->in('pid', explode(',', $pids)))->execute();
+
+
+    /*
+     * Set range for result items
+     *
+     * @param \TYPO3\CMS\Extbase\Persistence\QueryInterface $query
+     * @param null|int $limit
+     * @param null|int $offset
+     */
+    protected function _setRange(&$query, $limit=null, $offset=null)
+    {
+        if ($limit > 0) {$query->setLimit($limit);}
+        if ($offset > 0) {$query->setOffset($offset);}
     }
 }

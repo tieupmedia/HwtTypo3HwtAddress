@@ -33,7 +33,7 @@
                 <source>Address Single</source>
             </trans-unit>
             <trans-unit id="flexform_setting.mode.address_search" xml:space="preserve">
-                <source>Address Search</source>
+                <source>Address Search (Zip / City)</source>
             </trans-unit>
             <trans-unit id="flexform_setting.addressSingleRecord" xml:space="preserve">
                 <source>Single Address Record</source>

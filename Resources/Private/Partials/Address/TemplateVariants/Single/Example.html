@@ -1,0 +1,28 @@
+<h3>Example variant of template 'Single'</h3>
+
+<div class="address-single">
+    <f:if condition="{address}">
+        <f:then>
+            <f:if condition="{address.lastname}">
+                <f:then>
+                    <f:render partial="Address/Person" arguments="{_all}"/>
+                </f:then>
+                <f:else>
+                    <f:render partial="Address/Company" arguments="{_all}"/>
+                </f:else>
+            </f:if>
+
+
+            <f:render partial="Address/Categories" arguments="{categories: address.categories}" />
+
+            <f:render partial="Address/Images" arguments="{images: address.images}" />
+
+            <f:render partial="Address/Links" arguments="{links: address.links}" />
+
+            <f:render partial="Address/Assets" arguments="{assets: address.assets}" />
+        </f:then>
+        <f:else>
+            <f:render partial="Address/SingleNotFound" />
+        </f:else>
+    </f:if>
+</div>

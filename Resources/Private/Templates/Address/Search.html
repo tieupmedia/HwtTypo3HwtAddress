@@ -1,4 +1,24 @@
-<form class="hwt-address-zipsearch" action="" method="post">
-    <fieldset><div class="hwt-fieldwrap"><label for="zip">Postleitzahl *</label> <input type="text" name="hwtAddress[zip]" id="zip" size="5" value="" /></div></fieldset>
-    <fieldset class="hwt-fieldset-submit"><input type="submit" name="hwtAddress[submit]" value="absenden" /></fieldset>
-</form>
+<f:layout name="default" />
+
+<f:section name="main">
+    <f:if condition="{settings.templateVariantSearch}">
+        <f:then>
+            <f:render partial="Address/TemplateVariants/Search/{settings.templateVariantSearch -> f:format.case(mode: 'capital')}" arguments="{_all}"/>
+        </f:then>
+        <f:else>
+            <f:form method="post" class="hwt-address-zipsearch">
+                <fieldset>
+                    <div class="hwt-fieldwrap">
+                        <label for="zip">Postleitzahl *</label> <f:form.textfield name="zip" id="zip" size="5" value="{searchform.zip}" />
+                    </div>
+                    <div class="hwt-fieldwrap">
+                        <label for="city">Stadt *</label> <f:form.textfield name="city" id="city" size="15" value="{searchform.city}" />
+                    </div>
+                </fieldset>
+                <fieldset class="hwt-fieldset-submit">
+                    <f:form.submit name="submit" value="absenden" />
+                </fieldset>
+            </f:form>
+        </f:else>
+    </f:if>
+</f:section>

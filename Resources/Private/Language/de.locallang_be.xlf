@@ -33,7 +33,7 @@
                 <target>Adress-Einzelansicht</target>
             </trans-unit>
             <trans-unit id="flexform_setting.mode.address_search" xml:space="preserve">
-                <target>Adress-Suche</target>
+                <target>Adress-Suche (PLZ / Stadt)</target>
             </trans-unit>
             <trans-unit id="flexform_setting.addressSingleRecord" xml:space="preserve">
                 <target>Einzelner Adress-Datensatz</target>

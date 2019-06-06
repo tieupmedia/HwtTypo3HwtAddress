@@ -5,7 +5,7 @@ namespace Hwt\HwtAddress\Domain\Repository;
 /***************************************************************
  *  Copyright notice
  *
- *  (c) 2014 Heiko Westermann <hwt3@gmx.de>
+ *  (c) 2014-2019 Heiko Westermann <hwt3@gmx.de>
  *  All rights reserved
  *
  *  This script is part of the TYPO3 project. The TYPO3 project is
@@ -67,14 +67,19 @@ SQL;
     /**
      * Find addresses without pid restriction
      *
+     * @param false|string $categories
+     * @param null|int $zip
+     * @param null|string $orderBy
+     * @param null|string $orderDirection
+     *
      * @return \TYPO3\CMS\Extbase\Persistence\QueryResultInterface addresses
      */
-    public function findAllWithoutPidRestriction($categories, $zip, $orderBy, $orderDirection) {
+    public function findAllWithoutPidRestriction($categories, $zip=null, $orderBy=null, $orderDirection=null) {
         $query = $this->createQuery();
         $query->getQuerySettings()->setRespectStoragePage(FALSE);
 
         if ($zip) {
-            $zip = substr($zip, 0, 2);
+            $zip = substr($zip, 0, 5);
             //$zip = (int)$zip;
 
             // protect any result if zip is false
@@ -128,28 +133,21 @@ SQL;
      * Find addresses by uid list
      *
      * @param string $uids comma separated address uids
-     * @param string $orderBy
-     * @param string $orderDirection
+     * @param null|string $orderBy
+     * @param null|string $orderDirection
      *
      * @return \TYPO3\CMS\Extbase\Persistence\QueryResultInterface addresses
      */
-    public function findByUidInList($uids, $orderBy, $orderDirection) {
-        $uids = explode(',', $uids);
+    public function findByUidInList($uids, $orderBy=null, $orderDirection=null) {
         $query = $this->createQuery();
         $query->getQuerySettings()->setRespectStoragePage(FALSE);
+
+        $uids = explode(',', $uids);
         $query->matching(
-                $query->in('uid', $uids)
+            $query->in('uid', $uids)
         );
-        if ($orderDirection == 'desc') {
-            $query->setOrderings(array(
-                $orderBy => \TYPO3\CMS\Extbase\Persistence\QueryInterface::ORDER_DESCENDING
-            ));
-        }
-        else {
-            $query->setOrderings(array(
-                $orderBy => \TYPO3\CMS\Extbase\Persistence\QueryInterface::ORDER_ASCENDING
-            ));
-        }
+
+        $this->_setOrderings($query, $orderBy, $orderDirection);
 
         return $query->execute();
     }

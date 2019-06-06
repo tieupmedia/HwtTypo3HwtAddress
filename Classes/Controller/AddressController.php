@@ -60,12 +60,13 @@ class AddressController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControll
      */
     public function searchAction() {
         // workaround cause only $zip is filled. a caching problem?
-        if ($this->request->hasArgument('city')) {
-            $city = $this->request->getArgument('city');
-        }
-        elseif ($this->request->hasArgument('zip')) {
+        if ( $this->request->hasArgument('zip') && ($this->request->getArgument('zip')!='') ) {
             $zip = $this->request->getArgument('zip');
         }
+        elseif ( $this->request->hasArgument('city') && ($this->request->getArgument('city')!='') ) {
+            $city = $this->request->getArgument('city');
+        }
+
         $this->view->assign('searchform', array('zip'=>$zip, 'city'=>$city));
     }
 

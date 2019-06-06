@@ -1,0 +1,12 @@
+<h3>Example variant of template 'Search'</h3>
+
+<f:form method="post" class="hwt-address-zipsearch">
+    <fieldset>
+        <div class="hwt-fieldwrap">
+            <label for="zip">Postleitzahl *</label> <f:form.textfield name="zip" id="zip" size="5" value="{searchform.zip}" />
+        </div>
+    </fieldset>
+    <fieldset class="hwt-fieldset-submit">
+        <f:form.submit name="submit" value="absenden" />
+    </fieldset>
+</f:form>

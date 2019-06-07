@@ -88,8 +88,19 @@ class CmsLayout {
 
             $this->flexformData = \TYPO3\CMS\Core\Utility\GeneralUtility::xml2array($params['row']['pi_flexform']);
 
-            $actions = $this->getFieldFromFlexform('switchableControllerActions');
 
+            $actions = $this->getFieldFromFlexform('switchableControllerActions');
+            $actionsArray = explode(';', $actions);
+            foreach ( $actionsArray as $action ) {
+                $action = strtolower(str_replace('->', '_', $action));
+                $result .= $this->getPluginLL(self::LLPATH . 'flexform_setting.mode.' . $action) . ' ';
+            }
+
+
+
+            /*
+             * Plugin settings
+             */
             $this->tableData[] = array(
                 $this->getPluginLL(self::LLPATH . 'flexform_setting.addressStoragePages'),
                 $this->getFieldFromFlexform('settings.addressStoragePages')
@@ -108,11 +119,11 @@ class CmsLayout {
                 );
                 $this->tableData[] = array(
                     $this->getPluginLL(self::LLPATH . 'flexform_setting.orderBy'),
-                    $this->getFieldFromFlexform('settings.orderBy')
+                    $this->getPluginLL(self::LLPATH . 'flexform_setting.orderBy.' . $this->getFieldFromFlexform('settings.orderBy'))
                 );
                 $this->tableData[] = array(
                     $this->getPluginLL(self::LLPATH . 'flexform_setting.orderDirection'),
-                    $this->getFieldFromFlexform('settings.orderDirection')
+                    $this->getPluginLL(self::LLPATH . 'flexform_setting.orderDirection.' . $this->getFieldFromFlexform('settings.orderDirection'))
                 );
             }
 
@@ -129,29 +140,29 @@ class CmsLayout {
             if ($actions === 'Address->single') {
                 $this->tableData[] = array(
                     $this->getPluginLL(self::LLPATH . 'flexform_setting.templateVariantSingle'),
-                    $this->getFieldFromFlexform('settings.templateVariantSingle', 'template')
+                    ucfirst($this->getFieldFromFlexform('settings.templateVariantSingle', 'template'))
                 );
             }
             elseif (($actions === 'Address->list;Address->single')) {
                 $this->tableData[] = array(
                     $this->getPluginLL(self::LLPATH . 'flexform_setting.templateVariantList'),
-                    $this->getFieldFromFlexform('settings.templateVariantList', 'template')
+                    ucfirst($this->getFieldFromFlexform('settings.templateVariantList', 'template'))
                 );
                 $this->tableData[] = array(
                     $this->getPluginLL(self::LLPATH . 'flexform_setting.templateVariantSingle'),
-                    $this->getFieldFromFlexform('settings.templateVariantSingle', 'template')
+                    ucfirst($this->getFieldFromFlexform('settings.templateVariantSingle', 'template'))
                 );
             }
             elseif (($actions === 'Address->search')) {
                 $this->tableData[] = array(
                     $this->getPluginLL(self::LLPATH . 'flexform_setting.templateVariantSearch'),
-                    $this->getFieldFromFlexform('settings.templateVariantSearch', 'template')
+                    ucfirst($this->getFieldFromFlexform('settings.templateVariantSearch', 'template'))
                 );
             }
 
 
 
-            $result .= $actions . $this->renderSettingsAsTable();
+            $result .= $this->renderSettingsAsTable();
         }
 
         return $result;

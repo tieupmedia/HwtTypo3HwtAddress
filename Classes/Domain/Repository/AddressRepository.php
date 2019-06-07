@@ -186,4 +186,57 @@ SQL;
 
         return $query->execute();
     }
+
+
+
+    /**
+     * Find addresses by uid list, ordered by uid list
+     *
+     * @param string $uids comma separated address uids
+     * @param null|string $orderBy comma separated uid list
+     * @param null|string $orderDirection
+     *
+     * @return \TYPO3\CMS\Extbase\Persistence\QueryResultInterface addresses
+     */
+    public function findByUidInListWithOrderList($uids, $orderBy=null, $orderDirection=null) {
+        // if oderBy isn't set, just order by uid list
+        if ( !$orderBy ) {
+            $orderBy = $uids;
+        }
+
+
+        // Create the query
+        $table = 'tx_hwtaddress_domain_model_address';
+
+        $connectionPool = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(
+            \TYPO3\CMS\Core\Database\ConnectionPool::class
+        );
+        $queryBuilder = $connectionPool->getQueryBuilderForTable($table);
+
+        if ( TYPO3_MODE === 'FE' ) {
+            $queryBuilder->setRestrictions(
+                \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(
+                    \TYPO3\CMS\Core\Database\Query\Restriction\FrontendRestrictionContainer::class
+                )
+            );
+        }
+
+        $queryBuilder
+            ->select('*')
+            ->from($table)
+            ->where($queryBuilder->expr()->in('uid', $uids))
+            ->add('orderBy', 'FIELD(' . $table . '.uid,' . $orderBy . ')');
+
+        $result = $queryBuilder->execute();
+
+
+        // Map rows (array) to objects (model)
+        $dataMapper = $this->objectManager->get(
+            \TYPO3\CMS\Extbase\Persistence\Generic\Mapper\DataMapper::class
+        );
+        $items = $dataMapper->map(\Hwt\HwtAddress\Domain\Model\Address::class, $result->fetchAll());
+
+
+        return $items;
+    }
 }

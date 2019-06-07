@@ -127,19 +127,23 @@
                                         <numIndex index="0">LLL:EXT:hwt_address/Resources/Private/Language/locallang_be.xml:flexform_setting.orderBy.sorting</numIndex>
                                         <numIndex index="1">sorting</numIndex>
                                     </numIndex>
-                                    <numIndex index="1" type="array">
+                                    <numIndex index="1">
+                                        <numIndex index="0">LLL:EXT:hwt_address/Resources/Private/Language/locallang_be.xml:flexform_setting.orderBy.selectedrecords</numIndex>
+                                        <numIndex index="1">selectedrecords</numIndex>
+                                    </numIndex>
+                                    <numIndex index="2" type="array">
                                         <numIndex index="0">LLL:EXT:hwt_address/Resources/Private/Language/locallang_be.xml:flexform_setting.orderBy.firstname</numIndex>
                                         <numIndex index="1">firstname</numIndex>
                                     </numIndex>
-                                    <numIndex index="2">
+                                    <numIndex index="3">
                                         <numIndex index="0">LLL:EXT:hwt_address/Resources/Private/Language/locallang_be.xml:flexform_setting.orderBy.lastname</numIndex>
                                         <numIndex index="1">lastname</numIndex>
                                     </numIndex>
-                                    <numIndex index="3">
+                                    <numIndex index="4">
                                         <numIndex index="0">LLL:EXT:hwt_address/Resources/Private/Language/locallang_be.xml:flexform_setting.orderBy.company_title</numIndex>
                                         <numIndex index="1">company_title</numIndex>
                                     </numIndex>
-                                    <numIndex index="4">
+                                    <numIndex index="5">
                                         <numIndex index="0">LLL:EXT:hwt_address/Resources/Private/Language/locallang_be.xml:flexform_setting.orderBy.crdate</numIndex>
                                         <numIndex index="1">crdate</numIndex>
                                     </numIndex>

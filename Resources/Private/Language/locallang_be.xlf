@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xliff version="1.0">
-    <file source-language="en" datatype="plaintext" original="messages" date="2017-10-10T17:54:12Z" product-name="tx_hwtaddress">
+    <file source-language="en" datatype="plaintext" original="messages" date="2018-06-06T17:54:12Z" product-name="tx_hwtaddress">
         <header/>
         <body>
             <trans-unit id="folder" xml:space="preserve">
@@ -53,7 +53,10 @@
                 <source>Order by</source>
             </trans-unit>
             <trans-unit id="flexform_setting.orderBy.sorting" xml:space="preserve">
-                <source>sorting</source>
+                <source>sorting (storage list)</source>
+            </trans-unit>
+            <trans-unit id="flexform_setting.orderBy.selectedrecords" xml:space="preserve">
+                <source>selected records</source>
             </trans-unit>
             <trans-unit id="flexform_setting.orderBy.firstname" xml:space="preserve">
                 <source>firstname</source>

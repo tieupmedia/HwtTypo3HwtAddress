@@ -53,7 +53,10 @@
                 <target>Sortierung</target>
             </trans-unit>
             <trans-unit id="flexform_setting.orderBy.sorting" xml:space="preserve">
-                <target>manuelle Sortierung</target>
+                <target>manuelle Sortierung (Speicherseite)</target>
+            </trans-unit>
+            <trans-unit id="flexform_setting.orderBy.selectedrecords" xml:space="preserve">
+                <target>ausgewählte Datensätze</target>
             </trans-unit>
             <trans-unit id="flexform_setting.orderBy.firstname" xml:space="preserve">
                 <target>Vorname</target>

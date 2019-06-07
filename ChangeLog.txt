@@ -1,3 +1,21 @@
+2019-06-07 Heiko Westermann <hwt3@gmx.de>
+    * Version 0.1.6-beta - Bugfix and maintenance release
+    * [BUGFIX] Correct prefilling of search form
+    * [UPDATE] Updated city/zip json data file
+    * [BUGFIX] Respect full zip in search query
+    * [FEATURE] Added city input field to search
+    * [TASK] Refactored repository functions
+    * [TASK] Refactored form and field tags of search to fluid
+    * [BUGFIX] Corrected field / parameter names in search templates
+    * [TASK] Clarified label for search mode in plugin settings
+    * [BUGFIX] Prepared single and search templates for template variants
+    * [FEATURE] Made address links translatable
+    * [BUGFIX] Made language fields of address records available in BE form
+    * [UPDATE] Deprecation: #78647 - Move language files from EXT:lang/locallang_* to Resources/Private/Language
+    * [BUGFIX] Initialize empty array for address records before using it (prevent count on NULL)
+    * [TASK] Code cleanup in controller class
+    * [TASK] Removed deprecated feInterface setting
+
 2018-10-28 Heiko Westermann <hwt3@gmx.de>
     * Version 0.1.5-beta - Maintenance release
     * [TASK] Allow more characters in academic title

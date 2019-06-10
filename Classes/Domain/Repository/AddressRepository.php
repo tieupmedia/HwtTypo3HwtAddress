@@ -33,6 +33,9 @@ namespace Hwt\HwtAddress\Domain\Repository;
  * @author Heiko Westermann <hwt3@gmx.de>
  */
 class AddressRepository extends AbstractRepository {
+    
+    use TraitCoreQueryBuilderHelper;
+    
 
     /**
      * Find addresses related to page
@@ -41,7 +44,7 @@ class AddressRepository extends AbstractRepository {
      *
      * @return array  The addresses
      */
-    public function findRelatedToPage($pageId) {
+    public function findRelatedToPage($pageId, $orderBy='uid', $orderDirection=null, $limit=null, $offset=null) {
         // Create the query
         $table = 'tx_hwtaddress_domain_model_address';
         $tableJoin = 'tx_hwtaddress_domain_model_pages_address_mm';
@@ -77,7 +80,10 @@ class AddressRepository extends AbstractRepository {
                     $queryBuilder->createNamedParameter($pageId, \PDO::PARAM_INT)
                 )
             );
-        
+
+        $this->_setOrderingsForCoreQueryBuilder($queryBuilder, $orderBy, $orderDirection);
+        $this->_setRangeForCoreQueryBuilder($queryBuilder, $limit, $offset);
+
         $result = $queryBuilder->execute();
 
 

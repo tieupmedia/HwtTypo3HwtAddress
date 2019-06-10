@@ -37,29 +37,58 @@ class AddressRepository extends AbstractRepository {
     /**
      * Find addresses related to page
      *
-     * @param int $pageId page id
+     * @param int $pageId  The page id
      *
-     * @return \TYPO3\CMS\Extbase\Persistence\QueryResultInterface addresses
+     * @return array  The addresses
      */
     public function findRelatedToPage($pageId) {
-        $sql = <<<SQL
-        SELECT
-            tx_hwtaddress_domain_model_address.*,
-            tx_hwtaddress_domain_model_pages_address_mm.uid_local
-        FROM
-            tx_hwtaddress_domain_model_address
-        JOIN
-            tx_hwtaddress_domain_model_pages_address_mm
-        ON
-            tx_hwtaddress_domain_model_pages_address_mm.uid_foreign = tx_hwtaddress_domain_model_address.uid
-        WHERE
-            tx_hwtaddress_domain_model_pages_address_mm.uid_local=? AND tx_hwtaddress_domain_model_address.hidden=0 AND tx_hwtaddress_domain_model_address.deleted=0;
-SQL;
-        $parameter = array($pageId);
+        // Create the query
+        $table = 'tx_hwtaddress_domain_model_address';
+        $tableJoin = 'tx_hwtaddress_domain_model_pages_address_mm';
 
-        $query = $this->createQuery();
-        $query->statement($sql, $parameter);
-        return $query->execute();
+        $connectionPool = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(
+            \TYPO3\CMS\Core\Database\ConnectionPool::class
+        );
+        $queryBuilder = $connectionPool->getQueryBuilderForTable($table);
+
+        if ( TYPO3_MODE === 'FE' ) {
+            $queryBuilder->setRestrictions(
+                \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(
+                    \TYPO3\CMS\Core\Database\Query\Restriction\FrontendRestrictionContainer::class
+                )
+            );
+        }
+
+        $queryBuilder
+            ->select($table . '.*', $tableJoin . '.*')
+            ->from($table)
+            ->join(
+                $table, // alias
+                $tableJoin,
+                $tableJoin, // alias
+                $queryBuilder->expr()->eq(
+                    $tableJoin . '.uid_foreign', 
+                    $queryBuilder->quoteIdentifier($table . '.uid')
+                )
+            )
+            ->where(
+                $queryBuilder->expr()->eq(
+                    $tableJoin . '.uid_local',
+                    $queryBuilder->createNamedParameter($pageId, \PDO::PARAM_INT)
+                )
+            );
+        
+        $result = $queryBuilder->execute();
+
+
+        // Map rows (array) to objects (model)
+        $dataMapper = $this->objectManager->get(
+            \TYPO3\CMS\Extbase\Persistence\Generic\Mapper\DataMapper::class
+        );
+        $items = $dataMapper->map(\Hwt\HwtAddress\Domain\Model\Address::class, $result->fetchAll());
+
+
+        return $items;
     }
 
 

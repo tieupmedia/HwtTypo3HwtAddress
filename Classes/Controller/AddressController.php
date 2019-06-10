@@ -107,7 +107,7 @@ class AddressController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControll
             $addressRecords = $this->addressRepository->findInPageIds($this->settings['addressStoragePages'], $this->settings['orderBy'], $this->settings['orderDirection']);
         }
         elseif ($this->settings['list']['displayPageRelated']==1) {
-            $addressRecords = $this->addressRepository->findRelatedToPage($GLOBALS['TSFE']->id);
+            $addressRecords = $this->addressRepository->findRelatedToPage($GLOBALS['TSFE']->id, $this->settings['orderBy'], $this->settings['orderDirection']);
         }
         elseif (($this->settings['addressCategories']) || ($zip)) {
             $addressRecords = $this->addressRepository->findAllWithoutPidRestriction($this->settings['addressCategories'], $zip, $this->settings['orderBy'], $this->settings['orderDirection']);

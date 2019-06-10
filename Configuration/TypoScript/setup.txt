@@ -90,5 +90,11 @@ lib.tx_hwtaddress.pluginRelatedToPage {
         list {
             displayPageRelated = 1
         }
+        
+        orderBy = tx_hwtaddress_domain_model_pages_address_mm.sorting
+        #orderBy = tx_hwtaddress_domain_model_address.sorting
+        #orderBy = lastname
+        
+        #orderDirection = desc
     }
 }

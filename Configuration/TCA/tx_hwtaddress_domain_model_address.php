@@ -305,6 +305,7 @@ $extTca = array(
                 'renderType' => 'inputDateTime',
                 'size' => 12,
                 'eval' => 'date',
+                'default' => 0,
             )
         ),
 

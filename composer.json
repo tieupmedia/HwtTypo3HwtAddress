@@ -30,7 +30,6 @@
         "typo3/cms-core": "~8.7.0||~9.0.0"
     },
     "replace": {
-        "hwt_address": "self.version",
         "typo3-ter/hwt-address": "self.version"
     },
     "autoload": {
@@ -42,5 +41,10 @@
     "license": "GPL-2.0-or-later",
     "support": {
         "issues": "https://github.com/tieupmedia/HwtTypo3HwtAddress/issues/"
+    },
+    "extra": {
+        "typo3/cms": {
+            "extension-key": "hwt_address"
+        }
     }
 }

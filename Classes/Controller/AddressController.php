@@ -1,11 +1,13 @@
 <?php
 
+declare(strict_types = 1);
+
 namespace Hwt\HwtAddress\Controller;
 
 /***************************************************************
  *  Copyright notice
  *
- *  (c) 2014-2018 Heiko Westermann <hwt3@gmx.de>
+ *  (c) 2014-2019 Heiko Westermann <hwt3@gmx.de>
  *  All rights reserved
  *
  *  This script is part of the TYPO3 project. The TYPO3 project is

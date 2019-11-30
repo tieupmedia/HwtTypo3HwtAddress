@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types = 1);
+
 namespace Hwt\HwtAddress\Hooks;
 
 use TYPO3\CMS\Core\Database\ConnectionPool;
@@ -10,7 +12,7 @@ use TYPO3\CMS\Core\Utility\GeneralUtility;
 /***************************************************************
  *  Copyright notice
  *
- *  (c) 2015-2018 Heiko Westermann <hwt3@gmx.de>
+ *  (c) 2015-2019 Heiko Westermann <hwt3@gmx.de>
  *  All rights reserved
  *
  *  This script is part of the TYPO3 project. The TYPO3 project is

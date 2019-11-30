@@ -1,11 +1,13 @@
 <?php
 
+declare(strict_types = 1);
+
 namespace Hwt\HwtAddress\Hooks;
 
 /***************************************************************
  *  Copyright notice
  *
- *  (c) 2015 Heiko Westermann <hwt3@gmx.de>
+ *  (c) 2015-2019 Heiko Westermann <hwt3@gmx.de>
  *  All rights reserved
  *
  *  This script is part of the TYPO3 project. The TYPO3 project is
@@ -138,25 +140,30 @@ class CmsLayout {
              * Template variants
              */
             if ($actions === 'Address->single') {
+                $variantField = $this->getFieldFromFlexform('settings.templateVariantSingle', 'template');
                 $this->tableData[] = array(
                     $this->getPluginLL(self::LLPATH . 'flexform_setting.templateVariantSingle'),
-                    ucfirst($this->getFieldFromFlexform('settings.templateVariantSingle', 'template'))
+                    ($variantField ? ucfirst($variantField) : '')
                 );
             }
             elseif (($actions === 'Address->list;Address->single')) {
+                $variantField = $this->getFieldFromFlexform('settings.templateVariantList', 'template');
                 $this->tableData[] = array(
                     $this->getPluginLL(self::LLPATH . 'flexform_setting.templateVariantList'),
-                    ucfirst($this->getFieldFromFlexform('settings.templateVariantList', 'template'))
+                    ($variantField ? ucfirst($variantField) : '')
                 );
+
+                $variantField = $this->getFieldFromFlexform('settings.templateVariantSingle', 'template');
                 $this->tableData[] = array(
                     $this->getPluginLL(self::LLPATH . 'flexform_setting.templateVariantSingle'),
-                    ucfirst($this->getFieldFromFlexform('settings.templateVariantSingle', 'template'))
+                    ($variantField ? ucfirst($variantField) : '')
                 );
             }
             elseif (($actions === 'Address->search')) {
+                $variantField = $this->getFieldFromFlexform('settings.templateVariantSearch', 'template');
                 $this->tableData[] = array(
                     $this->getPluginLL(self::LLPATH . 'flexform_setting.templateVariantSearch'),
-                    ucfirst($this->getFieldFromFlexform('settings.templateVariantSearch', 'template'))
+                    ($variantField ? ucfirst($variantField) : '')
                 );
             }
 

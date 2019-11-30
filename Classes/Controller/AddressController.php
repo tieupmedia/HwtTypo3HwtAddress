@@ -134,14 +134,11 @@ class AddressController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControll
      * @return void
      */
     public function singleAction(\Hwt\HwtAddress\Domain\Model\Address $address = NULL) {
-        if ($address) {
-            $record = $this->addressRepository->findByUid($address);
-        }
-        elseif ( (int)$this->settings['addressSingleRecord'] > 0 ) {
+        if ( (!$address) && (int)$this->settings['addressSingleRecord'] > 0 ) {
                 // If configured, get a fallback record, if no single record is given
-            $record = $this->addressRepository->findByUid((int)$this->settings['addressSingleRecord']);
+            $address = $this->addressRepository->findByUid((int)$this->settings['addressSingleRecord']);
         }
-        elseif ( (int)$this->settings['single']['redirectIfEmptyPid'] > 0 ) {
+        elseif ( (!$address) && (int)$this->settings['single']['redirectIfEmptyPid'] > 0 ) {
                 // If configured, redirect to a page with pid, if no single record and no fallback record are given
             $this->uriBuilder->setTargetPageUid($this->settings['single']['redirectIfEmptyPid']);
             $link = $this->uriBuilder->build();
@@ -149,7 +146,7 @@ class AddressController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControll
             $this->redirectToURI($link);
         }
 
-        if ( !$record &&
+        if ( !$address &&
              is_array($this->settings['single']['recordNotFoundHandling']) &&
              isset($this->settings['single']['recordNotFoundHandling']['mode']) ) {
                 // Do configurable error handling, if no address record was found
@@ -157,6 +154,6 @@ class AddressController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControll
             return $this->doConfiguredErrorHandling($this->settings['single']['recordNotFoundHandling']);
         }
 
-        $this->view->assign('address', $record);
+        $this->view->assign('address', $address);
     }
 }

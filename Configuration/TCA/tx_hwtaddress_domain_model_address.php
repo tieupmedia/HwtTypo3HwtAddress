@@ -716,7 +716,7 @@ $extTca = array(
 
 
 // Get extension manager configuration
-$emConfiguration = unserialize($GLOBALS['TYPO3_CONF_VARS']['EXT']['extConf']['hwt_address']);
+$emConfiguration = $GLOBALS['TYPO3_CONF_VARS']['EXTENSIONS']['hwt_address'];
 
 // Remove relation field, if not activated in em config
 if (!$emConfiguration['enableRelationsInPages']) {

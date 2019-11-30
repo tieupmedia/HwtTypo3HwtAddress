@@ -28,7 +28,7 @@ if (TYPO3_MODE == 'BE') {
 
 //$configurationUtility = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance('TYPO3\\CMS\\Extensionmanager\\Utility\\ConfigurationUtility');
 //$extensionConfiguration = $configurationUtility->getCurrentConfiguration('hwt_address');
-$extensionConfiguration = unserialize($GLOBALS['TYPO3_CONF_VARS']['EXT']['extConf']['hwt_address']);
+$extensionConfiguration = $GLOBALS['TYPO3_CONF_VARS']['EXTENSIONS']['hwt_address'];
 
 // Add relation field, if activated in em config
 if ( isset($extensionConfiguration['enableRelationsInPages']) && ($extensionConfiguration['enableRelationsInPages']==true) ) {

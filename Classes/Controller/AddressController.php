@@ -105,6 +105,11 @@ class AddressController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControll
          */
         $addressRecords = array();
 
+        // set default order field (equal to first flexform option)
+        if (!is_string($this->settings['orderBy'])) {
+            $this->settings['orderBy'] = 'sorting';
+        }
+
         if ($this->settings['addressStoragePages'] && ($this->settings['addressStoragePages'] != '')) {
             $addressRecords = $this->addressRepository->findInPageIds($this->settings['addressStoragePages'], $this->settings['orderBy'], $this->settings['orderDirection']);
         }

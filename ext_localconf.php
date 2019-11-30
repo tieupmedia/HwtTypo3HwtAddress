@@ -4,12 +4,14 @@ if (!defined('TYPO3_MODE')) {
     die ('Access denied.');
 }
 
+$extensionKey = 'hwt_address';
+
 
 /*
  * Configure plugin(s)
  */
 \TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
-    'Hwt.' . $_EXTKEY,
+    'Hwt.' . $extensionKey,
     'Address',
     array(
         'Address' => 'list,single,search',

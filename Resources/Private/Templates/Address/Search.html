@@ -6,7 +6,7 @@
             <f:render partial="Address/TemplateVariants/Search/{settings.templateVariantSearch -> f:format.case(mode: 'capital')}" arguments="{_all}"/>
         </f:then>
         <f:else>
-            <f:form method="post" class="hwt-address-zipsearch">
+            <f:form method="post" class="hwt-address-zipsearch" action="search">
                 <fieldset>
                     <div class="hwt-fieldwrap">
                         <label for="zip">Postleitzahl *</label> <f:form.textfield name="zip" id="zip" size="5" value="{searchform.zip}" />

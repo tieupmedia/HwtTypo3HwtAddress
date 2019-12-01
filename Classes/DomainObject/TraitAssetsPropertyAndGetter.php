@@ -42,7 +42,7 @@ trait TraitAssetsPropertyAndGetter {
      * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\TYPO3\CMS\Extbase\Domain\Model\FileReference>
      * @TYPO3\CMS\Extbase\Annotation\ORM\Lazy
      * @extensionScannerIgnoreLine Still needed for TYPO3 8.7
-     * @lazy
+     * @TYPO3\CMS\Extbase\Annotation\ORM\Lazy
      */
     protected $assets;
 

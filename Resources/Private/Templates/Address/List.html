@@ -9,6 +9,10 @@
             <f:for each="{addresses}" as="address">
                 <f:render partial="Address/ListItem" arguments="{address: address}"/>
             </f:for>
+
+            <f:if condition="!{addresses} && {isSearch}">
+                <f:render partial="Address/SearchResultNotFound" />
+            </f:if>
         </f:else>
     </f:if>
 </f:section>

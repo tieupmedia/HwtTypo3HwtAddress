@@ -129,7 +129,10 @@ class AddressController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControll
             }
         }
 
-        $this->view->assign('addresses', $addressRecords);
+        $this->view->assignMultiple([
+            'addresses' => $addressRecords,
+            'isSearch' => $isSearch,
+        ]);
     }
 
 

@@ -60,7 +60,7 @@ class Address extends \Hwt\HwtAddress\DomainObject\AbstractManageableEntity {
     protected $gender;
 
     /**
-     * @var DateTime
+     * @var \DateTime
      */
     protected $birthday;
 
@@ -279,7 +279,7 @@ class Address extends \Hwt\HwtAddress\DomainObject\AbstractManageableEntity {
     /**
      * Get birthday
      *
-     * @return DateTime
+     * @return \DateTime
      */
     public function getBirthday() {
         return $this->birthday;

@@ -37,22 +37,22 @@ namespace Hwt\HwtAddress\DomainObject;
 abstract class AbstractManageableEntity extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 
     /**
-     * @var DateTime
+     * @var \DateTime
      */
     protected $crdate;
 
     /**
-     * @var DateTime
+     * @var \DateTime
      */
     protected $tstamp;
 
     /**
-     * @var DateTime
+     * @var \DateTime
      */
     protected $starttime;
 
     /**
-     * @var DateTime
+     * @var \DateTime
      */
     protected $endtime;
 
@@ -135,7 +135,7 @@ abstract class AbstractManageableEntity extends \TYPO3\CMS\Extbase\DomainObject\
     /**
      * Get start time
      *
-     * @return DateTime
+     * @return \DateTime
      */
     public function getStarttime() {
             return $this->starttime;
@@ -144,7 +144,7 @@ abstract class AbstractManageableEntity extends \TYPO3\CMS\Extbase\DomainObject\
     /**
      * Get endtime
      *
-     * @return DateTime
+     * @return \DateTime
      */
     public function getEndtime() {
             return $this->endtime;

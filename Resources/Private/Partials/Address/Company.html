@@ -14,10 +14,10 @@
 
     <p class="electronic-address">
         <span class="phone" itemprop="telephone">{address.phone}</span><br />
-        <span class="mobile">{address.mobile}</span><br />
-        <span class="fax">{address.fax}</span><br />
+        <span class="mobile" itemprop="telephone">{address.mobile}</span><br />
+        <span class="fax" itemprop="faxNumber">{address.fax}</span><br />
         <a class="email" href="mailto:{address.email}" itemprop="email">{address.email}</a><br />
-        <a class="www" href="{address.www}">{address.www}</a>
+        <a class="www" href="{address.www}" itemprop="url">{address.www}</a>
     </p>
 
     <f:render partial="Address/RelatedAddresses" arguments="{_all}"/>

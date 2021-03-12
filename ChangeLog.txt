@@ -1,3 +1,17 @@
+2021-03-12 Heiko Westermann <hwt3@gmx.de>
+    * Version 0.3.0-beta - Update, bugfix and maintenance release
+    * [UPDATE] Migrate extension config array, deprecation #82254
+    * [UPDATE] Replace @lazy with @TYPO3\CMS\Extbase\Annotation\ORM\Lazy, deprecation #83078
+    * [BUGFIX] Correct namespace for DateTime class
+    * [UPDATE] Make extension available for TYPO3 10.x
+    * [BUGFIX] Add mandatory form action property to search
+    * [UPDATE] Make extension available for TYPO3 10 LTS
+    * [FEATURE] Wrap plugin with css extension class
+    * [UPDATE] Don't make l10n_parent fields excludable, important #89672
+    * [FEATURE] Don't remove field 'layout' from plugin
+    * [BUGFIX] Correct schema.org itemscope for company address
+    * [FEATURE] Add some more schema.org itemprops
+
 2019-12-05 Heiko Westermann <hwt3@gmx.de>
     * Version 0.2.2-beta - Bugfix and maintenance release
     * [FEATURE] Sort selected address records by plugin list

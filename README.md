@@ -34,3 +34,4 @@ This TYPO3 extension provides a modern address handling since TYPO3 6.x, establi
 - < 0.1.0 for TYPO3 6.2 - 7.6
 - \>= 0.1.0 for TYPO3 7.6 - 8.7
 - \>= 0.2.0 for TYPO3 8.7 - 9.5
+- \>= 0.3.0 for TYPO3 9.0 - 10.4

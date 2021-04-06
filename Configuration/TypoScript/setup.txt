@@ -25,6 +25,13 @@ plugin.tx_hwtaddress {
 		list {
             displayPageRelated = {$plugin.tx_hwtaddress.settings.list.displayPageRelated}
             singlePid = {$plugin.tx_hwtaddress.settings.list.singlePid}
+
+            image {
+                maxWidth = 125
+                maxHeight =
+                width =
+                height =
+            }
 		}
 
 		single {

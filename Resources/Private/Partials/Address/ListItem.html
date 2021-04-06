@@ -1,9 +1,21 @@
 <div class="address-item">
+    <f:if condition="{address.images}">
+        <f:then>
+            <f:render partial="Address/Image" arguments="{image: address.images.0, imageSettings: settings.list.image}" />
+        </f:then>
+    </f:if>
+
     <p>
         Name: {address.firstname} {address.lastname}<br />
         Company: {address.companyTitle}<br />
         Uid: {address.uid}
     </p>
-    
+
+    <f:if condition="{address.companyImages}">
+        <f:then>
+            <f:render partial="Address/Image" arguments="{image: address.companyImages.0, imageSettings: settings.list.image}" />
+        </f:then>
+    </f:if>
+
     <f:link.page pageUid="{settings.list.singlePid}" additionalParams="{tx_hwtaddress_address: {address: address}}">Details</f:link.page>
 </div>

@@ -252,6 +252,7 @@ $extTca = array(
             )
         ),
         'assets' => array(
+            'exclude' => 1,
             'label' => 'LLL:EXT:frontend/Resources/Private/Language/Database.xlf:tt_content.asset_references',
             'config' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::getFileFieldTCAConfig('assets', array(
                 'appearance' => array(

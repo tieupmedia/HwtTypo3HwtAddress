@@ -1,5 +1,5 @@
 <figure class="image">
-	<f:image src="{image.originalResource.originalFile.uid}" alt="" width="{imageSettings.width}" height="{imageSettings.height}" maxWidth="{imageSettings.maxWidth}" maxHeight="{imageSettings.maxHeight}" />
+    <f:image image="{image}" alt="" width="{imageSettings.width}" height="{imageSettings.height}" maxWidth="{imageSettings.maxWidth}" maxHeight="{imageSettings.maxHeight}" />
 
 	<f:if condition="{image.description}">
 		<f:then>
@@ -35,6 +35,7 @@
     Beschreibung: {image.originalResource.name}<br /><br />
 
     Ausgabe als Bild:<br />
+    <f:image image="{image}" alt="" /><br />
     <f:image src="{image.originalResource.originalFile.uid}" alt="" /><br />
     <f:image src="{image.uid}" alt="" treatIdAsReference="TRUE" /><br /><br />
 </f:comment>

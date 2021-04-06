@@ -19,11 +19,11 @@ CREATE TABLE tx_hwtaddress_domain_model_address (
     endtime int(11) DEFAULT '0' NOT NULL,
 
     academic varchar(30) DEFAULT '' NOT NULL,
-    firstname tinytext NOT NULL,
-    lastname tinytext NOT NULL,
+    firstname tinytext,
+    lastname tinytext,
     gender int(1) DEFAULT '0' NOT NULL,
 
-    images int(11) unsigned DEFAULT '0',
+    images int(11) unsigned DEFAULT '0' NOT NULL,
 	assets int(11) unsigned DEFAULT '0' NOT NULL,
     birthday int(11) DEFAULT '0' NOT NULL,
     info text,
@@ -35,7 +35,7 @@ CREATE TABLE tx_hwtaddress_domain_model_address (
     company_subtitle tinytext,
     company_short text,
     company_bodytext mediumtext,
-    company_images int(11) unsigned DEFAULT '0',
+    company_images int(11) unsigned DEFAULT '0' NOT NULL,
 
     phone varchar(30) DEFAULT '' NOT NULL,
     mobile varchar(30) DEFAULT '' NOT NULL,
@@ -51,8 +51,8 @@ CREATE TABLE tx_hwtaddress_domain_model_address (
     region varchar(100) DEFAULT '' NOT NULL,
     country varchar(100) DEFAULT '' NOT NULL,
 
-    longitude tinytext NOT NULL,
-    latitude tinytext NOT NULL,
+    longitude tinytext,
+    latitude tinytext,
 
     related_address int(11) DEFAULT '0' NOT NULL,
     related_address_from int(11) DEFAULT '0' NOT NULL,
@@ -97,10 +97,10 @@ CREATE TABLE tx_hwtaddress_domain_model_link (
     starttime int(11) DEFAULT '0' NOT NULL,
     endtime int(11) DEFAULT '0' NOT NULL,
 
-    header tinytext NOT NULL,
-    type tinytext NOT NULL,
+    header tinytext,
+    type tinytext,
     parameter varchar(1024) DEFAULT '' NOT NULL,
-    linktext tinytext NOT NULL,
+    linktext tinytext,
 
     address int(11) DEFAULT '0' NOT NULL,
 

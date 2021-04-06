@@ -1,5 +1,5 @@
 <figure class="image">
-    <f:image image="{image}" alt="" width="{imageSettings.width}" height="{imageSettings.height}" maxWidth="{imageSettings.maxWidth}" maxHeight="{imageSettings.maxHeight}" />
+    <f:image image="{image}" alt="{f:if(condition: image.alternative, then: image.alternative, else: image.originalResource.alternative)}" title="{f:if(condition: image.title, then: image.title, else: image.originalResource.title)}" width="{imageSettings.width}" height="{imageSettings.height}" maxWidth="{imageSettings.maxWidth}" maxHeight="{imageSettings.maxHeight}" />
 
 	<f:if condition="{image.description}">
 		<f:then>

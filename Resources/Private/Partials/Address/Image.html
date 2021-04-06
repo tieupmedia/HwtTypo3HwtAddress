@@ -4,14 +4,14 @@
 	<f:if condition="{image.description}">
 		<f:then>
 			<figcaption class="image-caption">
-				{image.description}
+				{image.description -> f:format.nl2br()}
 			</figcaption>
 		</f:then>
 		<f:else>
 			<f:if condition="{image.originalResource.description}">
 				<f:then>
 					<figcaption class="image-caption">
-						{image.originalResource.description}
+						{image.originalResource.description -> f:format.nl2br()}
 					</figcaption>
 				</f:then>
 			</f:if>

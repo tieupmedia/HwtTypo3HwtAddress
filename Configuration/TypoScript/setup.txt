@@ -31,6 +31,13 @@ plugin.tx_hwtaddress {
             backPid = {$plugin.tx_hwtaddress.settings.single.backPid}
             redirectIfEmptyPid = {$plugin.tx_hwtaddress.settings.single.redirectIfEmptyPid}
 
+            image {
+                maxWidth = 250
+                maxHeight =
+                width =
+                height =
+            }
+
             recordNotFoundHandling {
                 mode = showStandaloneTemplate
                 #templatePathAndFilename = EXT:ext_key/Path/To/Template/SingleNotFound.html

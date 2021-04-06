@@ -1,7 +1,7 @@
 <ul class="address-images">
     <f:for each="{images}" as="image">
         <li>
-            <f:render partial="Address/Image" arguments="{image: image}" />
+            <f:render partial="Address/Image" arguments="{image: image, imageSettings: imageSettings}" />
         </li>
     </f:for>
 </ul>

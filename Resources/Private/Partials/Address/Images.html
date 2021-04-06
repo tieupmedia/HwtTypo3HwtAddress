@@ -1,41 +1,7 @@
-<dl class="address-images">
+<ul class="address-images">
     <f:for each="{images}" as="image">
-        <dt>
-            <f:image src="{image.originalResource.originalFile.uid}" alt="" />
-        </dt>
-
-        <f:if condition="{image.description}">
-            <f:then>
-                <dd>{image.description}</dd>
-            </f:then>
-            <f:else>
-                <f:if condition="{image.originalResource.description}">
-                    <f:then>
-                        <dd>{image.originalResource.description}</dd>
-                    </f:then>
-                </f:if>
-            </f:else>
-        </f:if>
+        <li>
+            <f:render partial="Address/Image" arguments="{image: image}" />
+        </li>
     </f:for>
-</dl>
-
-
-<f:comment>
-    <f:for each="{images}" as="image">
-        Orginal-Attribute:<br />
-        Dateiname:    {image.originalResource.originalFile.name}<br />
-        Titel:        {image.originalResource.originalFile.title}<br />
-        Beschreibung: {image.originalResource.originalFile.description}<br />
-        Alt-Text:     {image.originalResource.originalFile.alternative}<br />
-        UID:          {image.originalResource.originalFile.uid}<br />
-        Pfad:         {image.originalResource.publicUrl}<br /><br />
-
-        Referenz-Attribute:<br />
-        Titel:        {image.originalResource.title}<br />
-        Beschreibung: {image.originalResource.name}<br /><br />
-
-        Ausgabe als Bild:<br />
-        <f:image src="{image.originalResource.originalFile.uid}" alt="" /><br />
-        <f:image src="{image.uid}" alt="" treatIdAsReference="TRUE" /><br /><br />
-    </f:for>
-</f:comment>
+</ul>

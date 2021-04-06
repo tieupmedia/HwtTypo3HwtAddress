@@ -1,0 +1,40 @@
+<figure class="image">
+	<f:image src="{image.originalResource.originalFile.uid}" alt="" />
+
+	<f:if condition="{image.description}">
+		<f:then>
+			<figcaption class="image-caption">
+				{image.description}
+			</figcaption>
+		</f:then>
+		<f:else>
+			<f:if condition="{image.originalResource.description}">
+				<f:then>
+					<figcaption class="image-caption">
+						{image.originalResource.description}
+					</figcaption>
+				</f:then>
+			</f:if>
+		</f:else>
+	</f:if>
+</figure>
+
+
+
+<f:comment>
+    Orginal-Attribute:<br />
+    Dateiname:    {image.originalResource.originalFile.name}<br />
+    Titel:        {image.originalResource.originalFile.title}<br />
+    Beschreibung: {image.originalResource.originalFile.description}<br />
+    Alt-Text:     {image.originalResource.originalFile.alternative}<br />
+    UID:          {image.originalResource.originalFile.uid}<br />
+    Pfad:         {image.originalResource.publicUrl}<br /><br />
+
+    Referenz-Attribute:<br />
+    Titel:        {image.originalResource.title}<br />
+    Beschreibung: {image.originalResource.name}<br /><br />
+
+    Ausgabe als Bild:<br />
+    <f:image src="{image.originalResource.originalFile.uid}" alt="" /><br />
+    <f:image src="{image.uid}" alt="" treatIdAsReference="TRUE" /><br /><br />
+</f:comment>

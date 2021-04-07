@@ -1,3 +1,14 @@
+2021-04-06 Heiko Westermann <hwt3@gmx.de>
+    * Version 0.3.1-beta - Bugfix and maintenance release
+    * [FEATURE] Add / prepare list images
+    * [FEATURE] Add image meta attributes
+    * [TASK] Replace image source attribute
+    * [FEATURE] Add settings for image dimensions
+    * [FEATURE] Make assets field excludable in user groups
+    * [FEATURE] Enable multiline image descriptions
+    * [TASK] Refactor image markup
+    * [BUGFIX] Correct sql field definitions
+
 2021-03-12 Heiko Westermann <hwt3@gmx.de>
     * Version 0.3.0-beta - Update, bugfix and maintenance release
     * [UPDATE] Migrate extension config array, deprecation #82254
@@ -29,7 +40,7 @@
     * [TASK] Replace $_EXTKEY in ext_localconf.php to be future save (breaks in TYPO3 10.x)
     * [BUGFIX] Allow storing links on standard pages, too, otherwise related address records cannot be stored
     * [BUGFIX] Prevent error, when 'orderBy' config is empty/null (e.g. if plugin is just inserted)
-    
+
 2019-06-07 Heiko Westermann <hwt3@gmx.de>
     * Version 0.2.1-beta - Bugfix and maintenance release
     * [UPDATE] Deprecation: #84680 - Move last language files away from ext:lang and remove ext:lang completely

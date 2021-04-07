@@ -1,7 +1,7 @@
 {
     "name": "tieupmedia/hwt_address",
     "type": "typo3-cms-extension",
-    "version": "0.3.0",
+    "version": "0.3.1",
     "description": "Address handling for TYPO3 (since 6.2, estab. 2014) Development on https://github.com/tieupmedia/HwtTypo3HwtAddress",
     "repositories": [
         {

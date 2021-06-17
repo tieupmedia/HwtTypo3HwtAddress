@@ -1,3 +1,7 @@
+2021-06-17 Heiko Westermann <hwt3@gmx.de>
+    * Version 0.3.2-beta - Bugfix release
+    * [BUGFIX] Get translated (not default) records, when fetching selected records sorted by uid list
+
 2021-04-06 Heiko Westermann <hwt3@gmx.de>
     * Version 0.3.1-beta - Bugfix and maintenance release
     * [FEATURE] Add / prepare list images

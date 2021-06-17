@@ -122,7 +122,7 @@ class AddressController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControll
 
         if ((count($addressRecords)==0) && $this->settings['addressRecords']) {
             if ($this->settings['orderBy']==='selectedrecords') {
-                $addressRecords = $this->addressRepository->findByUidInListWithOrderList($this->settings['addressRecords'], $this->settings['addressRecords'], $this->settings['orderDirection']);
+                $addressRecords = $this->addressRepository->findByUidInOrderedList($this->settings['addressRecords'], $this->settings['orderDirection']);
             }
             else {
                 $addressRecords = $this->addressRepository->findByUidInList($this->settings['addressRecords'], $this->settings['orderBy'], $this->settings['orderDirection']);

@@ -14,10 +14,10 @@ $extensionKey = 'hwt_address';
     'Hwt.' . $extensionKey,
     'Address',
     array(
-        'Address' => 'list,single,search',
+        \Hwt\HwtAddress\Controller\AddressController::class => 'list,single,search',
     ),
     array(
-        'Address' => 'list,single,search',
+        \Hwt\HwtAddress\Controller\AddressController::class => 'list,single,search',
     )
 );
 

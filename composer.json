@@ -15,7 +15,10 @@
         "Fluid",
         "Modern Address",
         "universal",
-        "Address"
+        "Address",
+        "Contacts",
+        "Locations",
+        "Employees"
     ],
     "authors": [
         {

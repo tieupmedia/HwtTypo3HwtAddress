@@ -1,3 +1,11 @@
+2022-08-18 Heiko Westermann <hwt3@gmx.de>
+    * Version 0.3.3-beta - Bugfix and maintenance release
+    * [BUGFIX] Replace $_EXTKEY in ext_localconf.php for icon path, broken in TYPO3 10.x
+    * [FEATURE] Declare compatibility to php 7.4
+    * [FEATURE] Remove version from composer.json to let it be resolved via tags
+    * [TASK] Add keywords to composer.json
+    * [FEATURE] Add special field 't3_origuid'
+
 2021-06-17 Heiko Westermann <hwt3@gmx.de>
     * Version 0.3.2-beta - Bugfix release
     * [BUGFIX] Get translated (not default) records, when fetching selected records sorted by uid list

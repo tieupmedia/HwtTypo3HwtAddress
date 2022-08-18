@@ -11,7 +11,7 @@ $extensionKey = 'hwt_address';
  * Configure plugin(s)
  */
 \TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
-    'Hwt.' . $extensionKey,
+    $extensionKey,
     'Address',
     array(
         \Hwt\HwtAddress\Controller\AddressController::class => 'list,single,search',

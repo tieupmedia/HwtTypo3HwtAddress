@@ -63,7 +63,7 @@ if (TYPO3_MODE === 'BE') {
         $iconRegistry->registerIcon(
             $identifier,
             'TYPO3\\CMS\\Core\\Imaging\\IconProvider\\BitmapIconProvider',
-            array('source' => 'EXT:' . $_EXTKEY . '/Resources/Public/Icons/' . $file)
+            array('source' => 'EXT:' . $extensionKey . '/Resources/Public/Icons/' . $file)
         );
     }
 }

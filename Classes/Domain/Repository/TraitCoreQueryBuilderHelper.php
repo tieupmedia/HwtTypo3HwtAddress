@@ -1,8 +1,10 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace Hwt\HwtAddress\Domain\Repository;
+
+use TYPO3\CMS\Extbase\Persistence\QueryInterface;
 
 /***************************************************************
  *  Copyright notice
@@ -26,7 +28,6 @@ namespace Hwt\HwtAddress\Domain\Repository;
  *
  *  This copyright notice MUST APPEAR in all copies of the script!
  ***************************************************************/
-
 /**
  * Trait that adds helper methods for core query builder
  *
@@ -34,7 +35,8 @@ namespace Hwt\HwtAddress\Domain\Repository;
  * @subpackage tx_hwtaddress
  * @author Heiko Westermann <hwt3@gmx.de>
  */
-trait TraitCoreQueryBuilderHelper {
+trait TraitCoreQueryBuilderHelper
+{
     /*
      * Set orderings helper function
      *
@@ -44,17 +46,16 @@ trait TraitCoreQueryBuilderHelper {
      */
     protected function _setOrderingsForCoreQueryBuilder(&$query, $orderBy='uid', $orderDirection)
     {
-        if ( $orderBy != '' ) {
-            if ( $orderDirection === 'desc' ) {
+        if ($orderBy != '') {
+            if ($orderDirection === 'desc') {
                 $query->orderBy(
                     $orderBy,
-                    \TYPO3\CMS\Extbase\Persistence\QueryInterface::ORDER_DESCENDING
+                    QueryInterface::ORDER_DESCENDING
                 );
-            }
-            else {
+            } else {
                 $query->orderBy(
                     $orderBy,
-                    \TYPO3\CMS\Extbase\Persistence\QueryInterface::ORDER_ASCENDING
+                    QueryInterface::ORDER_ASCENDING
                 );
             }
         }
@@ -71,7 +72,11 @@ trait TraitCoreQueryBuilderHelper {
      */
     protected function _setRangeForCoreQueryBuilder(&$query, $limit=null, $offset=null)
     {
-        if ($limit > 0) {$query->setMaxResults($limit);}
-        if ($offset > 0) {$query->setFirstResult($offset);}
+        if ($limit > 0) {
+            $query->setMaxResults($limit);
+        }
+        if ($offset > 0) {
+            $query->setFirstResult($offset);
+        }
     }
 }

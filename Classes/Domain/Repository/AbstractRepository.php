@@ -1,8 +1,12 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace Hwt\HwtAddress\Domain\Repository;
+
+use TYPO3\CMS\Extbase\Persistence\Repository;
+use TYPO3\CMS\Extbase\Persistence\QueryResultInterface;
+use TYPO3\CMS\Extbase\Persistence\QueryInterface;
 
 /***************************************************************
  *  Copyright notice
@@ -26,7 +30,6 @@ namespace Hwt\HwtAddress\Domain\Repository;
  *
  *  This copyright notice MUST APPEAR in all copies of the script!
  ***************************************************************/
-
 /**
  * Abstract repository with all the callable functionality
  *
@@ -34,8 +37,8 @@ namespace Hwt\HwtAddress\Domain\Repository;
  * @subpackage tx_hwtaddress
  * @author Heiko Westermann <hwt3@gmx.de>
  */
-class AbstractRepository extends \TYPO3\CMS\Extbase\Persistence\Repository {
-
+class AbstractRepository extends Repository
+{
     /**
      * Find records in given page uids
      *
@@ -45,11 +48,12 @@ class AbstractRepository extends \TYPO3\CMS\Extbase\Persistence\Repository {
      * @param null|int $limit
      * @param null|int $offset
      *
-     * @return \TYPO3\CMS\Extbase\Persistence\QueryResultInterface
+     * @return QueryResultInterface
      */
-    public function findInPageIds($pids, $orderBy='uid', $orderDirection=null, $limit=null, $offset=null) {
+    public function findInPageIds($pids, $orderBy='uid', $orderDirection=null, $limit=null, $offset=null)
+    {
         $query = $this->createQuery();
-        $query->getQuerySettings()->setRespectStoragePage(FALSE);
+        $query->getQuerySettings()->setRespectStoragePage(false);
 
         $this->_setOrderings($query, $orderBy, $orderDirection);
         $this->_setRange($query, $limit, $offset);
@@ -70,15 +74,14 @@ class AbstractRepository extends \TYPO3\CMS\Extbase\Persistence\Repository {
      */
     protected function _setOrderings(&$query, $orderBy='uid', $orderDirection)
     {
-        if ( $orderDirection === 'desc' ) {
-            $query->setOrderings(array(
-                $orderBy => \TYPO3\CMS\Extbase\Persistence\QueryInterface::ORDER_DESCENDING
-            ));
-        }
-        else {
-            $query->setOrderings(array(
-                $orderBy => \TYPO3\CMS\Extbase\Persistence\QueryInterface::ORDER_ASCENDING
-            ));
+        if ($orderDirection === 'desc') {
+            $query->setOrderings([
+                $orderBy => QueryInterface::ORDER_DESCENDING
+            ]);
+        } else {
+            $query->setOrderings([
+                $orderBy => QueryInterface::ORDER_ASCENDING
+            ]);
         }
     }
 
@@ -93,7 +96,11 @@ class AbstractRepository extends \TYPO3\CMS\Extbase\Persistence\Repository {
      */
     protected function _setRange(&$query, $limit=null, $offset=null)
     {
-        if ($limit > 0) {$query->setLimit($limit);}
-        if ($offset > 0) {$query->setOffset($offset);}
+        if ($limit > 0) {
+            $query->setLimit($limit);
+        }
+        if ($offset > 0) {
+            $query->setOffset($offset);
+        }
     }
 }

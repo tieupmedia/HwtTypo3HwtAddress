@@ -1,7 +1,7 @@
 <?php
 
-if (!defined('TYPO3_MODE')) {
-	die ('Access denied.');
+if (!defined('TYPO3')) {
+    die('Access denied.');
 }
 
 $extensionKey = 'hwt_address';
@@ -11,7 +11,9 @@ $extensionKey = 'hwt_address';
  * Register plugin
  */
 \TYPO3\CMS\Extbase\Utility\ExtensionUtility::registerPlugin(
-	$extensionKey, 'Address', 'LLL:EXT:' . $extensionKey . '/Resources/Private/Language/locallang_be.xlf:plugin_address'
+    $extensionKey,
+    'Address',
+    'LLL:EXT:' . $extensionKey . '/Resources/Private/Language/locallang_be.xlf:plugin_address'
 );
 
 $extensionName = \TYPO3\CMS\Core\Utility\GeneralUtility::underscoredToUpperCamelCase($extensionKey);

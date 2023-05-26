@@ -1,7 +1,7 @@
 <?php
 
-if (!defined('TYPO3_MODE')) {
-    die ('Access denied.');
+if (!defined('TYPO3')) {
+    die('Access denied.');
 }
 
 
@@ -12,7 +12,7 @@ if (!defined('TYPO3_MODE')) {
     'hwt_address',
     'tx_hwtaddress_domain_model_address',
     $fieldName = 'categories',
-    $options = array(
+    $options = [
         'l10n_mode' => 'exclude'
-    )
+    ]
 );

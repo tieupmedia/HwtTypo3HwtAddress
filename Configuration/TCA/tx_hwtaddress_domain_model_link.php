@@ -1,7 +1,7 @@
 <?php
 
-if (!defined('TYPO3_MODE')) {
-    die ('Access denied.');
+if (!defined('TYPO3')) {
+    die('Access denied.');
 }
 
 
@@ -9,26 +9,26 @@ if (!defined('TYPO3_MODE')) {
 $ll = 'LLL:EXT:hwt_address/Resources/Private/Language/locallang_db.xlf:tx_hwtaddress_domain_model_link.';
 
 // General locallang
-if ( version_compare(TYPO3_version, '9.3.0') >= 0 ) {
+if (version_compare(\TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(\TYPO3\CMS\Core\Information\Typo3Version::class)->getVersion(), '9.3.0') >= 0) {
     $llGeneral = 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:';
-} elseif ( version_compare(TYPO3_version, '8.5.0') >= 0 ) {
-    $llGeneral = 'LLL:EXT:lang/Resources/Private/Language/locallang_general.xlf:';
+} elseif (version_compare(\TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(\TYPO3\CMS\Core\Information\Typo3Version::class)->getVersion(), '8.5.0') >= 0) {
+    $llGeneral = 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:';
 } else {
-    $llGeneral = 'LLL:EXT:lang/locallang_general.xlf:';
+    $llGeneral = 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:';
 }
 
 // TCA locallang
-$llTca = 'LLL:EXT:lang/locallang_tca.xlf:';
+$llTca = 'LLL:EXT:core/Resources/Private/Language/locallang_tca.xlf:';
 
 // CMS locallang
-if ( version_compare(TYPO3_version, '8.0.0') >= 0 ) {
+if (version_compare(\TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(\TYPO3\CMS\Core\Information\Typo3Version::class)->getVersion(), '8.0.0') >= 0) {
     $llTtc = 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:';
 } else {
-    $llTtc = 'LLL:EXT:cms/locallang_ttc.xlf:';
+    $llTtc = 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:';
 }
 
-$extTca = array(
-    'ctrl' => array(
+$extTca = [
+    'ctrl' => [
         'title' => 'LLL:EXT:hwt_address/Resources/Private/Language/locallang_db.xlf:tx_hwtaddress_domain_model_link',
         'label' => 'header',
         'label_alt' => 'linktext, type, parameter',
@@ -37,42 +37,29 @@ $extTca = array(
         'crdate' => 'crdate',
         'cruser_id' => 'cruser_id',
         'origUid' => 't3_origuid',
-        'dividers2tabs' => TRUE,
         'default_sortby' => 'ORDER BY sorting',
         'sortby' => 'sorting',
         'delete' => 'deleted',
-        'enablecolumns' => array(
+        'enablecolumns' => [
             'disabled' => 'hidden',
             'starttime' => 'starttime',
             'endtime' => 'endtime',
-        ),
+        ],
         'iconfile' => 'EXT:hwt_address/Resources/Public/Icons/tx_hwtaddress_domain_model_link.gif',
         'searchFields' => 'uid,header,type,link,linktext',
 
         'languageField' => 'sys_language_uid',
         'transOrigPointerField' => 'l10n_parent',
         'transOrigDiffSourceField' => 'l10n_diffsource',
-    ),
-    'interface' => array(
+    ],
+    'interface' => [
         'showRecordFieldList' => 'sorting,hidden,starttime,endtime,header,type,parameter,linktext'
-    ),
-    'columns' => array(
+    ],
+    'columns' => [
         'sys_language_uid' => [
             'exclude' => true,
             'label' => $llGeneral . 'LGL.language',
-            'config' => [
-                'type' => 'select',
-                'renderType' => 'selectSingle',
-                'special' => 'languages',
-                'items' => [
-                    [
-                        $llGeneral . 'LGL.allLanguages',
-                        -1,
-                        'flags-multiple'
-                    ],
-                ],
-                'default' => 0,
-            ]
+            'config' => ['type' => 'language']
         ],
         'l10n_parent' => [
             'displayCond' => 'FIELD:sys_language_uid:>:0',
@@ -94,150 +81,150 @@ $extTca = array(
                 'default' => ''
             ]
         ],
-        'pid' => array(
+        'pid' => [
             'label' => 'pid',
-            'config' => array(
+            'config' => [
                 'type' => 'passthrough'
-            )
-        ),
-        'sorting' => array(
+            ]
+        ],
+        'sorting' => [
             'label' => 'sorting',
-            'config' => array(
+            'config' => [
                 'type' => 'passthrough'
-            )
-        ),
-        'crdate' => array(
+            ]
+        ],
+        'crdate' => [
             'label' => 'crdate',
-            'config' => array(
+            'config' => [
                 'type' => 'passthrough',
-            )
-        ),
-        'tstamp' => array(
+            ]
+        ],
+        'tstamp' => [
             'label' => 'tstamp',
-            'config' => array(
+            'config' => [
                 'type' => 'passthrough',
-            )
-        ),
-        'hidden' => array(
+            ]
+        ],
+        'hidden' => [
             'exclude' => 1,
             'label' => $llGeneral . 'LGL.hidden',
-            'config' => array(
+            'config' => [
                 'type' => 'check',
                 'default' => 0
-            )
-        ),
-        'starttime' => array(
+            ]
+        ],
+        'starttime' => [
             'exclude' => 1,
             'label' => $llGeneral . 'LGL.starttime',
-            'config' => array(
+            'config' => [
                 'type' => 'input',
                 'renderType' => 'inputDateTime',
                 'size' => 10,
                 'eval' => 'datetime,int',
                 'default' => 0,
-            )
-        ),
-        'endtime' => array(
+            ]
+        ],
+        'endtime' => [
             'exclude' => 1,
             'label' => $llGeneral . 'LGL.endtime',
-            'config' => array(
+            'config' => [
                 'type' => 'input',
                 'renderType' => 'inputDateTime',
                 'size' => 10,
                 'eval' => 'datetime,int',
                 'default' => 0,
-            )
-        ),
+            ]
+        ],
 
-        'header' => array(
+        'header' => [
             'exclude' => 1,
             'label' => $ll . 'header',
-            'config' => array(
+            'config' => [
                 'type' => 'input',
                 'size' => 15,
                 'max' => 30,
-            )
-        ),
-        'parameter' => array(
+            ]
+        ],
+        'parameter' => [
             'exclude' => 0,
             'label' => $ll . 'parameter',
-            'config' => array(
+            'config' => [
                 'type' => 'input',
                 'renderType' => 'inputLink',
                 'size' => 50,
                 'max' => 1024,
                 'eval' => 'trim',
                 'softref' => 'typolink'
-            )
-        ),
-        'linktext' => array(
+            ]
+        ],
+        'linktext' => [
             'exclude' => 1,
             'label' => $ll . 'linktext',
-            'config' => array(
+            'config' => [
                 'type' => 'input',
                 'size' => 15,
                 'max' => 30,
-            )
-        ),
-        'type' => array(
+            ]
+        ],
+        'type' => [
             'exclude' => 0,
             'label' => $ll . 'type',
             'l10n_mode' => 'exclude',
-            'config' => array(
+            'config' => [
                 'type' => 'select',
                 'renderType' => 'selectSingle',
-                'items' => array(
-                    array($ll . 'type.pleaseSelect', ''),
-                    array($ll . 'type.facebook', 'facebook'),
-                    array($ll . 'type.github', 'github'),
-                    array($ll . 'type.gitlab', 'gitlab'),
-                    array($ll . 'type.google', 'google'),
-                    array($ll . 'type.pinterest', 'pinterest'),
-                    array($ll . 'type.instagram', 'instagram'),
-                    array($ll . 'type.linkedin', 'linkedin'),
-                    array($ll . 'type.twitter', 'twitter'),
-                    array($ll . 'type.vimeo', 'vimeo'),
-                    array($ll . 'type.xing', 'xing'),
-                    array($ll . 'type.youtube', 'youtube'),
-                ),
+                'items' => [
+                    [$ll . 'type.pleaseSelect', ''],
+                    [$ll . 'type.facebook', 'facebook'],
+                    [$ll . 'type.github', 'github'],
+                    [$ll . 'type.gitlab', 'gitlab'],
+                    [$ll . 'type.google', 'google'],
+                    [$ll . 'type.pinterest', 'pinterest'],
+                    [$ll . 'type.instagram', 'instagram'],
+                    [$ll . 'type.linkedin', 'linkedin'],
+                    [$ll . 'type.twitter', 'twitter'],
+                    [$ll . 'type.vimeo', 'vimeo'],
+                    [$ll . 'type.xing', 'xing'],
+                    [$ll . 'type.youtube', 'youtube'],
+                ],
                 'size' => 1,
                 'max' => 1,
-            )
-        ),
-    ),
-    'types' => array(
-        0 => array(
+            ]
+        ],
+    ],
+    'types' => [
+        0 => [
             'showitem' =>
-                '--palette--;'.$ll.'palette.name;paletteName,
+                '--palette--;' . $ll . 'palette.name;paletteName,
 
-                --div--;'.$ll.'tabs.language,
-                    --palette--;'.$ll.'palette.language;paletteLanguage,
+                --div--;' . $ll . 'tabs.language,
+                    --palette--;' . $ll . 'palette.language;paletteLanguage,
 
-                --div--;LLL:EXT:cms/locallang_ttc.xlf:tabs.access,
-                    --palette--;'.$llTtc.'palette.visibility;paletteVisbility,
-                    --palette--;'.$llTtc.'palette.access;paletteAccess,'
-        ),
-    ),
-    'palettes' => array(
-        'paletteName' => array(
+                --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.access,
+                    --palette--;' . $llTtc . 'palette.visibility;paletteVisbility,
+                    --palette--;' . $llTtc . 'palette.access;paletteAccess,'
+        ],
+    ],
+    'palettes' => [
+        'paletteName' => [
             'showitem' => 'header, --linebreak--, type, parameter, linktext',
-            'canNotCollapse' => TRUE,
-        ),
+            'canNotCollapse' => true,
+        ],
 
-        'paletteVisbility' => array(
+        'paletteVisbility' => [
             'showitem' => 'hidden',
-            'canNotCollapse' => TRUE,
-        ),
-        'paletteAccess' => array(
-            'showitem' => 'starttime;'.$llTtc.'starttime_formlabel, endtime;'.$llTtc.'endtime_formlabel,',
-            'canNotCollapse' => TRUE,
-        ),
-        'paletteLanguage' => array(
+            'canNotCollapse' => true,
+        ],
+        'paletteAccess' => [
+            'showitem' => 'starttime;' . $llTtc . 'starttime_formlabel, endtime;' . $llTtc . 'endtime_formlabel,',
+            'canNotCollapse' => true,
+        ],
+        'paletteLanguage' => [
             'showitem' => '
-                sys_language_uid;'.$llTtc.'sys_language_uid_formlabel,l10n_parent
+                sys_language_uid;' . $llTtc . 'sys_language_uid_formlabel,l10n_parent
             ',
-        ),
-    ),
-);
+        ],
+    ],
+];
 
 return $extTca;

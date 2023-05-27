@@ -1,9 +1,6 @@
 <?php
 
-if (!defined('TYPO3')) {
-    die('Access denied.');
-}
-
+defined('TYPO3') || die('Access denied.');
 
 // DB locallang
 $ll = 'LLL:EXT:hwt_address/Resources/Private/Language/locallang_db.xlf:tx_hwtaddress_domain_model_address.';

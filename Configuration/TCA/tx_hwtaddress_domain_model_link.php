@@ -1,31 +1,18 @@
 <?php
 
-if (!defined('TYPO3')) {
-    die('Access denied.');
-}
-
+defined('TYPO3') || die('Access denied.');
 
 // DB locallang
 $ll = 'LLL:EXT:hwt_address/Resources/Private/Language/locallang_db.xlf:tx_hwtaddress_domain_model_link.';
 
 // General locallang
-if (version_compare(\TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(\TYPO3\CMS\Core\Information\Typo3Version::class)->getVersion(), '9.3.0') >= 0) {
-    $llGeneral = 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:';
-} elseif (version_compare(\TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(\TYPO3\CMS\Core\Information\Typo3Version::class)->getVersion(), '8.5.0') >= 0) {
-    $llGeneral = 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:';
-} else {
-    $llGeneral = 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:';
-}
+$llGeneral = 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:';
 
 // TCA locallang
 $llTca = 'LLL:EXT:core/Resources/Private/Language/locallang_tca.xlf:';
 
 // CMS locallang
-if (version_compare(\TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(\TYPO3\CMS\Core\Information\Typo3Version::class)->getVersion(), '8.0.0') >= 0) {
-    $llTtc = 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:';
-} else {
-    $llTtc = 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:';
-}
+$llTtc = 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:';
 
 $extTca = [
     'ctrl' => [

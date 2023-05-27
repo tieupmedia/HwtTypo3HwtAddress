@@ -1,13 +1,8 @@
 <?php
 
-if (!defined('TYPO3')) {
-    die('Access denied.');
-}
-
-$extensionKey = 'hwt_address';
-
+defined('TYPO3') || die('Access denied.');
 
 /*
  * Default selectable TypoScript
  */
-\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addStaticFile($extensionKey, 'Configuration/TypoScript', 'Modern Address');
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addStaticFile('hwt_address', 'Configuration/TypoScript', 'Modern Address');

@@ -1,9 +1,6 @@
 <?php
 
-if (!defined('TYPO3')) {
-    die('Access denied.');
-}
-
+defined('TYPO3') || die('Access denied.');
 
 /*
  * Add System Categories

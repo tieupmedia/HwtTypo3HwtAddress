@@ -1,17 +1,12 @@
 <?php
 
-if (!defined('TYPO3')) {
-    die('Access denied.');
-}
-
-$extensionKey = 'hwt_address';
-
+defined('TYPO3') || die('Access denied.');
 
 /*
  * Configure plugin(s)
  */
 \TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
-    $extensionKey,
+    'hwt_address',
     'Address',
     [
         \Hwt\HwtAddress\Controller\AddressController::class => 'list,single,search',
@@ -35,35 +30,31 @@ if ($emConfiguration['enableKesearchHooks']) {
 /*
  * Register CmsLayout hook
  */
-$GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['cms/layout/class.tx_cms_layout.php']['list_type_Info']['hwtaddress_address'][$extensionKey] = 'Hwt\\HwtAddress\\Hooks\\CmsLayout->getExtensionSummary';
+$GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['cms/layout/class.tx_cms_layout.php']['list_type_Info']['hwtaddress_address']['hwt_address'] = 'Hwt\\HwtAddress\\Hooks\\CmsLayout->getExtensionSummary';
 
 
 /*
  * Add pageTS
  */
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPageTSConfig('
-    <INCLUDE_TYPOSCRIPT: source="FILE:EXT:hwt_address/Configuration/TSconfig/ContentElementWizard/mod.wizards.txt">
+    @import \'EXT:hwt_address/Configuration/TSconfig/ContentElementWizard/mod.wizards.txt\'
 ');
 
+/*
+ * Register icons
+ */
+$icons = [
+    'apps-pagetree-folder-contains-hwtaddress' => 'folder-hwtaddress.gif',
+    'ext-hwtaddress-wizard-icon' => 'ce_wiz.gif',
+];
 
-if (TYPO3_MODE === 'BE') {
-    /*
-     * Register folder icon
-     * (For TYPO3 >= 7.5)
-     */
-    $icons = [
-        'apps-pagetree-folder-contains-hwtaddress' => 'folder-hwtaddress.gif',
-        'ext-hwtaddress-wizard-icon' => 'ce_wiz.gif',
-    ];
+/** @var \TYPO3\CMS\Core\Imaging\IconRegistry $iconRegistry */
+$iconRegistry = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(\TYPO3\CMS\Core\Imaging\IconRegistry::class);
 
-    /** @var \TYPO3\CMS\Core\Imaging\IconRegistry $iconRegistry */
-    $iconRegistry = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance('TYPO3\\CMS\\Core\\Imaging\\IconRegistry');
-
-    foreach ($icons as $identifier => $file) {
-        $iconRegistry->registerIcon(
-            $identifier,
-            'TYPO3\\CMS\\Core\\Imaging\\IconProvider\\BitmapIconProvider',
-            ['source' => 'EXT:' . $extensionKey . '/Resources/Public/Icons/' . $file]
-        );
-    }
+foreach ($icons as $identifier => $file) {
+    $iconRegistry->registerIcon(
+        $identifier,
+        \TYPO3\CMS\Core\Imaging\IconProvider\BitmapIconProvider::class,
+        ['source' => 'EXT:hwt_address/Resources/Public/Icons/' . $file]
+    );
 }

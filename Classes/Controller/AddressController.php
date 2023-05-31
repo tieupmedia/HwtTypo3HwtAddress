@@ -1,8 +1,14 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace Hwt\HwtAddress\Controller;
+
+use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
+use Hwt\HwtAddress\Domain\Repository\AddressRepository;
+use Psr\Http\Message\ResponseInterface;
+use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
+use Hwt\HwtAddress\Domain\Model\Address;
 
 /***************************************************************
  *  Copyright notice
@@ -26,7 +32,6 @@ namespace Hwt\HwtAddress\Controller;
  *
  *  This copyright notice MUST APPEAR in all copies of the script!
  ***************************************************************/
-
 /**
  * Controller of address records
  *
@@ -34,22 +39,23 @@ namespace Hwt\HwtAddress\Controller;
  * @subpackage tx_hwtaddress
  * @author Heiko Westermann <hwt3@gmx.de>
  */
-class AddressController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController {
-
+class AddressController extends ActionController
+{
     use CustomErrorHandlingTrait;
 
     /**
-     * @var \Hwt\HwtAddress\Domain\Repository\AddressRepository
+     * @var AddressRepository
      */
     protected $addressRepository;
 
     /**
      * Inject a address repository
      *
-     * @param \Hwt\HwtAddress\Domain\Repository\AddressRepository $addressRepository
+     * @param AddressRepository $addressRepository
      * @return void
      */
-    public function injectNewsRepository(\Hwt\HwtAddress\Domain\Repository\AddressRepository $addressRepository) {
+    public function injectNewsRepository(AddressRepository $addressRepository)
+    {
         $this->addressRepository = $addressRepository;
     }
 
@@ -60,16 +66,17 @@ class AddressController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControll
      *
      * @return void
      */
-    public function searchAction() {
+    public function searchAction(): ResponseInterface
+    {
         // workaround cause only $zip is filled. a caching problem?
-        if ( $this->request->hasArgument('zip') && ($this->request->getArgument('zip')!='') ) {
+        if ($this->request->hasArgument('zip') && ($this->request->getArgument('zip')!='')) {
             $zip = $this->request->getArgument('zip');
-        }
-        elseif ( $this->request->hasArgument('city') && ($this->request->getArgument('city')!='') ) {
+        } elseif ($this->request->hasArgument('city') && ($this->request->getArgument('city')!='')) {
             $city = $this->request->getArgument('city');
         }
 
-        $this->view->assign('searchform', array('zip'=>$zip, 'city'=>$city));
+        $this->view->assign('searchform', ['zip'=>$zip, 'city'=>$city]);
+        return $this->htmlResponse();
     }
 
 
@@ -79,31 +86,32 @@ class AddressController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControll
      *
      * @return void
      */
-    public function listAction() {
+    public function listAction(): ResponseInterface
+    {
         /*
          * Prepare zip or city search, if requested
          */
         if ($this->request->hasArgument('zip') && ($this->request->getArgument('zip')!='')) {
             $zip = $this->request->getArgument('zip');
-            $isSearch = TRUE;
+            $isSearch = true;
         }
         if (($zip=='') && $this->request->hasArgument('city') && ($this->request->getArgument('city')!='')) {
-                $jsonFileName = \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extPath('hwt_address').'Resources/Private/Data/city-zip.json';
-                $dataArray = array_change_key_case(json_decode(file_get_contents($jsonFileName), true));
+            $jsonFileName = ExtensionManagementUtility::extPath('hwt_address') . 'Resources/Private/Data/city-zip.json';
+            $dataArray = array_change_key_case(json_decode(file_get_contents($jsonFileName), true));
 
-                $city = strtolower($this->request->getArgument('city'));
+            $city = strtolower($this->request->getArgument('city'));
 
-                if (!empty($dataArray[$city])) {
-                    $zip = substr($dataArray[$city],0,5);
-                }
-                $isSearch = TRUE;
+            if (!empty($dataArray[$city])) {
+                $zip = substr($dataArray[$city], 0, 5);
+            }
+            $isSearch = true;
         }
 
 
         /*
          * Get address records
          */
-        $addressRecords = array();
+        $addressRecords = [];
 
         // set default order field (equal to first flexform option)
         if (!is_string($this->settings['orderBy'])) {
@@ -112,19 +120,16 @@ class AddressController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControll
 
         if ($this->settings['addressStoragePages'] && ($this->settings['addressStoragePages'] != '')) {
             $addressRecords = $this->addressRepository->findInPageIds($this->settings['addressStoragePages'], $this->settings['orderBy'], $this->settings['orderDirection']);
-        }
-        elseif ($this->settings['list']['displayPageRelated']==1) {
+        } elseif ($this->settings['list']['displayPageRelated']==1) {
             $addressRecords = $this->addressRepository->findRelatedToPage($GLOBALS['TSFE']->id, $this->settings['orderBy'], $this->settings['orderDirection']);
-        }
-        elseif (($this->settings['addressCategories']) || ($zip)) {
+        } elseif (($this->settings['addressCategories']) || ($zip)) {
             $addressRecords = $this->addressRepository->findAllWithoutPidRestriction($this->settings['addressCategories'], $zip, $this->settings['orderBy'], $this->settings['orderDirection']);
         }
 
         if ((count($addressRecords)==0) && $this->settings['addressRecords']) {
             if ($this->settings['orderBy']==='selectedrecords') {
                 $addressRecords = $this->addressRepository->findByUidInOrderedList($this->settings['addressRecords'], $this->settings['orderDirection']);
-            }
-            else {
+            } else {
                 $addressRecords = $this->addressRepository->findByUidInList($this->settings['addressRecords'], $this->settings['orderBy'], $this->settings['orderDirection']);
             }
         }
@@ -133,6 +138,7 @@ class AddressController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControll
             'addresses' => $addressRecords,
             'isSearch' => $isSearch,
         ]);
+        return $this->htmlResponse();
     }
 
 
@@ -140,26 +146,26 @@ class AddressController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControll
     /**
      * Single view of a address record
      *
-     * @param \Hwt\HwtAddress\Domain\Model\Address $address single address item
+     * @param Address $address single address item
      * @return void
      */
-    public function singleAction(\Hwt\HwtAddress\Domain\Model\Address $address = NULL) {
-        if ( (!$address) && (int)$this->settings['addressSingleRecord'] > 0 ) {
-                // If configured, get a fallback record, if no single record is given
+    public function singleAction(Address $address = null)
+    {
+        if ((!$address) && (int)$this->settings['addressSingleRecord'] > 0) {
+            // If configured, get a fallback record, if no single record is given
             $address = $this->addressRepository->findByUid((int)$this->settings['addressSingleRecord']);
-        }
-        elseif ( (!$address) && (int)$this->settings['single']['redirectIfEmptyPid'] > 0 ) {
-                // If configured, redirect to a page with pid, if no single record and no fallback record are given
+        } elseif ((!$address) && (int)$this->settings['single']['redirectIfEmptyPid'] > 0) {
+            // If configured, redirect to a page with pid, if no single record and no fallback record are given
             $this->uriBuilder->setTargetPageUid($this->settings['single']['redirectIfEmptyPid']);
             $link = $this->uriBuilder->build();
 
             $this->redirectToURI($link);
         }
 
-        if ( !$address &&
+        if (!$address &&
              is_array($this->settings['single']['recordNotFoundHandling']) &&
-             isset($this->settings['single']['recordNotFoundHandling']['mode']) ) {
-                // Do configurable error handling, if no address record was found
+             isset($this->settings['single']['recordNotFoundHandling']['mode'])) {
+            // Do configurable error handling, if no address record was found
 
             return $this->doConfiguredErrorHandling($this->settings['single']['recordNotFoundHandling']);
         }

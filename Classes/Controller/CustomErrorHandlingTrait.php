@@ -1,10 +1,14 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace Hwt\HwtAddress\Controller;
 
-use TYPO3\CMS\Core\Utility\GeneralUtility as GeneralUtility;
+use TYPO3\CMS\Core\Utility\GeneralUtility;
+use TYPO3\CMS\Frontend\Controller\ErrorController;
+use TYPO3\CMS\Core\Http\ImmediateResponseException;
+use TYPO3\CMS\Core\Utility\HttpUtility;
+use TYPO3\CMS\Fluid\View\StandaloneView;
 
 /***************************************************************
  *  Copyright notice
@@ -36,8 +40,8 @@ use TYPO3\CMS\Core\Utility\GeneralUtility as GeneralUtility;
  * @subpackage tx_hwtaddress
  * @author Heiko Westermann <hwt3@gmx.de>
  */
-trait CustomErrorHandlingTrait {
-
+trait CustomErrorHandlingTrait
+{
     /**
      * Error handling configured before
      *
@@ -45,60 +49,64 @@ trait CustomErrorHandlingTrait {
      * @throws \InvalidArgumentException
      * @return string
      */
-    protected function doConfiguredErrorHandling($configuration) {
+    protected function doConfiguredErrorHandling($configuration)
+    {
         $return = null;
 
         //\TYPO3\CMS\Extbase\Utility\DebuggerUtility::var_dump($configuration);
-        if ( is_array($configuration) && isset($configuration['mode']) ) {
+        if (is_array($configuration) && isset($configuration['mode'])) {
             $redirectMode = $configuration['mode'];
-            switch ( $redirectMode ) {
+            switch ($redirectMode) {
                 case 'redirectToAction':
-                    if ( isset($configuration['action']) ) {
+                    if (isset($configuration['action'])) {
                         $this->redirect($configuration['action']);
 
-                        // not executed
+                    // not executed
                         //break;
                     } else {
                         $msg = sprintf('If error handling "%s" is used, "%s" key must be set.', 'redirectToAction', 'action');
                         throw new \InvalidArgumentException($msg);
                     }
+                    // no break
                 case 'redirectToPage':
-                    if ( isset($configuration['pid']) && ((int)$configuration['pid']>0) ) {
+                    if (isset($configuration['pid']) && ((int)$configuration['pid']>0)) {
                         $this->uriBuilder->reset();
                         $this->uriBuilder->setTargetPageUid((int)$configuration['pid']);
                         $this->uriBuilder->setCreateAbsoluteUri(true);
-                        if ( GeneralUtility::getIndpEnv('TYPO3_SSL') ) {
+                        if (GeneralUtility::getIndpEnv('TYPO3_SSL')) {
                             $this->uriBuilder->setAbsoluteUriScheme('https');
                         }
                         $url = $this->uriBuilder->build();
 
                         $statusCode = 303;
-                        if ( isset($configuration['httpStatusCode']) ) {
+                        if (isset($configuration['httpStatusCode'])) {
                             $statusCode = (int)$configuration['httpStatusCode'];
                         }
                         # ToDo: Any other than '303' (=default) returns '302' intead of given one, see https://forum.typo3.org/index.php/t/192428/extbase-redirecttouri-setzt-statuscode-nicht
                         //$this->redirectToUri($url, 0, $statusCode);
                         $this->redirectToUri($url);
 
-                        // not executed
+                    // not executed
                         //break;
                     } else {
                         $msg = sprintf('If error handling "%s" is used, "%s" key must be set to a page id.', 'redirectToPage', 'pid');
                         throw new \InvalidArgumentException($msg);
                     }
+                    // no break
                 case 'pageNotFoundHandler':
-                    $GLOBALS['TSFE']->pageNotFoundAndExit('No record of type "' . $configuration['recordType'] . '" found.');
+                    $response = GeneralUtility::makeInstance(ErrorController::class)->pageNotFoundAction($GLOBALS['TYPO3_REQUEST'], 'No record of type "' . $configuration['recordType'] . '" found.');
+                    throw new ImmediateResponseException($response);
 
                     // not executed
                     //break;
                 case 'showStandaloneTemplate':
-                    if ( isset($configuration['templatePathAndFilename']) ) {
-                        if ( isset($configuration['httpStatusCode']) ) {
-                            $statusCode = constant(\TYPO3\CMS\Core\Utility\HttpUtility::class . '::HTTP_STATUS_' . $configuration['httpStatusCode']);
-                            \TYPO3\CMS\Core\Utility\HttpUtility::setResponseCode($statusCode);
+                    if (isset($configuration['templatePathAndFilename'])) {
+                        if (isset($configuration['httpStatusCode'])) {
+                            $statusCode = constant(HttpUtility::class . '::HTTP_STATUS_' . $configuration['httpStatusCode']);
+                            HttpUtility::setResponseCode($statusCode);
                         }
 
-                        $standaloneTemplate = GeneralUtility::makeInstance(\TYPO3\CMS\Fluid\View\StandaloneView::class);
+                        $standaloneTemplate = GeneralUtility::makeInstance(StandaloneView::class);
                         $standaloneTemplate->setTemplatePathAndFilename(GeneralUtility::getFileAbsFileName($configuration['templatePathAndFilename']));
                         $return = $standaloneTemplate->render();
 
@@ -107,8 +115,9 @@ trait CustomErrorHandlingTrait {
                         $msg = sprintf('If error handling "%s" is used, "%s" key must be set.', 'showStandaloneTemplate', 'templatePathAndFilename');
                         throw new \InvalidArgumentException($msg);
                     }
+                    // no break
                 case 'showContentObject':
-                    if ( isset($configuration['cObjectUid']) && ((int)$configuration['cObjectUid']>0) ) {
+                    if (isset($configuration['cObjectUid']) && ((int)$configuration['cObjectUid']>0)) {
                         $return = $this->_getContentObjectByUid((int)$configuration['cObjectUid']);
 
                         break;
@@ -116,6 +125,7 @@ trait CustomErrorHandlingTrait {
                         $msg = sprintf('If error handling "%s" is used, "%s" key must be set.', 'showContentObject', 'cObjectUid');
                         throw new \InvalidArgumentException($msg);
                     }
+                    // no break
                 default:
                     // Do nothing, it might be handled in the view.
             }
@@ -131,12 +141,13 @@ trait CustomErrorHandlingTrait {
      * @param integer $uid
      * @return string
      */
-    protected function _getContentObjectByUid($uid) {
-        $conf = array(
+    protected function _getContentObjectByUid($uid)
+    {
+        $conf = [
             'tables' => 'tt_content',
             'source' => $uid,
             'dontCheckPid' => 1
-        );
+        ];
 
         $cObjectRenderer = GeneralUtility::makeInstance('TYPO3\CMS\Frontend\ContentObject\ContentObjectRenderer');
         return $cObjectRenderer->cObjGetSingle('RECORDS', $conf);

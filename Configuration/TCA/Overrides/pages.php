@@ -1,50 +1,35 @@
 <?php
 
-if (!defined('TYPO3_MODE')) {
-    die ('Access denied.');
-}
+defined('TYPO3') || die('Access denied.');
 
-$extensionKey = 'hwt_address';
+/*
+ * Add folder contains type,
+ * mount page icon
+ * (since TYPO3 7.5)
+ */
 
+$GLOBALS['TCA']['pages']['ctrl']['typeicon_classes']['contains-hwtaddress'] = 'apps-pagetree-folder-contains-hwtaddress';
 
-if (TYPO3_MODE == 'BE') {
-    /*
-     * Add folder contains type,
-     * mount page icon
-     * (since TYPO3 7.5)
-     */
+// add select option for hwtaddress
+$GLOBALS['TCA']['pages']['columns']['module']['config']['items'][] = [
+    0 => 'LLL:EXT:hwt_address/Resources/Private/Language/locallang_be.xlf:folder',
+    1 => 'hwtaddress',
+    2 => 'apps-pagetree-folder-contains-hwtaddress'
+];
 
-    $GLOBALS['TCA']['pages']['ctrl']['typeicon_classes']['contains-hwtaddress'] = 'apps-pagetree-folder-contains-hwtaddress';
-
-    // add select option for hwtaddress
-    $GLOBALS['TCA']['pages']['columns']['module']['config']['items'][] = array(
-        0 => 'LLL:EXT:' . $extensionKey . '/Resources/Private/Language/locallang_be.xlf:folder',
-        1 => 'hwtaddress',
-        2 => 'apps-pagetree-folder-contains-hwtaddress'
-    );
-}
-
-
-
-//$configurationUtility = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance('TYPO3\\CMS\\Extensionmanager\\Utility\\ConfigurationUtility');
-//$extensionConfiguration = $configurationUtility->getCurrentConfiguration('hwt_address');
 $extensionConfiguration = $GLOBALS['TYPO3_CONF_VARS']['EXTENSIONS']['hwt_address'];
 
 // Add relation field, if activated in em config
-if ( isset($extensionConfiguration['enableRelationsInPages']) && ($extensionConfiguration['enableRelationsInPages']==true) ) {
-    // Extension locallang
-    $ll = 'LLL:EXT:hwt_address/Resources/Private/Language/locallang_db.xlf:pages.';
-
+if ($extensionConfiguration['enableRelationsInPages'] ?? false) {
     /*
      * Extend tca of pages
      */
-    $tempColumns = array(
-        'tx_hwtaddress_related_address' => array(
+    $tempColumns = [
+        'tx_hwtaddress_related_address' => [
             'exclude' => 1,
-            'label' => $ll . 'tx_hwtaddress_related_address',
-            'config' => array(
+            'label' => 'LLL:EXT:hwt_address/Resources/Private/Language/locallang_db.xlf:pages.tx_hwtaddress_related_address',
+            'config' => [
                 'type' => 'group',
-                'internal_type' => 'db',
                 'allowed' => 'tx_hwtaddress_domain_model_address',
                 'foreign_table' => 'tx_hwtaddress_domain_model_address',
                 'size' => 5,
@@ -54,9 +39,9 @@ if ( isset($extensionConfiguration['enableRelationsInPages']) && ($extensionConf
                 'behaviour' => [
                     'allowLanguageSynchronization' => true,
                 ],
-            )
-        ),
-    );
+            ]
+        ],
+    ];
 
     \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTCAcolumns('pages', $tempColumns);
     \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addToAllTCAtypes(

@@ -1,8 +1,11 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace Hwt\HwtAddress\DomainObject;
+
+use TYPO3\CMS\Extbase\Persistence\ObjectStorage;
+use TYPO3\CMS\Extbase\Domain\Model\Category;
 
 /***************************************************************
  *  Copyright notice
@@ -26,7 +29,6 @@ namespace Hwt\HwtAddress\DomainObject;
  *
  *  This copyright notice MUST APPEAR in all copies of the script!
  ***************************************************************/
-
 /**
  * Trait that adds categories property and getter method
  *
@@ -34,21 +36,22 @@ namespace Hwt\HwtAddress\DomainObject;
  * @subpackage tx_hwtaddress
  * @author Heiko Westermann <hwt3@gmx.de>
  */
-trait TraitCategoriesPropertyAndGetter {
-
+trait TraitCategoriesPropertyAndGetter
+{
     /**
      * Categories
      *
-     * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\TYPO3\CMS\Extbase\Domain\Model\Category>
+     * @var ObjectStorage<Category>
      */
     protected $categories;
 
     /**
      * Returns the categories
      *
-     * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\TYPO3\CMS\Extbase\Domain\Model\Category> $categories
+     * @return ObjectStorage<Category> $categories
      */
-    public function getCategories() {
+    public function getCategories()
+    {
         return $this->categories;
     }
 
@@ -56,7 +59,8 @@ trait TraitCategoriesPropertyAndGetter {
      * Init function for trait, e.g. to execute in constructor of using object
      *
      */
-    public function initTraitCategoriesPropertyAndGetter() {
-        $this->categories = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
+    public function initTraitCategoriesPropertyAndGetter()
+    {
+        $this->categories = new ObjectStorage();
     }
 }

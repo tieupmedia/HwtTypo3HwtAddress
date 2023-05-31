@@ -1,8 +1,12 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace Hwt\HwtAddress\DomainObject;
+
+use TYPO3\CMS\Extbase\Persistence\ObjectStorage;
+use TYPO3\CMS\Extbase\Domain\Model\FileReference;
+use TYPO3\CMS\Extbase\Annotation\ORM\Lazy;
 
 /***************************************************************
  *  Copyright notice
@@ -26,7 +30,6 @@ namespace Hwt\HwtAddress\DomainObject;
  *
  *  This copyright notice MUST APPEAR in all copies of the script!
  ***************************************************************/
-
 /**
  * Trait that adds assets property and getter method
  *
@@ -34,24 +37,25 @@ namespace Hwt\HwtAddress\DomainObject;
  * @subpackage tx_hwtaddress
  * @author Heiko Westermann <hwt3@gmx.de>
  */
-trait TraitAssetsPropertyAndGetter {
-
+trait TraitAssetsPropertyAndGetter
+{
     /**
      * Assets
      *
-     * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\TYPO3\CMS\Extbase\Domain\Model\FileReference>
-     * @TYPO3\CMS\Extbase\Annotation\ORM\Lazy
+     * @var ObjectStorage<FileReference>
+     * @Lazy
      * @extensionScannerIgnoreLine Still needed for TYPO3 8.7
-     * @TYPO3\CMS\Extbase\Annotation\ORM\Lazy
+     * @Lazy
      */
     protected $assets;
 
     /**
      * Returns the assets
      *
-     * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\TYPO3\CMS\Extbase\Domain\Model\FileReference> $assets
+     * @return ObjectStorage<FileReference> $assets
      */
-    public function getAssets() {
+    public function getAssets()
+    {
         return $this->assets;
     }
 
@@ -59,7 +63,8 @@ trait TraitAssetsPropertyAndGetter {
      * Init function for trait, e.g. to execute in constructor of using object
      *
      */
-    public function initTraitAssetsPropertyAndGetter() {
-        $this->assets = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
+    public function initTraitAssetsPropertyAndGetter()
+    {
+        $this->assets = new ObjectStorage();
     }
 }

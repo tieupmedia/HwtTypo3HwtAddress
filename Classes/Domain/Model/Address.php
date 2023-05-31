@@ -1,8 +1,15 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace Hwt\HwtAddress\Domain\Model;
+
+use Hwt\HwtAddress\DomainObject\AbstractManageableEntity;
+use Hwt\HwtAddress\DomainObject\TraitAssetsPropertyAndGetter;
+use Hwt\HwtAddress\DomainObject\TraitCategoriesPropertyAndGetter;
+use TYPO3\CMS\Extbase\Persistence\ObjectStorage;
+use TYPO3\CMS\Extbase\Annotation\ORM\Lazy;
+use TYPO3\CMS\Extbase\Domain\Model\FileReference;
 
 /***************************************************************
  *  Copyright notice
@@ -26,7 +33,6 @@ namespace Hwt\HwtAddress\Domain\Model;
  *
  *  This copyright notice MUST APPEAR in all copies of the script!
  ***************************************************************/
-
 /**
  * Address model
  *
@@ -34,10 +40,10 @@ namespace Hwt\HwtAddress\Domain\Model;
  * @subpackage tx_hwtaddress
  * @author Heiko Westermann <hwt3@gmx.de>
  */
-class Address extends \Hwt\HwtAddress\DomainObject\AbstractManageableEntity {
-
-    use \Hwt\HwtAddress\DomainObject\TraitAssetsPropertyAndGetter;
-    use \Hwt\HwtAddress\DomainObject\TraitCategoriesPropertyAndGetter;
+class Address extends AbstractManageableEntity
+{
+    use TraitAssetsPropertyAndGetter;
+    use TraitCategoriesPropertyAndGetter;
 
     /**
      * @var string
@@ -155,10 +161,10 @@ class Address extends \Hwt\HwtAddress\DomainObject\AbstractManageableEntity {
     protected $www;
 
     /**
-     * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Hwt\HwtAddress\Domain\Model\Link>
-     * @TYPO3\CMS\Extbase\Annotation\ORM\Lazy
+     * @var ObjectStorage<Link>
+     * @Lazy
      * @extensionScannerIgnoreLine Still needed for TYPO3 8.7
-     * @TYPO3\CMS\Extbase\Annotation\ORM\Lazy
+     * @Lazy
      */
     protected $links;
 
@@ -175,37 +181,37 @@ class Address extends \Hwt\HwtAddress\DomainObject\AbstractManageableEntity {
     /**
      * images
      *
-     * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\TYPO3\CMS\Extbase\Domain\Model\FileReference>
-     * @TYPO3\CMS\Extbase\Annotation\ORM\Lazy
+     * @var ObjectStorage<FileReference>
+     * @Lazy
      * @extensionScannerIgnoreLine Still needed for TYPO3 8.7
-     * @TYPO3\CMS\Extbase\Annotation\ORM\Lazy
+     * @Lazy
      */
     protected $images;
 
     /**
      * company images
      *
-     * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\TYPO3\CMS\Extbase\Domain\Model\FileReference>
-     * @TYPO3\CMS\Extbase\Annotation\ORM\Lazy
+     * @var ObjectStorage<FileReference>
+     * @Lazy
      * @extensionScannerIgnoreLine Still needed for TYPO3 8.7
-     * @TYPO3\CMS\Extbase\Annotation\ORM\Lazy
+     * @Lazy
      */
     protected $companyImages;
 
     /**
      * related addresses
      *
-     * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Hwt\HwtAddress\Domain\Model\Address>
+     * @var ObjectStorage<\Hwt\HwtAddress\Domain\Model\Address>
      */
     protected $relatedAddress;
 
     /**
      * related from addresses
      *
-     * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Hwt\HwtAddress\Domain\Model\Address>
-     * @TYPO3\CMS\Extbase\Annotation\ORM\Lazy
+     * @var ObjectStorage<\Hwt\HwtAddress\Domain\Model\Address>
+     * @Lazy
      * @extensionScannerIgnoreLine Still needed for TYPO3 8.7
-     * @TYPO3\CMS\Extbase\Annotation\ORM\Lazy
+     * @Lazy
      */
     protected $relatedAddressFrom;
 
@@ -215,12 +221,13 @@ class Address extends \Hwt\HwtAddress\DomainObject\AbstractManageableEntity {
      * __construct
      * @return AbstractObject
      */
-    public function __construct() {
-        $this->images = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
-        $this->companyImages = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
-        $this->links = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
-        $this->relatedAddress = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
-        $this->relatedAddressFrom = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
+    public function __construct()
+    {
+        $this->images = new ObjectStorage();
+        $this->companyImages = new ObjectStorage();
+        $this->links = new ObjectStorage();
+        $this->relatedAddress = new ObjectStorage();
+        $this->relatedAddressFrom = new ObjectStorage();
         $this->initTraitAssetsPropertyAndGetter();
         $this->initTraitCategoriesPropertyAndGetter();
     }
@@ -232,9 +239,10 @@ class Address extends \Hwt\HwtAddress\DomainObject\AbstractManageableEntity {
      *
      * @return string
      */
-    public function getNameOrTitle() {
+    public function getNameOrTitle()
+    {
         $nameOrTitle = $this->companyTitle;
-        if ( $this->lastname ) {
+        if ($this->lastname) {
             $nameOrTitle = $this->firstname . ' ' . $this->lastname;
         }
         return $nameOrTitle;
@@ -245,7 +253,8 @@ class Address extends \Hwt\HwtAddress\DomainObject\AbstractManageableEntity {
      *
      * @return string
      */
-    public function getAcademic() {
+    public function getAcademic()
+    {
         return $this->academic;
     }
 
@@ -254,7 +263,8 @@ class Address extends \Hwt\HwtAddress\DomainObject\AbstractManageableEntity {
      *
      * @return string
      */
-    public function getFirstname() {
+    public function getFirstname()
+    {
         return $this->firstname;
     }
 
@@ -263,7 +273,8 @@ class Address extends \Hwt\HwtAddress\DomainObject\AbstractManageableEntity {
      *
      * @return string
      */
-    public function getLastname() {
+    public function getLastname()
+    {
         return $this->lastname;
     }
 
@@ -272,7 +283,8 @@ class Address extends \Hwt\HwtAddress\DomainObject\AbstractManageableEntity {
      *
      * @return int
      */
-    public function getGender() {
+    public function getGender()
+    {
         return $this->gender;
     }
 
@@ -281,7 +293,8 @@ class Address extends \Hwt\HwtAddress\DomainObject\AbstractManageableEntity {
      *
      * @return \DateTime
      */
-    public function getBirthday() {
+    public function getBirthday()
+    {
         return $this->birthday;
     }
 
@@ -290,7 +303,8 @@ class Address extends \Hwt\HwtAddress\DomainObject\AbstractManageableEntity {
      *
      * @return string
      */
-    public function getInfo() {
+    public function getInfo()
+    {
         return $this->info;
     }
 
@@ -299,7 +313,8 @@ class Address extends \Hwt\HwtAddress\DomainObject\AbstractManageableEntity {
      *
      * @return string
      */
-    public function getDepartment() {
+    public function getDepartment()
+    {
         return $this->department;
     }
 
@@ -308,7 +323,8 @@ class Address extends \Hwt\HwtAddress\DomainObject\AbstractManageableEntity {
      *
      * @return string
      */
-    public function getPosition() {
+    public function getPosition()
+    {
         return $this->position;
     }
 
@@ -317,7 +333,8 @@ class Address extends \Hwt\HwtAddress\DomainObject\AbstractManageableEntity {
      *
      * @return string
      */
-    public function getCompanyTitle() {
+    public function getCompanyTitle()
+    {
         return $this->companyTitle;
     }
 
@@ -326,7 +343,8 @@ class Address extends \Hwt\HwtAddress\DomainObject\AbstractManageableEntity {
      *
      * @return string
      */
-    public function getCompanySubtitle() {
+    public function getCompanySubtitle()
+    {
         return $this->companySubtitle;
     }
 
@@ -335,7 +353,8 @@ class Address extends \Hwt\HwtAddress\DomainObject\AbstractManageableEntity {
      *
      * @return string
      */
-    public function getCompanyShort() {
+    public function getCompanyShort()
+    {
         return $this->companyShort;
     }
 
@@ -344,7 +363,8 @@ class Address extends \Hwt\HwtAddress\DomainObject\AbstractManageableEntity {
      *
      * @return string
      */
-    public function getCompanyBodytext() {
+    public function getCompanyBodytext()
+    {
         return $this->companyBodytext;
     }
 
@@ -353,7 +373,8 @@ class Address extends \Hwt\HwtAddress\DomainObject\AbstractManageableEntity {
      *
      * @return string
      */
-    public function getBuilding() {
+    public function getBuilding()
+    {
         return $this->building;
     }
 
@@ -362,7 +383,8 @@ class Address extends \Hwt\HwtAddress\DomainObject\AbstractManageableEntity {
      *
      * @return string
      */
-    public function getStreet() {
+    public function getStreet()
+    {
         return $this->street;
     }
 
@@ -371,7 +393,8 @@ class Address extends \Hwt\HwtAddress\DomainObject\AbstractManageableEntity {
      *
      * @return string
      */
-    public function getZip() {
+    public function getZip()
+    {
         return $this->zip;
     }
 
@@ -380,7 +403,8 @@ class Address extends \Hwt\HwtAddress\DomainObject\AbstractManageableEntity {
      *
      * @return string
      */
-    public function getCity() {
+    public function getCity()
+    {
         return $this->city;
     }
 
@@ -389,7 +413,8 @@ class Address extends \Hwt\HwtAddress\DomainObject\AbstractManageableEntity {
      *
      * @return string
      */
-    public function getRegion() {
+    public function getRegion()
+    {
         return $this->region;
     }
 
@@ -398,7 +423,8 @@ class Address extends \Hwt\HwtAddress\DomainObject\AbstractManageableEntity {
      *
      * @return string
      */
-    public function getCountry() {
+    public function getCountry()
+    {
         return $this->country;
     }
 
@@ -407,7 +433,8 @@ class Address extends \Hwt\HwtAddress\DomainObject\AbstractManageableEntity {
      *
      * @return string
      */
-    public function getPhone() {
+    public function getPhone()
+    {
         return $this->phone;
     }
 
@@ -416,7 +443,8 @@ class Address extends \Hwt\HwtAddress\DomainObject\AbstractManageableEntity {
      *
      * @return string
      */
-    public function getFax() {
+    public function getFax()
+    {
         return $this->fax;
     }
 
@@ -425,7 +453,8 @@ class Address extends \Hwt\HwtAddress\DomainObject\AbstractManageableEntity {
      *
      * @return string
      */
-    public function getMobile() {
+    public function getMobile()
+    {
         return $this->mobile;
     }
 
@@ -434,7 +463,8 @@ class Address extends \Hwt\HwtAddress\DomainObject\AbstractManageableEntity {
      *
      * @return string
      */
-    public function getEmail() {
+    public function getEmail()
+    {
         return $this->email;
     }
 
@@ -443,16 +473,18 @@ class Address extends \Hwt\HwtAddress\DomainObject\AbstractManageableEntity {
      *
      * @return string
      */
-    public function getWww() {
+    public function getWww()
+    {
         return $this->www;
     }
 
     /**
      * Get links
      *
-     * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Hwt\HwtAddress\Domain\Model\Link> $links
+     * @return ObjectStorage<Link> $links
      */
-    public function getLinks() {
+    public function getLinks()
+    {
         return $this->links;
     }
 
@@ -461,7 +493,8 @@ class Address extends \Hwt\HwtAddress\DomainObject\AbstractManageableEntity {
      *
      * @return string
      */
-    public function getLongitude() {
+    public function getLongitude()
+    {
         return $this->longitude;
     }
 
@@ -470,43 +503,48 @@ class Address extends \Hwt\HwtAddress\DomainObject\AbstractManageableEntity {
      *
      * @return string
      */
-    public function getLatitude() {
+    public function getLatitude()
+    {
         return $this->latitude;
     }
 
     /**
      * Returns the images
      *
-     * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\TYPO3\CMS\Extbase\Domain\Model\FileReference> $images
+     * @return ObjectStorage<FileReference> $images
      */
-    public function getImages() {
-            return $this->images;
+    public function getImages()
+    {
+        return $this->images;
     }
 
     /**
      * Returns the company images
      *
-     * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\TYPO3\CMS\Extbase\Domain\Model\FileReference> $companyImages
+     * @return ObjectStorage<FileReference> $companyImages
      */
-    public function getCompanyImages() {
-            return $this->companyImages;
+    public function getCompanyImages()
+    {
+        return $this->companyImages;
     }
 
     /**
      * Returns related addresses
      *
-     * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Hwt\HwtAddress\Domain\Model\Address> $relatedAddress
+     * @return ObjectStorage<\Hwt\HwtAddress\Domain\Model\Address> $relatedAddress
      */
-    public function getRelatedAddress() {
+    public function getRelatedAddress()
+    {
         return $this->relatedAddress;
     }
 
     /**
      * Returns the addresses related from
      *
-     * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Hwt\HwtAddress\Domain\Model\Address> $relatedAddressFrom
+     * @return ObjectStorage<\Hwt\HwtAddress\Domain\Model\Address> $relatedAddressFrom
      */
-    public function getRelatedAddressFrom() {
+    public function getRelatedAddressFrom()
+    {
         return $this->relatedAddressFrom;
     }
 }

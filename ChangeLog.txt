@@ -1,3 +1,16 @@
+2024-01-26 Heiko Westermann <hwt3@gmx.de>
+    * Version 0.4.1 - Version 0.4.1 - Update, bugfix and maintenance release
+    * Contributor: Philipp Kitzberger, https://github.com/kitzberger
+    * [TASK] changelog: Add infos about version 0.4.0
+    * [TASK] extension icon: Move it to the new file location for TYPO3 >= 12.4, available since 8.3, deprecation #98093
+    * [BUGFIX] ext_localconf/tca: Removing 'TYPO3_MODE' condition, to avoid limiting the cache functionality
+    * [TASK] tca: Remove conditions for locallang paths in older TYPO3 versions < 10.0
+    * [BUGFIX] Replace $_EXTKEY in ext_tables.php for locallang path, broken in TYPO3 10.x
+    * [BUGFIX] Replace $_EXTKEY in ext_localconf.php for hook registration, broken in TYPO3 10.x
+    * [BUGFIX] repository: Avoid breaking ordering, if order by parameter is missing
+    * [FEATURE] Declare compatibility to php 8.1
+    * [UPDATE] repository: Optional parameter declared before required for php >= 8.0
+
 2022-08-18 Heiko Westermann <hwt3@gmx.de>
     * Version 0.4.0 - Update release
     * [UPDATE] ext_tables: Remove vendor prefix in 'registerPlugin' function for TYPO3 >= 10.1, deprecation #88995

@@ -35,7 +35,7 @@ if ($emConfiguration['enableKesearchHooks']) {
 /*
  * Register CmsLayout hook
  */
-$GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['cms/layout/class.tx_cms_layout.php']['list_type_Info']['hwtaddress_address'][$_EXTKEY] = 'Hwt\\HwtAddress\\Hooks\\CmsLayout->getExtensionSummary';
+$GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['cms/layout/class.tx_cms_layout.php']['list_type_Info']['hwtaddress_address'][$extensionKey] = 'Hwt\\HwtAddress\\Hooks\\CmsLayout->getExtensionSummary';
 
 
 /*

@@ -9,23 +9,13 @@ if (!defined('TYPO3_MODE')) {
 $ll = 'LLL:EXT:hwt_address/Resources/Private/Language/locallang_db.xlf:tx_hwtaddress_domain_model_link.';
 
 // General locallang
-if ( version_compare(TYPO3_version, '9.3.0') >= 0 ) {
-    $llGeneral = 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:';
-} elseif ( version_compare(TYPO3_version, '8.5.0') >= 0 ) {
-    $llGeneral = 'LLL:EXT:lang/Resources/Private/Language/locallang_general.xlf:';
-} else {
-    $llGeneral = 'LLL:EXT:lang/locallang_general.xlf:';
-}
+$llGeneral = 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:';
 
 // TCA locallang
 $llTca = 'LLL:EXT:lang/locallang_tca.xlf:';
 
 // CMS locallang
-if ( version_compare(TYPO3_version, '8.0.0') >= 0 ) {
-    $llTtc = 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:';
-} else {
-    $llTtc = 'LLL:EXT:cms/locallang_ttc.xlf:';
-}
+$llTtc = 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:';
 
 $extTca = array(
     'ctrl' => array(

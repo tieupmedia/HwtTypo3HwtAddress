@@ -1,4 +1,10 @@
 2022-08-18 Heiko Westermann <hwt3@gmx.de>
+    * Version 0.4.0 - Update release
+    * [UPDATE] ext_tables: Remove vendor prefix in 'registerPlugin' function for TYPO3 >= 10.1, deprecation #88995
+    * [UPDATE] ext_localconf: Remove vendor prefix in 'configurePlugin' function for TYPO3 >= 10.0, deprecation #87550
+    * [UPDATE] ext_localconf: Add namespace to 'configurePlugin' function for TYPO3 >= 10.0, deprecation #87550
+
+2022-08-18 Heiko Westermann <hwt3@gmx.de>
     * Version 0.3.3-beta - Bugfix and maintenance release
     * [BUGFIX] Replace $_EXTKEY in ext_localconf.php for icon path, broken in TYPO3 10.x
     * [FEATURE] Declare compatibility to php 7.4

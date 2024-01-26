@@ -68,7 +68,7 @@ class AbstractRepository extends \TYPO3\CMS\Extbase\Persistence\Repository {
      * @param string $orderBy
      * @param null|string $orderDirection
      */
-    protected function _setOrderings(&$query, $orderBy='uid', $orderDirection)
+    protected function _setOrderings(&$query, $orderBy='uid', $orderDirection=null)
     {
         if ( $orderDirection === 'desc' ) {
             $query->setOrderings(array(

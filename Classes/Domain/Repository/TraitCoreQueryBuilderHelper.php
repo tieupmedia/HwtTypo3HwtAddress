@@ -42,7 +42,7 @@ trait TraitCoreQueryBuilderHelper {
      * @param string $orderBy
      * @param null|string $orderDirection
      */
-    protected function _setOrderingsForCoreQueryBuilder(&$query, $orderBy='uid', $orderDirection)
+    protected function _setOrderingsForCoreQueryBuilder(&$query, $orderBy='uid', $orderDirection=null)
     {
         if ( $orderBy != '' ) {
             if ( $orderDirection === 'desc' ) {

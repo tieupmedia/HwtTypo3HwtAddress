@@ -7,22 +7,21 @@ if (!defined('TYPO3_MODE')) {
 $extensionKey = 'hwt_address';
 
 
-if (TYPO3_MODE == 'BE') {
-    /*
-     * Add folder contains type,
-     * mount page icon
-     * (since TYPO3 7.5)
-     */
 
-    $GLOBALS['TCA']['pages']['ctrl']['typeicon_classes']['contains-hwtaddress'] = 'apps-pagetree-folder-contains-hwtaddress';
+/*
+ * Add folder contains type,
+ * mount page icon
+ * (since TYPO3 7.5)
+ */
 
-    // add select option for hwtaddress
-    $GLOBALS['TCA']['pages']['columns']['module']['config']['items'][] = array(
-        0 => 'LLL:EXT:' . $extensionKey . '/Resources/Private/Language/locallang_be.xlf:folder',
-        1 => 'hwtaddress',
-        2 => 'apps-pagetree-folder-contains-hwtaddress'
-    );
-}
+$GLOBALS['TCA']['pages']['ctrl']['typeicon_classes']['contains-hwtaddress'] = 'apps-pagetree-folder-contains-hwtaddress';
+
+// add select option for hwtaddress
+$GLOBALS['TCA']['pages']['columns']['module']['config']['items'][] = array(
+    0 => 'LLL:EXT:' . $extensionKey . '/Resources/Private/Language/locallang_be.xlf:folder',
+    1 => 'hwtaddress',
+    2 => 'apps-pagetree-folder-contains-hwtaddress'
+);
 
 
 

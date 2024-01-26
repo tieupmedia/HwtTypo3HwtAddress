@@ -70,15 +70,17 @@ class AbstractRepository extends \TYPO3\CMS\Extbase\Persistence\Repository {
      */
     protected function _setOrderings(&$query, $orderBy='uid', $orderDirection=null)
     {
-        if ( $orderDirection === 'desc' ) {
-            $query->setOrderings(array(
-                $orderBy => \TYPO3\CMS\Extbase\Persistence\QueryInterface::ORDER_DESCENDING
-            ));
-        }
-        else {
-            $query->setOrderings(array(
-                $orderBy => \TYPO3\CMS\Extbase\Persistence\QueryInterface::ORDER_ASCENDING
-            ));
+        if ( $orderBy != '' ) {
+            if ( $orderDirection === 'desc' ) {
+                $query->setOrderings(array(
+                    $orderBy => \TYPO3\CMS\Extbase\Persistence\QueryInterface::ORDER_DESCENDING
+                ));
+            }
+            else {
+                $query->setOrderings(array(
+                    $orderBy => \TYPO3\CMS\Extbase\Persistence\QueryInterface::ORDER_ASCENDING
+                ));
+            }
         }
     }
 

@@ -707,10 +707,10 @@ $extTca = array(
 
 
 // Get extension manager configuration
-$emConfiguration = $GLOBALS['TYPO3_CONF_VARS']['EXTENSIONS']['hwt_address'];
+$emConfiguration = isset($GLOBALS['TYPO3_CONF_VARS']['EXTENSIONS']['hwt_address']) ? $GLOBALS['TYPO3_CONF_VARS']['EXTENSIONS']['hwt_address'] : [];
 
 // Remove relation field, if not activated in em config
-if (!$emConfiguration['enableRelationsInPages']) {
+if (isset($emConfiguration['enableRelationsInPages']) && !$emConfiguration['enableRelationsInPages']) {
     unset($extTca['columns']['related_pages_from']);
 }
 

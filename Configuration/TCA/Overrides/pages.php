@@ -25,9 +25,7 @@ $GLOBALS['TCA']['pages']['columns']['module']['config']['items'][] = array(
 
 
 
-//$configurationUtility = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance('TYPO3\\CMS\\Extensionmanager\\Utility\\ConfigurationUtility');
-//$extensionConfiguration = $configurationUtility->getCurrentConfiguration('hwt_address');
-$extensionConfiguration = $GLOBALS['TYPO3_CONF_VARS']['EXTENSIONS']['hwt_address'];
+$extensionConfiguration = isset($GLOBALS['TYPO3_CONF_VARS']['EXTENSIONS']['hwt_address']) ? $GLOBALS['TYPO3_CONF_VARS']['EXTENSIONS']['hwt_address'] : [];
 
 // Add relation field, if activated in em config
 if ( isset($extensionConfiguration['enableRelationsInPages']) && ($extensionConfiguration['enableRelationsInPages']==true) ) {

@@ -56,7 +56,8 @@ class AddressRepository extends AbstractRepository {
         );
         $queryBuilder = $connectionPool->getQueryBuilderForTable($table);
 
-        if ( TYPO3_MODE === 'FE' ) {
+        if (($GLOBALS['TYPO3_REQUEST'] ?? null) instanceof ServerRequestInterface &&
+            ApplicationType::fromRequest($GLOBALS['TYPO3_REQUEST'])->isFrontend()) {
             $queryBuilder->setRestrictions(
                 \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(
                     \TYPO3\CMS\Core\Database\Query\Restriction\FrontendRestrictionContainer::class

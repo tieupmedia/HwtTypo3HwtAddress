@@ -155,7 +155,7 @@ class AddressController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControll
         }
         elseif ( (!$address) && (int)$this->settings['single']['redirectIfEmptyPid'] > 0 ) {
                 // If configured, redirect to a page with pid, if no single record and no fallback record are given
-            $this->uriBuilder->setTargetPageUid($this->settings['single']['redirectIfEmptyPid']);
+            $this->uriBuilder->setTargetPageUid((int)$this->settings['single']['redirectIfEmptyPid']);
             $link = $this->uriBuilder->build();
 
             $this->redirectToURI($link);

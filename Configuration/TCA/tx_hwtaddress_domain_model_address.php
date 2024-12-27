@@ -184,6 +184,7 @@ $extTca = array(
                 'items' => array(
                     array($ll . 'gender.0', '0'),
                     array($ll . 'gender.1', '1'),
+                    array($ll . 'gender.2', '2'),
                 ),
             )
         ),

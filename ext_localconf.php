@@ -8,18 +8,46 @@ $extensionKey = 'hwt_address';
 
 
 /*
- * Configure plugin(s)
+ * Configure plugins
  */
 \TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
     $extensionKey,
-    'Address',
+    'AddressList',
     array(
-        \Hwt\HwtAddress\Controller\AddressController::class => 'list,single,search',
+        \Hwt\HwtAddress\Controller\AddressController::class => 'list',
     ),
     array(
-        \Hwt\HwtAddress\Controller\AddressController::class => 'list,single,search',
+        \Hwt\HwtAddress\Controller\AddressController::class => 'list',
     )
 );
+\TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
+    $extensionKey,
+    'AddressSingle',
+    array(
+        \Hwt\HwtAddress\Controller\AddressController::class => 'single',
+    ),
+    array(
+        \Hwt\HwtAddress\Controller\AddressController::class => 'single',
+    )
+);
+\TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
+    $extensionKey,
+    'AddressSearch',
+    array(
+        \Hwt\HwtAddress\Controller\AddressController::class => 'search',
+    ),
+    array(
+        \Hwt\HwtAddress\Controller\AddressController::class => 'search',
+    )
+);
+
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTypoScriptSetup(trim('
+    plugin {
+        tx_hwtaddress_addresslist.view.pluginNamespace = tx_hwtaddress_address
+        tx_hwtaddress_addresssingle.view.pluginNamespace = tx_hwtaddress_address
+        tx_hwtaddress_addresssearch.view.pluginNamespace = tx_hwtaddress_address
+    }
+'));
 
 
 /*

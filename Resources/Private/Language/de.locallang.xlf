@@ -4,7 +4,7 @@
         <header/>
         <body>
             <trans-unit id="title" xml:space="preserve">
-                <source>Titel</source>
+                <target>Titel</target>
             </trans-unit>
         </body>
     </file>

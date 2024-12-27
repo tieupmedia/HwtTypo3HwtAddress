@@ -3,9 +3,6 @@
     <file source-language="en" target-language="de" datatype="plaintext" original="messages" date="2014-05-18T17:54:12Z" product-name="tx_hwtaddress">
         <header/>
         <body>
-            <trans-unit id="title" xml:space="preserve">
-                <target>Titel</target>
-            </trans-unit>
             <trans-unit id="single-link" xml:space="preserve">
                 <target>Details</target>
             </trans-unit>

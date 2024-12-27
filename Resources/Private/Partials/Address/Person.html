@@ -2,6 +2,18 @@
     <h1 class="personal-data">
         <span class="academic" itemprop="honorificPrefix">{address.academic}</span>
         <span class="name" itemprop="name">{address.firstname} {address.lastname}</span>
+        <span class="gender">
+            (<f:if condition="{address.gender}==0">
+                <f:then>{f:translate(key: 'tx_hwtaddress_domain_model_address.gender.0')}</f:then>
+                <f:else if="{address.gender}==1">{f:translate(key: 'tx_hwtaddress_domain_model_address.gender.1')}</f:else>
+                <f:else if="{address.gender}==2">{f:translate(key: 'tx_hwtaddress_domain_model_address.gender.2')}</f:else>
+            </f:if>)
+            <meta itemprop="gender" content="<f:if condition="{address.gender}==0">
+                    <f:then>https://schema.org/Female</f:then>
+                    <f:else if="{address.gender}==1">https://schema.org/Male</f:else>
+                    <f:else if="{address.gender}==2">X-gender</f:else>
+                </f:if>" />
+        </span>
     </h1>
 
     <f:render partial="Address/PostalAddress" arguments="{_all}"/>

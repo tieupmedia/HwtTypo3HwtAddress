@@ -61,6 +61,8 @@ class AddressController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControll
      * @return void
      */
     public function searchAction() {
+        $zip = $city = false;
+
         // workaround cause only $zip is filled. a caching problem?
         if ( $this->request->hasArgument('zip') && ($this->request->getArgument('zip')!='') ) {
             $zip = $this->request->getArgument('zip');
@@ -80,6 +82,9 @@ class AddressController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControll
      * @return void
      */
     public function listAction() {
+        $isSearch = false;
+        $zip = '';
+
         /*
          * Prepare zip or city search, if requested
          */

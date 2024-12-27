@@ -9,14 +9,23 @@
 
 
 
-            <trans-unit id="plugin_address" xml:space="preserve">
-                <target>Adress-Plugin</target>
+            <trans-unit id="plugin.address_list.title" xml:space="preserve">
+                <target>Adress-Plugin: Liste</target>
             </trans-unit>
-            <trans-unit id="wizard_pi1.title" xml:space="preserve">
-                <target>Adress-Plugin</target>
+            <trans-unit id="plugin.address_list.description" xml:space="preserve">
+                <target>Listenansicht für Adressen und Personen</target>
             </trans-unit>
-            <trans-unit id="wizard_pi1.plus_wiz_description" xml:space="preserve">
-                <target>Listen und Detailansicht für Adressen und Personen</target>
+            <trans-unit id="plugin.address_single.title" xml:space="preserve">
+                <target>Adress-Plugin: Detail</target>
+            </trans-unit>
+            <trans-unit id="plugin.address_single.description" xml:space="preserve">
+                <target>Detailansicht für Adressen und Personen</target>
+            </trans-unit>
+            <trans-unit id="plugin.address_search.title" xml:space="preserve">
+                <target>Adress-Plugin: Suche</target>
+            </trans-unit>
+            <trans-unit id="plugin.address_search.description" xml:space="preserve">
+                <target>Suchansicht für Adressen und Personen</target>
             </trans-unit>
 
 

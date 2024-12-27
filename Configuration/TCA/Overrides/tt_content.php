@@ -8,15 +8,26 @@ $extensionKey = 'hwt_address';
 
 
 /*
- * Register plugin
+ * Register plugins
  */
-\TYPO3\CMS\Extbase\Utility\ExtensionUtility::registerPlugin(
-	$extensionKey, 'Address', 'LLL:EXT:' . $extensionKey . '/Resources/Private/Language/locallang_be.xlf:plugin_address'
-);
+$pluginKeys = ['address_list', 'address_single', 'address_search'];
+foreach ($pluginKeys as $pluginKey) {
+    $pluginIdentifier = \TYPO3\CMS\Extbase\Utility\ExtensionUtility::registerPlugin(
+        $extensionKey,
+        $pluginName = \TYPO3\CMS\Core\Utility\GeneralUtility::underscoredToUpperCamelCase($pluginKey),
+        'LLL:EXT:' . $extensionKey . '/Resources/Private/Language/locallang_be.xlf:plugin.' . $pluginKey . '.title'
+    );
 
-$extensionName = \TYPO3\CMS\Core\Utility\GeneralUtility::underscoredToUpperCamelCase($extensionKey);
-$pluginSignature = strtolower($extensionName) . '_address';
+    // Fallback for TYPO3 <= 12.0
+    // https://docs.typo3.org/c/typo3/cms-core/main/en-us/Changelog/12.0/Feature-82809-MakeExtensionUtilityregisterPluginMethodReturnPluginSignature.html
+    if (!$pluginIdentifier) {
+        $pluginIdentifier = str_replace(' ', '', $extensionKey) . '_' .  str_replace(' ', '', $pluginKey);
+    }
 
-$GLOBALS['TCA']['tt_content']['types']['list']['subtypes_excludelist'][$pluginSignature] = 'recursive,select_key,pages';
-$GLOBALS['TCA']['tt_content']['types']['list']['subtypes_addlist'][$pluginSignature] = 'pi_flexform';
-\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPiFlexFormValue($pluginSignature, 'FILE:EXT:' . $extensionKey . '/Configuration/FlexForms/Address.xml');
+    $GLOBALS['TCA']['tt_content']['types']['list']['subtypes_excludelist'][$pluginIdentifier] = 'recursive,select_key,pages';
+    $GLOBALS['TCA']['tt_content']['types']['list']['subtypes_addlist'][$pluginIdentifier] = 'pi_flexform';
+    \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPiFlexFormValue(
+        $pluginIdentifier,
+        'FILE:EXT:' . $extensionKey . '/Configuration/FlexForms/' . $pluginName . '.xml'
+    );
+}

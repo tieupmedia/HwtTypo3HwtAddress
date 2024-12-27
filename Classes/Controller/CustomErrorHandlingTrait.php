@@ -52,16 +52,6 @@ trait CustomErrorHandlingTrait {
         if ( is_array($configuration) && isset($configuration['mode']) ) {
             $redirectMode = $configuration['mode'];
             switch ( $redirectMode ) {
-                case 'redirectToAction':
-                    if ( isset($configuration['action']) ) {
-                        $this->redirect($configuration['action']);
-
-                        // not executed
-                        //break;
-                    } else {
-                        $msg = sprintf('If error handling "%s" is used, "%s" key must be set.', 'redirectToAction', 'action');
-                        throw new \InvalidArgumentException($msg);
-                    }
                 case 'redirectToPage':
                     if ( isset($configuration['pid']) && ((int)$configuration['pid']>0) ) {
                         $this->uriBuilder->reset();

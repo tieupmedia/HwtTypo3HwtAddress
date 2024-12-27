@@ -16,48 +16,6 @@
                 </TCEforms>
                 <type>array</type>
                 <el>
-                    <!-- View -->
-                    <switchableControllerActions>
-                        <TCEforms>
-                        <label>LLL:EXT:hwt_address/Resources/Private/Language/locallang_be.xlf:flexform_setting.mode</label>
-                        <onChange>reload</onChange>
-                        <config>
-                            <type>select</type>
-                            <renderType>selectSingle</renderType>
-                            <items>
-                                <numIndex index="0">
-                                    <numIndex index="0">LLL:EXT:hwt_address/Resources/Private/Language/locallang_be.xlf:flexform_setting.mode.address_list</numIndex>
-                                    <numIndex index="1">Address->list;Address->single</numIndex>
-                                </numIndex>
-                                <numIndex index="1">
-                                    <numIndex index="0">LLL:EXT:hwt_address/Resources/Private/Language/locallang_be.xlf:flexform_setting.mode.address_single</numIndex>
-                                    <numIndex index="1">Address->single</numIndex>
-                                </numIndex>
-                                <numIndex index="2">
-                                    <numIndex index="0">LLL:EXT:hwt_address/Resources/Private/Language/locallang_be.xlf:flexform_setting.mode.address_search</numIndex>
-                                    <numIndex index="1">Address->search</numIndex>
-                                </numIndex>
-                            </items>
-                        </config>
-                        </TCEforms>
-                    </switchableControllerActions>
-
-                    <!-- single address item -->
-                    <settings.addressSingleRecord>
-                        <TCEforms>
-                            <label>LLL:EXT:hwt_address/Resources/Private/Language/locallang_be.xlf:flexform_setting.addressSingleRecord</label>
-                            <displayCond>FIELD:switchableControllerActions:=:Address->single</displayCond>
-                            <config>
-                                <type>group</type>
-                                <internal_type>db</internal_type>
-                                <allowed>tx_hwtaddress_domain_model_address</allowed>
-                                <size>1</size>
-                                <maxitems>1</maxitems>
-                                <minitems>0</minitems>
-                            </config>
-                        </TCEforms>
-                    </settings.addressSingleRecord>
-
                     <!-- address category -->
                     <settings.addressCategories>
                         <TCEforms>
@@ -100,7 +58,6 @@
                     <settings.addressRecords>
                         <TCEforms>
                             <label>LLL:EXT:hwt_address/Resources/Private/Language/locallang_be.xlf:flexform_setting.addressRecords</label>
-                            <displayCond>FIELD:switchableControllerActions:=:Address->list;Address->single</displayCond>
                             <config>
                                 <type>group</type>
                                 <internal_type>db</internal_type>
@@ -118,7 +75,6 @@
                     <settings.orderBy>
                         <TCEforms>
                             <label>LLL:EXT:hwt_address/Resources/Private/Language/locallang_be.xml:flexform_setting.orderBy</label>
-                            <displayCond>FIELD:switchableControllerActions:=:Address->list;Address->single</displayCond>
                             <config>
                                 <type>select</type>
                                 <renderType>selectSingle</renderType>
@@ -156,7 +112,6 @@
                     <settings.orderDirection>
                         <TCEforms>
                             <label>LLL:EXT:hwt_address/Resources/Private/Language/locallang_be.xml:flexform_setting.orderDirection</label>
-                            <displayCond>FIELD:switchableControllerActions:=:Address->list;Address->single</displayCond>
                             <config>
                                 <type>select</type>
                                 <renderType>selectSingle</renderType>
@@ -196,7 +151,6 @@
                     <settings.templateVariantList>
                         <TCEforms>
                             <label>LLL:EXT:hwt_address/Resources/Private/Language/locallang_be.xlf:flexform_setting.templateVariantList</label>
-                            <displayCond>FIELD:sDEF.switchableControllerActions:=:Address->list;Address->single</displayCond>
                             <config>
                                 <type>select</type>
                                 <renderType>selectSingle</renderType>
@@ -213,55 +167,6 @@
                             </config>
                         </TCEforms>
                     </settings.templateVariantList>
-
-                    <!-- template variant single -->
-                    <settings.templateVariantSingle>
-                        <TCEforms>
-                            <label>LLL:EXT:hwt_address/Resources/Private/Language/locallang_be.xlf:flexform_setting.templateVariantSingle</label>
-                            <displayCond>
-                                <OR>
-                                    <numIndex index="0">FIELD:sDEF.switchableControllerActions:=:Address->list;Address->single</numIndex>
-                                    <numIndex index="1">FIELD:sDEF.switchableControllerActions:=:Address->single</numIndex>
-                                </OR>
-                            </displayCond>
-                            <config>
-                                <type>select</type>
-                                <renderType>selectSingle</renderType>
-                                <items>
-                                    <numIndex index="0" type="array">
-                                        <numIndex index="0"> </numIndex>
-                                        <numIndex index="1">0</numIndex>
-                                    </numIndex>
-                                    <numIndex index="1" type="array">
-                                        <numIndex index="0">LLL:EXT:hwt_address/Resources/Private/Language/locallang_be.xml:flexform_setting.templateVariantSingle.example</numIndex>
-                                        <numIndex index="1">example</numIndex>
-                                    </numIndex>
-                                </items>
-                            </config>
-                        </TCEforms>
-                    </settings.templateVariantSingle>
-
-                    <!-- template variant search -->
-                    <settings.templateVariantSearch>
-                        <TCEforms>
-                            <label>LLL:EXT:hwt_address/Resources/Private/Language/locallang_be.xlf:flexform_setting.templateVariantSearch</label>
-                            <displayCond>FIELD:sDEF.switchableControllerActions:=:Address->search</displayCond>
-                            <config>
-                                <type>select</type>
-                                <renderType>selectSingle</renderType>
-                                <items>
-                                    <numIndex index="0" type="array">
-                                        <numIndex index="0"> </numIndex>
-                                        <numIndex index="1">0</numIndex>
-                                    </numIndex>
-                                    <numIndex index="1" type="array">
-                                        <numIndex index="0">LLL:EXT:hwt_address/Resources/Private/Language/locallang_be.xml:flexform_setting.templateVariantSearch.example</numIndex>
-                                        <numIndex index="1">example</numIndex>
-                                    </numIndex>
-                                </items>
-                            </config>
-                        </TCEforms>
-                    </settings.templateVariantSearch>
                 </el>
             </ROOT>
         </template>

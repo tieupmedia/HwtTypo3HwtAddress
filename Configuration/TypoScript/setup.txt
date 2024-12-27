@@ -53,12 +53,6 @@ plugin.tx_hwtaddress {
                 #recordType = ACustomRecordTypeLabel
                 #recordType = HwtAddress
 
-                # Redirect to another action.
-                # Note: Action must be switchable, so not allowed when "strict" single mode is selected.
-                #mode = redirectToAction
-                #action = anactionname
-                #action = list
-
                 # optional for 'showStandaloneTemplate' (or 'redirectToPage')
                 # ToDo: With 'redirectToPage' any other than '303' (=default) returns '302' intead of given one, see https://forum.typo3.org/index.php/t/192428/extbase-redirecttouri-setzt-statuscode-nicht
                 #httpStatusCode = 404
@@ -79,29 +73,22 @@ lib.tx_hwtaddress.pluginRelatedToPage = USER
 lib.tx_hwtaddress.pluginRelatedToPage {
     userFunc = TYPO3\CMS\Extbase\Core\Bootstrap->run
     extensionName = HwtAddress
-    pluginName = Address
+    pluginName = AddressList
     vendorName = Hwt
 
     controller = Address
     action = list
-
-    switchableControllerActions {
-        Address {
-            1 = list
-            2 = single
-        }
-    }
 
     settings < plugin.tx_hwtaddress
     settings {
         list {
             displayPageRelated = 1
         }
-        
+
         orderBy = tx_hwtaddress_domain_model_pages_address_mm.sorting
         #orderBy = tx_hwtaddress_domain_model_address.sorting
         #orderBy = lastname
-        
+
         #orderDirection = desc
     }
 }

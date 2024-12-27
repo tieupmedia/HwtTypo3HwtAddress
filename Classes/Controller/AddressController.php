@@ -72,6 +72,7 @@ class AddressController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControll
         }
 
         $this->view->assign('searchform', array('zip'=>$zip, 'city'=>$city));
+        return $this->htmlResponse();
     }
 
 
@@ -142,6 +143,7 @@ class AddressController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControll
             'addresses' => $addressRecords,
             'isSearch' => $isSearch,
         ]);
+        return $this->htmlResponse();
     }
 
 
@@ -162,7 +164,7 @@ class AddressController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControll
             $this->uriBuilder->setTargetPageUid((int)$this->settings['single']['redirectIfEmptyPid']);
             $link = $this->uriBuilder->build();
 
-            $this->redirectToURI($link);
+            return $this->redirectToURI($link);
         }
 
         if ( !$address &&
@@ -174,5 +176,6 @@ class AddressController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControll
         }
 
         $this->view->assign('address', $address);
+        return $this->htmlResponse();
     }
 }

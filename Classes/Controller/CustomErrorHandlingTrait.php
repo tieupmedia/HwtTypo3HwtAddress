@@ -125,7 +125,7 @@ trait CustomErrorHandlingTrait {
                     // Do nothing, it might be handled in the view.
             }
         }
-        return $return;
+        return $this->htmlResponse($return);
     }
 
 

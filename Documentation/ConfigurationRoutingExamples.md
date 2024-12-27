@@ -15,6 +15,7 @@ routeEnhancers:
     limitToPages:
 	  - <your uid of single page>
     extension: HwtAddress
+    # use the plugin namespace (without tx_extensionkey prefix)!
     plugin: Address
     routes:
       -

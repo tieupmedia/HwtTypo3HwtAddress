@@ -1,12 +1,32 @@
 mod.wizards.newContentElement.wizardItems.plugins {
 	elements {
-		hwt_address {
+		hwt_address_list {
 			iconIdentifier = ext-hwtaddress-wizard-icon
-			title = LLL:EXT:hwt_address/Resources/Private/Language/locallang_be.xlf:wizard_pi1.title
-			description = LLL:EXT:hwt_address/Resources/Private/Language/locallang_be.xlf:wizard_pi1.plus_wiz_description
+			title = LLL:EXT:hwt_address/Resources/Private/Language/locallang_be.xlf:plugin.address_list.title
+			description = LLL:EXT:hwt_address/Resources/Private/Language/locallang_be.xlf:plugin.address_list.description
 			tt_content_defValues {
 				CType = list
-				list_type = hwtaddress_address
+				list_type = hwtaddress_addresslist
+			}
+		}
+
+        hwt_address_single {
+			iconIdentifier = ext-hwtaddress-wizard-icon
+			title = LLL:EXT:hwt_address/Resources/Private/Language/locallang_be.xlf:plugin.address_single.title
+			description = LLL:EXT:hwt_address/Resources/Private/Language/locallang_be.xlf:plugin.address_single.description
+			tt_content_defValues {
+				CType = list
+				list_type = hwtaddress_addresssingle
+			}
+		}
+
+        hwt_address_search {
+			iconIdentifier = ext-hwtaddress-wizard-icon
+			title = LLL:EXT:hwt_address/Resources/Private/Language/locallang_be.xlf:plugin.address_search.title
+			description = LLL:EXT:hwt_address/Resources/Private/Language/locallang_be.xlf:plugin.address_search.description
+			tt_content_defValues {
+				CType = list
+				list_type = hwtaddress_addresssearch
 			}
 		}
 	}

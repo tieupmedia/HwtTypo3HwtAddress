@@ -6,6 +6,9 @@
             <trans-unit id="title" xml:space="preserve">
                 <target>Titel</target>
             </trans-unit>
+            <trans-unit id="single-link" xml:space="preserve">
+                <target>Details</target>
+            </trans-unit>
         </body>
     </file>
 </xliff>

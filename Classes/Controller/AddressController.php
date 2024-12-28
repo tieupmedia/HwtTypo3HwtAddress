@@ -110,22 +110,25 @@ class AddressController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControll
          */
         $addressRecords = array();
 
-        // set default order field (equal to first flexform option)
-        if (!is_string($this->settings['orderBy'])) {
+        // set default order fields (equal to first flexform option)
+        if (!isset($this->settings['orderBy']) || !is_string($this->settings['orderBy'])) {
             $this->settings['orderBy'] = 'sorting';
         }
+        if (!isset($this->settings['orderDirection']) || !is_string($this->settings['orderDirection'])) {
+            $this->settings['orderDirection'] = 'asc';
+        }
 
-        if ($this->settings['addressStoragePages'] && ($this->settings['addressStoragePages'] != '')) {
+        if (isset($this->settings['addressStoragePages']) && ($this->settings['addressStoragePages'] != '')) {
             $addressRecords = $this->addressRepository->findInPageIds($this->settings['addressStoragePages'], $this->settings['orderBy'], $this->settings['orderDirection']);
         }
-        elseif ($this->settings['list']['displayPageRelated']==1) {
+        elseif (isset($this->settings['list']['displayPageRelated']) && $this->settings['list']['displayPageRelated']==1) {
             $addressRecords = $this->addressRepository->findRelatedToPage($GLOBALS['TSFE']->id, $this->settings['orderBy'], $this->settings['orderDirection']);
         }
-        elseif (($this->settings['addressCategories']) || ($zip)) {
+        elseif (isset($this->settings['addressCategories']) || $zip) {
             $addressRecords = $this->addressRepository->findAllWithoutPidRestriction($this->settings['addressCategories'], $zip, $this->settings['orderBy'], $this->settings['orderDirection']);
         }
 
-        if ((count($addressRecords)==0) && $this->settings['addressRecords']) {
+        if ((count($addressRecords)==0) && isset($this->settings['addressRecords'])) {
             if ($this->settings['orderBy']==='selectedrecords') {
                 $addressRecords = $this->addressRepository->findByUidInOrderedList($this->settings['addressRecords'], $this->settings['orderDirection']);
             }

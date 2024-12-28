@@ -1,11 +1,4 @@
 plugin.tx_hwtaddress {
-	#mvc.callDefaultActionIfActionCantBeResolved = 1
-
-	persistence {
-		classes {
-		}
-	}
-
     view {
         templateRootPaths {
             0 = EXT:hwt_address/Resources/Private/Templates/

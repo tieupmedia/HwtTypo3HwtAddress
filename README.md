@@ -13,7 +13,7 @@ This TYPO3 extension provides a modern address handling since TYPO3 6.x, establi
 - Translatable records
 - TYPO3's assets field for adding multimedia elements to addresses
 - Relate addresses to addresses
-- Relate addresses to pages (aktivate field in extension manager, [see docu](Documentation/FeatureDisplayRelatedToPage.md))
+- Relate addresses to pages (activate field in extension manager, [see docu](Documentation/FeatureDisplayRelatedToPage.md))
 - Relate links to addresses, that allow flexible customization, e.g. for social/profile links.
 
 **Plugin - Frontend**

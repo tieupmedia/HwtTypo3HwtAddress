@@ -1,5 +1,21 @@
+2024-12-28 Heiko Westermann <hwt3@gmx.de>
+    * Version 0.4.2 - Update, bugfix and maintenance release
+    * [UPDATE] Declare compatibility to php 8.2 and 8.3
+    * [TASK] Synchronize php declaration between ext_emconf.php and composer.json
+    * [BUGFIX] frontend: Explicit convert type of uriBuilder parameter to avoid error
+    * [BUGFIX] frontend: Init variables used in controller with default values
+    * [FEATURE] frontend: Output gender value with translation and itemprop for schema.org microdata
+    * [FEATURE] backend: Add option for x-gender to gender field of address record
+    * [BUGFIX] frontend: Remove unused locallang item
+    * [FEATURE] frontend: Add translation for link to single view
+    * [BUGFIX] frontend: Correct locallang element
+    * [BUGFIX] Avoid errors caused by empty extension configuration array, fixes #10
+    * [BUGFIX] ext_emconf: Correct version number, fixes #8
+    * [BUGFIX] classes: Correct naming of repository injection method
+    * [TASK] readme: Fix typo in README.md
+
 2024-01-26 Heiko Westermann <hwt3@gmx.de>
-    * Version 0.4.1 - Version 0.4.1 - Update, bugfix and maintenance release
+    * Version 0.4.1 - Update, bugfix and maintenance release
     * Contributor: Philipp Kitzberger, https://github.com/kitzberger
     * [TASK] changelog: Add infos about version 0.4.0
     * [TASK] extension icon: Move it to the new file location for TYPO3 >= 12.4, available since 8.3, deprecation #98093

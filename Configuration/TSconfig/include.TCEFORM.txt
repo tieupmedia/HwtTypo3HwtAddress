@@ -1,6 +1,0 @@
-# Add one of these lines to your pageTS
-
-<INCLUDE_TYPOSCRIPT: source="FILE:EXT:hwt_address/Configuration/TSconfig/TCEFORM.hwtaddress_address_person.txt">
-#<INCLUDE_TYPOSCRIPT: source="FILE:EXT:hwt_address/Configuration/TSconfig/TCEFORM.hwtaddress_address_company.txt">
-#<INCLUDE_TYPOSCRIPT: source="FILE:EXT:hwt_address/Configuration/TSconfig/TCEFORM.hwtaddress_link.txt">
-#<INCLUDE_TYPOSCRIPT: source="FILE:EXT:hwt_address/Configuration/TSconfig/TCEFORM.tt_content.pi_flexform.hwtaddress_address.txt">

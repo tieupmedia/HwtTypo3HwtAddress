@@ -91,7 +91,7 @@ class AddressRepository extends AbstractRepository {
 
 
         // Map rows (array) to objects (model)
-        $dataMapper = $this->objectManager->get(
+        $dataMapper = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(
             \TYPO3\CMS\Extbase\Persistence\Generic\Mapper\DataMapper::class
         );
         $items = $dataMapper->map(\Hwt\HwtAddress\Domain\Model\Address::class, $result->fetchAll());

@@ -13,7 +13,6 @@
             <trans-unit id="tx_hwtaddress_domain_model_address.gender.1" xml:space="preserve">
                 <target>männlich</target>
             </trans-unit>
-            </trans-unit>
             <trans-unit id="tx_hwtaddress_domain_model_address.gender.2" xml:space="preserve">
                 <target>divers</target>
             </trans-unit>

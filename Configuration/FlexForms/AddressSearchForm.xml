@@ -71,10 +71,10 @@
                 </TCEforms>
                 <type>array</type>
                 <el>
-                    <!-- template variant search -->
-                    <settings.templateVariantSearch>
+                    <!-- template variant search form -->
+                    <settings.templateVariantSearchForm>
                         <TCEforms>
-                            <label>LLL:EXT:hwt_address/Resources/Private/Language/locallang_be.xlf:flexform_setting.templateVariantSearch</label>
+                            <label>LLL:EXT:hwt_address/Resources/Private/Language/locallang_be.xlf:flexform_setting.templateVariantSearchForm</label>
                             <config>
                                 <type>select</type>
                                 <renderType>selectSingle</renderType>
@@ -84,13 +84,13 @@
                                         <numIndex index="1">0</numIndex>
                                     </numIndex>
                                     <numIndex index="1" type="array">
-                                        <numIndex index="0">LLL:EXT:hwt_address/Resources/Private/Language/locallang_be.xml:flexform_setting.templateVariantSearch.example</numIndex>
+                                        <numIndex index="0">LLL:EXT:hwt_address/Resources/Private/Language/locallang_be.xml:flexform_setting.templateVariantSearchForm.example</numIndex>
                                         <numIndex index="1">example</numIndex>
                                     </numIndex>
                                 </items>
                             </config>
                         </TCEforms>
-                    </settings.templateVariantSearch>
+                    </settings.templateVariantSearchForm>
                 </el>
             </ROOT>
         </template>

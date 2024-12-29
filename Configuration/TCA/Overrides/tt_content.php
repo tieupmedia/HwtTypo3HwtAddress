@@ -10,7 +10,7 @@ $extensionKey = 'hwt_address';
 /*
  * Register plugins
  */
-$pluginKeys = ['address_list', 'address_single', 'address_search'];
+$pluginKeys = ['address_list', 'address_single', 'address_search_form'];
 foreach ($pluginKeys as $pluginKey) {
     $pluginIdentifier = \TYPO3\CMS\Extbase\Utility\ExtensionUtility::registerPlugin(
         $extensionKey,

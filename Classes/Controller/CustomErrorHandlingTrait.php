@@ -87,7 +87,12 @@ trait CustomErrorHandlingTrait {
                         throw new \InvalidArgumentException($msg);
                     }
                 case 'pageNotFoundHandler':
-                    $GLOBALS['TSFE']->pageNotFoundAndExit('No record of type "' . $configuration['recordType'] . '" found.');
+					$response = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(
+						\TYPO3\CMS\Frontend\Controller\ErrorController::class
+					)->pageNotFoundAction(
+						$GLOBALS['TYPO3_REQUEST'], 'No record of type "' . $configuration['recordType'] . '" found.'
+					);
+            		throw new \TYPO3\CMS\Core\Http\ImmediateResponseException($response, 1617116194);
 
                     // not executed
                     //break;

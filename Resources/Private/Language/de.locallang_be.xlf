@@ -21,11 +21,11 @@
             <trans-unit id="plugin.address_single.description" xml:space="preserve">
                 <target>Detailansicht für Adressen und Personen</target>
             </trans-unit>
-            <trans-unit id="plugin.address_search.title" xml:space="preserve">
-                <target>Adress-Plugin: Suche</target>
+            <trans-unit id="plugin.address_search_form.title" xml:space="preserve">
+                <target>Adress-Plugin: Suchformular</target>
             </trans-unit>
-            <trans-unit id="plugin.address_search.description" xml:space="preserve">
-                <target>Suchansicht für Adressen und Personen</target>
+            <trans-unit id="plugin.address_search_form.description" xml:space="preserve">
+                <target>Suchformular für Adressen und Personen</target>
             </trans-unit>
 
 
@@ -41,7 +41,7 @@
             <trans-unit id="flexform_setting.mode.address_single" xml:space="preserve">
                 <target>Adress-Einzelansicht</target>
             </trans-unit>
-            <trans-unit id="flexform_setting.mode.address_search" xml:space="preserve">
+            <trans-unit id="flexform_setting.mode.address_search_form" xml:space="preserve">
                 <target>Adress-Suche (PLZ / Stadt)</target>
             </trans-unit>
             <trans-unit id="flexform_setting.addressSingleRecord" xml:space="preserve">
@@ -105,11 +105,11 @@
                 <target>Beispiel Einzelansicht</target>
             </trans-unit>
 
-            <trans-unit id="flexform_setting.templateVariantSearch" xml:space="preserve">
-                <target>Template-Variante für Suche</target>
+            <trans-unit id="flexform_setting.templateVariantSearchForm" xml:space="preserve">
+                <target>Template-Variante für Suchformular</target>
             </trans-unit>
-            <trans-unit id="flexform_setting.templateVariantSearch.example" xml:space="preserve">
-                <target>Beispiel Suche</target>
+            <trans-unit id="flexform_setting.templateVariantSearchForm.example" xml:space="preserve">
+                <target>Beispiel Suchformular</target>
             </trans-unit>
 
 

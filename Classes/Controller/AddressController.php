@@ -60,7 +60,7 @@ class AddressController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControll
      *
      * @return void
      */
-    public function searchAction() {
+    public function searchFormAction() {
         $zip = $city = false;
 
         // workaround cause only $zip is filled. a caching problem?

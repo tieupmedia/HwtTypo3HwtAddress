@@ -159,10 +159,10 @@ class CmsLayout {
                     ($variantField ? ucfirst($variantField) : '')
                 );
             }
-            elseif (($actions === 'Address->search')) {
-                $variantField = $this->getFieldFromFlexform('settings.templateVariantSearch', 'template');
+            elseif (($actions === 'Address->searchForm')) {
+                $variantField = $this->getFieldFromFlexform('settings.templateVariantSearchForm', 'template');
                 $this->tableData[] = array(
-                    $this->getPluginLL(self::LLPATH . 'flexform_setting.templateVariantSearch'),
+                    $this->getPluginLL(self::LLPATH . 'flexform_setting.templateVariantSearchForm'),
                     ($variantField ? ucfirst($variantField) : '')
                 );
             }

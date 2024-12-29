@@ -21,11 +21,11 @@
             <trans-unit id="plugin.address_single.description" xml:space="preserve">
                 <source>Shows single view of addresses and persons</source>
             </trans-unit>
-            <trans-unit id="plugin.address_search.title" xml:space="preserve">
-                <source>Adress plugin: search</source>
+            <trans-unit id="plugin.address_search_form.title" xml:space="preserve">
+                <source>Adress plugin: search form</source>
             </trans-unit>
-            <trans-unit id="plugin.address_search.description" xml:space="preserve">
-                <source>Shows search view of addresses and persons</source>
+            <trans-unit id="plugin.address_search_form.description" xml:space="preserve">
+                <source>Shows search form for addresses and persons</source>
             </trans-unit>
 
 
@@ -41,8 +41,8 @@
             <trans-unit id="flexform_setting.mode.address_single" xml:space="preserve">
                 <source>Address Single</source>
             </trans-unit>
-            <trans-unit id="flexform_setting.mode.address_search" xml:space="preserve">
-                <source>Address Search (Zip / City)</source>
+            <trans-unit id="flexform_setting.mode.address_search_form" xml:space="preserve">
+                <source>Address Search Form (Zip / City)</source>
             </trans-unit>
             <trans-unit id="flexform_setting.addressSingleRecord" xml:space="preserve">
                 <source>Single Address Record</source>
@@ -105,11 +105,11 @@
                 <source>Single Example</source>
             </trans-unit>
 
-            <trans-unit id="flexform_setting.templateVariantSearch" xml:space="preserve">
-                <source>Template variant for search view</source>
+            <trans-unit id="flexform_setting.templateVariantSearchForm" xml:space="preserve">
+                <source>Template variant for search form view</source>
             </trans-unit>
-            <trans-unit id="flexform_setting.templateVariantSearch.example" xml:space="preserve">
-                <source>Search Example</source>
+            <trans-unit id="flexform_setting.templateVariantSearchForm.example" xml:space="preserve">
+                <source>Search Form Example</source>
             </trans-unit>
 
 

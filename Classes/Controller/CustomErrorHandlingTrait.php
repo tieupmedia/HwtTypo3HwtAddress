@@ -67,8 +67,9 @@ trait CustomErrorHandlingTrait {
                             $statusCode = (int)$configuration['httpStatusCode'];
                         }
                         # ToDo: Any other than '303' (=default) returns '302' intead of given one, see https://forum.typo3.org/index.php/t/192428/extbase-redirecttouri-setzt-statuscode-nicht
-                        //$this->redirectToUri($url, 0, $statusCode);
-                        return $this->redirectToUri($url);
+						# Since TYPO3 11.3: Only redirect codes 302, 303 and 307 are allowed
+                        return $this->redirectToUri($url, null, $statusCode);
+                        //return $this->redirectToUri($url);
 
                         // not executed
                         //break;

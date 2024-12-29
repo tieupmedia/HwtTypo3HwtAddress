@@ -53,10 +53,12 @@ plugin.tx_hwtaddress {
                 #recordType = ACustomRecordTypeLabel
                 #recordType = HwtAddress
 
-                # optional for 'showStandaloneTemplate' (or 'redirectToPage')
-                # ToDo: With 'redirectToPage' any other than '303' (=default) returns '302' intead of given one, see https://forum.typo3.org/index.php/t/192428/extbase-redirecttouri-setzt-statuscode-nicht
+                # optional for 'showStandaloneTemplate' or 'redirectToPage'
                 #httpStatusCode = 404
                 #httpStatusCode = 503
+                # ToDo: With 'redirectToPage' any other than '303' (=default) returns '302' intead of given one, see https://forum.typo3.org/index.php/t/192428/extbase-redirecttouri-setzt-statuscode-nicht
+				# Since TYPO3 11.3: With 'redirectToPage' only redirect codes 302, 303 and 307 are allowed
+                #httpStatusCode = 307
             }
 		}
 	}

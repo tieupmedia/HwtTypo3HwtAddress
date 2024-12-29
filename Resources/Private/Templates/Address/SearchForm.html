@@ -1,9 +1,9 @@
 <f:layout name="default" />
 
 <f:section name="main">
-    <f:if condition="{settings.templateVariantSearch}">
+    <f:if condition="{settings.templateVariantSearchForm}">
         <f:then>
-            <f:render partial="Address/TemplateVariants/Search/{settings.templateVariantSearch -> f:format.case(mode: 'capital')}" arguments="{_all}"/>
+            <f:render partial="Address/TemplateVariants/SearchForm/{settings.templateVariantSearchForm -> f:format.case(mode: 'capital')}" arguments="{_all}"/>
         </f:then>
         <f:else>
             <f:form method="post" class="hwt-address-zipsearch">

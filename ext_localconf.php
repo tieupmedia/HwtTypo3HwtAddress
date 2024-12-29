@@ -32,12 +32,12 @@ $extensionKey = 'hwt_address';
 );
 \TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
     $extensionKey,
-    'AddressSearch',
+    'AddressSearchForm',
     array(
-        \Hwt\HwtAddress\Controller\AddressController::class => 'search',
+        \Hwt\HwtAddress\Controller\AddressController::class => 'searchForm',
     ),
     array(
-        \Hwt\HwtAddress\Controller\AddressController::class => 'search',
+        \Hwt\HwtAddress\Controller\AddressController::class => 'searchForm',
     )
 );
 
@@ -45,7 +45,7 @@ $extensionKey = 'hwt_address';
     plugin {
         tx_hwtaddress_addresslist.view.pluginNamespace = tx_hwtaddress_address
         tx_hwtaddress_addresssingle.view.pluginNamespace = tx_hwtaddress_address
-        tx_hwtaddress_addresssearch.view.pluginNamespace = tx_hwtaddress_address
+        tx_hwtaddress_addresssearchform.view.pluginNamespace = tx_hwtaddress_address
     }
 '));
 

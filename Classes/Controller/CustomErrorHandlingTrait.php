@@ -46,7 +46,7 @@ trait CustomErrorHandlingTrait {
      * @return string
      */
     protected function doConfiguredErrorHandling($configuration) {
-        $return = null;
+        $return = $statusCode = null;
 
         //\TYPO3\CMS\Extbase\Utility\DebuggerUtility::var_dump($configuration);
         if ( is_array($configuration) && isset($configuration['mode']) ) {
@@ -89,8 +89,7 @@ trait CustomErrorHandlingTrait {
                 case 'showStandaloneTemplate':
                     if ( isset($configuration['templatePathAndFilename']) ) {
                         if ( isset($configuration['httpStatusCode']) ) {
-                            $statusCode = constant(\TYPO3\CMS\Core\Utility\HttpUtility::class . '::HTTP_STATUS_' . $configuration['httpStatusCode']);
-                            \TYPO3\CMS\Core\Utility\HttpUtility::setResponseCode($statusCode);
+                            $statusCode = (int)$configuration['httpStatusCode'];
                         }
 
                         $standaloneTemplate = GeneralUtility::makeInstance(\TYPO3\CMS\Fluid\View\StandaloneView::class);
@@ -115,7 +114,12 @@ trait CustomErrorHandlingTrait {
                     // Do nothing, it might be handled in the view.
             }
         }
-        return $this->htmlResponse($return);
+
+        $response = $this->htmlResponse($return);
+        if ($statusCode) {
+            $response = $response->withStatus($statusCode);
+        }
+        return $response;
     }
 
 

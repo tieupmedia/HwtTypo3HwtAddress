@@ -68,7 +68,7 @@ trait CustomErrorHandlingTrait {
                         }
                         # ToDo: Any other than '303' (=default) returns '302' intead of given one, see https://forum.typo3.org/index.php/t/192428/extbase-redirecttouri-setzt-statuscode-nicht
                         //$this->redirectToUri($url, 0, $statusCode);
-                        $this->redirectToUri($url);
+                        return $this->redirectToUri($url);
 
                         // not executed
                         //break;

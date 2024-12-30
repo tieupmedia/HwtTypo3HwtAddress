@@ -30,4 +30,6 @@ foreach ($pluginKeys as $pluginKey) {
         $pluginIdentifier,
         'FILE:EXT:' . $extensionKey . '/Configuration/FlexForms/' . $pluginName . '.xml'
     );
+
+    $GLOBALS['TCA']['tt_content']['types']['list']['previewRenderer'][$pluginIdentifier] = \Hwt\HwtAddress\Preview\PluginPreviewRenderer::class;
 }

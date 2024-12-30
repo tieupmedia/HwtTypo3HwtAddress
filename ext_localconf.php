@@ -61,12 +61,6 @@ if (isset($emConfiguration['enableKesearchHooks']) && $emConfiguration['enableKe
 
 
 /*
- * Register CmsLayout hook
- */
-$GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['cms/layout/class.tx_cms_layout.php']['list_type_Info']['hwtaddress_address'][$extensionKey] = 'Hwt\\HwtAddress\\Hooks\\CmsLayout->getExtensionSummary';
-
-
-/*
  * Add pageTS
  */
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPageTSConfig('

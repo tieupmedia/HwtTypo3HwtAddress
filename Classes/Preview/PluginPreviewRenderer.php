@@ -2,12 +2,12 @@
 
 declare(strict_types = 1);
 
-namespace Hwt\HwtAddress\Hooks;
+namespace Hwt\HwtAddress\Preview;
 
 /***************************************************************
  *  Copyright notice
  *
- *  (c) 2015-2019 Heiko Westermann <hwt3@gmx.de>
+ *  (c) 2024 Heiko Westermann <hwt3@gmx.de>
  *  All rights reserved
  *
  *  This script is part of the TYPO3 project. The TYPO3 project is
@@ -28,12 +28,12 @@ namespace Hwt\HwtAddress\Hooks;
  ***************************************************************/
 
 /**
- * Hook into tcemain which is used to show preview of items
+ * Page preview renderer which is used to show preview of items in the backend.
  *
  * @package TYPO3
  * @subpackage hwt_address
  */
-class CmsLayout {
+class PluginPreviewRenderer extends \TYPO3\CMS\Backend\Preview\StandardContentPreviewRenderer {
     /**
      * Extension key
      *
@@ -65,41 +65,27 @@ class CmsLayout {
 
 
     /**
-     * Returns translations
-     *
-     * @param	string		$llPathAndKey	Parameter with the locallang path and key
-     * @return	string		The translation
+     * @throws \TYPO3\CMS\Extbase\Configuration\Exception\InvalidConfigurationTypeException
+     * @throws \TYPO3\CMS\Core\Configuration\Exception\ExtensionConfigurationPathDoesNotExistException
+     * @throws \TYPO3\CMS\Core\Configuration\Exception\ExtensionConfigurationExtensionNotConfiguredException
      */
-    function getPluginLL($llPathAndKey) {
-        $llValue = $GLOBALS['LANG']->sL($llPathAndKey);
-        return htmlspecialchars($llValue);
-    }
+    public function renderPageModulePreviewContent(\TYPO3\CMS\Backend\View\BackendLayout\Grid\GridColumnItem $item): string
+    {
+        $row = $item->getRecord();
 
-    /**
-     * Returns information about this extension's pi1 plugin
-     *
-     * @param	array		$params	Parameters to the hook
-     * @param	object		$pObj	A reference to calling object
-     * @return	string		Information about pi1 plugin
-     */
-    function getExtensionSummary($params, &$pObj) {
-        $result = '';
+		$pluginLLKey = str_replace('hwtaddress_address', 'plugin.address_', $row['list_type']);
+		if ($pluginLLKey === 'plugin.address_searchform') {
+			$pluginLLKey = 'plugin.address_search_form';
+		}
+        $result = '<br /><strong>' . $this->getPluginLL(self::LLPATH . $pluginLLKey . '.title') . '</strong><br />';
 
-        if ($params['row']['list_type'] == 'hwtaddress_address') {
-            $result .= '<br /><strong>' . $this->getPluginLL(self::LLPATH . 'plugin_address') . '</strong><br />';
+        $flexforms = \TYPO3\CMS\Core\Utility\GeneralUtility::xml2array($row['pi_flexform']);
+        if (is_string($flexforms)) {
+            return 'ERROR: ' . htmlspecialchars($flexforms);
+        }
+        $this->flexformData = (array)$flexforms;
 
-            $this->flexformData = \TYPO3\CMS\Core\Utility\GeneralUtility::xml2array($params['row']['pi_flexform']);
-
-
-            $actions = $this->getFieldFromFlexform('switchableControllerActions');
-            $actionsArray = explode(';', $actions);
-            foreach ( $actionsArray as $action ) {
-                $action = strtolower(str_replace('->', '_', $action));
-                $result .= $this->getPluginLL(self::LLPATH . 'flexform_setting.mode.' . $action) . ' ';
-            }
-
-
-
+        if (!empty($this->flexformData)) {
             /*
              * Plugin settings
              */
@@ -108,13 +94,13 @@ class CmsLayout {
                 $this->getFieldFromFlexform('settings.addressStoragePages')
             );
 
-            if ($actions === 'Address->single') {
+            if ($row['list_type'] === 'hwtaddress_addresssingle') {
                 $this->tableData[] = array(
                     $this->getPluginLL(self::LLPATH . 'flexform_setting.addressSingleRecord'),
                     $this->getFieldFromFlexform('settings.addressSingleRecord')
                 );
             }
-            elseif (($actions === 'Address->list;Address->single')) {
+            elseif ($row['list_type'] === 'hwtaddress_addresslist') {
                 $this->tableData[] = array(
                     $this->getPluginLL(self::LLPATH . 'flexform_setting.addressRecords'),
                     $this->getFieldFromFlexform('settings.addressRecords')
@@ -139,14 +125,14 @@ class CmsLayout {
             /*
              * Template variants
              */
-            if ($actions === 'Address->single') {
+            if ($row['list_type'] === 'hwtaddress_addresssingle') {
                 $variantField = $this->getFieldFromFlexform('settings.templateVariantSingle', 'template');
                 $this->tableData[] = array(
                     $this->getPluginLL(self::LLPATH . 'flexform_setting.templateVariantSingle'),
                     ($variantField ? ucfirst($variantField) : '')
                 );
             }
-            elseif (($actions === 'Address->list;Address->single')) {
+            elseif ($row['list_type'] === 'hwtaddress_addresslist') {
                 $variantField = $this->getFieldFromFlexform('settings.templateVariantList', 'template');
                 $this->tableData[] = array(
                     $this->getPluginLL(self::LLPATH . 'flexform_setting.templateVariantList'),
@@ -159,7 +145,7 @@ class CmsLayout {
                     ($variantField ? ucfirst($variantField) : '')
                 );
             }
-            elseif (($actions === 'Address->searchForm')) {
+            elseif ($row['list_type'] === 'hwtaddress_addresssearchform') {
                 $variantField = $this->getFieldFromFlexform('settings.templateVariantSearchForm', 'template');
                 $this->tableData[] = array(
                     $this->getPluginLL(self::LLPATH . 'flexform_setting.templateVariantSearchForm'),
@@ -171,8 +157,20 @@ class CmsLayout {
 
             $result .= $this->renderSettingsAsTable();
         }
-
         return $result;
+    }
+
+
+
+    /**
+     * Returns translations
+     *
+     * @param	string		$llPathAndKey	Parameter with the locallang path and key
+     * @return	string		The translation
+     */
+    function getPluginLL($llPathAndKey) {
+        $llValue = $GLOBALS['LANG']->sL($llPathAndKey);
+        return htmlspecialchars($llValue);
     }
 
 
@@ -190,7 +188,7 @@ class CmsLayout {
         if (isset($flexform['data'])) {
             $flexform = $flexform['data'];
             if (is_array($flexform) && is_array($flexform[$sheet]) && is_array($flexform[$sheet]['lDEF'])
-                && is_array($flexform[$sheet]['lDEF'][$key]) && isset($flexform[$sheet]['lDEF'][$key]['vDEF'])
+                && isset($flexform[$sheet]['lDEF'][$key]) && is_array($flexform[$sheet]['lDEF'][$key]) && isset($flexform[$sheet]['lDEF'][$key]['vDEF'])
             ) {
                 return $flexform[$sheet]['lDEF'][$key]['vDEF'];
             }

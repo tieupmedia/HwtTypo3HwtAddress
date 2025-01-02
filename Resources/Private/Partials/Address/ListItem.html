@@ -17,7 +17,7 @@
         </f:then>
     </f:if>
 
-    <f:link.page pageUid="{settings.list.singlePid}" additionalParams="{tx_hwtaddress_address: {address: address}}">
+    <f:link.action action="single" arguments="{address: address}" pageUid="{settings.list.singlePid}">
         <f:translate key="single-link" />
-    </f:link.page>
+    </f:link.action>
 </div>

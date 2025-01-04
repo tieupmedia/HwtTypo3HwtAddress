@@ -51,11 +51,11 @@ class KeSearchHooks {
     function registerIndexerConfiguration(&$params, $pObj) {
 
         // add address indexer item to "type" field
-        $newArray = array(
+        $newArray = [
             'Modern Address (hwt_address)',
             'hwtaddressindexer',
             'EXT:hwt_address/Resources/Public/Icons/tx_hwtaddress_domain_model_address.gif'
-        );
+        ];
         $params['items'][] = $newArray;
 
         // enable "sysfolder" field
@@ -115,12 +115,12 @@ class KeSearchHooks {
                 $fullContent = $title . "\n" . $abstract . "\n" . $content;
                 $params = '&tx_hwtaddress_address[address]=' . $record['uid'];
                 //$tags = '#example_tag_1#,#example_tag_2#';
-                $additionalFields = array(
+                $additionalFields = [
                     'sortdate' => $record['crdate'],
                     'orig_uid' => $record['uid'],
                     'orig_pid' => $record['pid'],
                     'sortdate' => $record['datetime'],
-                );
+                ];
 
                 // add something to the title, just to identify the entries
                 // in the frontend

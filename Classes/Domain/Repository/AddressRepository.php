@@ -151,7 +151,7 @@ SQL;
                 ORDER BY tx_hwtaddress_domain_model_address.
 SQL;
             $sql .= $orderBy . ' ' . $orderDirection;
-            $parameters = array('tx_hwtaddress_domain_model_address');
+            $parameters = ['tx_hwtaddress_domain_model_address'];
             $query->statement($sql, $parameters);
         }
         elseif ($zip) {

@@ -132,11 +132,11 @@ trait CustomErrorHandlingTrait {
      * @return string
      */
     protected function _getContentObjectByUid($uid) {
-        $conf = array(
+        $conf = [
             'tables' => 'tt_content',
             'source' => $uid,
             'dontCheckPid' => 1
-        );
+        ];
 
         $cObjectRenderer = GeneralUtility::makeInstance('TYPO3\CMS\Frontend\ContentObject\ContentObjectRenderer');
         return $cObjectRenderer->cObjGetSingle('RECORDS', $conf);

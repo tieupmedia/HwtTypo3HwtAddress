@@ -13,32 +13,32 @@ $extensionKey = 'hwt_address';
 \TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
     $extensionKey,
     'AddressList',
-    array(
+    [
         \Hwt\HwtAddress\Controller\AddressController::class => 'list',
-    ),
-    array(
+    ],
+    [
         \Hwt\HwtAddress\Controller\AddressController::class => 'list',
-    )
+    ]
 );
 \TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
     $extensionKey,
     'AddressSingle',
-    array(
+    [
         \Hwt\HwtAddress\Controller\AddressController::class => 'single',
-    ),
-    array(
+    ],
+    [
         \Hwt\HwtAddress\Controller\AddressController::class => 'single',
-    )
+    ]
 );
 \TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
     $extensionKey,
     'AddressSearchForm',
-    array(
+    [
         \Hwt\HwtAddress\Controller\AddressController::class => 'searchForm',
-    ),
-    array(
+    ],
+    [
         \Hwt\HwtAddress\Controller\AddressController::class => 'searchForm',
-    )
+    ]
 );
 
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTypoScriptSetup(trim('
@@ -73,10 +73,10 @@ if (isset($emConfiguration['enableKesearchHooks']) && $emConfiguration['enableKe
  * Register folder icon
  * (For TYPO3 >= 7.5)
  */
-$icons = array(
+$icons = [
     'apps-pagetree-folder-contains-hwtaddress' => 'folder-hwtaddress.gif',
     'ext-hwtaddress-wizard-icon' => 'ce_wiz.gif',
-);
+];
 
 /** @var \TYPO3\CMS\Core\Imaging\IconRegistry $iconRegistry */
 $iconRegistry = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance('TYPO3\\CMS\\Core\\Imaging\\IconRegistry');
@@ -85,6 +85,6 @@ foreach ($icons as $identifier => $file) {
     $iconRegistry->registerIcon(
         $identifier,
         'TYPO3\\CMS\\Core\\Imaging\\IconProvider\\BitmapIconProvider',
-        array('source' => 'EXT:' . $extensionKey . '/Resources/Public/Icons/' . $file)
+        ['source' => 'EXT:' . $extensionKey . '/Resources/Public/Icons/' . $file]
     );
 }

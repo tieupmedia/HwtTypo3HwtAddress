@@ -135,7 +135,7 @@ trait CustomErrorHandlingTrait {
         $conf = [
             'tables' => 'tt_content',
             'source' => $uid,
-            'dontCheckPid' => 1
+            'dontCheckPid' => 1,
         ];
 
         $cObjectRenderer = GeneralUtility::makeInstance('TYPO3\CMS\Frontend\ContentObject\ContentObjectRenderer');

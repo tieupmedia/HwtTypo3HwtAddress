@@ -69,11 +69,6 @@ abstract class AbstractManageableEntity extends \TYPO3\CMS\Extbase\DomainObject\
     /**
      * @var int
      */
-    protected $cruserId;
-
-    /**
-     * @var integer
-     */
     protected $sorting;
 
 
@@ -96,16 +91,6 @@ abstract class AbstractManageableEntity extends \TYPO3\CMS\Extbase\DomainObject\
     public function getTstamp()
     {
         return $this->tstamp;
-    }
-
-    /**
-     * Get id of creator user
-     *
-     * @return integer
-     */
-    public function getCruserId()
-    {
-        return $this->cruserId;
     }
 
     /**

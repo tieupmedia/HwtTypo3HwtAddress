@@ -10,7 +10,6 @@ CREATE TABLE tx_hwtaddress_domain_model_address (
     pid int(11) DEFAULT '0' NOT NULL,
     tstamp int(11) DEFAULT '0' NOT NULL,
     crdate int(11) DEFAULT '0' NOT NULL,
-    cruser_id int(11) DEFAULT '0' NOT NULL,
 	t3_origuid int(11) DEFAULT '0' NOT NULL,
 
     sorting int(11) DEFAULT '0' NOT NULL,
@@ -90,7 +89,6 @@ CREATE TABLE tx_hwtaddress_domain_model_link (
     pid int(11) DEFAULT '0' NOT NULL,
     tstamp int(11) DEFAULT '0' NOT NULL,
     crdate int(11) DEFAULT '0' NOT NULL,
-    cruser_id int(11) DEFAULT '0' NOT NULL,
 	t3_origuid int(11) DEFAULT '0' NOT NULL,
 
     sorting int(11) DEFAULT '0' NOT NULL,

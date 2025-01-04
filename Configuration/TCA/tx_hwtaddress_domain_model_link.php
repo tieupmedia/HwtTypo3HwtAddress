@@ -25,7 +25,6 @@ $extTca = [
         'label_alt_force' => 1,
         'tstamp' => 'tstamp',
         'crdate' => 'crdate',
-        'cruser_id' => 'cruser_id',
         'origUid' => 't3_origuid',
         'dividers2tabs' => true,
         'default_sortby' => 'ORDER BY sorting',

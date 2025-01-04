@@ -17,11 +17,11 @@ $extensionKey = 'hwt_address';
 $GLOBALS['TCA']['pages']['ctrl']['typeicon_classes']['contains-hwtaddress'] = 'apps-pagetree-folder-contains-hwtaddress';
 
 // add select option for hwtaddress
-$GLOBALS['TCA']['pages']['columns']['module']['config']['items'][] = array(
+$GLOBALS['TCA']['pages']['columns']['module']['config']['items'][] = [
     0 => 'LLL:EXT:' . $extensionKey . '/Resources/Private/Language/locallang_be.xlf:folder',
     1 => 'hwtaddress',
     2 => 'apps-pagetree-folder-contains-hwtaddress'
-);
+];
 
 
 
@@ -35,11 +35,11 @@ if ( isset($extensionConfiguration['enableRelationsInPages']) && ($extensionConf
     /*
      * Extend tca of pages
      */
-    $tempColumns = array(
-        'tx_hwtaddress_related_address' => array(
+    $tempColumns = [
+        'tx_hwtaddress_related_address' => [
             'exclude' => 1,
             'label' => $ll . 'tx_hwtaddress_related_address',
-            'config' => array(
+            'config' => [
                 'type' => 'group',
                 'internal_type' => 'db',
                 'allowed' => 'tx_hwtaddress_domain_model_address',
@@ -51,9 +51,9 @@ if ( isset($extensionConfiguration['enableRelationsInPages']) && ($extensionConf
                 'behaviour' => [
                     'allowLanguageSynchronization' => true,
                 ],
-            )
-        ),
-    );
+            ]
+        ],
+    ];
 
     \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTCAcolumns('pages', $tempColumns);
     \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addToAllTCAtypes(

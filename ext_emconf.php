@@ -10,7 +10,7 @@
 # writing. "version" and "dependencies" must not be touched!
 ########################################################################
 
-$EM_CONF[$_EXTKEY] = array(
+$EM_CONF[$_EXTKEY] = [
     'title' => 'Modern Address',
     'description' => 'Address handling for TYPO3 (since 6.2, estab. 2014)',
     'category' => 'plugin',
@@ -22,15 +22,15 @@ $EM_CONF[$_EXTKEY] = array(
     'createDirs' => '',
     'clearCacheOnLoad' => 0,
     'version' => '0.4.2',
-    'constraints' => array(
-        'depends' => array(
+    'constraints' => [
+        'depends' => [
             'typo3' => '10.1.0-11.5.99',
             'php' => '7.0.0-8.3.99',
-        ),
-        'conflicts' => array(
-        ),
-        'suggests' => array(
+        ],
+        'conflicts' => [
+        ],
+        'suggests' => [
             'ke_search' => '2.5.0-2.7.0',
-        ),
-    ),
-);
+        ],
+    ],
+];

@@ -71,7 +71,7 @@ class AddressController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControll
             $city = $this->request->getArgument('city');
         }
 
-        $this->view->assign('searchform', array('zip'=>$zip, 'city'=>$city));
+        $this->view->assign('searchform', ['zip' => $zip, 'city' => $city]);
         return $this->htmlResponse();
     }
 
@@ -109,7 +109,7 @@ class AddressController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControll
         /*
          * Get address records
          */
-        $addressRecords = array();
+        $addressRecords = [];
 
         // set default order fields (equal to first flexform option)
         if (!isset($this->settings['orderBy']) || !is_string($this->settings['orderBy'])) {

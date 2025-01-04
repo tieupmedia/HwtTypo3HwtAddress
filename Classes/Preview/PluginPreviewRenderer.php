@@ -53,14 +53,14 @@ class PluginPreviewRenderer extends \TYPO3\CMS\Backend\Preview\StandardContentPr
      *
      * @var array
      */
-    public $flexformData = array();
+    public $flexformData = [];
 
     /**
      * Table information
      *
      * @var array
      */
-    public $tableData = array();
+    public $tableData = [];
 
 
 
@@ -89,36 +89,36 @@ class PluginPreviewRenderer extends \TYPO3\CMS\Backend\Preview\StandardContentPr
             /*
              * Plugin settings
              */
-            $this->tableData[] = array(
+            $this->tableData[] = [
                 $this->getPluginLL(self::LLPATH . 'flexform_setting.addressStoragePages'),
                 $this->getFieldFromFlexform('settings.addressStoragePages')
-            );
+            ];
 
             if ($row['list_type'] === 'hwtaddress_addresssingle') {
-                $this->tableData[] = array(
+                $this->tableData[] = [
                     $this->getPluginLL(self::LLPATH . 'flexform_setting.addressSingleRecord'),
                     $this->getFieldFromFlexform('settings.addressSingleRecord')
-                );
+                ];
             }
             elseif ($row['list_type'] === 'hwtaddress_addresslist') {
-                $this->tableData[] = array(
+                $this->tableData[] = [
                     $this->getPluginLL(self::LLPATH . 'flexform_setting.addressRecords'),
                     $this->getFieldFromFlexform('settings.addressRecords')
-                );
-                $this->tableData[] = array(
+                ];
+                $this->tableData[] = [
                     $this->getPluginLL(self::LLPATH . 'flexform_setting.orderBy'),
                     $this->getPluginLL(self::LLPATH . 'flexform_setting.orderBy.' . $this->getFieldFromFlexform('settings.orderBy'))
-                );
-                $this->tableData[] = array(
+                ];
+                $this->tableData[] = [
                     $this->getPluginLL(self::LLPATH . 'flexform_setting.orderDirection'),
                     $this->getPluginLL(self::LLPATH . 'flexform_setting.orderDirection.' . $this->getFieldFromFlexform('settings.orderDirection'))
-                );
+                ];
             }
 
-            $this->tableData[] = array(
+            $this->tableData[] = [
                 $this->getPluginLL(self::LLPATH . 'flexform_setting.addressCategories'),
                 $this->getFieldFromFlexform('settings.addressCategories')
-            );
+            ];
 
 
 
@@ -127,30 +127,30 @@ class PluginPreviewRenderer extends \TYPO3\CMS\Backend\Preview\StandardContentPr
              */
             if ($row['list_type'] === 'hwtaddress_addresssingle') {
                 $variantField = $this->getFieldFromFlexform('settings.templateVariantSingle', 'template');
-                $this->tableData[] = array(
+                $this->tableData[] = [
                     $this->getPluginLL(self::LLPATH . 'flexform_setting.templateVariantSingle'),
                     ($variantField ? ucfirst($variantField) : '')
-                );
+                ];
             }
             elseif ($row['list_type'] === 'hwtaddress_addresslist') {
                 $variantField = $this->getFieldFromFlexform('settings.templateVariantList', 'template');
-                $this->tableData[] = array(
+                $this->tableData[] = [
                     $this->getPluginLL(self::LLPATH . 'flexform_setting.templateVariantList'),
                     ($variantField ? ucfirst($variantField) : '')
-                );
+                ];
 
                 $variantField = $this->getFieldFromFlexform('settings.templateVariantSingle', 'template');
-                $this->tableData[] = array(
+                $this->tableData[] = [
                     $this->getPluginLL(self::LLPATH . 'flexform_setting.templateVariantSingle'),
                     ($variantField ? ucfirst($variantField) : '')
-                );
+                ];
             }
             elseif ($row['list_type'] === 'hwtaddress_addresssearchform') {
                 $variantField = $this->getFieldFromFlexform('settings.templateVariantSearchForm', 'template');
-                $this->tableData[] = array(
+                $this->tableData[] = [
                     $this->getPluginLL(self::LLPATH . 'flexform_setting.templateVariantSearchForm'),
                     ($variantField ? ucfirst($variantField) : '')
-                );
+                ];
             }
 
 

@@ -38,6 +38,9 @@ $extTca = [
         ],
         'iconfile' => 'EXT:hwt_address/Resources/Public/Icons/tx_hwtaddress_domain_model_link.gif',
         'searchFields' => 'uid,header,type,link,linktext',
+        'security' => [
+            'ignorePageTypeRestriction' => true,
+        ],
 
         'languageField' => 'sys_language_uid',
         'transOrigPointerField' => 'l10n_parent',

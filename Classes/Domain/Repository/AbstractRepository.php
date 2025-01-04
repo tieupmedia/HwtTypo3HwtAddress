@@ -73,12 +73,12 @@ class AbstractRepository extends \TYPO3\CMS\Extbase\Persistence\Repository {
         if ( $orderBy != '' ) {
             if ( $orderDirection === 'desc' ) {
                 $query->setOrderings([
-                    $orderBy => \TYPO3\CMS\Extbase\Persistence\QueryInterface::ORDER_DESCENDING
+                    $orderBy => \TYPO3\CMS\Extbase\Persistence\QueryInterface::ORDER_DESCENDING,
                 ]);
             }
             else {
                 $query->setOrderings([
-                    $orderBy => \TYPO3\CMS\Extbase\Persistence\QueryInterface::ORDER_ASCENDING
+                    $orderBy => \TYPO3\CMS\Extbase\Persistence\QueryInterface::ORDER_ASCENDING,
                 ]);
             }
         }

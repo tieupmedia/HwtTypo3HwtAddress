@@ -20,7 +20,7 @@ $GLOBALS['TCA']['pages']['ctrl']['typeicon_classes']['contains-hwtaddress'] = 'a
 $GLOBALS['TCA']['pages']['columns']['module']['config']['items'][] = [
     0 => 'LLL:EXT:' . $extensionKey . '/Resources/Private/Language/locallang_be.xlf:folder',
     1 => 'hwtaddress',
-    2 => 'apps-pagetree-folder-contains-hwtaddress'
+    2 => 'apps-pagetree-folder-contains-hwtaddress',
 ];
 
 
@@ -51,7 +51,7 @@ if ( isset($extensionConfiguration['enableRelationsInPages']) && ($extensionConf
                 'behaviour' => [
                     'allowLanguageSynchronization' => true,
                 ],
-            ]
+            ],
         ],
     ];
 

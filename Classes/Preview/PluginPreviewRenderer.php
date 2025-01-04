@@ -91,33 +91,33 @@ class PluginPreviewRenderer extends \TYPO3\CMS\Backend\Preview\StandardContentPr
              */
             $this->tableData[] = [
                 $this->getPluginLL(self::LLPATH . 'flexform_setting.addressStoragePages'),
-                $this->getFieldFromFlexform('settings.addressStoragePages')
+                $this->getFieldFromFlexform('settings.addressStoragePages'),
             ];
 
             if ($row['list_type'] === 'hwtaddress_addresssingle') {
                 $this->tableData[] = [
                     $this->getPluginLL(self::LLPATH . 'flexform_setting.addressSingleRecord'),
-                    $this->getFieldFromFlexform('settings.addressSingleRecord')
+                    $this->getFieldFromFlexform('settings.addressSingleRecord'),
                 ];
             }
             elseif ($row['list_type'] === 'hwtaddress_addresslist') {
                 $this->tableData[] = [
                     $this->getPluginLL(self::LLPATH . 'flexform_setting.addressRecords'),
-                    $this->getFieldFromFlexform('settings.addressRecords')
+                    $this->getFieldFromFlexform('settings.addressRecords'),
                 ];
                 $this->tableData[] = [
                     $this->getPluginLL(self::LLPATH . 'flexform_setting.orderBy'),
-                    $this->getPluginLL(self::LLPATH . 'flexform_setting.orderBy.' . $this->getFieldFromFlexform('settings.orderBy'))
+                    $this->getPluginLL(self::LLPATH . 'flexform_setting.orderBy.' . $this->getFieldFromFlexform('settings.orderBy')),
                 ];
                 $this->tableData[] = [
                     $this->getPluginLL(self::LLPATH . 'flexform_setting.orderDirection'),
-                    $this->getPluginLL(self::LLPATH . 'flexform_setting.orderDirection.' . $this->getFieldFromFlexform('settings.orderDirection'))
+                    $this->getPluginLL(self::LLPATH . 'flexform_setting.orderDirection.' . $this->getFieldFromFlexform('settings.orderDirection')),
                 ];
             }
 
             $this->tableData[] = [
                 $this->getPluginLL(self::LLPATH . 'flexform_setting.addressCategories'),
-                $this->getFieldFromFlexform('settings.addressCategories')
+                $this->getFieldFromFlexform('settings.addressCategories'),
             ];
 
 
@@ -129,27 +129,27 @@ class PluginPreviewRenderer extends \TYPO3\CMS\Backend\Preview\StandardContentPr
                 $variantField = $this->getFieldFromFlexform('settings.templateVariantSingle', 'template');
                 $this->tableData[] = [
                     $this->getPluginLL(self::LLPATH . 'flexform_setting.templateVariantSingle'),
-                    ($variantField ? ucfirst($variantField) : '')
+                    ($variantField ? ucfirst($variantField) : ''),
                 ];
             }
             elseif ($row['list_type'] === 'hwtaddress_addresslist') {
                 $variantField = $this->getFieldFromFlexform('settings.templateVariantList', 'template');
                 $this->tableData[] = [
                     $this->getPluginLL(self::LLPATH . 'flexform_setting.templateVariantList'),
-                    ($variantField ? ucfirst($variantField) : '')
+                    ($variantField ? ucfirst($variantField) : ''),
                 ];
 
                 $variantField = $this->getFieldFromFlexform('settings.templateVariantSingle', 'template');
                 $this->tableData[] = [
                     $this->getPluginLL(self::LLPATH . 'flexform_setting.templateVariantSingle'),
-                    ($variantField ? ucfirst($variantField) : '')
+                    ($variantField ? ucfirst($variantField) : ''),
                 ];
             }
             elseif ($row['list_type'] === 'hwtaddress_addresssearchform') {
                 $variantField = $this->getFieldFromFlexform('settings.templateVariantSearchForm', 'template');
                 $this->tableData[] = [
                     $this->getPluginLL(self::LLPATH . 'flexform_setting.templateVariantSearchForm'),
-                    ($variantField ? ucfirst($variantField) : '')
+                    ($variantField ? ucfirst($variantField) : ''),
                 ];
             }
 

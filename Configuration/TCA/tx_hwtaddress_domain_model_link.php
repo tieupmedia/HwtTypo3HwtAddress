@@ -58,11 +58,11 @@ $extTca = [
                     [
                         $llGeneral . 'LGL.allLanguages',
                         -1,
-                        'flags-multiple'
+                        'flags-multiple',
                     ],
                 ],
                 'default' => 0,
-            ]
+            ],
         ],
         'l10n_parent' => [
             'displayCond' => 'FIELD:sys_language_uid:>:0',
@@ -76,45 +76,45 @@ $extTca = [
                 'foreign_table' => 'tx_hwtaddress_domain_model_address',
                 'foreign_table_where' => 'AND tx_hwtaddress_domain_model_address.pid=###CURRENT_PID### AND tx_hwtaddress_domain_model_address.sys_language_uid IN (-1,0)',
                 'default' => 0,
-            ]
+            ],
         ],
         'l10n_diffsource' => [
             'config' => [
                 'type' => 'passthrough',
-                'default' => ''
-            ]
+                'default' => '',
+            ],
         ],
         'pid' => [
             'label' => 'pid',
             'config' => [
-                'type' => 'passthrough'
-            ]
+                'type' => 'passthrough',
+            ],
         ],
         'sorting' => [
             'label' => 'sorting',
             'config' => [
-                'type' => 'passthrough'
-            ]
+                'type' => 'passthrough',
+            ],
         ],
         'crdate' => [
             'label' => 'crdate',
             'config' => [
                 'type' => 'passthrough',
-            ]
+            ],
         ],
         'tstamp' => [
             'label' => 'tstamp',
             'config' => [
                 'type' => 'passthrough',
-            ]
+            ],
         ],
         'hidden' => [
             'exclude' => 1,
             'label' => $llGeneral . 'LGL.hidden',
             'config' => [
                 'type' => 'check',
-                'default' => 0
-            ]
+                'default' => 0,
+            ],
         ],
         'starttime' => [
             'exclude' => 1,
@@ -125,7 +125,7 @@ $extTca = [
                 'size' => 10,
                 'eval' => 'datetime,int',
                 'default' => 0,
-            ]
+            ],
         ],
         'endtime' => [
             'exclude' => 1,
@@ -136,7 +136,7 @@ $extTca = [
                 'size' => 10,
                 'eval' => 'datetime,int',
                 'default' => 0,
-            ]
+            ],
         ],
 
         'header' => [
@@ -146,7 +146,7 @@ $extTca = [
                 'type' => 'input',
                 'size' => 15,
                 'max' => 30,
-            ]
+            ],
         ],
         'parameter' => [
             'exclude' => 0,
@@ -157,8 +157,8 @@ $extTca = [
                 'size' => 50,
                 'max' => 1024,
                 'eval' => 'trim',
-                'softref' => 'typolink'
-            ]
+                'softref' => 'typolink',
+            ],
         ],
         'linktext' => [
             'exclude' => 1,
@@ -167,7 +167,7 @@ $extTca = [
                 'type' => 'input',
                 'size' => 15,
                 'max' => 30,
-            ]
+            ],
         ],
         'type' => [
             'exclude' => 0,
@@ -192,7 +192,7 @@ $extTca = [
                 ],
                 'size' => 1,
                 'max' => 1,
-            ]
+            ],
         ],
     ],
     'types' => [
@@ -205,7 +205,7 @@ $extTca = [
 
                 --div--;LLL:EXT:cms/locallang_ttc.xlf:tabs.access,
                     --palette--;'.$llTtc.'palette.visibility;paletteVisbility,
-                    --palette--;'.$llTtc.'palette.access;paletteAccess,'
+                    --palette--;'.$llTtc.'palette.access;paletteAccess,',
         ],
     ],
     'palettes' => [

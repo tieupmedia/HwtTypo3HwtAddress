@@ -10,8 +10,8 @@ if (!defined('TYPO3')) {
  */
 $GLOBALS['TCA']['tx_hwtaddress_domain_model_address']['columns']['categories'] = [
    'config' => [
-      'type' => 'category'
-   ]
+      'type' => 'category',
+   ],
 ];
 
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addToAllTCAtypes('tx_hwtaddress_domain_model_address', 'categories');

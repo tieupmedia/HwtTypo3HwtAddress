@@ -54,7 +54,7 @@ class KeSearchHooks {
         $newArray = [
             'Modern Address (hwt_address)',
             'hwtaddressindexer',
-            'EXT:hwt_address/Resources/Public/Icons/tx_hwtaddress_domain_model_address.gif'
+            'EXT:hwt_address/Resources/Public/Icons/tx_hwtaddress_domain_model_address.gif',
         ];
         $params['items'][] = $newArray;
 

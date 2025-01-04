@@ -44,11 +44,6 @@ $extTca = [
         'transOrigPointerField' => 'l10n_parent',
         'transOrigDiffSourceField' => 'l10n_diffsource',
     ],
-    'interface' => [
-        'showRecordFieldList' => 'sorting,hidden,starttime,endtime,academic,firstname,lastname,gender,images,assets,birthday,department,position,info,
-            company_title,company_subtitle,company_short,company_bodytext,company_images,
-            phone,mobile,fax,email,www,street,building,zip,city,region,country,longitude,latitude',
-    ],
     'columns' => [
         'sys_language_uid' => [
             'exclude' => true,

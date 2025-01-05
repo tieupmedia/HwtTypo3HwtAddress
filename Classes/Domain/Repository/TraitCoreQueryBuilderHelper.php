@@ -1,6 +1,6 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace Hwt\HwtAddress\Domain\Repository;
 
@@ -34,7 +34,8 @@ namespace Hwt\HwtAddress\Domain\Repository;
  * @subpackage tx_hwtaddress
  * @author Heiko Westermann <hwt3@gmx.de>
  */
-trait TraitCoreQueryBuilderHelper {
+trait TraitCoreQueryBuilderHelper
+{
     /*
      * Set orderings helper function
      *
@@ -42,16 +43,15 @@ trait TraitCoreQueryBuilderHelper {
      * @param string $orderBy
      * @param null|string $orderDirection
      */
-    protected function _setOrderingsForCoreQueryBuilder(&$query, $orderBy='uid', $orderDirection=null)
+    protected function _setOrderingsForCoreQueryBuilder(&$query, $orderBy = 'uid', $orderDirection = null)
     {
-        if ( $orderBy != '' ) {
-            if ( $orderDirection === 'desc' ) {
+        if ($orderBy != '') {
+            if ($orderDirection === 'desc') {
                 $query->orderBy(
                     $orderBy,
                     \TYPO3\CMS\Extbase\Persistence\QueryInterface::ORDER_DESCENDING
                 );
-            }
-            else {
+            } else {
                 $query->orderBy(
                     $orderBy,
                     \TYPO3\CMS\Extbase\Persistence\QueryInterface::ORDER_ASCENDING
@@ -69,9 +69,13 @@ trait TraitCoreQueryBuilderHelper {
      * @param null|int $limit
      * @param null|int $offset
      */
-    protected function _setRangeForCoreQueryBuilder(&$query, $limit=null, $offset=null)
+    protected function _setRangeForCoreQueryBuilder(&$query, $limit = null, $offset = null)
     {
-        if ($limit > 0) {$query->setMaxResults($limit);}
-        if ($offset > 0) {$query->setFirstResult($offset);}
+        if ($limit > 0) {
+            $query->setMaxResults($limit);
+        }
+        if ($offset > 0) {
+            $query->setFirstResult($offset);
+        }
     }
 }

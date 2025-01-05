@@ -1,6 +1,6 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace Hwt\HwtAddress\Hooks;
 
@@ -37,7 +37,8 @@ use TYPO3\CMS\Core\Utility\GeneralUtility;
  * @subpackage tx_hwtaddress
  * @author Heiko Westermann <hwt3@gmx.de>
  */
-class KeSearchHooks {
+class KeSearchHooks
+{
     /**
      * indexer configurations
      *
@@ -48,7 +49,8 @@ class KeSearchHooks {
      * @param array $params
      * @param type $pObj
      */
-    function registerIndexerConfiguration(&$params, $pObj) {
+    public function registerIndexerConfiguration(&$params, $pObj)
+    {
 
         // add address indexer item to "type" field
         $newArray = [
@@ -70,11 +72,12 @@ class KeSearchHooks {
     * @param array $indexerObject Reference to indexer class.
     * @return string Output.
     */
-    public function customIndexer(&$indexerConfig, &$indexerObject) {
+    public function customIndexer(&$indexerConfig, &$indexerObject)
+    {
         /*
          * address indexing
          */
-        if($indexerConfig['type'] == 'hwtaddressindexer') {
+        if ($indexerConfig['type'] == 'hwtaddressindexer') {
             $content = '';
 
             // get all the entries to index
@@ -97,7 +100,7 @@ class KeSearchHooks {
             //$queryBuilder->setRestrictions(GeneralUtility::makeInstance(FrontendRestrictionContainer::class));
 
             $statement = $queryBuilder->select($fields)->from($table);
-            if ( $sysfolders ) {
+            if ($sysfolders) {
                 $statement->where(
                     $queryBuilder->expr()->in('pid', $sysfolders)
                 );
@@ -106,7 +109,7 @@ class KeSearchHooks {
 
 
             // Loop through the records and write them to the index.
-            while ( ($record = $statement->fetch()) ) {
+            while (($record = $statement->fetch())) {
                 // compile the information which should go into the index
                 // the field names depend on the table you want to index!
                 $title = strip_tags($record['firstname'] . "\n" . $record['lastname'] . "\n" . $record['company_title']);

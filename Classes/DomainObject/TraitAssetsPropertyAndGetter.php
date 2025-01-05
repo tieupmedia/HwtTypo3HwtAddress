@@ -1,6 +1,6 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace Hwt\HwtAddress\DomainObject;
 
@@ -34,8 +34,8 @@ namespace Hwt\HwtAddress\DomainObject;
  * @subpackage tx_hwtaddress
  * @author Heiko Westermann <hwt3@gmx.de>
  */
-trait TraitAssetsPropertyAndGetter {
-
+trait TraitAssetsPropertyAndGetter
+{
     /**
      * Assets
      *
@@ -51,15 +51,16 @@ trait TraitAssetsPropertyAndGetter {
      *
      * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\TYPO3\CMS\Extbase\Domain\Model\FileReference> $assets
      */
-    public function getAssets() {
+    public function getAssets()
+    {
         return $this->assets;
     }
 
     /**
      * Init function for trait, e.g. to execute in constructor of using object
-     *
      */
-    public function initTraitAssetsPropertyAndGetter() {
+    public function initTraitAssetsPropertyAndGetter()
+    {
         $this->assets = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
     }
 }

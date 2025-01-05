@@ -1,7 +1,7 @@
 <?php
 
 if (!defined('TYPO3')) {
-	die ('Access denied.');
+    die('Access denied.');
 }
 
 $extensionKey = 'hwt_address';
@@ -21,7 +21,7 @@ foreach ($pluginKeys as $pluginKey) {
     // Fallback for TYPO3 <= 12.0
     // https://docs.typo3.org/c/typo3/cms-core/main/en-us/Changelog/12.0/Feature-82809-MakeExtensionUtilityregisterPluginMethodReturnPluginSignature.html
     if (!$pluginIdentifier) {
-        $pluginIdentifier = str_replace('_', '', $extensionKey) . '_' .  str_replace('_', '', $pluginKey);
+        $pluginIdentifier = str_replace('_', '', $extensionKey) . '_' . str_replace('_', '', $pluginKey);
     }
 
     $GLOBALS['TCA']['tt_content']['types']['list']['subtypes_excludelist'][$pluginIdentifier] = 'recursive,select_key,pages';

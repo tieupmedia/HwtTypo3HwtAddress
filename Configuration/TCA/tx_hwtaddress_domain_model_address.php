@@ -1,7 +1,7 @@
 <?php
 
 if (!defined('TYPO3')) {
-    die ('Access denied.');
+    die('Access denied.');
 }
 
 
@@ -28,7 +28,7 @@ $extTca = [
         'crdate' => 'crdate',
         'cruser_id' => 'cruser_id',
         'origUid' => 't3_origuid',
-        'dividers2tabs' => TRUE,
+        'dividers2tabs' => true,
         'default_sortby' => 'ORDER BY crdate',
         'sortby' => 'sorting',
         'delete' => 'deleted',
@@ -195,7 +195,7 @@ $extTca = [
                             'width' => '100',
                             'height' => '100',
                         ],
-                        'createNewRelationLinkTitle' => $llTtc.'images.addFileReference',
+                        'createNewRelationLinkTitle' => $llTtc . 'images.addFileReference',
                     ],
                     // custom configuration for displaying fields in the overlay/reference table
                     // to use the imageoverlayPalette instead of the basicoverlayPalette
@@ -351,7 +351,7 @@ $extTca = [
         ],
         'company_bodytext' => [
             'exclude' => 1,
-            'label' => $llTtc.'bodytext_formlabel',
+            'label' => $llTtc . 'bodytext_formlabel',
             'config' => [
                 'type' => 'text',
                 'enableRichtext' => true,
@@ -381,7 +381,7 @@ $extTca = [
                             'width' => '100',
                             'height' => '100',
                         ],
-                        'createNewRelationLinkTitle' => $llTtc.'images.addFileReference',
+                        'createNewRelationLinkTitle' => $llTtc . 'images.addFileReference',
                     ],
                     // custom configuration for displaying fields in the overlay/reference table
                     // to use the imageoverlayPalette instead of the basicoverlayPalette
@@ -488,7 +488,7 @@ $extTca = [
                 'minitems' => 0,
                 'maxitems' => 20,
                 'appearance' => [
-                'collapse' => 0,
+                    'collapse' => 0,
                     'levelLinksPosition' => 'top',
                     'showSynchronizationLink' => 1,
                     'showPossibleLocalizationRecords' => 1,
@@ -625,76 +625,76 @@ $extTca = [
     'types' => [
         0 => [
             'showitem' =>
-                '--palette--;'.$ll.'palette.name;paletteName,
-                    birthday,info, --palette--;'.$ll.'palette.employee;paletteEmployee, images, assets,
+                '--palette--;' . $ll . 'palette.name;paletteName,
+                    birthday,info, --palette--;' . $ll . 'palette.employee;paletteEmployee, images, assets,
 
-                --div--;'.$ll.'tabs.company,
-                    --palette--;'.$ll.'palette.company_title;paletteCompanyTitle, company_short,company_bodytext,company_images,
+                --div--;' . $ll . 'tabs.company,
+                    --palette--;' . $ll . 'palette.company_title;paletteCompanyTitle, company_short,company_bodytext,company_images,
 
-                --div--;'.$ll.'tabs.address,
-                    --palette--;'.$ll.'palette.electronic_address;paletteElectronicAddress,
-                    --palette--;'.$ll.'palette.location_address;paletteLocationAddress,
-                    --palette--;'.$ll.'palette.geographical_address;paletteGeographicalAddress,
+                --div--;' . $ll . 'tabs.address,
+                    --palette--;' . $ll . 'palette.electronic_address;paletteElectronicAddress,
+                    --palette--;' . $ll . 'palette.location_address;paletteLocationAddress,
+                    --palette--;' . $ll . 'palette.geographical_address;paletteGeographicalAddress,
 
-                --div--;'.$ll.'tabs.relations,
-                    --palette--;'.$ll.'palette.relations_address;paletteRelationsAddress,
-                    --palette--;'.$ll.'palette.relations_pages;paletteRelationsPages,
+                --div--;' . $ll . 'tabs.relations,
+                    --palette--;' . $ll . 'palette.relations_address;paletteRelationsAddress,
+                    --palette--;' . $ll . 'palette.relations_pages;paletteRelationsPages,
 
-                --div--;'.$ll.'tabs.language,
-                    --palette--;'.$ll.'palette.language;paletteLanguage,
+                --div--;' . $ll . 'tabs.language,
+                    --palette--;' . $ll . 'palette.language;paletteLanguage,
 
-                --div--;'.$llTtc.'tabs.access,
-                    --palette--;'.$llTtc.'palette.visibility;paletteVisbility,
-                    --palette--;'.$llTtc.'palette.access;paletteAccess,',
+                --div--;' . $llTtc . 'tabs.access,
+                    --palette--;' . $llTtc . 'palette.visibility;paletteVisbility,
+                    --palette--;' . $llTtc . 'palette.access;paletteAccess,',
         ],
     ],
     'palettes' => [
         'paletteName' => [
             'showitem' => 'l10n_parent, l10n_diffsource, academic, gender, --linebreak--, firstname,lastname,',
-            'canNotCollapse' => TRUE,
+            'canNotCollapse' => true,
         ],
         'paletteEmployee' => [
             'showitem' => 'department, position',
-            'canNotCollapse' => TRUE,
+            'canNotCollapse' => true,
         ],
         'paletteCompanyTitle' => [
             'showitem' => 'company_title, --linebreak--, company_subtitle',
-            'canNotCollapse' => TRUE,
+            'canNotCollapse' => true,
         ],
 
         'paletteElectronicAddress' => [
             'showitem' => 'phone, fax, --linebreak--, mobile, email, --linebreak--, www, --linebreak--, links',
-            'canNotCollapse' => TRUE,
+            'canNotCollapse' => true,
         ],
         'paletteLocationAddress' => [
             'showitem' => 'street, building, --linebreak--, zip, city, --linebreak--, region, country',
-            'canNotCollapse' => TRUE,
+            'canNotCollapse' => true,
         ],
         'paletteGeographicalAddress' => [
             'showitem' => 'longitude, latitude',
-            'canNotCollapse' => TRUE,
+            'canNotCollapse' => true,
         ],
 
         'paletteRelationsAddress' => [
             'showitem' => 'related_address, --linebreak--, related_address_from',
-            'canNotCollapse' => TRUE,
+            'canNotCollapse' => true,
         ],
         'paletteRelationsPages' => [
             'showitem' => 'related_pages, --linebreak--, related_pages_from',
-            'canNotCollapse' => TRUE,
+            'canNotCollapse' => true,
         ],
 
         'paletteVisbility' => [
             'showitem' => 'hidden',
-            'canNotCollapse' => TRUE,
+            'canNotCollapse' => true,
         ],
         'paletteAccess' => [
-            'showitem' => 'starttime;'.$llTtc.'starttime_formlabel, endtime;'.$llTtc.'endtime_formlabel,',
-            'canNotCollapse' => TRUE,
+            'showitem' => 'starttime;' . $llTtc . 'starttime_formlabel, endtime;' . $llTtc . 'endtime_formlabel,',
+            'canNotCollapse' => true,
         ],
         'paletteLanguage' => [
             'showitem' => '
-                sys_language_uid;'.$llTtc.'sys_language_uid_formlabel,l10n_parent
+                sys_language_uid;' . $llTtc . 'sys_language_uid_formlabel,l10n_parent
             ',
         ],
     ],

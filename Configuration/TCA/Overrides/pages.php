@@ -1,7 +1,7 @@
 <?php
 
 if (!defined('TYPO3')) {
-    die ('Access denied.');
+    die('Access denied.');
 }
 
 $extensionKey = 'hwt_address';
@@ -28,7 +28,7 @@ $GLOBALS['TCA']['pages']['columns']['module']['config']['items'][] = [
 $extensionConfiguration = $GLOBALS['TYPO3_CONF_VARS']['EXTENSIONS']['hwt_address'] ?? [];
 
 // Add relation field, if activated in em config
-if ( isset($extensionConfiguration['enableRelationsInPages']) && ($extensionConfiguration['enableRelationsInPages']==true) ) {
+if (isset($extensionConfiguration['enableRelationsInPages']) && ($extensionConfiguration['enableRelationsInPages'] == true)) {
     // Extension locallang
     $ll = 'LLL:EXT:hwt_address/Resources/Private/Language/locallang_db.xlf:pages.';
 

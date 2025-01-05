@@ -1,6 +1,6 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace Hwt\HwtAddress\Preview;
 
@@ -33,20 +33,21 @@ namespace Hwt\HwtAddress\Preview;
  * @package TYPO3
  * @subpackage hwt_address
  */
-class PluginPreviewRenderer extends \TYPO3\CMS\Backend\Preview\StandardContentPreviewRenderer {
+class PluginPreviewRenderer extends \TYPO3\CMS\Backend\Preview\StandardContentPreviewRenderer
+{
     /**
      * Extension key
      *
      * @var string
      */
-    const KEY = 'hwt_address';
+    public const KEY = 'hwt_address';
 
     /**
      * Path to the locallang file
      *
      * @var string
      */
-    const LLPATH = 'LLL:EXT:hwt_address/Resources/Private/Language/locallang_be.xlf:';
+    public const LLPATH = 'LLL:EXT:hwt_address/Resources/Private/Language/locallang_be.xlf:';
 
     /**
      * Flexform information
@@ -73,10 +74,10 @@ class PluginPreviewRenderer extends \TYPO3\CMS\Backend\Preview\StandardContentPr
     {
         $row = $item->getRecord();
 
-		$pluginLLKey = str_replace('hwtaddress_address', 'plugin.address_', $row['list_type']);
-		if ($pluginLLKey === 'plugin.address_searchform') {
-			$pluginLLKey = 'plugin.address_search_form';
-		}
+        $pluginLLKey = str_replace('hwtaddress_address', 'plugin.address_', $row['list_type']);
+        if ($pluginLLKey === 'plugin.address_searchform') {
+            $pluginLLKey = 'plugin.address_search_form';
+        }
         $result = '<br /><strong>' . $this->getPluginLL(self::LLPATH . $pluginLLKey . '.title') . '</strong><br />';
 
         $flexforms = \TYPO3\CMS\Core\Utility\GeneralUtility::xml2array($row['pi_flexform']);
@@ -99,8 +100,7 @@ class PluginPreviewRenderer extends \TYPO3\CMS\Backend\Preview\StandardContentPr
                     $this->getPluginLL(self::LLPATH . 'flexform_setting.addressSingleRecord'),
                     $this->getFieldFromFlexform('settings.addressSingleRecord'),
                 ];
-            }
-            elseif ($row['list_type'] === 'hwtaddress_addresslist') {
+            } elseif ($row['list_type'] === 'hwtaddress_addresslist') {
                 $this->tableData[] = [
                     $this->getPluginLL(self::LLPATH . 'flexform_setting.addressRecords'),
                     $this->getFieldFromFlexform('settings.addressRecords'),
@@ -131,8 +131,7 @@ class PluginPreviewRenderer extends \TYPO3\CMS\Backend\Preview\StandardContentPr
                     $this->getPluginLL(self::LLPATH . 'flexform_setting.templateVariantSingle'),
                     ($variantField ? ucfirst($variantField) : ''),
                 ];
-            }
-            elseif ($row['list_type'] === 'hwtaddress_addresslist') {
+            } elseif ($row['list_type'] === 'hwtaddress_addresslist') {
                 $variantField = $this->getFieldFromFlexform('settings.templateVariantList', 'template');
                 $this->tableData[] = [
                     $this->getPluginLL(self::LLPATH . 'flexform_setting.templateVariantList'),
@@ -144,8 +143,7 @@ class PluginPreviewRenderer extends \TYPO3\CMS\Backend\Preview\StandardContentPr
                     $this->getPluginLL(self::LLPATH . 'flexform_setting.templateVariantSingle'),
                     ($variantField ? ucfirst($variantField) : ''),
                 ];
-            }
-            elseif ($row['list_type'] === 'hwtaddress_addresssearchform') {
+            } elseif ($row['list_type'] === 'hwtaddress_addresssearchform') {
                 $variantField = $this->getFieldFromFlexform('settings.templateVariantSearchForm', 'template');
                 $this->tableData[] = [
                     $this->getPluginLL(self::LLPATH . 'flexform_setting.templateVariantSearchForm'),
@@ -168,7 +166,8 @@ class PluginPreviewRenderer extends \TYPO3\CMS\Backend\Preview\StandardContentPr
      * @param	string		$llPathAndKey	Parameter with the locallang path and key
      * @return	string		The translation
      */
-    function getPluginLL($llPathAndKey) {
+    public function getPluginLL($llPathAndKey)
+    {
         $llValue = $GLOBALS['LANG']->sL($llPathAndKey);
         return htmlspecialchars($llValue);
     }
@@ -183,7 +182,8 @@ class PluginPreviewRenderer extends \TYPO3\CMS\Backend\Preview\StandardContentPr
      * @param string $sheet name of the sheet
      * @return string|NULL if nothing found, value if found
      */
-    public function getFieldFromFlexform($key, $sheet = 'sDEF') {
+    public function getFieldFromFlexform($key, $sheet = 'sDEF')
+    {
         $flexform = $this->flexformData;
         if (isset($flexform['data'])) {
             $flexform = $flexform['data'];
@@ -194,7 +194,7 @@ class PluginPreviewRenderer extends \TYPO3\CMS\Backend\Preview\StandardContentPr
             }
         }
 
-        return NULL;
+        return null;
     }
 
 
@@ -205,7 +205,8 @@ class PluginPreviewRenderer extends \TYPO3\CMS\Backend\Preview\StandardContentPr
      *
      * @return string
      */
-    protected function renderSettingsAsTable() {
+    protected function renderSettingsAsTable()
+    {
         if (count($this->tableData) == 0) {
             return '';
         }

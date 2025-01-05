@@ -1,7 +1,7 @@
 <?php
 
 if (!defined('TYPO3')) {
-    die ('Access denied.');
+    die('Access denied.');
 }
 
 $extensionKey = 'hwt_address';

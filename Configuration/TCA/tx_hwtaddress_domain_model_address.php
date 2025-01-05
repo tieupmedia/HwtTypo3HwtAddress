@@ -702,7 +702,7 @@ $extTca = [
 
 
 // Get extension manager configuration
-$emConfiguration = isset($GLOBALS['TYPO3_CONF_VARS']['EXTENSIONS']['hwt_address']) ? $GLOBALS['TYPO3_CONF_VARS']['EXTENSIONS']['hwt_address'] : [];
+$emConfiguration = $GLOBALS['TYPO3_CONF_VARS']['EXTENSIONS']['hwt_address'] ?? [];
 
 // Remove relation field, if not activated in em config
 if (isset($emConfiguration['enableRelationsInPages']) && !$emConfiguration['enableRelationsInPages']) {

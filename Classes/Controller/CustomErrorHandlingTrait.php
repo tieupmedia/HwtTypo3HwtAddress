@@ -4,7 +4,8 @@ declare(strict_types=1);
 
 namespace Hwt\HwtAddress\Controller;
 
-use TYPO3\CMS\Core\Utility\GeneralUtility as GeneralUtility;
+use InvalidArgumentException;
+use TYPO3\CMS\Core\Utility\GeneralUtility;
 
 /***************************************************************
  *  Copyright notice
@@ -80,7 +81,7 @@ trait CustomErrorHandlingTrait
                         throw new \InvalidArgumentException($msg);
                     }
                 case 'pageNotFoundHandler':
-                    $response = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(
+                    $response = GeneralUtility::makeInstance(
                         \TYPO3\CMS\Frontend\Controller\ErrorController::class
                     )->pageNotFoundAction(
                         $GLOBALS['TYPO3_REQUEST'],

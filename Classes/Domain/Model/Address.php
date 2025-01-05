@@ -155,7 +155,7 @@ class Address extends \Hwt\HwtAddress\DomainObject\AbstractManageableEntity
     protected $www;
 
     /**
-     * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Hwt\HwtAddress\Domain\Model\Link>
+     * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<Link>
      * @TYPO3\CMS\Extbase\Annotation\ORM\Lazy
      * @extensionScannerIgnoreLine Still needed for TYPO3 8.7
      * @TYPO3\CMS\Extbase\Annotation\ORM\Lazy
@@ -195,14 +195,14 @@ class Address extends \Hwt\HwtAddress\DomainObject\AbstractManageableEntity
     /**
      * related addresses
      *
-     * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Hwt\HwtAddress\Domain\Model\Address>
+     * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<Address>
      */
     protected $relatedAddress;
 
     /**
      * related from addresses
      *
-     * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Hwt\HwtAddress\Domain\Model\Address>
+     * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<Address>
      * @TYPO3\CMS\Extbase\Annotation\ORM\Lazy
      * @extensionScannerIgnoreLine Still needed for TYPO3 8.7
      * @TYPO3\CMS\Extbase\Annotation\ORM\Lazy
@@ -475,7 +475,7 @@ class Address extends \Hwt\HwtAddress\DomainObject\AbstractManageableEntity
     /**
      * Get links
      *
-     * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Hwt\HwtAddress\Domain\Model\Link> $links
+     * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<Link> $links
      */
     public function getLinks()
     {
@@ -525,7 +525,7 @@ class Address extends \Hwt\HwtAddress\DomainObject\AbstractManageableEntity
     /**
      * Returns related addresses
      *
-     * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Hwt\HwtAddress\Domain\Model\Address> $relatedAddress
+     * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<Address> $relatedAddress
      */
     public function getRelatedAddress()
     {
@@ -535,7 +535,7 @@ class Address extends \Hwt\HwtAddress\DomainObject\AbstractManageableEntity
     /**
      * Returns the addresses related from
      *
-     * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Hwt\HwtAddress\Domain\Model\Address> $relatedAddressFrom
+     * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<Address> $relatedAddressFrom
      */
     public function getRelatedAddressFrom()
     {

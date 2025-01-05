@@ -180,7 +180,7 @@ class PluginPreviewRenderer extends \TYPO3\CMS\Backend\Preview\StandardContentPr
      *
      * @param string $key name of the key
      * @param string $sheet name of the sheet
-     * @return string|NULL if nothing found, value if found
+     * @return string|null if nothing found, value if found
      */
     public function getFieldFromFlexform($key, $sheet = 'sDEF')
     {

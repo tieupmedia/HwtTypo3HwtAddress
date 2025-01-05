@@ -49,7 +49,6 @@ class AddressController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControll
      * Inject a address repository
      *
      * @param \Hwt\HwtAddress\Domain\Repository\AddressRepository $addressRepository
-     * @return void
      */
     public function injectAddressRepository(\Hwt\HwtAddress\Domain\Repository\AddressRepository $addressRepository): void
     {

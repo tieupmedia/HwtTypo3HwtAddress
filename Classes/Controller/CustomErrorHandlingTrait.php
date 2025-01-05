@@ -136,7 +136,7 @@ trait CustomErrorHandlingTrait
     /**
      * Get a content object
      *
-     * @param integer $uid
+     * @param int $uid
      * @return string
      */
     protected function _getContentObjectByUid(int $uid): string

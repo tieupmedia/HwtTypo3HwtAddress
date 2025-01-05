@@ -1,6 +1,6 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace Hwt\HwtAddress\Controller;
 
@@ -36,8 +36,8 @@ use TYPO3\CMS\Core\Utility\GeneralUtility as GeneralUtility;
  * @subpackage tx_hwtaddress
  * @author Heiko Westermann <hwt3@gmx.de>
  */
-trait CustomErrorHandlingTrait {
-
+trait CustomErrorHandlingTrait
+{
     /**
      * Error handling configured before
      *
@@ -45,29 +45,30 @@ trait CustomErrorHandlingTrait {
      * @throws \InvalidArgumentException
      * @return string
      */
-    protected function doConfiguredErrorHandling($configuration) {
+    protected function doConfiguredErrorHandling($configuration)
+    {
         $return = $statusCode = null;
 
         //\TYPO3\CMS\Extbase\Utility\DebuggerUtility::var_dump($configuration);
-        if ( is_array($configuration) && isset($configuration['mode']) ) {
+        if (is_array($configuration) && isset($configuration['mode'])) {
             $redirectMode = $configuration['mode'];
-            switch ( $redirectMode ) {
+            switch ($redirectMode) {
                 case 'redirectToPage':
-                    if ( isset($configuration['pid']) && ((int)$configuration['pid']>0) ) {
+                    if (isset($configuration['pid']) && ((int)$configuration['pid'] > 0)) {
                         $this->uriBuilder->reset();
                         $this->uriBuilder->setTargetPageUid((int)$configuration['pid']);
                         $this->uriBuilder->setCreateAbsoluteUri(true);
-                        if ( GeneralUtility::getIndpEnv('TYPO3_SSL') ) {
+                        if (GeneralUtility::getIndpEnv('TYPO3_SSL')) {
                             $this->uriBuilder->setAbsoluteUriScheme('https');
                         }
                         $url = $this->uriBuilder->build();
 
                         $statusCode = 303;
-                        if ( isset($configuration['httpStatusCode']) ) {
+                        if (isset($configuration['httpStatusCode'])) {
                             $statusCode = (int)$configuration['httpStatusCode'];
                         }
-                        # ToDo: Any other than '303' (=default) returns '302' intead of given one, see https://forum.typo3.org/index.php/t/192428/extbase-redirecttouri-setzt-statuscode-nicht
-						# Since TYPO3 11.3: Only redirect codes 302, 303 and 307 are allowed
+                        // ToDo: Any other than '303' (=default) returns '302' intead of given one, see https://forum.typo3.org/index.php/t/192428/extbase-redirecttouri-setzt-statuscode-nicht
+                        // Since TYPO3 11.3: Only redirect codes 302, 303 and 307 are allowed
                         return $this->redirectToUri($url, null, $statusCode);
                         //return $this->redirectToUri($url);
 
@@ -78,18 +79,19 @@ trait CustomErrorHandlingTrait {
                         throw new \InvalidArgumentException($msg);
                     }
                 case 'pageNotFoundHandler':
-					$response = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(
-						\TYPO3\CMS\Frontend\Controller\ErrorController::class
-					)->pageNotFoundAction(
-						$GLOBALS['TYPO3_REQUEST'], 'No record of type "' . $configuration['recordType'] . '" found.'
-					);
-            		throw new \TYPO3\CMS\Core\Http\ImmediateResponseException($response, 1617116194);
+                    $response = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(
+                        \TYPO3\CMS\Frontend\Controller\ErrorController::class
+                    )->pageNotFoundAction(
+                        $GLOBALS['TYPO3_REQUEST'],
+                        'No record of type "' . $configuration['recordType'] . '" found.'
+                    );
+                    throw new \TYPO3\CMS\Core\Http\ImmediateResponseException($response, 1617116194);
 
                     // not executed
                     //break;
                 case 'showStandaloneTemplate':
-                    if ( isset($configuration['templatePathAndFilename']) ) {
-                        if ( isset($configuration['httpStatusCode']) ) {
+                    if (isset($configuration['templatePathAndFilename'])) {
+                        if (isset($configuration['httpStatusCode'])) {
                             $statusCode = (int)$configuration['httpStatusCode'];
                         }
 
@@ -103,7 +105,7 @@ trait CustomErrorHandlingTrait {
                         throw new \InvalidArgumentException($msg);
                     }
                 case 'showContentObject':
-                    if ( isset($configuration['cObjectUid']) && ((int)$configuration['cObjectUid']>0) ) {
+                    if (isset($configuration['cObjectUid']) && ((int)$configuration['cObjectUid'] > 0)) {
                         $return = $this->_getContentObjectByUid((int)$configuration['cObjectUid']);
 
                         break;
@@ -131,7 +133,8 @@ trait CustomErrorHandlingTrait {
      * @param integer $uid
      * @return string
      */
-    protected function _getContentObjectByUid($uid) {
+    protected function _getContentObjectByUid($uid)
+    {
         $conf = [
             'tables' => 'tt_content',
             'source' => $uid,

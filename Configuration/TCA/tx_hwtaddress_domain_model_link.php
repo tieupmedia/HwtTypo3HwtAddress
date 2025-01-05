@@ -1,7 +1,7 @@
 <?php
 
 if (!defined('TYPO3')) {
-    die ('Access denied.');
+    die('Access denied.');
 }
 
 
@@ -27,7 +27,7 @@ $extTca = [
         'crdate' => 'crdate',
         'cruser_id' => 'cruser_id',
         'origUid' => 't3_origuid',
-        'dividers2tabs' => TRUE,
+        'dividers2tabs' => true,
         'default_sortby' => 'ORDER BY sorting',
         'sortby' => 'sorting',
         'delete' => 'deleted',
@@ -195,33 +195,33 @@ $extTca = [
     'types' => [
         0 => [
             'showitem' =>
-                '--palette--;'.$ll.'palette.name;paletteName,
+                '--palette--;' . $ll . 'palette.name;paletteName,
 
-                --div--;'.$ll.'tabs.language,
-                    --palette--;'.$ll.'palette.language;paletteLanguage,
+                --div--;' . $ll . 'tabs.language,
+                    --palette--;' . $ll . 'palette.language;paletteLanguage,
 
                 --div--;LLL:EXT:cms/locallang_ttc.xlf:tabs.access,
-                    --palette--;'.$llTtc.'palette.visibility;paletteVisbility,
-                    --palette--;'.$llTtc.'palette.access;paletteAccess,',
+                    --palette--;' . $llTtc . 'palette.visibility;paletteVisbility,
+                    --palette--;' . $llTtc . 'palette.access;paletteAccess,',
         ],
     ],
     'palettes' => [
         'paletteName' => [
             'showitem' => 'header, --linebreak--, type, parameter, linktext',
-            'canNotCollapse' => TRUE,
+            'canNotCollapse' => true,
         ],
 
         'paletteVisbility' => [
             'showitem' => 'hidden',
-            'canNotCollapse' => TRUE,
+            'canNotCollapse' => true,
         ],
         'paletteAccess' => [
-            'showitem' => 'starttime;'.$llTtc.'starttime_formlabel, endtime;'.$llTtc.'endtime_formlabel,',
-            'canNotCollapse' => TRUE,
+            'showitem' => 'starttime;' . $llTtc . 'starttime_formlabel, endtime;' . $llTtc . 'endtime_formlabel,',
+            'canNotCollapse' => true,
         ],
         'paletteLanguage' => [
             'showitem' => '
-                sys_language_uid;'.$llTtc.'sys_language_uid_formlabel,l10n_parent
+                sys_language_uid;' . $llTtc . 'sys_language_uid_formlabel,l10n_parent
             ',
         ],
     ],

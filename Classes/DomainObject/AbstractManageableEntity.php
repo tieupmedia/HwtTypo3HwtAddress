@@ -1,6 +1,6 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace Hwt\HwtAddress\DomainObject;
 
@@ -34,8 +34,8 @@ namespace Hwt\HwtAddress\DomainObject;
  * @subpackage tx_hwtaddress
  * @author Heiko Westermann <hwt3@gmx.de>
  */
-abstract class AbstractManageableEntity extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
-
+abstract class AbstractManageableEntity extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
+{
     /**
      * @var \DateTime
      */
@@ -83,8 +83,9 @@ abstract class AbstractManageableEntity extends \TYPO3\CMS\Extbase\DomainObject\
      *
      * @return integer
      */
-    public function getCrdate() {
-            return $this->crdate;
+    public function getCrdate()
+    {
+        return $this->crdate;
     }
 
     /**
@@ -92,8 +93,9 @@ abstract class AbstractManageableEntity extends \TYPO3\CMS\Extbase\DomainObject\
      *
      * @return integer
      */
-    public function getTstamp() {
-            return $this->tstamp;
+    public function getTstamp()
+    {
+        return $this->tstamp;
     }
 
     /**
@@ -101,8 +103,9 @@ abstract class AbstractManageableEntity extends \TYPO3\CMS\Extbase\DomainObject\
      *
      * @return integer
      */
-    public function getCruserId() {
-            return $this->cruserId;
+    public function getCruserId()
+    {
+        return $this->cruserId;
     }
 
     /**
@@ -110,8 +113,9 @@ abstract class AbstractManageableEntity extends \TYPO3\CMS\Extbase\DomainObject\
      *
      * @return integer
      */
-    public function getEditlock() {
-            return $this->editlock;
+    public function getEditlock()
+    {
+        return $this->editlock;
     }
 
     /**
@@ -119,8 +123,9 @@ abstract class AbstractManageableEntity extends \TYPO3\CMS\Extbase\DomainObject\
      *
      * @return integer
      */
-    public function getHidden() {
-            return $this->hidden;
+    public function getHidden()
+    {
+        return $this->hidden;
     }
 
     /**
@@ -128,8 +133,9 @@ abstract class AbstractManageableEntity extends \TYPO3\CMS\Extbase\DomainObject\
      *
      * @return integer
      */
-    public function getDeleted() {
-            return $this->deleted;
+    public function getDeleted()
+    {
+        return $this->deleted;
     }
 
     /**
@@ -137,8 +143,9 @@ abstract class AbstractManageableEntity extends \TYPO3\CMS\Extbase\DomainObject\
      *
      * @return \DateTime
      */
-    public function getStarttime() {
-            return $this->starttime;
+    public function getStarttime()
+    {
+        return $this->starttime;
     }
 
     /**
@@ -146,8 +153,9 @@ abstract class AbstractManageableEntity extends \TYPO3\CMS\Extbase\DomainObject\
      *
      * @return \DateTime
      */
-    public function getEndtime() {
-            return $this->endtime;
+    public function getEndtime()
+    {
+        return $this->endtime;
     }
 
     /**
@@ -155,7 +163,8 @@ abstract class AbstractManageableEntity extends \TYPO3\CMS\Extbase\DomainObject\
      *
      * @return integer
      */
-    public function getSorting() {
-            return $this->sorting;
+    public function getSorting()
+    {
+        return $this->sorting;
     }
 }

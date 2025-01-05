@@ -1,6 +1,6 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace Hwt\HwtAddress\DomainObject;
 
@@ -34,8 +34,8 @@ namespace Hwt\HwtAddress\DomainObject;
  * @subpackage tx_hwtaddress
  * @author Heiko Westermann <hwt3@gmx.de>
  */
-trait TraitCategoriesPropertyAndGetter {
-
+trait TraitCategoriesPropertyAndGetter
+{
     /**
      * Categories
      *
@@ -48,15 +48,16 @@ trait TraitCategoriesPropertyAndGetter {
      *
      * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\TYPO3\CMS\Extbase\Domain\Model\Category> $categories
      */
-    public function getCategories() {
+    public function getCategories()
+    {
         return $this->categories;
     }
 
     /**
      * Init function for trait, e.g. to execute in constructor of using object
-     *
      */
-    public function initTraitCategoriesPropertyAndGetter() {
+    public function initTraitCategoriesPropertyAndGetter()
+    {
         $this->categories = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
     }
 }

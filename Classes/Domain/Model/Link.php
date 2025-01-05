@@ -1,6 +1,6 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace Hwt\HwtAddress\Domain\Model;
 
@@ -34,8 +34,8 @@ namespace Hwt\HwtAddress\Domain\Model;
  * @subpackage tx_hwtaddress
  * @author Heiko Westermann <hwt3@gmx.de>
  */
-class Link extends \Hwt\HwtAddress\DomainObject\AbstractManageableEntity {
-
+class Link extends \Hwt\HwtAddress\DomainObject\AbstractManageableEntity
+{
     /**
      * @var string
      */
@@ -63,7 +63,8 @@ class Link extends \Hwt\HwtAddress\DomainObject\AbstractManageableEntity {
      *
      * @return string
      */
-    public function getHeader() {
+    public function getHeader()
+    {
         return $this->header;
     }
 
@@ -72,7 +73,8 @@ class Link extends \Hwt\HwtAddress\DomainObject\AbstractManageableEntity {
      *
      * @return string
      */
-    public function getParameter() {
+    public function getParameter()
+    {
         return $this->parameter;
     }
 
@@ -81,7 +83,8 @@ class Link extends \Hwt\HwtAddress\DomainObject\AbstractManageableEntity {
      *
      * @return string
      */
-    public function getLinktext() {
+    public function getLinktext()
+    {
         return $this->linktext;
     }
 
@@ -90,7 +93,8 @@ class Link extends \Hwt\HwtAddress\DomainObject\AbstractManageableEntity {
      *
      * @return string
      */
-    public function getType() {
+    public function getType()
+    {
         return $this->type;
     }
 }

@@ -49,7 +49,7 @@ class AddressController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControll
      * @param \Hwt\HwtAddress\Domain\Repository\AddressRepository $addressRepository
      * @return void
      */
-    public function injectAddressRepository(\Hwt\HwtAddress\Domain\Repository\AddressRepository $addressRepository)
+    public function injectAddressRepository(\Hwt\HwtAddress\Domain\Repository\AddressRepository $addressRepository): void
     {
         $this->addressRepository = $addressRepository;
     }

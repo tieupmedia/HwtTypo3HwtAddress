@@ -56,7 +56,7 @@ trait TraitCategoriesPropertyAndGetter
     /**
      * Init function for trait, e.g. to execute in constructor of using object
      */
-    public function initTraitCategoriesPropertyAndGetter()
+    public function initTraitCategoriesPropertyAndGetter(): void
     {
         $this->categories = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
     }

@@ -59,7 +59,7 @@ trait TraitAssetsPropertyAndGetter
     /**
      * Init function for trait, e.g. to execute in constructor of using object
      */
-    public function initTraitAssetsPropertyAndGetter()
+    public function initTraitAssetsPropertyAndGetter(): void
     {
         $this->assets = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
     }

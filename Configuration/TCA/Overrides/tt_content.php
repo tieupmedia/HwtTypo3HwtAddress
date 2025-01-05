@@ -18,12 +18,6 @@ foreach ($pluginKeys as $pluginKey) {
         'LLL:EXT:' . $extensionKey . '/Resources/Private/Language/locallang_be.xlf:plugin.' . $pluginKey . '.title'
     );
 
-    // Fallback for TYPO3 <= 12.0
-    // https://docs.typo3.org/c/typo3/cms-core/main/en-us/Changelog/12.0/Feature-82809-MakeExtensionUtilityregisterPluginMethodReturnPluginSignature.html
-    if (!$pluginIdentifier) {
-        $pluginIdentifier = str_replace('_', '', $extensionKey) . '_' . str_replace('_', '', $pluginKey);
-    }
-
     $GLOBALS['TCA']['tt_content']['types']['list']['subtypes_excludelist'][$pluginIdentifier] = 'recursive,select_key,pages';
     $GLOBALS['TCA']['tt_content']['types']['list']['subtypes_addlist'][$pluginIdentifier] = 'pi_flexform';
     \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPiFlexFormValue(

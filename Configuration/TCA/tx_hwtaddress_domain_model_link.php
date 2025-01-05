@@ -148,12 +148,11 @@ $extTca = [
             'exclude' => 0,
             'label' => $ll . 'parameter',
             'config' => [
-                'type' => 'input',
-                'renderType' => 'inputLink',
+                'type' => 'link',
                 'size' => 50,
-                'max' => 1024,
-                'eval' => 'trim',
-                'softref' => 'typolink',
+                'appearance' => [
+                    'browserTitle' => $ll . 'parameter',
+                ],
             ],
         ],
         'linktext' => [

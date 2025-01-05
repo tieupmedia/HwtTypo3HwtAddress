@@ -57,17 +57,17 @@ abstract class AbstractManageableEntity extends \TYPO3\CMS\Extbase\DomainObject\
     protected $endtime;
 
     /**
-     * @var boolean
+     * @var bool
      */
     protected $hidden;
 
     /**
-     * @var boolean
+     * @var bool
      */
     protected $deleted;
 
     /**
-     * @var integer
+     * @var int
      */
     protected $cruserId;
 
@@ -81,7 +81,7 @@ abstract class AbstractManageableEntity extends \TYPO3\CMS\Extbase\DomainObject\
     /**
      * Get creation date
      *
-     * @return integer
+     * @return int
      */
     public function getCrdate()
     {
@@ -91,7 +91,7 @@ abstract class AbstractManageableEntity extends \TYPO3\CMS\Extbase\DomainObject\
     /**
      * Get timestamp
      *
-     * @return integer
+     * @return int
      */
     public function getTstamp()
     {
@@ -111,7 +111,7 @@ abstract class AbstractManageableEntity extends \TYPO3\CMS\Extbase\DomainObject\
     /**
      * Get editlock flag
      *
-     * @return integer
+     * @return int
      */
     public function getEditlock()
     {
@@ -121,7 +121,7 @@ abstract class AbstractManageableEntity extends \TYPO3\CMS\Extbase\DomainObject\
     /**
      * Get hidden flag
      *
-     * @return integer
+     * @return int
      */
     public function getHidden()
     {
@@ -131,7 +131,7 @@ abstract class AbstractManageableEntity extends \TYPO3\CMS\Extbase\DomainObject\
     /**
      * Get deleted flag
      *
-     * @return integer
+     * @return int
      */
     public function getDeleted()
     {
@@ -161,7 +161,7 @@ abstract class AbstractManageableEntity extends \TYPO3\CMS\Extbase\DomainObject\
     /**
      * Get sorting
      *
-     * @return integer
+     * @return int
      */
     public function getSorting()
     {

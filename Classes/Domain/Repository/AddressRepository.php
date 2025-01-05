@@ -107,9 +107,9 @@ class AddressRepository extends AbstractRepository
      * Find addresses without pid restriction
      *
      * @param false|string $categories
-     * @param null|int $zip
-     * @param null|string $orderBy
-     * @param null|string $orderDirection
+     * @param int|null $zip
+     * @param string|null $orderBy
+     * @param string|null $orderDirection
      *
      * @return \TYPO3\CMS\Extbase\Persistence\QueryResultInterface addresses
      */
@@ -174,8 +174,8 @@ SQL;
      * Find addresses by uid list
      *
      * @param string $uids comma separated address uids
-     * @param null|string $orderBy
-     * @param null|string $orderDirection
+     * @param string|null $orderBy
+     * @param string|null $orderDirection
      *
      * @return \TYPO3\CMS\Extbase\Persistence\QueryResultInterface addresses
      */
@@ -200,8 +200,8 @@ SQL;
      * Find addresses by uid list, ordered by uid list
      *
      * @param string $uids comma separated address uids
-     * @param null|string $orderBy comma separated uid list
-     * @param null|string $orderDirection
+     * @param string|null $orderBy comma separated uid list
+     * @param string|null $orderDirection
      *
      * @return \TYPO3\CMS\Extbase\Persistence\QueryResultInterface addresses
      */

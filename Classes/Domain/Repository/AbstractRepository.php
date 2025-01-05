@@ -41,9 +41,9 @@ class AbstractRepository extends \TYPO3\CMS\Extbase\Persistence\Repository
      *
      * @param string $pids
      * @param string $orderBy
-     * @param null|string $orderDirection
-     * @param null|int $limit
-     * @param null|int $offset
+     * @param string|null $orderDirection
+     * @param int|null $limit
+     * @param int|null $offset
      *
      * @return \TYPO3\CMS\Extbase\Persistence\QueryResultInterface
      */

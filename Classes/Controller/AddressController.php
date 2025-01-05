@@ -47,7 +47,6 @@ class AddressController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControll
      * Inject a address repository
      *
      * @param \Hwt\HwtAddress\Domain\Repository\AddressRepository $addressRepository
-     * @return void
      */
     public function injectAddressRepository(\Hwt\HwtAddress\Domain\Repository\AddressRepository $addressRepository): void
     {
@@ -58,8 +57,6 @@ class AddressController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControll
 
     /**
      * Output search form for address
-     *
-     * @return void
      */
     public function searchFormAction()
     {
@@ -80,8 +77,6 @@ class AddressController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControll
 
     /**
      * Outputs a list view of address
-     *
-     * @return void
      */
     public function listAction()
     {

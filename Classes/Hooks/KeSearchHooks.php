@@ -49,7 +49,7 @@ class KeSearchHooks
      * @param array $params
      * @param type $pObj
      */
-    public function registerIndexerConfiguration(&$params, $pObj)
+    public function registerIndexerConfiguration(&$params, $pObj): void
     {
 
         // add address indexer item to "type" field

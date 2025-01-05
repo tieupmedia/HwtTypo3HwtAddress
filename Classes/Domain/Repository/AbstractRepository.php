@@ -69,7 +69,7 @@ class AbstractRepository extends \TYPO3\CMS\Extbase\Persistence\Repository
      * @param string $orderBy
      * @param null|string $orderDirection
      */
-    protected function _setOrderings(&$query, $orderBy = 'uid', $orderDirection = null)
+    protected function _setOrderings(&$query, $orderBy = 'uid', $orderDirection = null): void
     {
         if ($orderBy != '') {
             if ($orderDirection === 'desc') {
@@ -93,7 +93,7 @@ class AbstractRepository extends \TYPO3\CMS\Extbase\Persistence\Repository
      * @param null|int $limit
      * @param null|int $offset
      */
-    protected function _setRange(&$query, $limit = null, $offset = null)
+    protected function _setRange(&$query, $limit = null, $offset = null): void
     {
         if ($limit > 0) {
             $query->setLimit($limit);

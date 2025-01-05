@@ -43,7 +43,7 @@ trait TraitCoreQueryBuilderHelper
      * @param string $orderBy
      * @param null|string $orderDirection
      */
-    protected function _setOrderingsForCoreQueryBuilder(&$query, $orderBy = 'uid', $orderDirection = null)
+    protected function _setOrderingsForCoreQueryBuilder(&$query, $orderBy = 'uid', $orderDirection = null): void
     {
         if ($orderBy != '') {
             if ($orderDirection === 'desc') {
@@ -69,7 +69,7 @@ trait TraitCoreQueryBuilderHelper
      * @param null|int $limit
      * @param null|int $offset
      */
-    protected function _setRangeForCoreQueryBuilder(&$query, $limit = null, $offset = null)
+    protected function _setRangeForCoreQueryBuilder(&$query, $limit = null, $offset = null): void
     {
         if ($limit > 0) {
             $query->setMaxResults($limit);

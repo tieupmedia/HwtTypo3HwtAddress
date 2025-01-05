@@ -117,13 +117,10 @@ $extTca = [
             ],
         ],
         'starttime' => [
-            'exclude' => 1,
+            'exclude' => true,
             'label' => $llGeneral . 'LGL.starttime',
             'config' => [
-                'type' => 'input',
-                'renderType' => 'inputDateTime',
-                'size' => 10,
-                'eval' => 'datetime,int',
+                'type' => 'datetime',
                 'default' => 0,
                 'behaviour' => [
                     'allowLanguageSynchronization' => true,
@@ -131,14 +128,14 @@ $extTca = [
             ],
         ],
         'endtime' => [
-            'exclude' => 1,
+            'exclude' => true,
             'label' => $llGeneral . 'LGL.endtime',
             'config' => [
-                'type' => 'input',
-                'renderType' => 'inputDateTime',
-                'size' => 10,
-                'eval' => 'datetime,int',
+                'type' => 'datetime',
                 'default' => 0,
+                'range' => [
+                    'upper' => mktime(0, 0, 0, 1, 1, 2038),
+                ],
                 'behaviour' => [
                     'allowLanguageSynchronization' => true,
                 ],
@@ -288,14 +285,10 @@ $extTca = [
             ],
         ],
         'birthday' => [
-            'exclude' => 1,
-            'l10n_mode' => 'exclude',
+            'exclude' => true,
             'label' => $ll . 'birthday',
             'config' => [
-                'type' => 'input',
-                'renderType' => 'inputDateTime',
-                'size' => 12,
-                'eval' => 'date',
+                'type' => 'datetime',
                 'default' => 0,
             ],
         ],

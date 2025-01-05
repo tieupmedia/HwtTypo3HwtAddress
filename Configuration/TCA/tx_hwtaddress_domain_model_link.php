@@ -116,25 +116,22 @@ $extTca = [
             ],
         ],
         'starttime' => [
-            'exclude' => 1,
+            'exclude' => true,
             'label' => $llGeneral . 'LGL.starttime',
             'config' => [
-                'type' => 'input',
-                'renderType' => 'inputDateTime',
-                'size' => 10,
-                'eval' => 'datetime,int',
+                'type' => 'datetime',
                 'default' => 0,
             ],
         ],
         'endtime' => [
-            'exclude' => 1,
+            'exclude' => true,
             'label' => $llGeneral . 'LGL.endtime',
             'config' => [
-                'type' => 'input',
-                'renderType' => 'inputDateTime',
-                'size' => 10,
-                'eval' => 'datetime,int',
+                'type' => 'datetime',
                 'default' => 0,
+                'range' => [
+                    'upper' => mktime(0, 0, 0, 1, 1, 2038),
+                ],
             ],
         ],
 

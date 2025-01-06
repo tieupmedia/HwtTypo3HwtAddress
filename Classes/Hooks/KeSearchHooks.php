@@ -5,8 +5,6 @@ declare(strict_types = 1);
 namespace Hwt\HwtAddress\Hooks;
 
 use TYPO3\CMS\Core\Database\ConnectionPool;
-use TYPO3\CMS\Core\Database\Query\QueryBuilder;
-//use TYPO3\CMS\Core\Database\Query\Restriction\FrontendRestrictionContainer;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 
 /***************************************************************

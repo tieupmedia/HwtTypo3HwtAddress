@@ -85,16 +85,17 @@ class AddressController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControll
         if ($this->request->hasArgument('zip') && ($this->request->getArgument('zip') != '')) {
             $zip = $this->request->getArgument('zip');
             $isSearch = true;
-        }
-        if (($zip == '') && $this->request->hasArgument('city') && ($this->request->getArgument('city') != '')) {
+        } elseif ($this->request->hasArgument('city') && ($this->request->getArgument('city') != '')) {
+            // Load city and zip data
             $jsonFileName = \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extPath('hwt_address') . 'Resources/Private/Data/city-zip.json';
             $dataArray = array_change_key_case(json_decode(file_get_contents($jsonFileName), true));
 
+            // Get zip for city from loaded data
             $city = strtolower($this->request->getArgument('city'));
-
             if (!empty($dataArray[$city])) {
                 $zip = substr($dataArray[$city], 0, 5);
             }
+
             $isSearch = true;
         }
 

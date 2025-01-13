@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace Hwt\HwtAddress\Controller;
 
+use Psr\Http\Message\ResponseInterface;
+
 /***************************************************************
  *  Copyright notice
  *
@@ -59,9 +61,9 @@ class AddressController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControll
     /**
      * Output search form for address
      *
-     * @return void
+     * @return Psr\Http\Message\ResponseInterface Description
      */
-    public function searchFormAction()
+    public function searchFormAction(): ResponseInterface
     {
         $zip = $city = false;
 
@@ -81,9 +83,9 @@ class AddressController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControll
     /**
      * Outputs a list view of address
      *
-     * @return void
+     * @return Psr\Http\Message\ResponseInterface
      */
-    public function listAction()
+    public function listAction(): ResponseInterface
     {
         $isSearch = false;
         $zip = '';
@@ -151,8 +153,10 @@ class AddressController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControll
      * Single view of a address record
      *
      * @param \Hwt\HwtAddress\Domain\Model\Address $address single address item
+     *
+     * @return Psr\Http\Message\ResponseInterface
      */
-    public function singleAction(\Hwt\HwtAddress\Domain\Model\Address $address = null)
+    public function singleAction(\Hwt\HwtAddress\Domain\Model\Address $address = null): ResponseInterface
     {
         if ((!$address) && (int)$this->settings['addressSingleRecord'] > 0) {
                 // If configured, get a fallback record, if no single record is given

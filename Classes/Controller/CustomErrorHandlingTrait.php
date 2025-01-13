@@ -43,9 +43,10 @@ trait CustomErrorHandlingTrait
      *
      * @param string $configuration configuration what will be done
      * @throws \InvalidArgumentException
+     * @throws \TYPO3\CMS\Core\Http\ImmediateResponseException
      * @return string
      */
-    protected function doConfiguredErrorHandling($configuration)
+    protected function doConfiguredErrorHandling($configuration): \Psr\Http\Message\ResponseInterface
     {
         $return = $statusCode = null;
 
@@ -133,7 +134,7 @@ trait CustomErrorHandlingTrait
      * @param integer $uid
      * @return string
      */
-    protected function _getContentObjectByUid($uid)
+    protected function _getContentObjectByUid($uid): string
     {
         $conf = [
             'tables' => 'tt_content',

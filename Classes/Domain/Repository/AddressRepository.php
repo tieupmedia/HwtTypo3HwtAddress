@@ -46,7 +46,7 @@ class AddressRepository extends AbstractRepository
      *
      * @return array  The addresses
      */
-    public function findRelatedToPage($pageId, $orderBy = 'uid', $orderDirection = null, $limit = null, $offset = null)
+    public function findRelatedToPage($pageId, $orderBy = 'uid', $orderDirection = null, $limit = null, $offset = null): array
     {
         // Create the query
         $table = 'tx_hwtaddress_domain_model_address';
@@ -113,7 +113,7 @@ class AddressRepository extends AbstractRepository
      *
      * @return \TYPO3\CMS\Extbase\Persistence\QueryResultInterface addresses
      */
-    public function findAllWithoutPidRestriction($categories, $zip = null, $orderBy = null, $orderDirection = null)
+    public function findAllWithoutPidRestriction($categories, $zip = null, $orderBy = null, $orderDirection = null): QueryResultInterface
     {
         $query = $this->createQuery();
         $query->getQuerySettings()->setRespectStoragePage(false);
@@ -179,7 +179,7 @@ SQL;
      *
      * @return \TYPO3\CMS\Extbase\Persistence\QueryResultInterface addresses
      */
-    public function findByUidInList($uids, $orderBy = null, $orderDirection = null)
+    public function findByUidInList($uids, $orderBy = null, $orderDirection = null): QueryResultInterface
     {
         $query = $this->createQuery();
         $query->getQuerySettings()->setRespectStoragePage(false);
@@ -203,9 +203,9 @@ SQL;
      * @param null|string $orderBy comma separated uid list
      * @param null|string $orderDirection
      *
-     * @return \TYPO3\CMS\Extbase\Persistence\QueryResultInterface addresses
+     * @return array addresses
      */
-    public function findByUidInOrderedList($uids, $orderDirection = null)
+    public function findByUidInOrderedList($uids, $orderDirection = null): array
     {
         $query = $this->createQuery();
         $query->getQuerySettings()->setRespectStoragePage(false);

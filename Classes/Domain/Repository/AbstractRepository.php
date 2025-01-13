@@ -47,7 +47,7 @@ class AbstractRepository extends \TYPO3\CMS\Extbase\Persistence\Repository
      *
      * @return \TYPO3\CMS\Extbase\Persistence\QueryResultInterface
      */
-    public function findInPageIds($pids, $orderBy = 'uid', $orderDirection = null, $limit = null, $offset = null)
+    public function findInPageIds($pids, $orderBy = 'uid', $orderDirection = null, $limit = null, $offset = null): \TYPO3\CMS\Extbase\Persistence\QueryResultInterface
     {
         $query = $this->createQuery();
         $query->getQuerySettings()->setRespectStoragePage(false);

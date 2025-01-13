@@ -83,7 +83,7 @@ class AddressController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControll
          * Prepare zip or city search, if requested
          */
         if ($this->request->hasArgument('zip') && ($this->request->getArgument('zip') != '')) {
-            $zip = $this->request->getArgument('zip');
+            $zip = trim($this->request->getArgument('zip'));
             $isSearch = true;
         } elseif ($this->request->hasArgument('city') && ($this->request->getArgument('city') != '')) {
             // Load city and zip data

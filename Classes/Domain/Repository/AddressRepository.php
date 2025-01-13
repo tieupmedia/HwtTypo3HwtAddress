@@ -115,12 +115,26 @@ class AddressRepository extends AbstractRepository
         $query->getQuerySettings()->setRespectStoragePage(false);
 
         if ($zip) {
-            $zip = substr($zip, 0, 5);
-            //$zip = (int)$zip;
+            if ($zip !== trim($zip)) {
+                throw new \UnexpectedValueException(
+                    sprintf(
+                        'The zip/postal code parameter must not contain any whitespace at the beginning or the end, but "%s" given!',
+                        $zip
+                    ),
+                    1736765075
+                );
+            }
 
-            // protect any result if zip is false
-            if ($zip == '') {
-                $zip = 'noplz';
+            // https://en.wikipedia.org/wiki/Postal_code#Presentation
+            if (strlen($zip) < 3 || strlen($zip) > 10) {
+                throw new \UnexpectedValueException(
+                    sprintf(
+                        'The zip/postal code parameter must not be shorter than 3 and longer than 10 numbers or characters, but "%s" with length "%s" given!',
+                        $zip,
+                        strlen($zip)
+                    ),
+                    1736765162
+                );
             }
         }
 

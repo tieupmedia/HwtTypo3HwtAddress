@@ -4,6 +4,9 @@ declare(strict_types=1);
 
 namespace Hwt\HwtAddress\Domain\Repository;
 
+use TYPO3\CMS\Core\Database\Query\QueryBuilder;
+use TYPO3\CMS\Extbase\Persistence\QueryInterface;
+
 /***************************************************************
  *  Copyright notice
  *
@@ -43,18 +46,19 @@ trait TraitCoreQueryBuilderHelper
      * @param string $orderBy
      * @param null|string $orderDirection
      */
-    protected function _setOrderingsForCoreQueryBuilder(&$query, $orderBy = 'uid', $orderDirection = null): void
+    protected function _setOrderingsForCoreQueryBuilder(QueryBuilder &$query, string $orderBy = 'uid', ?string $orderDirection = null): void
     {
         if ($orderBy != '') {
-            if ($orderDirection === 'desc') {
+            if ($orderDirection &&
+                strtoupper($orderDirection) === QueryInterface::ORDER_DESCENDING) {
                 $query->orderBy(
                     $orderBy,
-                    \TYPO3\CMS\Extbase\Persistence\QueryInterface::ORDER_DESCENDING
+                    QueryInterface::ORDER_DESCENDING
                 );
             } else {
                 $query->orderBy(
                     $orderBy,
-                    \TYPO3\CMS\Extbase\Persistence\QueryInterface::ORDER_ASCENDING
+                    QueryInterface::ORDER_ASCENDING
                 );
             }
         }
@@ -66,10 +70,10 @@ trait TraitCoreQueryBuilderHelper
      * Set range for result items
      *
      * @param \TYPO3\CMS\Core\Database\Query\QueryBuilder $query
-     * @param null|int $limit
-     * @param null|int $offset
+     * @param int|null $limit
+     * @param int|null $offset
      */
-    protected function _setRangeForCoreQueryBuilder(&$query, $limit = null, $offset = null): void
+    protected function _setRangeForCoreQueryBuilder(QueryBuilder &$query, ?int $limit = null, ?int $offset = null): void
     {
         if ($limit > 0) {
             $query->setMaxResults($limit);

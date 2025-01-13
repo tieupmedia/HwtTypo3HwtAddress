@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace Hwt\HwtAddress\Domain\Repository;
 
+use TYPO3\CMS\Extbase\Persistence\QueryInterface;
+
 /***************************************************************
  *  Copyright notice
  *
@@ -43,10 +45,14 @@ class AddressRepository extends AbstractRepository
      * Find addresses related to page
      *
      * @param int $pageId  The page id
+     * @param string $orderBy
+     * @param string|null $orderDirection
+     * @param int|null $limit
+     * @param int|null $offset
      *
      * @return array  The addresses
      */
-    public function findRelatedToPage($pageId, $orderBy = 'uid', $orderDirection = null, $limit = null, $offset = null): array
+    public function findRelatedToPage(int $pageId, string $orderBy = 'uid', ?string $orderDirection = null, ?int $limit = null, ?int $offset = null): array
     {
         // Create the query
         $table = 'tx_hwtaddress_domain_model_address';
@@ -106,14 +112,14 @@ class AddressRepository extends AbstractRepository
     /**
      * Find addresses without pid restriction
      *
-     * @param false|string $categories
-     * @param null|int $zip
-     * @param null|string $orderBy
-     * @param null|string $orderDirection
+     * @param string|null $categories
+     * @param string|null $zip
+     * @param string $orderBy
+     * @param string|null $orderDirection
      *
      * @return \TYPO3\CMS\Extbase\Persistence\QueryResultInterface addresses
      */
-    public function findAllWithoutPidRestriction($categories, $zip = null, $orderBy = null, $orderDirection = null): QueryResultInterface
+    public function findAllWithoutPidRestriction(?string $categories = null, ?string $zip = null, string $orderBy = 'uid', ?string $orderDirection = null): QueryResultInterface
     {
         $query = $this->createQuery();
         $query->getQuerySettings()->setRespectStoragePage(false);
@@ -174,12 +180,12 @@ SQL;
      * Find addresses by uid list
      *
      * @param string $uids comma separated address uids
-     * @param null|string $orderBy
-     * @param null|string $orderDirection
+     * @param string $orderBy
+     * @param string|null $orderDirection
      *
      * @return \TYPO3\CMS\Extbase\Persistence\QueryResultInterface addresses
      */
-    public function findByUidInList($uids, $orderBy = null, $orderDirection = null): QueryResultInterface
+    public function findByUidInList(string $uids, string $orderBy = 'uid', ?string $orderDirection = null): QueryResultInterface
     {
         $query = $this->createQuery();
         $query->getQuerySettings()->setRespectStoragePage(false);
@@ -200,18 +206,19 @@ SQL;
      * Find addresses by uid list, ordered by uid list
      *
      * @param string $uids comma separated address uids
-     * @param null|string $orderBy comma separated uid list
-     * @param null|string $orderDirection
+     * @param string $orderBy comma separated uid list
+     * @param string|null $orderDirection
      *
      * @return array addresses
      */
-    public function findByUidInOrderedList($uids, $orderDirection = null): array
+    public function findByUidInOrderedList(string $uids, ?string $orderDirection = null): array
     {
         $query = $this->createQuery();
         $query->getQuerySettings()->setRespectStoragePage(false);
 
         $uids = explode(',', $uids);
-        if ($orderDirection === 'desc') {
+        if ($orderDirection &&
+            strtoupper($orderDirection) === QueryInterface::ORDER_DESCENDING) {
             $uids = array_reverse($uids);
         }
 

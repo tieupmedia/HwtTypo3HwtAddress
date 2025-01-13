@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace Hwt\HwtAddress\Domain\Repository;
 
+use TYPO3\CMS\Extbase\Persistence\QueryInterface;
+
 /***************************************************************
  *  Copyright notice
  *
@@ -47,7 +49,7 @@ class AbstractRepository extends \TYPO3\CMS\Extbase\Persistence\Repository
      *
      * @return \TYPO3\CMS\Extbase\Persistence\QueryResultInterface
      */
-    public function findInPageIds($pids, $orderBy = 'uid', $orderDirection = null, $limit = null, $offset = null): \TYPO3\CMS\Extbase\Persistence\QueryResultInterface
+    public function findInPageIds(string $pids, string $orderBy = 'uid', ?string $orderDirection = null, ?int $limit = null, ?int $offset = null): \TYPO3\CMS\Extbase\Persistence\QueryResultInterface
     {
         $query = $this->createQuery();
         $query->getQuerySettings()->setRespectStoragePage(false);
@@ -67,18 +69,19 @@ class AbstractRepository extends \TYPO3\CMS\Extbase\Persistence\Repository
      *
      * @param \TYPO3\CMS\Extbase\Persistence\QueryInterface $query
      * @param string $orderBy
-     * @param null|string $orderDirection
+     * @param string|null $orderDirection
      */
-    protected function _setOrderings(&$query, $orderBy = 'uid', $orderDirection = null): void
+    protected function _setOrderings(QueryInterface &$query, string $orderBy = 'uid', ?string $orderDirection = null): void
     {
         if ($orderBy != '') {
-            if ($orderDirection === 'desc') {
+            if ($orderDirection &&
+                strtoupper($orderDirection) === QueryInterface::ORDER_DESCENDING) {
                 $query->setOrderings([
-                    $orderBy => \TYPO3\CMS\Extbase\Persistence\QueryInterface::ORDER_DESCENDING,
+                    $orderBy => QueryInterface::ORDER_DESCENDING,
                 ]);
             } else {
                 $query->setOrderings([
-                    $orderBy => \TYPO3\CMS\Extbase\Persistence\QueryInterface::ORDER_ASCENDING,
+                    $orderBy => QueryInterface::ORDER_ASCENDING,
                 ]);
             }
         }
@@ -90,10 +93,10 @@ class AbstractRepository extends \TYPO3\CMS\Extbase\Persistence\Repository
      * Set range for result items
      *
      * @param \TYPO3\CMS\Extbase\Persistence\QueryInterface $query
-     * @param null|int $limit
-     * @param null|int $offset
+     * @param int|null $limit
+     * @param int|null $offset
      */
-    protected function _setRange(&$query, $limit = null, $offset = null): void
+    protected function _setRange(QueryInterface &$query, ?int $limit = null, ?int $offset = null): void
     {
         if ($limit > 0) {
             $query->setLimit($limit);

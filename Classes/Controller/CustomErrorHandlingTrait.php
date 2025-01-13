@@ -41,17 +41,17 @@ trait CustomErrorHandlingTrait
     /**
      * Error handling configured before
      *
-     * @param string $configuration configuration what will be done
+     * @param array $configuration configuration what will be done
      * @throws \InvalidArgumentException
      * @throws \TYPO3\CMS\Core\Http\ImmediateResponseException
      * @return string
      */
-    protected function doConfiguredErrorHandling($configuration): \Psr\Http\Message\ResponseInterface
+    protected function doConfiguredErrorHandling(array $configuration): \Psr\Http\Message\ResponseInterface
     {
         $return = $statusCode = null;
 
         //\TYPO3\CMS\Extbase\Utility\DebuggerUtility::var_dump($configuration);
-        if (is_array($configuration) && isset($configuration['mode'])) {
+        if (isset($configuration['mode']) && $configuration['mode']) {
             $redirectMode = $configuration['mode'];
             switch ($redirectMode) {
                 case 'redirectToPage':
@@ -117,6 +117,11 @@ trait CustomErrorHandlingTrait
                 default:
                     // Do nothing, it might be handled in the view.
             }
+        } else {
+            throw new \UnexpectedValueException(
+                'The "mode" of the error handling must be set.',
+                1736795777
+            );
         }
 
         $response = $this->htmlResponse($return);
@@ -134,7 +139,7 @@ trait CustomErrorHandlingTrait
      * @param integer $uid
      * @return string
      */
-    protected function _getContentObjectByUid($uid): string
+    protected function _getContentObjectByUid(int $uid): string
     {
         $conf = [
             'tables' => 'tt_content',

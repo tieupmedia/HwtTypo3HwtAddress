@@ -17,6 +17,7 @@ declare(strict_types=1);
 
 namespace Hwt\HwtAddress\Domain\Repository;
 
+use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Extbase\Persistence\QueryInterface;
 
 /**
@@ -28,6 +29,7 @@ use TYPO3\CMS\Extbase\Persistence\QueryInterface;
  */
 class AddressRepository extends AbstractRepository
 {
+    use TraitCategoryHelper;
     use TraitCoreQueryBuilderHelper;
     
 
@@ -88,7 +90,7 @@ class AddressRepository extends AbstractRepository
 
 
         // Map rows (array) to objects (model)
-        $dataMapper = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(
+        $dataMapper = GeneralUtility::makeInstance(
             \TYPO3\CMS\Extbase\Persistence\Generic\Mapper\DataMapper::class
         );
         $items = $dataMapper->map(\Hwt\HwtAddress\Domain\Model\Address::class, $result->fetchAll());
@@ -138,43 +140,28 @@ class AddressRepository extends AbstractRepository
             }
         }
 
+        $constraints = [];
+
         if ($categories) {
-            $sql = <<<SQL
-                SELECT
-                    tx_hwtaddress_domain_model_address.*
-                FROM
-                    sys_category_record_mm
-                LEFT JOIN
-                    tx_hwtaddress_domain_model_address
-                ON
-                    sys_category_record_mm.uid_foreign = tx_hwtaddress_domain_model_address.uid
-                WHERE
-                    sys_category_record_mm.tablenames = ? AND sys_category_record_mm.uid_local IN (
-SQL;
-            $sql .= $categories;
-            $sql .= ')';
-
-            if ($zip) {
-                $sql .= " AND (tx_hwtaddress_domain_model_address.region LIKE '%" . $zip . "%' OR tx_hwtaddress_domain_model_address.region LIKE '%" . $zip . ",%')";
+            $categories = GeneralUtility::intExplode(',', $categories, true);
+            if ($categories) {
+                $constraints['categories'] = $this->_createCategoryConstraint();
             }
+        }
 
-            $sql .= <<<SQL
-                AND tx_hwtaddress_domain_model_address.hidden=0 AND tx_hwtaddress_domain_model_address.deleted=0
-                GROUP BY
-                    tx_hwtaddress_domain_model_address.uid
-                ORDER BY tx_hwtaddress_domain_model_address.
-SQL;
-            $sql .= $orderBy . ' ' . $orderDirection;
-            $parameters = ['tx_hwtaddress_domain_model_address'];
-            $query->statement($sql, $parameters);
-        } elseif ($zip) {
-            $query->matching(
-                $query->logicalOr(
-                    $query->like('region', '%' . $zip . '%'),
-                    $query->like('region', '%' . $zip . ',%')
-                )
+        if ($zip) {
+            $constraints['zip'] = $query->logicalOr(
+                $query->like('region', '%' . $zip . '%'),
+                $query->like('region', '%' . $zip . ',%')
             );
         }
+
+        $query->matching(
+            $query->logicalAnd(...$constraints)
+        );
+
+        $this->_setOrderings($query, $orderBy, $orderDirection);
+
         return $query->execute();
     }
 

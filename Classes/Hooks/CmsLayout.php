@@ -91,11 +91,12 @@ class CmsLayout {
             $this->flexformData = \TYPO3\CMS\Core\Utility\GeneralUtility::xml2array($params['row']['pi_flexform']);
 
 
-            $actions = $this->getFieldFromFlexform('switchableControllerActions');
-            $actionsArray = explode(';', $actions);
-            foreach ( $actionsArray as $action ) {
-                $action = strtolower(str_replace('->', '_', $action));
-                $result .= $this->getPluginLL(self::LLPATH . 'flexform_setting.mode.' . $action) . ' ';
+            if ($actions = $this->getFieldFromFlexform('switchableControllerActions')) {
+                $actionsArray = explode(';', $actions);
+                foreach ( $actionsArray as $action ) {
+                    $action = strtolower(str_replace('->', '_', $action));
+                    $result .= $this->getPluginLL(self::LLPATH . 'flexform_setting.mode.' . $action) . ' ';
+                }
             }
 
 
